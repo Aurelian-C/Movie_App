@@ -1,0 +1,13 @@
+// Base folder
+@import './base/base';
+@import './base/typography';
+@import './base/utilities';
+
+// Components folder
+@import './components/card';
+@import './components/search';
+@import './components/selector';
+
+// Layout folder
+@import './layout/header';
+@import './layout/footer';

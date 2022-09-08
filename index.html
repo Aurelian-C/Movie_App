@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+    <title>Movie App</title>
+    <script defer type="module" src="./src/js/Controller.js"></script>
+  </head>
+  <body>
+    <!-- Header section -->
+    <header class="header">
+      <div class="header__container">
+        <div class="header__menu-left-side">
+          <div class="header__logo">
+            <img
+              src="./src/img/tmdb_logo_header.svg"
+              alt=""
+              class="header__img"
+            />
+          </div>
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="/movie" class="header__menu-link">Movies</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="/tv" class="header__menu-link">TV Shows</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="/people" class="header__menu-link">People</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">More</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__menu-right-side">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="/add-movie" class="header__menu-link"
+                ><i class="fa-solid fa-plus"></i
+              ></a>
+            </li>
+            <li class="header__menu-item header__menu-item-language">
+              <a href="/language" class="header__menu-link">EN</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="/login" class="header__menu-link">Login</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="/join" class="header__menu-link">Join TMDB</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="/search" class="header__menu-link"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search section -->
+    <section class="search">
+      <div class="search__container">
+        <div class="search__content">
+          <h2 class="search__title">Welcome.</h2>
+          <span class="search__text"
+            >Millions of movies, TV shows and people to discover. Explore
+            now.</span
+          >
+        </div>
+        <form class="search__form">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Search for a movie, TV show, person......"
+          />
+          <button class="search__button" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Popular section -->
+    <section class="cards-section u-margin-top-big">
+      <div class="selector">
+        <h3 class="selector__description">What's Popular</h3>
+        <ul class="selector__container">
+          <li class="selector__item selected">
+            <h4 class="selector__title">Streaming</h4>
+            <div class="selector__bg"></div>
+          </li>
+          <li class="selector__item">
+            <h4 class="selector__title">On TV</h4>
+            <div class="selector__bg"></div>
+          </li>
+          <li class="selector__item">
+            <h4 class="selector__title">For Rent</h4>
+            <div class="selector__bg"></div>
+          </li>
+          <li class="selector__item">
+            <h4 class="selector__title">In Theaters</h4>
+            <div class="selector__bg"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="cards">
+        <div class="cards__container" id="popular"></div>
+      </div>
+    </section>
+
+    <!-- Trendings section -->
+    <section class="cards-section u-margin-top-big">
+      <div class="selector">
+        <h3 class="selector__description">Trending</h3>
+        <ul class="selector__container">
+          <li class="selector__item selected">
+            <h4 class="selector__title">Today</h4>
+            <div class="selector__bg"></div>
+          </li>
+          <li class="selector__item">
+            <h4 class="selector__title">Week</h4>
+            <div class="selector__bg"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="cards">
+        <div class="cards__container" id="trendings"></div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer u-margin-top-big">
+      <div class="footer__logo">
+        <img src="./src/img/tmdb_logo_footer.svg" alt="" class="footer__img" />
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">THE BASICS</h3>
+        <ul class="footer__items">
+          <li class="footer__item">
+            <a href="#" class="footer__link">About TMDB</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Contact Us</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Support Forums</a>
+          </li>
+          <li class="footer__item"><a href="#" class="footer__link">API</a></li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">System Status</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">GET INVOLVED</h3>
+        <ul class="footer__items">
+          <li class="footer__item">
+            <a href="#" class="footer__link">Contribution Bible</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Add New Movie</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Add New TV Show</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">COMMUNITY</h3>
+        <ul class="footer__items">
+          <li class="footer__item">
+            <a href="#" class="footer__link">Guidelines</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Discussions</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Leaderboard</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Twitter</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">LEGAL</h3>
+        <ul class="footer__items">
+          <li class="footer__item">
+            <a href="#" class="footer__link">Terms of Use</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">API Terms of Use</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Privacy Policy</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

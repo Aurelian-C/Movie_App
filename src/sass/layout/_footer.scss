@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  background-color: var(--footer-bg-dark);
+  padding: 5rem 0;
+
+  &__logo {
+    display: inline-block;
+    height: 10rem;
+  }
+
+  &__img {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__items {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 0.5rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "movie_app",
+  "version": "1.0.0",
+  "description": "A Vanilla Javascript Movie App build by Cioloca Aurelian",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "Cioloca Aurelian",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}

@@ -1,0 +1,22 @@
+.selected {
+  h4 {
+    background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+    background-clip: text;
+    color: transparent;
+  }
+
+  div {
+    background-color: black;
+    position: absolute;
+    top: -1;
+    left: 0;
+    border-radius: 30px;
+    height: 106%;
+    width: 102%;
+    z-index: -1;
+  }
+}
+
+.u-margin-top-big {
+  margin-top: 3rem;
+}
