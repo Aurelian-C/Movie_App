@@ -2,7 +2,8 @@ import { View } from './View';
 
 class SelectorView extends View {
   addHandlerSelect(handler) {
-    this._parentElement.addEventListener('click', e => {
+    const element = document.querySelector('.selector__container');
+    element.addEventListener('click', e => {
       // Select clicked item
       const item = e.target.closest('.selector__item');
       if (!item) return;

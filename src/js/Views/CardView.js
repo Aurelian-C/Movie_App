@@ -2,7 +2,9 @@ import { View } from './View';
 
 class CardView extends View {
   _generateMarkup(data) {
-    return this._data
+    return `
+    <div class="cards__container" id="trendings-cards">
+    ${this._data
       .map((cardData, i) => {
         if (!i) {
           return this._generateMarkupCard({ cardData, firstCard: true });
@@ -10,7 +12,8 @@ class CardView extends View {
           return this._generateMarkupCard({ cardData, firstCard: '' });
         }
       })
-      .join('');
+      .join('')}
+      </div>`;
   }
 
   _generateMarkupCard({ cardData, firstCard }) {
