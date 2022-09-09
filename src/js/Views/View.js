@@ -14,7 +14,6 @@ export class View {
 
   update(parentElementID, data) {
     this._parentElement = document.getElementById(parentElementID);
-    console.log(this._parentElement);
     this._data = data;
     const markup = this._generateMarkup(this._data);
     this._cleanContainer();
