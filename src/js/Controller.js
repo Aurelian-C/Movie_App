@@ -1,6 +1,11 @@
 import * as Model from './Model';
 import CardView from './Views/CardView';
+import SearchView from './Views/SearchView';
 import SelectorView from './Views/SelectorView';
+
+const controlSearchView = function () {
+  SearchView.render(document.getElementById('search'));
+};
 
 const controlTrendings = async function () {
   try {
@@ -33,5 +38,6 @@ const controlSelector = async function (media) {
 
 const init = function () {
   controlTrendings();
+  controlSearchView();
 };
 init();
