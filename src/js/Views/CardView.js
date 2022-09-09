@@ -1,13 +1,6 @@
-class CardView {
-  _data;
-  _parentElement = document.getElementById('trendings');
+import { View } from './View';
 
-  render(data) {
-    this._data = data;
-    const markup = this._generateMarkup(this._data);
-    this._parentElement.insertAdjacentHTML('beforeend', markup);
-  }
-
+class CardView extends View {
   _generateMarkup(data) {
     return this._data
       .map((cardData, i) => {

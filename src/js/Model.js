@@ -2,7 +2,21 @@ import { API_KEY, API_URL, IMAGES_PATH } from './Config';
 import { AJAX } from './Helpers';
 
 export const state = {
-  trendings: [],
+  trendings: {
+    selector: {
+      title: 'Trendings',
+      items: ['All', 'Movie', 'TV'],
+    },
+    cards: [],
+  },
+
+  popular: {
+    selector: {
+      title: `What's popular`,
+      items: ['Streaming', 'On TV', 'For Rent', 'In Theaters'],
+    },
+    cards: [],
+  },
 };
 
 const createCardDetails = result => {
@@ -23,7 +37,7 @@ export const fetchCardDates = async function (category, mediaType, timeWindow) {
       `${API_URL}/${category}/${mediaType}/${timeWindow}?api_key=${API_KEY}`
     );
 
-    state.trendings = results.map(createCardDetails);
+    state.trendings.cards = results.map(createCardDetails);
   } catch (err) {
     throw err;
   }
