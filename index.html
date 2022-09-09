@@ -20,14 +20,10 @@
   <body>
     <!-- Header section -->
     <header class="header">
-      <div class="header__container">
+      <div class="header__container header__container--big-screen">
         <div class="header__menu-left-side">
           <div class="header__logo">
-            <img
-              src="./src/img/tmdb_logo_header.svg"
-              alt=""
-              class="header__img"
-            />
+            <img src="./src/img/tmdb_logo1.svg" alt="" class="header__img" />
           </div>
           <ul class="header__menu">
             <li class="header__menu-item">
@@ -68,6 +64,24 @@
           </ul>
         </div>
       </div>
+      <div class="header__container header__container--small-screen">
+        <i class="fa-solid fa-bars"></i>
+        <div class="header__logo">
+          <img src="./src/img/tmdb_logo2.svg" alt="" class="header__img" />
+        </div>
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="/join" class="header__menu-link"
+              ><i class="fa-solid fa-user"></i
+            ></a>
+          </li>
+          <li class="header__menu-item">
+            <a href="/search" class="header__menu-link"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- Search section -->
@@ -79,7 +93,7 @@
     <!-- Footer section -->
     <footer class="footer u-margin-top-big">
       <div class="footer__logo">
-        <img src="./src/img/tmdb_logo_footer.svg" alt="" class="footer__img" />
+        <img src="./src/img/tmdb_logo2.svg" alt="" class="footer__img" />
       </div>
       <div class="footer__content">
         <h3 class="footer__title">THE BASICS</h3>

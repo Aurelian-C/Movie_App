@@ -15,7 +15,7 @@ class SearchView extends View {
           <input
             type="text"
             class="search__input"
-            placeholder="Search for a movie, TV show, person......"
+            placeholder="Search for a movie, TV show, person ..."
           />
           <button class="search__button" type="submit">Search</button>
         </form>

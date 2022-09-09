@@ -5,9 +5,19 @@
   background-color: var(--footer-bg-dark);
   padding: 5rem 0;
 
+  @media screen and (max-width: 900px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 2.5rem var(--padding-sides-main);
+  }
+
   &__logo {
     display: inline-block;
     height: 10rem;
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
   }
 
   &__img {

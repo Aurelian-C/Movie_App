@@ -1,6 +1,5 @@
 .header {
   background-color: var(--header-bg-dark);
-  padding: 2.5rem var(--padding-sides-main);
 
   &__container {
     display: flex;
@@ -8,11 +7,31 @@
     align-items: center;
     max-width: 120rem;
     margin: 0 auto;
+
+    &--big-screen {
+      padding: 2.5rem var(--padding-sides-main);
+
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    &--small-screen {
+      padding: 1rem var(--padding-sides-main);
+
+      @media screen and (min-width: 901px) {
+        display: none;
+      }
+    }
   }
 
   &__logo {
     display: inline-block;
     width: 13rem;
+
+    @media screen and (max-width: 900px) {
+      width: 5rem;
+    }
   }
 
   &__img {
