@@ -39,9 +39,7 @@ class CardView extends View {
           </button>
         </div>
         <div class="card__image">
-          <a href="/${cardData.mediaType}/${
-      cardData.id
-    }" class="card__image-anchor">
+          <a href="#" class="card__image-anchor">
             <img
               src="${cardData.posterImage}"
               alt=""
@@ -51,9 +49,7 @@ class CardView extends View {
         <div class="card__content">
           <div class="card__score">${cardData.voteAverage}</div>
           <div class="card__title">
-            <a href="/${cardData.mediaType}/${
-      cardData.id
-    }" class="card__title-anchor">${cardData.title}</a>
+            <a href="#" class="card__title-anchor">${cardData.title}</a>
           </div>
           <div class="card__date">${date}</div>
         </div>
