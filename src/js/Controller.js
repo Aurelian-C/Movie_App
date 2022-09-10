@@ -7,25 +7,52 @@ const controlSearchView = function () {
   SearchView.render('search', 'search');
 };
 
+// Popularity
+const controlPopularity = async function () {
+  try {
+    const rootID = 'section-popularity';
+    await Model.fetchPopular('movie');
+    SelectorView.render(
+      rootID,
+      'popularity-selector',
+      Model.state.popular.selector
+    );
+    SelectorView.addHandlerSelect(controlPopularitySelector);
+    CardView.render(rootID, 'cards', Model.state.popular.cards);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const controlPopularitySelector = async function (mediaType, sectionElement) {
+  try {
+    await Model.fetchPopular(mediaType);
+    CardView.update(sectionElement, Model.state.popular.cards);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// Trendings
 const controlTrendings = async function () {
   try {
     const rootID = 'section-trendings';
-    await Model.fetchCardDates('trending', 'all', 'week');
+    await Model.fetchTrendings('trending', 'all', 'week');
     SelectorView.render(
       rootID,
       'trendings-selector',
       Model.state.trendings.selector
     );
-    SelectorView.addHandlerSelect(controlSelector);
+    SelectorView.addHandlerSelect(controlTrendingsSelector);
     CardView.render(rootID, 'cards', Model.state.trendings.cards);
   } catch (err) {
     console.log(err);
   }
 };
 
-const controlSelector = async function (mediaType, sectionElement) {
+const controlTrendingsSelector = async function (mediaType, sectionElement) {
   try {
-    await Model.fetchCardDates('trending', mediaType, 'day');
+    await Model.fetchTrendings('trending', mediaType, 'day');
     CardView.update(sectionElement, Model.state.trendings.cards);
   } catch (err) {
     console.log(err);
@@ -34,6 +61,7 @@ const controlSelector = async function (mediaType, sectionElement) {
 
 const init = function () {
   controlSearchView();
+  controlPopularity();
   controlTrendings();
 };
 init();

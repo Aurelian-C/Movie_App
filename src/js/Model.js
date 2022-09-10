@@ -13,7 +13,7 @@ export const state = {
   popular: {
     selector: {
       title: `What's popular`,
-      items: ['Streaming', 'On TV', 'For Rent', 'In Theaters'],
+      items: ['Movie', 'TV'],
     },
     cards: [],
   },
@@ -39,13 +39,36 @@ const createCardDetails = result => {
   };
 };
 
-export const fetchCardDates = async function (category, mediaType, timeWindow) {
+export const fetchPopular = async function (mediaType) {
   try {
+    console.log('popularity');
+    const { results } = await AJAX(
+      `${API_URL}${mediaType}/popular?api_key=${API_KEY}`
+    );
+    state.popular.cards = results.map(createCardDetails);
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const fetchTrendings = async function (category, mediaType, timeWindow) {
+  try {
+    console.log('trendings');
     const { results } = await AJAX(
       `${API_URL}/${category}/${mediaType}/${timeWindow}?api_key=${API_KEY}`
     );
-
     state.trendings.cards = results.map(createCardDetails);
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const fetchGenres = async function (mediaType) {
+  try {
+    const results = await AJAX(
+      `${API_URL}genre/${mediaType}/list?api_key=${API_KEY}`
+    );
+    console.log(results);
   } catch (err) {
     throw err;
   }
