@@ -20,14 +20,22 @@ export const state = {
 };
 
 const createCardDetails = result => {
+  const date = result.first_air_date || result.release_date;
+  const options = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  };
+  const releaseDate = new Date(date).toLocaleString('en-US', options);
+
   return {
     title: result.title || result.name || result.original_name,
-    releaseDate: result.first_air_date || result.release_date,
     mediaType: result.media_type,
     posterImage: `${IMAGES_PATH}${result.poster_path}`,
     backdropImage: `${IMAGES_PATH}${result.backdrop_path}`,
     voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
     id: result.id,
+    releaseDate,
   };
 };
 

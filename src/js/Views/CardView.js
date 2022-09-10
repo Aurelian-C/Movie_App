@@ -17,16 +17,6 @@ class CardView extends View {
   }
 
   _generateMarkupCard({ cardData, firstCard }) {
-    const options = {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    };
-    const date = new Date(cardData.releaseDate).toLocaleString(
-      'en-US',
-      options
-    );
-
     return `
       <div class="card ${firstCard && 'card--first'}">
         <div class="card__circle">
@@ -51,7 +41,7 @@ class CardView extends View {
           <div class="card__title">
             <a href="#" class="card__title-anchor">${cardData.title}</a>
           </div>
-          <div class="card__date">${date}</div>
+          <div class="card__date">${cardData.releaseDate}</div>
         </div>
       </div>
     `;
