@@ -1,10 +1,10 @@
 export class View {
+  _root;
   _parentElement;
-  _sectionContainer;
   _data;
 
-  render(sectionContainerID, parentElementID, data) {
-    this._sectionContainer = document.getElementById(sectionContainerID);
+  render(rootID, parentElementID, data) {
+    this._root = document.getElementById(rootID);
     this._parentElement = this._append(parentElementID);
     this._data = data;
     const markup = this._generateMarkup(this._data);
@@ -23,7 +23,7 @@ export class View {
   _append(id) {
     const element = document.createElement('div');
     element.classList.add(id);
-    this._sectionContainer.append(element);
+    this._root.append(element);
     return element;
   }
 
