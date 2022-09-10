@@ -37,7 +37,7 @@ const controlPopularitySelector = async function (mediaType, sectionElement) {
 const controlTrendings = async function () {
   try {
     const rootID = 'section-trendings';
-    await Model.fetchTrendings('trending', 'all', 'week');
+    await Model.fetchTrendings('trending', 'all', 'day');
     SelectorView.render(
       rootID,
       'trendings-selector',
@@ -50,9 +50,9 @@ const controlTrendings = async function () {
   }
 };
 
-const controlTrendingsSelector = async function (mediaType, sectionElement) {
+const controlTrendingsSelector = async function (timeWindow, sectionElement) {
   try {
-    await Model.fetchTrendings('trending', mediaType, 'day');
+    await Model.fetchTrendings('trending', 'all', timeWindow);
     CardView.update(sectionElement, Model.state.trendings.cards);
   } catch (err) {
     console.log(err);

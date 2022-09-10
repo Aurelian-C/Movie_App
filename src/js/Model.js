@@ -5,7 +5,7 @@ export const state = {
   trendings: {
     selector: {
       title: 'Trendings',
-      items: ['All', 'Movie', 'TV'],
+      items: ['Day', 'Week'],
     },
     cards: [],
   },
