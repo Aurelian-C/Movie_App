@@ -9,14 +9,15 @@ const controlSearchView = function () {
 
 const controlTrendings = async function () {
   try {
+    const sectionID = 'section-trendings';
     await Model.fetchCardDates('trending', 'all', 'week');
     SelectorView.render(
-      'cards-section',
+      sectionID,
       'trendings-selector',
       Model.state.trendings.selector
     );
     SelectorView.addHandlerSelect(controlSelector);
-    CardView.render('cards-section', 'cards', Model.state.trendings.cards);
+    CardView.render(sectionID, 'cards', Model.state.trendings.cards);
   } catch (err) {
     console.log(err);
   }
