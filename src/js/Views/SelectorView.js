@@ -18,9 +18,12 @@ class SelectorView extends View {
       // Add 'selected' class to clicked item
       item.classList.add('selected');
 
+      // Get container
+      const sectionEl = parentEl.closest('.cards-section');
+
       // Get item's mediaType and pass to handler function
       const { mediaType } = item.dataset;
-      handler(mediaType);
+      handler(mediaType, sectionEl);
     });
   }
 

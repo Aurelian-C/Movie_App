@@ -12,8 +12,8 @@ export class View {
     this._parentElement.insertAdjacentHTML('beforeend', markup);
   }
 
-  update(parentElementID, data) {
-    this._parentElement = document.getElementById(parentElementID);
+  update(sectionElement, data) {
+    this._parentElement = sectionElement.querySelector('.cards__container');
     this._data = data;
     const markup = this._generateMarkup(this._data);
     this._cleanContainer();
