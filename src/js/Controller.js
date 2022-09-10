@@ -23,9 +23,9 @@ const controlTrendings = async function () {
   }
 };
 
-const controlSelector = async function (media, sectionElement) {
+const controlSelector = async function (mediaType, sectionElement) {
   try {
-    await Model.fetchCardDates('trending', media, 'day');
+    await Model.fetchCardDates('trending', mediaType, 'day');
     CardView.update(sectionElement, Model.state.trendings.cards);
   } catch (err) {
     console.log(err);
