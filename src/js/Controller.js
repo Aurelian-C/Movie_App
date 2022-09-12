@@ -3,6 +3,7 @@ import CardView from './Views/CardView';
 import SearchView from './Views/SearchView';
 import SelectorView from './Views/SelectorView';
 import MobileMenu from './Views/MobileMenu';
+import HeaderView from './Views/HeaderView';
 
 const controlSearchView = function () {
   SearchView.render('search', 'search');

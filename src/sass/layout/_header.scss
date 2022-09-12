@@ -1,5 +1,19 @@
 .header {
   background-color: var(--header-bg-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+
+  &--scroll-down {
+    top: -100%;
+  }
+
+  &--scroll-up {
+    top: 0;
+  }
 
   &__container {
     display: flex;
