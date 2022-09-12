@@ -104,6 +104,10 @@
     }
   }
 
+  &__mobile-icon {
+    font-size: 1.6rem;
+  }
+
   &__menu-item:hover > &__menu-container-extras {
     display: block;
   }

@@ -96,19 +96,19 @@
         </div>
       </div>
       <div class="header__container header__container--small-screen">
-        <i class="fa-solid fa-bars" id="btn-mobile-menu"></i>
+        <i class="fa-solid fa-bars header__mobile-icon" id="btn-menu--open"></i>
         <div class="header__logo">
           <img src="./src/img/tmdb_logo2.svg" alt="" class="header__img" />
         </div>
         <ul class="header__menu">
           <li class="header__menu-item">
             <a href="#" class="header__menu-link"
-              ><i class="fa-solid fa-user"></i
+              ><i class="fa-solid fa-user header__mobile-icon"></i
             ></a>
           </li>
           <li class="header__menu-item">
             <a href="#" class="header__menu-link"
-              ><i class="fa-solid fa-magnifying-glass"></i
+              ><i class="fa-solid fa-magnifying-glass header__mobile-icon"></i
             ></a>
           </li>
         </ul>
@@ -116,6 +116,9 @@
     </header>
 
     <div class="mobile-menu">
+      <div class="mobile-menu__close" id="btn-menu--close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
       <ul class="mobile-menu__main">
         <li class="mobile-menu__item">
           <h3 class="mobile-menu__title">Movies</h3>

@@ -1,12 +1,12 @@
 class MobileMenu {
-  _button = document.getElementById('btn-mobile-menu');
+  _buttonOpen = document.getElementById('btn-menu--open');
+  _buttonClose = document.getElementById('btn-menu--close');
   _mobileMenu = document.querySelector('.mobile-menu');
   _mainMenu = document.querySelector('.mobile-menu__main');
 
   constructor() {
-    this._button.addEventListener(
-      'click',
-      this._toggleMobileMenuVisibility.bind(this)
+    [this._buttonOpen, this._buttonClose].forEach(btn =>
+      btn.addEventListener('click', this._toggleMobileMenuVisibility.bind(this))
     );
 
     this._mainMenu.addEventListener('click', function (e) {

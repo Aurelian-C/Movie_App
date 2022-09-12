@@ -9,6 +9,16 @@
   transition: all 0.3s ease-in-out;
   z-index: 9999;
 
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
   &__main,
   &__secondary {
     list-style: none;
@@ -22,6 +32,18 @@
     margin-bottom: 1.5rem;
   }
 
+  &__title {
+    font-size: 2rem;
+
+    @media screen and (max-width: 900px) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: 550px) {
+      font-size: 2rem;
+    }
+  }
+
   &__container-extras {
     list-style: none;
     margin-bottom: 4rem;
@@ -29,5 +51,14 @@
 
   &__extra {
     margin-top: 1rem;
+    font-size: 1.8rem;
+
+    @media screen and (max-width: 550px) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 1.4rem;
+    }
   }
 }
