@@ -1,0 +1,34 @@
+.mobile-menu {
+  background-color: var(--mobile-menu-bg-dark);
+  backdrop-filter: blur(15px);
+  padding: 3rem 0 0 2rem;
+  position: fixed;
+  height: 100vh;
+  width: 90%;
+  left: -100%;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+
+  &__main,
+  &__secondary {
+    list-style: none;
+  }
+
+  &__secondary {
+    margin-bottom: 4rem;
+  }
+
+  &__item {
+    margin-bottom: 1.5rem;
+  }
+
+  &__container-extras {
+    list-style: none;
+    margin-bottom: 4rem;
+    display: none;
+  }
+
+  &__extra {
+    margin-top: 1rem;
+  }
+}

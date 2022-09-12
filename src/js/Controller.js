@@ -2,6 +2,7 @@ import * as Model from './Model';
 import CardView from './Views/CardView';
 import SearchView from './Views/SearchView';
 import SelectorView from './Views/SelectorView';
+import MobileMenu from './Views/MobileMenu';
 
 const controlSearchView = function () {
   SearchView.render('search', 'search');

@@ -17,6 +17,14 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.mobile-active {
+  left: 0 !important;
+}
+
 .u-margin-top-big {
   margin-top: 3rem;
 }
