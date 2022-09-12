@@ -41,7 +41,6 @@ const createCardDetails = result => {
 
 export const fetchPopular = async function (mediaType) {
   try {
-    console.log('popularity');
     const { results } = await AJAX(
       `${API_URL}${mediaType}/popular?api_key=${API_KEY}`
     );
@@ -53,7 +52,6 @@ export const fetchPopular = async function (mediaType) {
 
 export const fetchTrendings = async function (category, mediaType, timeWindow) {
   try {
-    console.log('trendings');
     const { results } = await AJAX(
       `${API_URL}/${category}/${mediaType}/${timeWindow}?api_key=${API_KEY}`
     );
