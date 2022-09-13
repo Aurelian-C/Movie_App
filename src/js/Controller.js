@@ -13,14 +13,19 @@ const controlSearchView = function () {
 const controlPopularity = async function () {
   try {
     const rootID = 'section-popularity';
+    const parentElementID = 'cards';
+
     await Model.fetchPopular('movie');
+
     SelectorView.render(
       rootID,
       'popularity-selector',
       Model.state.popular.selector
     );
     SelectorView.addHandlerSelect(controlPopularitySelector);
-    CardView.render(rootID, 'cards', Model.state.popular.cards);
+
+    CardView.render(rootID, parentElementID, Model.state.popular.cards);
+    CardView.toggleFadeInOut();
   } catch (err) {
     console.log(err);
   }
@@ -39,14 +44,19 @@ const controlPopularitySelector = async function (mediaType, sectionElement) {
 const controlTrendings = async function () {
   try {
     const rootID = 'section-trendings';
+    const parentElementID = 'cards';
+
     await Model.fetchTrendings('trending', 'all', 'day');
+
     SelectorView.render(
       rootID,
       'trendings-selector',
       Model.state.trendings.selector
     );
     SelectorView.addHandlerSelect(controlTrendingsSelector);
-    CardView.render(rootID, 'cards', Model.state.trendings.cards);
+
+    CardView.render(rootID, parentElementID, Model.state.trendings.cards);
+    CardView.toggleFadeInOut();
   } catch (err) {
     console.log(err);
   }

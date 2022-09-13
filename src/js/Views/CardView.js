@@ -1,18 +1,45 @@
 import { View } from './View';
 
 class CardView extends View {
+  toggleFadeInOut() {
+    const cards = this._root.querySelector('.cards');
+    const cardsContainer = this._root.querySelector('cards__container');
+    const firstCard = this._root.querySelector('.card--first');
+
+    const options = {
+      root: cardsContainer,
+      rootMargin: '0px',
+      threshold: [0],
+    };
+
+    const obsCallback = (entries, observer) => {
+      const [entry] = entries;
+
+      if (!entry.isIntersecting) {
+        cards.classList.add('fade-out');
+      }
+
+      if (entry.isIntersecting) {
+        cards.classList.remove('fade-out');
+      }
+    };
+
+    const observer = new IntersectionObserver(obsCallback, options);
+    observer.observe(firstCard);
+  }
+
   _generateMarkup(data) {
     return `
-    <div class="cards__container" id="trendings-cards">
-    ${this._data
-      .map((cardData, i) => {
-        if (!i) {
-          return this._generateMarkupCard({ cardData, firstCard: true });
-        } else {
-          return this._generateMarkupCard({ cardData, firstCard: '' });
-        }
-      })
-      .join('')}
+      <div class="cards__container">
+      ${this._data
+        .map((cardData, i) => {
+          if (!i) {
+            return this._generateMarkupCard({ cardData, firstCard: true });
+          } else {
+            return this._generateMarkupCard({ cardData, firstCard: '' });
+          }
+        })
+        .join('')}
       </div>`;
   }
 
