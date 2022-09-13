@@ -53,6 +53,10 @@
     text-align: center;
     margin-top: 2rem;
 
+    @media screen and (max-width: 900px) {
+      padding: 2.5rem var(--padding-sides-main);
+    }
+
     a:link,
     a:visited {
       color: rgb(255, 69, 69);
