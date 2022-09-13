@@ -41,9 +41,36 @@
     cursor: pointer;
   }
 
+  &__item.selected {
+    @media screen and (max-width: 900px) {
+      &::after {
+        content: '';
+        background-image: url(/src/img/arrow-down.png);
+        background-size: cover;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+
+  &__items.active {
+    @media screen and (max-width: 900px) {
+      background: linear-gradient(
+        to right,
+        var(--selector-bg-green--lighter) 0%,
+        var(--selector-bg-green--light) 100%
+      );
+      border-radius: 15px;
+    }
+  }
+
   &__items.active > &__item {
     @media screen and (max-width: 900px) {
-      display: block;
+      display: flex;
+      padding-right: 5rem;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
     }
   }
 

@@ -7,15 +7,15 @@
   align-items: center;
   gap: 1rem;
 
-  @media screen and (max-width: 900px) {
-    &::after {
-      content: '';
-      background-image: url(/src/img/circle-down.png);
-      background-size: cover;
-      height: 1.5rem;
-      width: 1.5rem;
-    }
-  }
+  // @media screen and (max-width: 900px) {
+  //   &::after {
+  //     content: '';
+  //     background-image: url(/src/img/arrow-down.png);
+  //     background-size: cover;
+  //     height: 1.5rem;
+  //     width: 1.5rem;
+  //   }
+  // }
 
   div {
     background-color: black;
