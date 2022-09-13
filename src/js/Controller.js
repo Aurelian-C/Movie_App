@@ -25,7 +25,9 @@ const controlPopularity = async function () {
     SelectorView.addHandlerSelect(controlPopularitySelector);
 
     CardView.render(rootID, parentElementID, Model.state.popular.cards);
-    CardView.toggleFadeInOut();
+
+    const root = document.getElementById(rootID);
+    CardView.toggleFadeInOut(root);
   } catch (err) {
     console.log(err);
   }
@@ -35,6 +37,9 @@ const controlPopularitySelector = async function (mediaType, sectionElement) {
   try {
     await Model.fetchPopular(mediaType);
     CardView.update(sectionElement, Model.state.popular.cards);
+
+    const root = document.getElementById('section-popularity');
+    CardView.toggleFadeInOut(root);
   } catch (err) {
     console.log(err);
   }
@@ -56,7 +61,9 @@ const controlTrendings = async function () {
     SelectorView.addHandlerSelect(controlTrendingsSelector);
 
     CardView.render(rootID, parentElementID, Model.state.trendings.cards);
-    CardView.toggleFadeInOut();
+
+    const root = document.getElementById(rootID);
+    CardView.toggleFadeInOut(root);
   } catch (err) {
     console.log(err);
   }
@@ -66,6 +73,9 @@ const controlTrendingsSelector = async function (timeWindow, sectionElement) {
   try {
     await Model.fetchTrendings('trending', 'all', timeWindow);
     CardView.update(sectionElement, Model.state.trendings.cards);
+
+    const root = document.getElementById('section-trendings');
+    CardView.toggleFadeInOut(root);
   } catch (err) {
     console.log(err);
   }

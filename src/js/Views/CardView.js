@@ -1,10 +1,10 @@
 import { View } from './View';
 
 class CardView extends View {
-  toggleFadeInOut() {
-    const cards = this._root.querySelector('.cards');
-    const cardsContainer = this._root.querySelector('cards__container');
-    const firstCard = this._root.querySelector('.card--first');
+  toggleFadeInOut(root) {
+    const cards = root.querySelector('.cards');
+    const cardsContainer = root.querySelector('cards__container');
+    const firstCard = root.querySelector('.card--first');
 
     const options = {
       root: cardsContainer,
