@@ -85,7 +85,7 @@ const init = function () {
   controlSearchView();
   controlPopularity();
 
-  // Fix the HTTP 429 Too Many Requests
+  // Fix the issue with HTTP 429 Too Many Requests
   setTimeout(() => {
     controlTrendings();
   }, 1000);
