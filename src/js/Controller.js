@@ -84,6 +84,10 @@ const controlTrendingsSelector = async function (timeWindow, sectionElement) {
 const init = function () {
   controlSearchView();
   controlPopularity();
-  controlTrendings();
+
+  // Fix the HTTP 429 Too Many Requests
+  setTimeout(() => {
+    controlTrendings();
+  }, 1000);
 };
 init();
