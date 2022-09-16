@@ -59,7 +59,7 @@ class CardView extends View {
           <a href="#" class="card__image-anchor">
             <img
               src="${cardData.posterImage}"
-              alt=""
+              alt="${cardData.title}"
             />
           </a>
         </div>
