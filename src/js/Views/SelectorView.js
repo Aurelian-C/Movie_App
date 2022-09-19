@@ -1,9 +1,8 @@
 class SelectorView {
-  _root = document.getElementById('section-popularity');
   _data;
 
-  addHandlerSelect(handler) {
-    const element = this._root.querySelector('.selector__container');
+  addHandlerSelect(root, handler) {
+    const element = root.querySelector('.selector__container');
     element.addEventListener('click', e => {
       // Make container visible
       const itemsContainer = e.target.closest('.selector__items');
@@ -27,19 +26,16 @@ class SelectorView {
       // Close the container by hidding
       itemsContainer.classList.remove('active');
 
-      // Get container
-      const sectionEl = parentEl.closest('.cards-section');
-
       // Get item's mediaType and pass to handler function
       const { mediaType } = item.dataset;
-      handler(mediaType, sectionEl);
+      handler(mediaType);
     });
   }
 
-  render(data) {
+  render(root, data) {
     this._data = data;
     const markup = this._generateMarkup(this._data);
-    this._root.insertAdjacentHTML('afterbegin', markup);
+    root.insertAdjacentHTML('afterbegin', markup);
   }
 
   _generateMarkup(data) {

@@ -1,14 +1,12 @@
 import placeholderImage from '../../img/placeholder_content_img1.jpg';
 
 class CardView {
-  _parentElement;
   _data;
 
-  toggleFadeInOut() {
-    const cards = this._parentElement.querySelector('.cards');
-    const cardsContainer =
-      this._parentElement.querySelector('cards__container');
-    const firstCard = this._parentElement.querySelector('.card--first');
+  toggleFadeInOut(root) {
+    const cards = root.querySelector('.cards');
+    const cardsContainer = root.querySelector('cards__container');
+    const firstCard = root.querySelector('.card--first');
 
     const options = {
       root: cardsContainer,
@@ -34,32 +32,15 @@ class CardView {
 
   renderCard(root, data) {
     this._data = data;
-
-    if (!this._parentElement) {
-      const parentElement = document.createElement('div');
-      this._parentElement = parentElement;
-      root.append(parentElement);
-    }
-
     const markup = this._generateMarkupCard(data);
-    this._clear();
-    this._parentElement.insertAdjacentHTML('beforeend', markup);
+    root.textContent = '';
+    root.insertAdjacentHTML('beforeend', markup);
   }
 
   renderPlaceholder(root) {
-    if (!this._parentElement) {
-      const parentElement = document.createElement('div');
-      this._parentElement = parentElement;
-      root.append(parentElement);
-    }
-
     const markup = this._generateMarkupPlaceholders();
-    this._clear();
-    this._parentElement.insertAdjacentHTML('beforeend', markup);
-  }
-
-  _clear() {
-    this._parentElement.textContent = '';
+    root.textContent = '';
+    root.insertAdjacentHTML('beforeend', markup);
   }
 
   _generateMarkupCard(data) {
