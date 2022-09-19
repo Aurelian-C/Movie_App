@@ -1,6 +1,7 @@
-import { View } from './View';
+class SelectorView {
+  _root = document.getElementById('section-popularity');
+  _data;
 
-class SelectorView extends View {
   addHandlerSelect(handler) {
     const element = this._root.querySelector('.selector__container');
     element.addEventListener('click', e => {
@@ -33,6 +34,12 @@ class SelectorView extends View {
       const { mediaType } = item.dataset;
       handler(mediaType, sectionEl);
     });
+  }
+
+  render(data) {
+    this._data = data;
+    const markup = this._generateMarkup(this._data);
+    this._root.insertAdjacentHTML('afterbegin', markup);
   }
 
   _generateMarkup(data) {

@@ -1,0 +1,47 @@
+.placeholder {
+  position: relative;
+  margin-bottom: 3rem;
+  animation: placeholder 1.5s infinite ease-in;
+
+  &__image {
+    height: 22rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__score {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    height: 4rem;
+    width: 4.2rem;
+    text-align: center;
+  }
+
+  &--first {
+    margin-left: var(--padding-left-side-main);
+  }
+}
+
+@keyframes placeholder {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}

@@ -1,45 +1,36 @@
 import * as Model from './Model';
-import CardView from './Views/CardView';
 import SearchView from './Views/SearchView';
 import SelectorView from './Views/SelectorView';
 import MobileMenu from './Views/MobileMenu';
 import HeaderView from './Views/HeaderView';
+import CardView from './Views/CardView';
 
 const controlSearchView = function () {
-  SearchView.render('search', 'search');
+  SearchView.render();
 };
 
 // Popularity
 const controlPopularity = async function () {
   try {
-    const rootID = 'section-popularity';
-    const parentElementID = 'cards';
-
+    const root = document.getElementById('section-popularity');
+    CardView.renderPlaceholder(root);
+    SelectorView.render(Model.state.popular.selector);
     await Model.fetchPopular('movie');
-
-    SelectorView.render(
-      rootID,
-      'popularity-selector',
-      Model.state.popular.selector
-    );
     SelectorView.addHandlerSelect(controlPopularitySelector);
-
-    CardView.render(rootID, parentElementID, Model.state.popular.cards);
-
-    const root = document.getElementById(rootID);
-    CardView.toggleFadeInOut(root);
+    CardView.renderCard(root, Model.state.popular.cards);
+    CardView.toggleFadeInOut();
   } catch (err) {
     console.log(err);
   }
 };
 
-const controlPopularitySelector = async function (mediaType, sectionElement) {
+const controlPopularitySelector = async function (mediaType) {
   try {
-    await Model.fetchPopular(mediaType);
-    CardView.update(sectionElement, Model.state.popular.cards);
-
     const root = document.getElementById('section-popularity');
-    CardView.toggleFadeInOut(root);
+    CardView.renderPlaceholder(root);
+    await Model.fetchPopular(mediaType);
+    CardView.renderCard(root, Model.state.popular.cards);
+    CardView.toggleFadeInOut();
   } catch (err) {
     console.log(err);
   }
@@ -48,34 +39,25 @@ const controlPopularitySelector = async function (mediaType, sectionElement) {
 // Trendings
 const controlTrendings = async function () {
   try {
-    const rootID = 'section-trendings';
-    const parentElementID = 'cards';
-
+    const root = document.getElementById('section-trendings');
+    CardView.renderPlaceholder(root);
+    SelectorView.render(Model.state.trendings.selector);
     await Model.fetchTrendings('trending', 'all', 'day');
-
-    SelectorView.render(
-      rootID,
-      'trendings-selector',
-      Model.state.trendings.selector
-    );
     SelectorView.addHandlerSelect(controlTrendingsSelector);
-
-    CardView.render(rootID, parentElementID, Model.state.trendings.cards);
-
-    const root = document.getElementById(rootID);
-    CardView.toggleFadeInOut(root);
+    CardView.renderCard(root, Model.state.trendings.cards);
+    CardView.toggleFadeInOut();
   } catch (err) {
     console.log(err);
   }
 };
 
-const controlTrendingsSelector = async function (timeWindow, sectionElement) {
+const controlTrendingsSelector = async function (timeWindow) {
   try {
-    await Model.fetchTrendings('trending', 'all', timeWindow);
-    CardView.update(sectionElement, Model.state.trendings.cards);
-
     const root = document.getElementById('section-trendings');
-    CardView.toggleFadeInOut(root);
+    CardView.renderPlaceholder(root);
+    await Model.fetchTrendings('trending', 'all', timeWindow);
+    CardView.renderCard(root, Model.state.trendings.cards);
+    CardView.toggleFadeInOut();
   } catch (err) {
     console.log(err);
   }
@@ -84,10 +66,6 @@ const controlTrendingsSelector = async function (timeWindow, sectionElement) {
 const init = function () {
   controlSearchView();
   controlPopularity();
-
-  // Fix the issue with HTTP 429 Too Many Requests
-  setTimeout(() => {
-    controlTrendings();
-  }, 1000);
+  // controlTrendings();
 };
 init();
