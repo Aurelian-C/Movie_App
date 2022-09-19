@@ -122,7 +122,8 @@
   }
 }
 
-#section-trendings .cards {
+#section-trendings .cards,
+#section-trendings .placeholders {
   background: url(.././img/background_for_trending_section.svg);
   background-repeat: no-repeat;
   background-position: bottom;

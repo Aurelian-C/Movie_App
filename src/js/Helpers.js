@@ -1,5 +1,13 @@
 import { TIMEOUT_FETCH } from './Config';
 
+export const promiseDelay = function (seconds) {
+  return new Promise((resolve, _) => {
+    setTimeout(() => {
+      resolve();
+    }, seconds * 1000);
+  });
+};
+
 const timeout = function (seconds) {
   return new Promise((_, reject) => {
     setTimeout(() => {

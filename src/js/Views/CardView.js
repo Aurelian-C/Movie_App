@@ -97,115 +97,117 @@ class CardView {
 
   _generateMarkupPlaceholders() {
     return `
-      <div class="placeholders__container">
-        <div class="placeholder placeholder--first">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
+      <div class="placeholders">
+        <div class="placeholders__container">
+          <div class="placeholder placeholder--first">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
-          </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
-          </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
-          </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
-          </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
-          </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
-          </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
-          </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
-          </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
-          </div>
-        </div>
-        <div class="placeholder">
-          <div class="placeholder__image">
-            <img
-              src="${placeholderImage}"
-              alt="Placeholder image"
-            />
-          </div>
-          <div class="placeholder__content">
-            <div class="placeholder__score">NR</div>
+          <div class="placeholder">
+            <div class="placeholder__image">
+              <img
+                src="${placeholderImage}"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="placeholder__content">
+              <div class="placeholder__score">NR</div>
+            </div>
           </div>
         </div>
       </div>

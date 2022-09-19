@@ -1,7 +1,14 @@
 .placeholder {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 10rem;
   animation: placeholder 1.5s infinite ease-in;
+
+  &__container {
+    gap: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    overflow-y: scroll;
+  }
 
   &__image {
     height: 22rem;

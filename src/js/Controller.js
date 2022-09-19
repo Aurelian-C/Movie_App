@@ -4,6 +4,8 @@ import SelectorView from './Views/SelectorView';
 import MobileMenu from './Views/MobileMenu';
 import HeaderView from './Views/HeaderView';
 import CardView from './Views/CardView';
+import { promiseDelay } from './Helpers';
+import { PROMISE_DELAY } from './Config';
 
 const controlSearchView = function () {
   SearchView.render();
@@ -44,6 +46,7 @@ const controlTrendings = async function () {
     const rootCards = document.getElementById('trendings-cards');
     CardView.renderPlaceholder(rootCards);
     SelectorView.render(rootSelector, Model.state.trendings.selector);
+    await promiseDelay(PROMISE_DELAY);
     await Model.fetchTrendings('trending', 'all', 'day');
     SelectorView.addHandlerSelect(rootSelector, controlTrendingsSelector);
     CardView.renderCard(rootCards, Model.state.trendings.cards);
