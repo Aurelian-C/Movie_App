@@ -20,108 +20,117 @@
   <body>
     <!-- Header section -->
     <header class="header">
-      <div class="header__container header__container--big-screen">
-        <div class="header__menu-left-side">
+      <div class="header__container">
+        <div class="header__container--big-screen">
+          <div class="header__menu-left-side">
+            <div class="header__logo">
+              <a href="#">
+                <img
+                  src="./src/img/tmdb_logo1.svg"
+                  alt=""
+                  class="header__img"
+                />
+              </a>
+            </div>
+            <ul class="header__menu">
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">Movies</a>
+                <div class="header__menu-container-extras">
+                  <ul class="header__menu-extras">
+                    <li class="header__menu-extra">Popular</li>
+                    <li class="header__menu-extra">Now Playing</li>
+                    <li class="header__menu-extra">Upcoming</li>
+                    <li class="header__menu-extra">Top Rated</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">TV Shows</a>
+                <div class="header__menu-container-extras">
+                  <ul class="header__menu-extras">
+                    <li class="header__menu-extra">Popular</li>
+                    <li class="header__menu-extra">Airing Today</li>
+                    <li class="header__menu-extra">On TV</li>
+                    <li class="header__menu-extra">Top Rated</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">People</a>
+                <div class="header__menu-container-extras">
+                  <ul class="header__menu-extras">
+                    <li class="header__menu-extra">Popular People</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">More</a>
+                <div class="header__menu-container-extras">
+                  <ul class="header__menu-extras">
+                    <li class="header__menu-extra">Discussions</li>
+                    <li class="header__menu-extra">Leaderboard</li>
+                    <li class="header__menu-extra">Support</li>
+                    <li class="header__menu-extra">API</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="header__menu-right-side">
+            <ul class="header__menu">
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link"
+                  ><i class="fa-solid fa-plus"></i
+                ></a>
+              </li>
+              <li class="header__menu-item header__menu-item-language">
+                <a href="#" class="header__menu-link">EN</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">Login</a>
+              </li>
+              <li class="header__menu-item">
+                <a href="#" class="header__menu-link">Join TMDB</a>
+              </li>
+              <li class="header__menu-item header__menu-search">
+                <a href="#" class="header__menu-link"
+                  ><i
+                    class="fa-solid fa-magnifying-glass icon-search icon-search--open search-big-screen__open"
+                  ></i>
+                  <i
+                    class="fa-solid fa-xmark icon-search icon-search--close search-big-screen__close hidden"
+                  ></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__container--small-screen">
+          <i
+            class="fa-solid fa-bars header__mobile-icon"
+            id="btn-menu--open"
+          ></i>
           <div class="header__logo">
-            <a href="#">
-              <img src="./src/img/tmdb_logo1.svg" alt="" class="header__img" />
-            </a>
+            <img src="./src/img/tmdb_logo2.svg" alt="" class="header__img" />
           </div>
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Movies</a>
-              <div class="header__menu-container-extras">
-                <ul class="header__menu-extras">
-                  <li class="header__menu-extra">Popular</li>
-                  <li class="header__menu-extra">Now Playing</li>
-                  <li class="header__menu-extra">Upcoming</li>
-                  <li class="header__menu-extra">Top Rated</li>
-                </ul>
-              </div>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">TV Shows</a>
-              <div class="header__menu-container-extras">
-                <ul class="header__menu-extras">
-                  <li class="header__menu-extra">Popular</li>
-                  <li class="header__menu-extra">Airing Today</li>
-                  <li class="header__menu-extra">On TV</li>
-                  <li class="header__menu-extra">Top Rated</li>
-                </ul>
-              </div>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">People</a>
-              <div class="header__menu-container-extras">
-                <ul class="header__menu-extras">
-                  <li class="header__menu-extra">Popular People</li>
-                </ul>
-              </div>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">More</a>
-              <div class="header__menu-container-extras">
-                <ul class="header__menu-extras">
-                  <li class="header__menu-extra">Discussions</li>
-                  <li class="header__menu-extra">Leaderboard</li>
-                  <li class="header__menu-extra">Support</li>
-                  <li class="header__menu-extra">API</li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="header__menu-right-side">
-          <ul class="header__menu">
-            <li class="header__menu-item">
               <a href="#" class="header__menu-link"
-                ><i class="fa-solid fa-plus"></i
+                ><i class="fa-solid fa-user header__mobile-icon"></i
               ></a>
-            </li>
-            <li class="header__menu-item header__menu-item-language">
-              <a href="#" class="header__menu-link">EN</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Login</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Join TMDB</a>
             </li>
             <li class="header__menu-item header__menu-search">
               <a href="#" class="header__menu-link"
                 ><i
-                  class="fa-solid fa-magnifying-glass icon-search icon-search--open search-big-screen__open"
-                ></i>
-                <i
-                  class="fa-solid fa-xmark icon-search icon-search--close search-big-screen__close hidden"
+                  class="fa-solid fa-magnifying-glass header__mobile-icon icon-search icon-search--open search-small-screen__open"
+                ></i
+                ><i
+                  class="fa-solid fa-xmark icon-search icon-search--close search-small-screen__close hidden"
                 ></i
               ></a>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="header__container header__container--small-screen">
-        <i class="fa-solid fa-bars header__mobile-icon" id="btn-menu--open"></i>
-        <div class="header__logo">
-          <img src="./src/img/tmdb_logo2.svg" alt="" class="header__img" />
-        </div>
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link"
-              ><i class="fa-solid fa-user header__mobile-icon"></i
-            ></a>
-          </li>
-          <li class="header__menu-item header__menu-search">
-            <a href="#" class="header__menu-link"
-              ><i
-                class="fa-solid fa-magnifying-glass header__mobile-icon icon-search icon-search--open search-small-screen__open"
-              ></i
-              ><i
-                class="fa-solid fa-xmark icon-search icon-search--close search-small-screen__close hidden"
-              ></i
-            ></a>
-          </li>
-        </ul>
       </div>
     </header>
 
