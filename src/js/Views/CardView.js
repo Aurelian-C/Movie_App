@@ -99,7 +99,7 @@ class CardView {
     return `
       <div class="placeholders">
         <div class="placeholders__container">
-          <div class="placeholder placeholder--first">
+          <div class="placeholder">
             <div class="placeholder__image">
               <img
                 src="${placeholderImage}"

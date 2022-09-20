@@ -76,16 +76,13 @@
   }
 
   &__container {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(fit-content, 1fr);
+    gap: 15px;
+    margin-left: var(--padding-left-side-main);
     overflow-y: scroll;
     padding-bottom: 10px;
-
-    // &::-webkit-scrollbar-track {
-    //   border: 1px solid #000;
-    //   padding: 2px 0;
-    //   background-color: #404040;
-    // }
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -104,10 +101,13 @@
   position: relative;
 
   &__container {
-    gap: 20px;
-    padding-bottom: 10px;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(fit-content, 1fr);
+    gap: 15px;
+    margin-left: var(--padding-left-side-main);
     overflow-y: scroll;
+    padding-bottom: 10px;
 
     &::-webkit-scrollbar {
       width: 0px;

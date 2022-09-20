@@ -2,10 +2,6 @@
   max-width: min-content;
   position: relative;
 
-  &--first {
-    margin-left: var(--padding-left-side-main);
-  }
-
   &__circle {
     position: absolute;
     top: 10px;
