@@ -5,6 +5,7 @@ class HeaderView {
   _btnSearchCloseBS = document.querySelector('.search-big-screen__close');
   _btnSearchCloseSS = document.querySelector('.search-small-screen__close');
   _searchBtns = document.querySelectorAll('.header__menu-search');
+  _searchHeader = document.querySelector('.header-search');
 
   constructor() {
     // Add a 'wheel' event for the mobile phones
@@ -22,6 +23,14 @@ class HeaderView {
     this._btnSearchOpenSS.classList.toggle('hidden');
     this._btnSearchCloseBS.classList.toggle('hidden');
     this._btnSearchCloseSS.classList.toggle('hidden');
+
+    if (!this._btnSearchCloseBS.classList.contains('hidden')) {
+      this._searchHeader.classList.remove('hidden');
+    }
+
+    if (this._btnSearchCloseBS.classList.contains('hidden')) {
+      this._searchHeader.classList.add('hidden');
+    }
   }
 
   _toggleHeaderVisibility(e) {
