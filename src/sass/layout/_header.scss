@@ -126,3 +126,19 @@
     display: block;
   }
 }
+
+.icon-search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &--open {
+    font-size: 2rem;
+    color: rgb(184, 114, 250);
+  }
+
+  &--close {
+    font-size: 3rem;
+  }
+}

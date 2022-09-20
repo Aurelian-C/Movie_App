@@ -1,11 +1,27 @@
 class HeaderView {
   _header = document.querySelector('.header');
+  _btnSearchOpenBS = document.querySelector('.search-big-screen__open');
+  _btnSearchOpenSS = document.querySelector('.search-small-screen__open');
+  _btnSearchCloseBS = document.querySelector('.search-big-screen__close');
+  _btnSearchCloseSS = document.querySelector('.search-small-screen__close');
+  _searchBtns = document.querySelectorAll('.header__menu-search');
 
   constructor() {
     // Add a 'wheel' event for the mobile phones
     ['wheel'].forEach(event => {
       window.addEventListener(event, this._toggleHeaderVisibility.bind(this));
     });
+
+    [...this._searchBtns].forEach(btn =>
+      btn.addEventListener('click', this._toggleSearchBtnVisibility.bind(this))
+    );
+  }
+
+  _toggleSearchBtnVisibility() {
+    this._btnSearchOpenBS.classList.toggle('hidden');
+    this._btnSearchOpenSS.classList.toggle('hidden');
+    this._btnSearchCloseBS.classList.toggle('hidden');
+    this._btnSearchCloseSS.classList.toggle('hidden');
   }
 
   _toggleHeaderVisibility(e) {
