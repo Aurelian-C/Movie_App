@@ -1,5 +1,6 @@
 class HeaderView {
   _header = document.querySelector('.header');
+  _headerContainer = document.querySelector('.header__container');
   _btnSearchOpenBS = document.querySelector('.search-big-screen__open');
   _btnSearchOpenSS = document.querySelector('.search-small-screen__open');
   _btnSearchCloseBS = document.querySelector('.search-big-screen__close');
@@ -12,22 +13,30 @@ class HeaderView {
   _scrollNumber = 0;
 
   constructor() {
-    // ['wheel'].forEach(event => {
-    //   window.addEventListener(event, this._toggleHeaderVisibility.bind(this));
-    // });
-
     window.addEventListener('scroll', () => {
       const scrollYnumber = window.scrollY;
+      const headerContainer = this._headerContainer.getBoundingClientRect();
+
+      // Scroll down
       if (scrollYnumber > this._scrollNumber) {
         this._scrollNumber = scrollYnumber;
-        this._header.classList.add('header--scroll-down');
-        this._header.classList.remove('header--scroll-up');
+        this._header.style.top = `-${headerContainer.height}px`;
       }
 
+      // Scroll Up
       if (scrollYnumber < this._scrollNumber) {
         this._scrollNumber = scrollYnumber;
-        this._header.classList.remove('header--scroll-down');
-        this._header.classList.add('header--scroll-up');
+        this._header.style.top = `0px`;
+      }
+
+      this._searchHeaderContent.classList.add('hidden');
+    });
+
+    document.body.addEventListener('click', e => {
+      const searchBtn = e.target.closest('.header__menu-search');
+
+      if (!e.target.contains(this._searchHeaderHints) && !searchBtn) {
+        this._searchHeaderContent.classList.add('hidden');
       }
     });
   }
