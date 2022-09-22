@@ -8,6 +8,7 @@ export const state = {
       items: ['Day', 'Week'],
     },
     cards: [],
+    searchHints: [],
   },
 
   popular: {
@@ -17,6 +18,25 @@ export const state = {
     },
     cards: [],
   },
+};
+
+const createSearchHints = result => {
+  return `${result.title || result.name || result.original_name}`;
+};
+
+export const fetchSearchHints = async function (
+  category,
+  mediaType,
+  timeWindow
+) {
+  try {
+    const { results } = await AJAX(
+      `${API_URL}/${category}/${mediaType}/${timeWindow}?api_key=${API_KEY}`
+    );
+    state.trendings.searchHints = results.map(createSearchHints).slice(0, 10);
+  } catch (err) {
+    throw err;
+  }
 };
 
 const createCardDetails = result => {

@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   z-index: 999;
-  transition: top 0.3s ease-in-out;
+  transition: top 0.5s ease-in-out;
 
   &--scroll-down {
     top: -100%;
@@ -144,6 +144,7 @@
 
   &__form-container {
     padding: 0 var(--padding-sides-main);
+    border-bottom: 1px solid var(--border-bottom-search-light);
   }
 
   &__form {
@@ -184,9 +185,9 @@
   }
 
   &__trending {
-    background-color: rgb(180, 180, 180);
-    padding: 1rem var(--padding-sides-main);
-    border-bottom: 1px solid black;
+    background-color: var(--hints-bg-light);
+    padding: 0.5rem var(--padding-sides-main);
+    border-bottom: 1px solid var(--border-bottom-search-light);
   }
 
   &__trending-container {
@@ -210,13 +211,18 @@
 
   &__hints {
     list-style: none;
-    padding: 0 var(--padding-sides-main);
   }
 
   &__hint {
-    padding: 3px 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border-bottom-search-light);
     color: black;
+    padding: 5px var(--padding-sides-main);
+    width: 100vw;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--hints-bg-light);
+    }
   }
 
   &__hint-container {

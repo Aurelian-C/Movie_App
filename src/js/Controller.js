@@ -11,6 +11,18 @@ const controlSearchView = function () {
   SearchView.render();
 };
 
+// Search input
+const controlSearchHints = async function () {
+  try {
+    if (!Model.state.trendings.searchHints.length) {
+      await Model.fetchSearchHints('trending', 'all', 'day');
+    }
+    HeaderView.renderHints(Model.state.trendings.searchHints);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 // Popularity
 const controlPopularity = async function () {
   try {
@@ -72,5 +84,6 @@ const init = function () {
   controlSearchView();
   controlPopularity();
   controlTrendings();
+  HeaderView.addHandlerHints(controlSearchHints);
 };
 init();
