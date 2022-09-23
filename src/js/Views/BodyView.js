@@ -23,7 +23,6 @@ class BodyView {
       }
 
       // Handle card widget visibility
-      console.log(e.target);
       if (!e.target.contains(this._widgetContainer) && !btn) {
         this._widgetContainer.classList.add('hidden');
       }

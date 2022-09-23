@@ -65,6 +65,7 @@ const controlTrendings = async function () {
     SelectorView.addHandlerSelect(rootSelector, controlTrendingsSelector);
     CardView.renderCard(rootCards, Model.state.trendings.cards);
     CardView.toggleFadeInOut(rootCards);
+    CardView.addOverlayFunctionality(rootCards);
   } catch (err) {
     console.log(err);
   }

@@ -17,8 +17,10 @@ class CardView {
       if (!btn) return;
       // Positioning the card widget
       const btnPosition = btn.getBoundingClientRect();
-      this._widgetContainer.style.top = `${btnPosition.y}px`;
-      this._widgetContainer.style.left = `${btnPosition.x}px`;
+      const bodyY = Math.abs(document.body.getBoundingClientRect().y);
+      const btnY = btnPosition.y;
+      this._widgetContainer.style.top = `${bodyY + btnY}px`;
+      this._widgetContainer.style.left = `${btnPosition.left}px`;
       this._widgetContainer.classList.remove('hidden');
 
       const card = btn.closest('.card');
