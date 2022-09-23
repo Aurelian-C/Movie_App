@@ -1,7 +1,7 @@
 .card {
   max-width: min-content;
   position: relative;
-  border-radius: 10px;
+  border-radius: var(--card-border-radius);
   overflow: hidden;
 
   &__overlay {
@@ -56,6 +56,8 @@
 
   &__image {
     height: 22rem;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
     cursor: pointer;
 
     img {
