@@ -2,6 +2,7 @@ import placeholderImage from '../../img/placeholder_content_img1.jpg';
 
 class CardView {
   _data;
+  _widgetContainer = document.querySelector('.widget');
 
   addOverlayFunctionality(root) {
     root.addEventListener('click', e => {
@@ -14,6 +15,12 @@ class CardView {
       // Handle click on button
       const btn = e.target.closest('.card__circle');
       if (!btn) return;
+      // Positioning the card widget
+      const btnPosition = btn.getBoundingClientRect();
+      this._widgetContainer.style.top = `${btnPosition.y}px`;
+      this._widgetContainer.style.left = `${btnPosition.x}px`;
+      this._widgetContainer.classList.remove('hidden');
+
       const card = btn.closest('.card');
       const cardOverlay = card.querySelector('.card__overlay');
       cardOverlay.classList.remove('hidden');

@@ -1,0 +1,35 @@
+.widget {
+  position: absolute;
+  width: max-content;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 2;
+  transform: translate(-50%, 40%);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    &--top {
+      border-bottom: 1px solid rgb(225, 225, 225);
+    }
+  }
+
+  &__title {
+    padding: 1rem 2rem;
+    font-weight: 600;
+  }
+
+  &__button {
+    padding: 1rem 2rem;
+
+    &:hover {
+      background-color: var(--header-bg-dark);
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

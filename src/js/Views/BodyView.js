@@ -1,4 +1,5 @@
 class BodyView {
+  _widgetContainer = document.querySelector('.widget');
   constructor() {
     document.body.addEventListener('click', e => {
       // Handle header search visibility
@@ -19,6 +20,12 @@ class BodyView {
       const btn = e.target.closest('.card__circle');
       if (!btn) {
         cardsOverlay.forEach(overlay => overlay.classList.add('hidden'));
+      }
+
+      // Handle card widget visibility
+      console.log(e.target);
+      if (!e.target.contains(this._widgetContainer) && !btn) {
+        this._widgetContainer.classList.add('hidden');
       }
     });
   }
