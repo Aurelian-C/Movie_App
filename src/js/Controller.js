@@ -2,6 +2,7 @@ import * as Model from './Model';
 import SearchView from './Views/SearchView';
 import SelectorView from './Views/SelectorView';
 import MobileMenu from './Views/MobileMenu';
+import BodyView from './Views/BodyView';
 import HeaderView from './Views/HeaderView';
 import CardView from './Views/CardView';
 import { promiseDelay } from './Helpers';
@@ -34,6 +35,7 @@ const controlPopularity = async function () {
     SelectorView.addHandlerSelect(rootSelector, controlPopularitySelector);
     CardView.renderCard(rootCards, Model.state.popular.cards);
     CardView.toggleFadeInOut(rootCards);
+    CardView.addOverlayFunctionality(rootCards);
   } catch (err) {
     console.log(err);
   }

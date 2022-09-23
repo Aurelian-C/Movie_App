@@ -3,6 +3,33 @@ import placeholderImage from '../../img/placeholder_content_img1.jpg';
 class CardView {
   _data;
 
+  addOverlayFunctionality(root) {
+    root.addEventListener('click', e => {
+      // Handle clicks on overlay
+      const selectOverlay = e.target.classList.contains('card__overlay');
+      if (selectOverlay) {
+        e.target.classList.add('hidden');
+      }
+
+      // Handle click on button
+      const btn = e.target.closest('.card__circle');
+      if (!btn) return;
+      const card = btn.closest('.card');
+      const cardOverlay = card.querySelector('.card__overlay');
+      cardOverlay.classList.remove('hidden');
+
+      const allCardsOverlay = card
+        .closest('.cards__container')
+        .querySelectorAll('.card__overlay');
+
+      [...allCardsOverlay].forEach(overlay => {
+        if (cardOverlay !== overlay) {
+          overlay.classList.add('hidden');
+        }
+      });
+    });
+  }
+
   toggleFadeInOut(root) {
     const cards = root.querySelector('.cards');
     const cardsContainer = root.querySelector('cards__container');
@@ -67,6 +94,7 @@ class CardView {
   _generateMarkupCardItems({ cardData, firstCard }) {
     return `
       <div class="card ${firstCard && 'card--first'}">
+        <div class="card__overlay hidden"></div>
         <div class="card__circle">
           <button class="card__button">
             <span class="card__dots"

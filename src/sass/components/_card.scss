@@ -1,6 +1,18 @@
 .card {
   max-width: min-content;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 1rem;
+    z-index: 1;
+  }
 
   &__circle {
     position: absolute;
@@ -44,8 +56,6 @@
 
   &__image {
     height: 22rem;
-    border-radius: 10px;
-    overflow: hidden;
     cursor: pointer;
 
     img {

@@ -31,17 +31,6 @@ class HeaderView {
 
       this._searchHeaderContent.classList.add('hidden');
     });
-
-    document.body.addEventListener('click', e => {
-      const searchBtn = e.target.closest('.header__menu-search');
-
-      if (
-        (!e.target.contains(this._searchHeaderHints) && !searchBtn) ||
-        e.target === document.body
-      ) {
-        this._searchHeaderContent.classList.add('hidden');
-      }
-    });
   }
 
   addHandlerHints(handler) {
