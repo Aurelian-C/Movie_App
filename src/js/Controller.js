@@ -1,7 +1,7 @@
 import * as Model from './Model';
 import SearchView from './Views/SearchView';
 import SelectorView from './Views/SelectorView';
-import MobileMenu from './Views/MobileMenu';
+import DropdownMenu from './Views/DropdownMenu';
 import BodyView from './Views/BodyView';
 import HeaderView from './Views/HeaderView';
 import CardView from './Views/CardView';
