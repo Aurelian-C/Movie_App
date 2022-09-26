@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: min-content repeat(2, 1fr) min-content;
     gap: 2rem;
-    max-width: var(--container-max-width);
+    max-width: 130rem;
     margin: 0 auto;
 
     @media screen and (max-width: 900px) {
