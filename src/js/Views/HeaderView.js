@@ -11,6 +11,14 @@ class HeaderView {
 
   constructor() {
     window.addEventListener('scroll', () => {
+      // Hide card widget on scroll
+      const widget = document.querySelector('.widget');
+      widget.classList.add('hidden');
+      const cardsOverlay = document.querySelectorAll('.card__overlay');
+      [...cardsOverlay].forEach(cardOverlay =>
+        cardOverlay.classList.add('hidden')
+      );
+
       const scrollYnumber = window.scrollY;
       const headerContainer = this._headerContainer.getBoundingClientRect();
 

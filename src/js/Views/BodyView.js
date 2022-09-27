@@ -1,5 +1,6 @@
 class BodyView {
   _widgetContainer = document.querySelector('.widget');
+
   constructor() {
     document.body.addEventListener('click', e => {
       // Handle header search visibility
