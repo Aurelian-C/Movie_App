@@ -36,6 +36,7 @@ const controlPopularity = async function () {
     CardView.renderCard(rootCards, Model.state.popular.cards);
     CardView.toggleFadeInOut(rootCards);
     CardView.addOverlayFunctionality(rootCards);
+    console.log(Model.state.popular.cards);
   } catch (err) {
     console.log(err);
   }
@@ -66,6 +67,7 @@ const controlTrendings = async function () {
     CardView.renderCard(rootCards, Model.state.trendings.cards);
     CardView.toggleFadeInOut(rootCards);
     CardView.addOverlayFunctionality(rootCards);
+    console.log(Model.state.trendings.cards);
   } catch (err) {
     console.log(err);
   }
