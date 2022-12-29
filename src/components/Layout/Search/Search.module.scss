@@ -1,0 +1,104 @@
+:root {
+  --padding-sides-main: 5rem;
+  --padding-left-side-main: var(--padding-sides-main);
+  --padding-right-side-main: var(--padding-sides-main);
+  --card-border-radius: 8px;
+
+  --font-color-light: white;
+  --font-color-dark: black;
+  --header-bg-dark: rgb(3, 37, 65);
+  --header-bg-light: rgb(255, 255, 255);
+  --mobile-menu-bg-dark: rgba(3, 37, 65, 0.9);
+  --menu-extras-bg-light: rgb(237, 237, 237);
+  --footer-bg-dark: rgb(3, 37, 65);
+  --footer-bg-light: rgb(255, 255, 255);
+  --light-green: rgb(30, 213, 169);
+  --light-blue: rgb(1, 180, 228);
+  --selector-bg-green--lighter: rgb(192, 254, 207);
+  --selector-bg-green--light: rgb(30, 213, 169);
+  --border-bottom-search-light: rgb(220, 220, 220);
+  --hints-bg-light: rgb(247, 247, 247);
+
+  --container-max-width: 125rem;
+
+  @media screen and (max-width: 700px) {
+    --padding-sides-main: 2rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    --padding-sides-main: 1.8rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    --padding-sides-main: 1rem;
+  }
+}
+
+.search {
+  background-image: url('../../../assets/img/search_img.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15rem var(--padding-sides-main) 9rem var(--padding-sides-main);
+  max-width: 130rem;
+  margin: 0 auto;
+
+  &__container {
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 7rem;
+  }
+
+  &__text {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  &__form {
+    position: relative;
+    margin: 5rem 0;
+  }
+
+  &__input {
+    width: 100%;
+    height: 4rem;
+    padding-left: 1.5rem;
+    border-radius: 5rem;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    color: rgb(112, 112, 112);
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &::placeholder {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 100%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(
+      to right,
+      var(--light-green) 0%,
+      var(--light-blue) 100%
+    );
+  }
+}

@@ -1,0 +1,270 @@
+.header {
+  font-size: 1.4rem;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgb(3, 37, 65);
+  transition: top 0.5s ease-in-out;
+
+  &__container {
+    padding: 2rem 5rem;
+    display: grid;
+    grid-template-columns: min-content repeat(2, 1fr) min-content;
+    gap: 2rem;
+    max-width: 130rem;
+    margin: 0 auto;
+
+    @media screen and (max-width: 900px) {
+      padding: 1rem 5rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__dropdown {
+    grid-column: 1 / 2;
+    align-self: center;
+
+    @media screen and (min-width: 901px) {
+      display: none;
+    }
+  }
+
+  &__dropdown-icon {
+    font-size: 1.6rem;
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 13rem;
+
+    &--small-screen {
+      @media screen and (min-width: 901px) {
+        display: none;
+      }
+    }
+
+    &--big-screen {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 5rem;
+      grid-column: 2 / 3;
+      justify-self: center;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+
+    &--1 {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    &--2 {
+      justify-content: end;
+    }
+  }
+
+  &__menu-items {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+
+    &--1 {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    &--2 {
+      @media screen and (min-width: 901px) {
+        display: none;
+      }
+    }
+  }
+
+  &__menu-item {
+    position: relative;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+
+  &__menu-search {
+    position: relative;
+    min-width: 1rem;
+  }
+
+  &__menu-item-language {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+
+    &:hover {
+      background-color: rgb(255, 255, 255);
+
+      & > * {
+        color: rgb(3, 37, 65) !important;
+      }
+    }
+  }
+
+  &__menu-link:link,
+  &__menu-link:visited {
+    text-decoration: none;
+    color: white;
+  }
+
+  &__menu-container-extras {
+    min-width: max-content;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    border-radius: 3px;
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    display: none;
+  }
+
+  &__menu-extras {
+    list-style: none;
+  }
+
+  &__menu-item:hover > &__menu-container-extras {
+    display: block;
+  }
+}
+
+// Second header with the search input & background image
+.header-search {
+  background-color: rgb(255, 255, 255);
+
+  &__form-container {
+    padding: 0 5rem;
+    border-bottom: 1px solid rgb(220, 220, 220);
+  }
+
+  &__form {
+    max-width: 125rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    color: black;
+
+    &--hint {
+      font-size: 1rem;
+      margin-right: 8px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 4rem;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    color: rgb(112, 112, 112);
+    font-style: italic;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &::placeholder {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+  }
+
+  &__trending {
+    background-color: rgb(247, 247, 247);
+    padding: 0.5rem 5rem;
+    border-bottom: 1px solid rgb(220, 220, 220);
+  }
+
+  &__trending-container {
+    max-width: 125rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__trending-icon {
+    color: black;
+    font-size: 2rem;
+  }
+
+  &__title {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  &__hints {
+    list-style: none;
+  }
+
+  &__hint {
+    border-bottom: 1px solid rgb(220, 220, 220);
+    color: black;
+    padding: 5px 5rem;
+    width: 100vw;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(247, 247, 247);
+    }
+  }
+
+  &__hint-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 125rem;
+  }
+
+  &__hint-name {
+    font-weight: 400;
+    color: rgb(45, 45, 45);
+  }
+}
+
+.icon-search {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+
+  &--open {
+    font-size: 2rem;
+    color: rgb(184, 114, 250);
+  }
+
+  &--close {
+    font-size: 3rem;
+  }
+}
