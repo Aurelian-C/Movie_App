@@ -107,44 +107,4 @@
   &__hints {
     list-style: none;
   }
-
-  &__hint {
-    border-bottom: 1px solid var(--border-bottom-search-light);
-    color: black;
-    padding: 5px var(--padding-sides-main);
-    width: 100vw;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--hints-bg-light);
-    }
-  }
-
-  &__hint-container {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    max-width: var(--container-max-width);
-  }
-
-  &__hint-name {
-    font-weight: 400;
-    color: rgb(45, 45, 45);
-  }
-}
-
-.icon-search {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-
-  &--open {
-    font-size: 2rem;
-    color: rgb(184, 114, 250);
-  }
-
-  &--close {
-    font-size: 3rem;
-  }
 }

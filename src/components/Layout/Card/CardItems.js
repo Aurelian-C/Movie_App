@@ -17,7 +17,7 @@ const CardItems = props => {
       <div>
         <div
           className={`${classes.cards} ${
-            trendingTitle === 'trendings' && classes.trending__background
+            trendingTitle === 'trendings' && classes.cards__background
           }`}
         >
           <div className={classes.cards__container}>

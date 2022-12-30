@@ -83,12 +83,6 @@
     }
   }
 
-  &__image-anchor {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-  }
-
   &__image {
     height: 22rem;
     border-radius: var(--card-border-radius);
@@ -100,6 +94,12 @@
       height: 100%;
       // width: 100%;
     }
+  }
+
+  &__image-anchor {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
   }
 
   &__content {

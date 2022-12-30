@@ -54,11 +54,6 @@
     max-width: var(--container-max-width);
   }
 
-  &__hint-name {
-    font-weight: 400;
-    color: rgb(45, 45, 45);
-  }
-
   &__icon {
     color: black;
 
@@ -66,5 +61,10 @@
       font-size: 1rem;
       margin-right: 8px;
     }
+  }
+
+  &__hint-name {
+    font-weight: 400;
+    color: rgb(45, 45, 45);
   }
 }
