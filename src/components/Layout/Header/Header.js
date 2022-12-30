@@ -5,6 +5,25 @@ import logo2 from '../../../assets/img/tmdb_logo2.svg';
 import HeaderMenuItem from './HeaderMenuItem';
 import HeaderSearch from './HeaderSearch';
 
+const menuItems = [
+  {
+    menuItemTitle: 'Movies',
+    menuSubItemTitles: ['Popular', 'Now Playing', 'Upcoming', 'Top Rated'],
+  },
+  {
+    menuItemTitle: 'TV Shows',
+    menuSubItemTitles: ['Popular', 'Airing Today', 'On TV', 'Top Rated'],
+  },
+  {
+    menuItemTitle: 'People',
+    menuSubItemTitles: ['Popular People'],
+  },
+  {
+    menuItemTitle: 'More',
+    menuSubItemTitles: ['Discussions', 'Leaderboard', 'Support', 'API'],
+  },
+];
+
 const Header = props => {
   const [iconSearchVisibility, setIconSearchVisibility] = useState(true);
 
@@ -43,19 +62,12 @@ const Header = props => {
           className={`${classes.header__menu} ${classes['header__menu--1']}`}
         >
           <ul className={classes['header__menu-items']}>
-            <HeaderMenuItem
-              title={'Movies'}
-              subTitles={['Popular', 'Now Playing', 'Upcoming', 'Top Rated']}
-            />
-            <HeaderMenuItem
-              title={'TV Shows'}
-              subTitles={['Popular', 'Airing Today', 'On TV', 'Top Rated']}
-            />
-            <HeaderMenuItem title={'People'} subTitles={['Popular People']} />
-            <HeaderMenuItem
-              title={'More'}
-              subTitles={['Discussions', 'Leaderboard', 'Support', 'API']}
-            />
+            {menuItems.map(item => (
+              <HeaderMenuItem
+                title={item.menuItemTitle}
+                subTitles={item.menuSubItemTitles}
+              />
+            ))}
           </ul>
         </div>
         <div
