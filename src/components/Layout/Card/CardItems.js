@@ -1,6 +1,6 @@
 import React from 'react';
 import CartItem from './CardItem';
-import CardSelector from './CardSelector';
+import Selector from '../Selector/Selector';
 import classes from './CardItems.module.scss';
 
 const CardItems = props => {
@@ -9,7 +9,7 @@ const CardItems = props => {
   return (
     <section className={classes['cards-section']}>
       <div>
-        <CardSelector
+        <Selector
           selectorCategories={props.selectorCategories}
           mainTitle={props.mainTitle}
         />

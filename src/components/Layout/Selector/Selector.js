@@ -1,13 +1,27 @@
 import React from 'react';
-import classes from './CardSelector.module.scss';
+import classes from './Selector.module.scss';
 
 const CardSelector = props => {
+  const selectCategoryHandler = e => {
+    const targetElement = e.target.closest(`.${classes.selector__item}`);
+    const elements = e.currentTarget.querySelectorAll(
+      `.${classes.selector__item}`
+    );
+    elements.forEach(element => {
+      element.classList.remove('selected');
+    });
+    targetElement.classList.add('selected');
+  };
+
   return (
     <div className={classes.selector}>
       <div className={classes.selector__container}>
         <h3 className={classes.selector__description}>{props.mainTitle}</h3>
         <div className={classes.selector__wrapper}>
-          <ul className={classes.selector__items}>
+          <ul
+            className={classes.selector__items}
+            onClick={selectCategoryHandler}
+          >
             {props.selectorCategories.map((title, idx) => {
               if (idx === 0) {
                 return (
