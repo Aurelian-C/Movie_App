@@ -452,7 +452,10 @@ const App = () => {
 
   return (
     <>
-      <Header onShowSideMenu={showSideMenuHandler} />
+      <Header
+        onShowSideMenu={showSideMenuHandler}
+        trendingItems={trending.items}
+      />
       <SideMenu
         sideMenuVisibility={sideMenuVisibility}
         onHideSideMenu={hideSideMenuHandler}

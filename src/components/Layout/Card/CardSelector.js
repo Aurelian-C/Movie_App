@@ -12,6 +12,7 @@ const CardSelector = props => {
               if (idx === 0) {
                 return (
                   <li
+                    key={title}
                     className={`${classes.selector__item} selected`}
                     data-media-type={title.toLowerCase()}
                   >
@@ -22,6 +23,7 @@ const CardSelector = props => {
               } else {
                 return (
                   <li
+                    key={title}
                     className={classes.selector__item}
                     data-media-type={title.toLowerCase()}
                   >

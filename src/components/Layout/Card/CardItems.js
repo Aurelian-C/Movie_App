@@ -4,6 +4,8 @@ import CardSelector from './CardSelector';
 import classes from './CardItems.module.scss';
 
 const CardItems = props => {
+  const trendingTitle = props.mainTitle.toLowerCase();
+
   return (
     <section className={classes['cards-section']}>
       <div>
@@ -13,7 +15,11 @@ const CardItems = props => {
         />
       </div>
       <div>
-        <div className={classes.cards}>
+        <div
+          className={`${classes.cards} ${
+            trendingTitle === 'trendings' && classes.trending__background
+          }`}
+        >
           <div className={classes.cards__container}>
             {props.items.map(item => (
               <CartItem

@@ -118,7 +118,9 @@ const Header = props => {
           </div>
         </div>
       </div>
-      {iconSearchVisibility || <HeaderSearch />}
+      {iconSearchVisibility || (
+        <HeaderSearch trendingItems={props.trendingItems} />
+      )}
     </header>
   );
 };

@@ -2,7 +2,9 @@ import React from 'react';
 import classes from './HeaderSearch.module.scss';
 import HeaderSearchHint from './HeaderSearchHint';
 
-const HeaderSearch = () => {
+const HeaderSearch = props => {
+  const trendingItems = props.trendingItems.slice(0, 10);
+
   return (
     <div className={`${classes['header-search']}`}>
       <div className={classes['header-search__form-container']}>
@@ -32,14 +34,8 @@ const HeaderSearch = () => {
           </div>
         </div>
         <ul className={classes['header-search__hints']}>
-          {[
-            'Rambo',
-            'Avatar: The Way of Water',
-            'The Witcher: Blood Origin',
-            'Treason',
-            "Roald Dahl's Matilda the Musical",
-          ].map(movieTitle => (
-            <HeaderSearchHint movieName={movieTitle} />
+          {trendingItems.map(item => (
+            <HeaderSearchHint movieName={item.title} />
           ))}
         </ul>
       </div>

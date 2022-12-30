@@ -11,7 +11,7 @@ const HeaderMenuItem = props => {
       <div className={classes['header__menu-container-extras']}>
         <ul className={classes['header__menu-extras']}>
           {props.subTitles.map(name => (
-            <HeaderMenuSubItem name={name} />
+            <HeaderMenuSubItem name={name} key={name} />
           ))}
         </ul>
       </div>
