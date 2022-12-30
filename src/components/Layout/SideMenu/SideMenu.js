@@ -13,7 +13,7 @@ const SideMenu = props => {
   return (
     <div
       className={`${classes['dropdown-menu']} ${
-        props.sideMenuVisibility && 'mobile-active'
+        props.sideMenuVisibility ? 'mobile-active' : ''
       }`}
     >
       <div

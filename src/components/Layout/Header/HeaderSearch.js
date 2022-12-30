@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './HeaderSearch.module.scss';
 import HeaderSearchHint from './HeaderSearchHint';
 
-const HeaderSearch = (props, ref) => {
+const HeaderSearch = props => {
   const trendingItems = props.trendingItems.slice(0, 10);
 
   return (

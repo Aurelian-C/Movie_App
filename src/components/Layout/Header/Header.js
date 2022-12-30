@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classes from './Header.module.scss';
 import logo1 from '../../../assets/img/tmdb_logo1.svg';
 import logo2 from '../../../assets/img/tmdb_logo2.svg';
@@ -37,25 +37,27 @@ const Header = props => {
     setIconSearchVisibility(false);
   };
 
-  // Header hide & show on page scrolling
-  let scrollNumber = 0;
-  window.addEventListener('scroll', e => {
-    const scrollYnumber = window.scrollY;
-    const headerHeight =
-      headerContainerRef.current.getBoundingClientRect().height;
+  useEffect(() => {
+    // Header hide & show on page scrolling
+    let scrollNumber = 0;
+    window.addEventListener('scroll', e => {
+      const scrollYnumber = window.scrollY;
+      const headerHeight =
+        headerContainerRef.current.getBoundingClientRect().height;
 
-    // Hide header when scroll down
-    if (scrollYnumber > scrollNumber) {
-      scrollNumber = scrollYnumber;
-      headerRef.current.style.top = `-${headerHeight}px`;
-    }
+      // Hide header when scroll down
+      if (scrollYnumber > scrollNumber) {
+        scrollNumber = scrollYnumber;
+        headerRef.current.style.top = `-${headerHeight}px`;
+      }
 
-    // Show header when scroll up
-    if (scrollYnumber < scrollNumber) {
-      scrollNumber = scrollYnumber;
-      headerRef.current.style.top = '0px';
-    }
-  });
+      // Show header when scroll up
+      if (scrollYnumber < scrollNumber) {
+        scrollNumber = scrollYnumber;
+        headerRef.current.style.top = '0px';
+      }
+    });
+  }, [headerContainerRef, headerRef]);
 
   return (
     <header className={classes.header} ref={headerRef}>
