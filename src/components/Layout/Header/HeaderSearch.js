@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './HeaderSearch.module.scss';
 import HeaderSearchHint from './HeaderSearchHint';
 
-const HeaderSearch = props => {
+const HeaderSearch = (props, ref) => {
   const trendingItems = props.trendingItems.slice(0, 10);
 
   return (
@@ -35,7 +35,7 @@ const HeaderSearch = props => {
         </div>
         <ul className={classes['header-search__hints']}>
           {trendingItems.map(item => (
-            <HeaderSearchHint movieName={item.title} />
+            <HeaderSearchHint movieName={item.title} key={item.title} />
           ))}
         </ul>
       </div>
