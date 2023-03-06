@@ -4,25 +4,7 @@ import logo1 from '../../assets/img/tmdb_logo1.svg';
 import logo2 from '../../assets/img/tmdb_logo2.svg';
 import HeaderMenuItem from './HeaderMenuItem';
 import HeaderSearch from './HeaderSearch';
-
-const menuItems = [
-  {
-    menuItemTitle: 'Movies',
-    menuSubItemTitles: ['Popular', 'Now Playing', 'Upcoming', 'Top Rated'],
-  },
-  {
-    menuItemTitle: 'TV Shows',
-    menuSubItemTitles: ['Popular', 'Airing Today', 'On TV', 'Top Rated'],
-  },
-  {
-    menuItemTitle: 'People',
-    menuSubItemTitles: ['Popular People'],
-  },
-  {
-    menuItemTitle: 'More',
-    menuSubItemTitles: ['Discussions', 'Leaderboard', 'Support', 'API'],
-  },
-];
+import { Link } from 'react-router-dom';
 
 const Header = props => {
   const [iconSearchVisibility, setIconSearchVisibility] = useState(true);
@@ -69,29 +51,18 @@ const Header = props => {
           ></i>
         </div>
         <div className={classes.header__logo}>
-          <a
-            href="https://movie-aic.netlify.app"
-            className={classes['header__logo--big-screen']}
-          >
+          <Link to="/" className={classes['header__logo--big-screen']}>
             <img src={logo1} alt="" className={classes.header__img} />
-          </a>
-          <a
-            href="https://movie-aic.netlify.app"
-            className={classes['header__logo--small-screen']}
-          >
+          </Link>
+          <Link to="/" className={classes['header__logo--small-screen']}>
             <img src={logo2} alt="" className={classes.header__img} />
-          </a>
+          </Link>
         </div>
         <div
           className={`${classes.header__menu} ${classes['header__menu--1']}`}
         >
           <ul className={classes['header__menu-items']}>
-            {menuItems.map(item => (
-              <HeaderMenuItem
-                title={item.menuItemTitle}
-                subTitles={item.menuSubItemTitles}
-              />
-            ))}
+            <HeaderMenuItem />
           </ul>
         </div>
         <div

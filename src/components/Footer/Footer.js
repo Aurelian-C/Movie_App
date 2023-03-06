@@ -115,7 +115,8 @@ const Footer = () => {
           >
             TMDB
           </a>
-          , build from scratch with Vanilla JavaScript &amp; ReactJS.
+          , build from scratch with HTML, CSS, Vanilla JavaScript, ReactJS &amp;
+          React Router
         </p>
         <p>
           For more projects go to

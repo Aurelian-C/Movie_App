@@ -4,16 +4,9 @@
   list-style: none;
 }
 
-.header__menu-link:link,
-.header__menu-link:visited {
-  text-decoration: none;
-  color: white;
-}
-
-.header__menu-link:link,
-.header__menu-link:visited {
-  text-decoration: none;
-  color: white;
+.header__menu-title {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .header__menu-container-extras {
@@ -35,4 +28,17 @@
 
 .header__menu-item:hover > .header__menu-container-extras {
   display: block;
+}
+
+.header__menu-extra:hover {
+  cursor: pointer;
+  background-color: rgb(237, 237, 237);
+}
+
+.header__menu-link:link,
+.header__menu-link:visited {
+  padding: 1rem 5rem 1rem 2rem;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
 }

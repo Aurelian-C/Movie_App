@@ -24,16 +24,22 @@
   --hints-bg-light: rgb(247, 247, 247);
 
   --container-max-width: 125rem;
+}
 
-  @media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
+  :root {
     --padding-sides-main: 2rem;
   }
+}
 
-  @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
+  :root {
     --padding-sides-main: 1.8rem;
   }
+}
 
-  @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
+  :root {
     --padding-sides-main: 1rem;
   }
 }
@@ -51,7 +57,7 @@ html {
 }
 
 body {
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
