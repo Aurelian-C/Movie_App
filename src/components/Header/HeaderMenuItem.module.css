@@ -1,0 +1,38 @@
+.header__menu-item {
+  position: relative;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.header__menu-link:link,
+.header__menu-link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.header__menu-link:link,
+.header__menu-link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.header__menu-container-extras {
+  min-width: max-content;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  border-radius: 3px;
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  display: none;
+}
+
+.header__menu-extras {
+  list-style: none;
+}
+
+.header__menu-item:hover > .header__menu-container-extras {
+  display: block;
+}

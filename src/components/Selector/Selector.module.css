@@ -1,0 +1,73 @@
+.selector {
+  color: var(--font-color-dark);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.selector__container {
+  display: flex;
+  align-items: center;
+}
+
+.selector__description {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.selector__wrapper {
+  position: relative;
+  max-width: 100%;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+.selector__items {
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 30px;
+  display: flex;
+}
+
+.selector__item {
+  position: relative;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .selector__items {
+    position: absolute;
+    z-index: 99;
+    flex-direction: column;
+  }
+
+  .selector__item.selected::after {
+    content: '';
+    background-image: url('../../assets/img/arrow-down.png');
+    background-size: cover;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .selector__items.active {
+    background: linear-gradient(
+      to right,
+      var(--selector-bg-green--lighter) 0%,
+      var(--selector-bg-green--light) 100%
+    );
+    border-radius: 15px;
+  }
+
+  .selector__items.active > .selector__item {
+    display: flex;
+    padding-right: 5rem;
+  }
+
+  .selector__items:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .selector__item:not(.selected) {
+    display: none;
+  }
+}

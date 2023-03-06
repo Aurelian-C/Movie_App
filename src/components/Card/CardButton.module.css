@@ -1,0 +1,22 @@
+.card__circle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.card__button:hover {
+  background-color: rgb(148, 51, 239);
+}
+
+.card__dots {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.card__dots i {
+  font-size: 4px;
+}

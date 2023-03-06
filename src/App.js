@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-import SideMenu from './components/Layout/SideMenu/SideMenu';
-import Header from './components/Layout/Header/Header';
-import Search from './components/Layout/Search/Search';
-import CardItems from './components/Layout/Card/CardItems';
-import Footer from './components/Layout/Footer/Footer';
+import React, { useEffect, useState } from 'react';
+import SideMenu from './components/SideMenu/SideMenu';
+import Header from './components/Header/Header';
+import Search from './components/Search/Search';
+import CardItems from './components/Card/CardItems';
+import Footer from './components/Footer/Footer';
+
+import {
+  fetchSearchHints,
+  fetchPopular,
+  fetchTrendings,
+} from './helpers/fetchData';
 
 const popularity = {
   items: [
@@ -441,6 +447,7 @@ const trending = {
 
 const App = () => {
   const [sideMenuVisibility, setSideMenuVisibility] = useState(false);
+  const [searchHints, setSearchHints] = useState([]);
 
   const showSideMenuHandler = () => {
     setSideMenuVisibility(true);
@@ -450,11 +457,21 @@ const App = () => {
     setSideMenuVisibility(false);
   };
 
+  const searchHintsHandler = async () => {
+    const searchHints = await fetchSearchHints('trending', 'all', 'day');
+    setSearchHints(searchHints);
+  };
+
+  useEffect(() => {
+    searchHintsHandler();
+  }, []);
+
   return (
     <>
       <Header
         onShowSideMenu={showSideMenuHandler}
         trendingItems={trending.items}
+        searchHints={searchHints}
       />
       <SideMenu
         sideMenuVisibility={sideMenuVisibility}
@@ -465,11 +482,13 @@ const App = () => {
         items={popularity.items}
         selectorCategories={popularity.categories}
         mainTitle={popularity.mainTitle}
+        onFetch={fetchPopular}
       />
       <CardItems
         items={trending.items}
         selectorCategories={trending.categories}
         mainTitle={trending.mainTitle}
+        onFetch={fetchTrendings}
       />
       <Footer />
     </>

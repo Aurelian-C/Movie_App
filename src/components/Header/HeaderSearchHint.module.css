@@ -1,0 +1,32 @@
+.header-search__hint {
+  border-bottom: 1px solid var(--border-bottom-search-light);
+  color: black;
+  padding: 5px var(--padding-sides-main);
+  width: 100vw;
+  cursor: pointer;
+}
+
+.header-search__hint:hover {
+  background-color: var(--hints-bg-light);
+}
+
+.header-search__hint-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+}
+
+.header-search__icon {
+  color: black;
+}
+
+.header-search__icon--hint {
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.header-search__hint-name {
+  font-weight: 400;
+  color: rgb(45, 45, 45);
+}
