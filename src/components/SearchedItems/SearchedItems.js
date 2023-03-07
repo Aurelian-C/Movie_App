@@ -1,3 +1,7 @@
 export default function SearchedItems() {
-  return <h1>SearchedItems</h1>;
+  return (
+    <div style={{ backgroundColor: 'red', height: '150rem', width: '100%' }}>
+      SearchedItems
+    </div>
+  );
 }

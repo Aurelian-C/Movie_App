@@ -108,20 +108,18 @@ const Header = props => {
           <div
             className={`${classes.header__menu} ${classes['header__menu-search']}`}
           >
-            <Link to="/" className={classes['header__menu-link']}>
-              {iconSearchVisibility && (
-                <i
-                  className={`fa-magnifying-glass fa-solid ${classes['icon-search']} ${classes['icon-search--open']}`}
-                  onClick={hideIconSearchHandler}
-                ></i>
-              )}
-              {iconSearchVisibility || (
-                <i
-                  className={`fa-solid fa-xmark ${classes['icon-search']} ${classes['icon-search--close']}`}
-                  onClick={showIconSearchHandler}
-                ></i>
-              )}
-            </Link>
+            {iconSearchVisibility && (
+              <i
+                className={`fa-magnifying-glass fa-solid ${classes['icon-search']} ${classes['icon-search--open']}`}
+                onClick={hideIconSearchHandler}
+              ></i>
+            )}
+            {iconSearchVisibility || (
+              <i
+                className={`fa-solid fa-xmark ${classes['icon-search']} ${classes['icon-search--close']}`}
+                onClick={showIconSearchHandler}
+              ></i>
+            )}
           </div>
         </div>
       </div>

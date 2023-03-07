@@ -1,14 +1,14 @@
-import classes from './FormFilter.module.css';
 import { Form } from 'react-router-dom';
-import Sort from './Sort';
+import classes from './FormFilter.module.css';
+import FilterContainer from './FilterContainer';
+import SortContent from './SortContent';
 
 export default function FormFilter() {
   return (
     <Form className={classes.form}>
-      <Sort />
-      <div>Filters</div>
-      <div>Where to Watch</div>
-      <button>Search</button>
+      <FilterContainer filterTitle="Sort">
+        <SortContent />
+      </FilterContainer>
     </Form>
   );
 }

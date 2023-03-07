@@ -6,6 +6,7 @@
   padding: 15rem var(--padding-sides-main) 9rem var(--padding-sides-main);
   max-width: 130rem;
   margin: 0 auto;
+  color: white;
 }
 
 .search__container {
