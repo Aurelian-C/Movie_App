@@ -9,6 +9,7 @@ const App = () => {
     {
       path: '/',
       element: <RootLayout />,
+
       children: [
         { index: true, element: <HomePage /> },
         {
