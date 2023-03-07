@@ -75,10 +75,11 @@
 
 .header__menu-item-language:hover {
   background-color: rgb(255, 255, 255);
+  color: rgb(3, 37, 65);
 }
 
-.header__menu-item-language > * {
-  color: rgb(3, 37, 65) !important;
+.header__menu-item-language:hover a {
+  color: rgb(3, 37, 65);
 }
 
 .header__menu-link:link,

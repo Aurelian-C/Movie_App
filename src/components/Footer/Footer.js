@@ -1,6 +1,6 @@
-import React from 'react';
 import classes from './Footer.module.css';
 import logo from '../../assets/img/tmdb_logo2.svg';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,29 +13,29 @@ const Footer = () => {
           <h3 className={classes.footer__title}>THE BASICS</h3>
           <ul className={classes.footer__items}>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 About TMDB
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Contact Us
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Support Forums
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 API
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 System Status
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -43,19 +43,19 @@ const Footer = () => {
           <h3 className={classes.footer__title}>GET INVOLVED</h3>
           <ul className={classes.footer__items}>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Contribution Bible
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Add New Movie
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Add New TV Show
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -63,24 +63,24 @@ const Footer = () => {
           <h3 className={classes.footer__title}>COMMUNITY</h3>
           <ul className={classes.footer__items}>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Guidelines
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Discussions
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Leaderboard
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Twitter
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -88,19 +88,19 @@ const Footer = () => {
           <h3 className={classes.footer__title}>LEGAL</h3>
           <ul className={classes.footer__items}>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Terms of Use
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 API Terms of Use
-              </a>
+              </Link>
             </li>
             <li className={classes.footer__item}>
-              <a href="#" className={classes.footer__link}>
+              <Link to="/" className={classes.footer__link}>
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -108,25 +108,25 @@ const Footer = () => {
       <div className={classes.footer__copyright}>
         <p>
           This website is a clone of
-          <a
+          <Link
             className={classes['footer__copyright-link']}
             target="_blank"
-            href="https://www.themoviedb.org/"
+            to="https://www.themoviedb.org/"
           >
             TMDB
-          </a>
+          </Link>
           , build from scratch with HTML, CSS, Vanilla JavaScript, ReactJS &amp;
           React Router
         </p>
         <p>
           For more projects go to
-          <a
+          <Link
             className={`${classes['footer__copyright-link']} ${classes['github-link']}`}
             target="_blank"
-            href="https://github.com/Aurelian-C"
+            to="https://github.com/Aurelian-C"
           >
             Aurelian Cioloca
-          </a>
+          </Link>
           Github page.
         </p>
       </div>

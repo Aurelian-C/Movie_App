@@ -72,43 +72,43 @@ const Header = props => {
             className={`${classes['header__menu-items']} ${classes['header__menu-items--1']}`}
           >
             <li className={classes['header__menu-item']}>
-              <a href="#" className={classes['header__menu-link']}>
+              <Link to="/" className={classes['header__menu-link']}>
                 <i className="fa-plus fa-solid"></i>
-              </a>
+              </Link>
             </li>
             <li
               className={`${classes['header__menu-item']} ${classes['header__menu-item-language']}`}
             >
-              <a href="#" className={classes['header__menu-link']}>
+              <Link to="/" className={classes['header__menu-link']}>
                 EN
-              </a>
+              </Link>
             </li>
             <li className={classes['header__menu-item']}>
-              <a href="#" className={classes['header__menu-link']}>
+              <Link to="/" className={classes['header__menu-link']}>
                 Login
-              </a>
+              </Link>
             </li>
             <li className={classes['header__menu-item']}>
-              <a href="#" className={classes['header__menu-link']}>
+              <Link to="/" className={classes['header__menu-link']}>
                 Join TMDB
-              </a>
+              </Link>
             </li>
           </ul>
           <ul
             className={`${classes['header__menu-items']} ${classes['header__menu-items--2']}`}
           >
             <li className={classes['header__menu-item']}>
-              <a href="#" className={classes['header__menu-link']}>
+              <Link to="/" className={classes['header__menu-link']}>
                 <i
                   className={`fa-solid fa-user ${classes['header__mobile-icon']}`}
                 ></i>
-              </a>
+              </Link>
             </li>
           </ul>
           <div
             className={`${classes.header__menu} ${classes['header__menu-search']}`}
           >
-            <a href="#" className={classes['header__menu-link']}>
+            <Link to="/" className={classes['header__menu-link']}>
               {iconSearchVisibility && (
                 <i
                   className={`fa-magnifying-glass fa-solid ${classes['icon-search']} ${classes['icon-search--open']}`}
@@ -121,7 +121,7 @@ const Header = props => {
                   onClick={showIconSearchHandler}
                 ></i>
               )}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

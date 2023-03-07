@@ -50,6 +50,11 @@
   font-size: 1.8rem;
 }
 
+.dropdown-menu__extra a {
+  text-decoration: none;
+  color: white;
+}
+
 @media screen and (max-width: 900px) {
   .dropdown-menu__title {
     font-size: 2.5rem;

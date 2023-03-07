@@ -4,6 +4,7 @@
   right: 10px;
   height: 3rem;
   width: 3rem;
+  z-index: 999;
 }
 
 .card__button:hover {

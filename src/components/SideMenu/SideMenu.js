@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import classes from './SideMenu.module.css';
+import { Link } from 'react-router-dom';
 
 const SideMenu = props => {
   const dropdownVisibilityHandler = e => {
@@ -33,10 +33,18 @@ const SideMenu = props => {
           <ul
             className={`${classes['dropdown-menu__container-extras']} hidden`}
           >
-            <li className={classes['dropdown-menu__extra']}>Popular</li>
-            <li className={classes['dropdown-menu__extra']}>Top Rated</li>
-            <li className={classes['dropdown-menu__extra']}>Upcoming</li>
-            <li className={classes['dropdown-menu__extra']}>Now Playing</li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/movie">Popular</Link>
+            </li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/movie/top-rated">Top Rated</Link>
+            </li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/movie/upcoming">Upcoming</Link>
+            </li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/movie/now-playing">Now Playing</Link>
+            </li>
           </ul>
         </li>
         <li className={classes['dropdown-menu__item']}>
@@ -49,10 +57,18 @@ const SideMenu = props => {
           <ul
             className={`${classes['dropdown-menu__container-extras']} hidden`}
           >
-            <li className={classes['dropdown-menu__extra']}>Popular</li>
-            <li className={classes['dropdown-menu__extra']}>Top Rated</li>
-            <li className={classes['dropdown-menu__extra']}>On TV</li>
-            <li className={classes['dropdown-menu__extra']}>Airing Today</li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/tv">Popular</Link>
+            </li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/tv/top-rated">Top Rated</Link>
+            </li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/tv/on-the-air">On TV</Link>
+            </li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/tv/airing-today">Airing Today</Link>
+            </li>
           </ul>
         </li>
         <li className={classes['dropdown-menu__item']}>
@@ -65,19 +81,37 @@ const SideMenu = props => {
           <ul
             className={`${classes['dropdown-menu__container-extras']} hidden`}
           >
-            <li className={classes['dropdown-menu__extra']}>Popular People</li>
+            <li className={classes['dropdown-menu__extra']}>
+              <Link to="/person">Popular People</Link>
+            </li>
           </ul>
         </li>
       </ul>
       <ul className={classes['dropdown-menu__secondary']}>
-        <li className={classes['dropdown-menu__extra']}>Contribution Bible</li>
-        <li className={classes['dropdown-menu__extra']}>Apps</li>
-        <li className={classes['dropdown-menu__extra']}>Discussions</li>
-        <li className={classes['dropdown-menu__extra']}>Leaderboard</li>
-        <li className={classes['dropdown-menu__extra']}>Contribute</li>
-        <li className={classes['dropdown-menu__extra']}>API</li>
-        <li className={classes['dropdown-menu__extra']}>Support</li>
-        <li className={classes['dropdown-menu__extra']}>About</li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/">Contribution Bible</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/">Apps</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/discuss">Discussions</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/leaderboard">Leaderboard</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/">Contribute</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/documentation/api">API</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/talk">Support</Link>
+        </li>
+        <li className={classes['dropdown-menu__extra']}>
+          <Link to="/">About</Link>
+        </li>
       </ul>
       <ul className={classes['dropdown-menu__secondary']}>
         <li className={classes['dropdown-menu__extra']}>Login</li>
