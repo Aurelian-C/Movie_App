@@ -1,5 +1,5 @@
 .form__content-title {
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
   font-weight: 400;
   font-size: 1.4rem;
 }
@@ -16,6 +16,11 @@
   padding: 15px 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form__sort-header:hover {
+  background-color: rgb(210, 210, 210);
 }
 
 .form__sort-title {

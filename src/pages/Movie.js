@@ -1,10 +1,10 @@
-import FormFilter from '../components/FormFilter/FormFilter';
+import FilterForm from '../components/FilterForm/FilterForm';
 import SearchedItems from '../components/SearchedItems/SearchedItems';
 
 export default function MoviePage() {
   return (
     <div style={{ display: 'flex' }}>
-      <FormFilter />
+      <FilterForm />
       <SearchedItems />
     </div>
   );

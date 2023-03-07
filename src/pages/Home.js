@@ -1,6 +1,5 @@
 import Search from '../components/Search/Search';
 import CardItems from '../components/Card/CardItems';
-import Footer from '../components/Footer/Footer';
 
 import { fetchPopular, fetchTrendings } from '../helpers/fetchData';
 
@@ -454,7 +453,6 @@ export default function HomePage() {
         mainTitle={trending.mainTitle}
         onFetch={fetchTrendings}
       />
-      <Footer />
     </>
   );
 }

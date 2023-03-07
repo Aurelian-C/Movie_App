@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FilterBox from '../UI/FilterBox';
+import FilterBox from './FilterBox';
 import FilterHeader from './FilterHeader';
 import classes from './FilterContainer.module.css';
 
@@ -23,6 +23,7 @@ export default function FilterContainer({ filterTitle, children }) {
       <FilterHeader
         title={filterTitle}
         onToggleContentVisibility={handleSortContentVisibility}
+        contentVisibility={contentVisibility}
       />
       <div className={contentClasses}>{children}</div>
     </FilterBox>
