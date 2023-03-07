@@ -1,0 +1,7 @@
+.form__box {
+  width: 30rem;
+  padding: 2rem 1rem;
+  border: 1px solid rgb(226, 226, 226);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
