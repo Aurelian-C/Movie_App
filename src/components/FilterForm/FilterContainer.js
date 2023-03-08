@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import FilterBox from './FilterBox';
 import FilterHeader from './FilterHeader';
-import classes from './FilterContainer.module.css';
 
 export default function FilterContainer({ filterTitle, children }) {
   const [contentVisibility, setContentVisibility] = useState(false);
@@ -14,9 +13,7 @@ export default function FilterContainer({ filterTitle, children }) {
     }
   };
 
-  let contentClasses = contentVisibility
-    ? classes.form__content
-    : `${classes.form__content} hidden`;
+  let contentClass = contentVisibility ? '' : 'hidden';
 
   return (
     <FilterBox>
@@ -25,7 +22,7 @@ export default function FilterContainer({ filterTitle, children }) {
         onToggleContentVisibility={handleSortContentVisibility}
         contentVisibility={contentVisibility}
       />
-      <div className={contentClasses}>{children}</div>
+      <div className={contentClass}>{children}</div>
     </FilterBox>
   );
 }

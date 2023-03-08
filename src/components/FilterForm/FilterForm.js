@@ -10,7 +10,7 @@ export default function FilterForm() {
       <FilterContainer filterTitle="Sort">
         <SortContent />
       </FilterContainer>
-      <FilterContainer filterTitle="Filter">
+      <FilterContainer filterTitle="Filters">
         <FilterContent />
       </FilterContainer>
     </Form>

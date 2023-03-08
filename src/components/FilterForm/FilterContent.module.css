@@ -1,0 +1,143 @@
+.form__section {
+  padding: 2rem 1rem;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+
+.form__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form__title {
+  margin-right: 10px;
+}
+
+.form__icon {
+  color: rgb(184, 184, 184);
+}
+
+.form__detail {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form__selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form__select {
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.form__search {
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+}
+
+.form__inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 4rem;
+  position: relative;
+}
+
+.input__search {
+  height: 3rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-left: 8px;
+  padding-right: 38px;
+}
+
+.input__search:focus {
+  outline-color: aqua;
+}
+
+.form__inputs i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.form__languages {
+  list-style: none;
+}
+
+.form__language {
+  padding: 3px 4rem;
+  font-size: 1.4rem;
+}
+
+.form__language:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+/* Copied from SortContent.js! NEED ANOTHER COMPONENT */
+.form__content-title {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.form__sort {
+  position: relative;
+}
+
+.form__sort-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(237, 237, 237);
+  padding: 15px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form__sort-header:hover {
+  background-color: rgb(210, 210, 210);
+}
+
+.form__sort-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.form__list {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form__list-item:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+.form__list-item {
+  padding: 10px 10px;
+  font-size: 1.4rem;
+}
+
+.form__list-item:first-of-type {
+  margin-top: 10px;
+}
+
+.selected {
+  background-color: rgb(237, 237, 237);
+  font-weight: bold;
+}
