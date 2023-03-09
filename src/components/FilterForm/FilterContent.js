@@ -1,5 +1,6 @@
 import classes from './FilterContent.module.css';
 import { useState } from 'react';
+import Slider from './Slider';
 
 export default function FilterContent() {
   const [sortIsVisible, setSortIsVisible] = useState(false);
@@ -152,7 +153,7 @@ export default function FilterContent() {
           <div className={searchClasses}>
             <div className={classes.form__inputs}>
               <input type="text" className={classes.input__search} />
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i className="fa-solid fa-magnifying-glass"></i>
             </div>
             <ul className={classes.form__languages}>
               <li className={classes.form__language} onClick={handleSortTitle}>
@@ -170,6 +171,9 @@ export default function FilterContent() {
             </ul>
           </div>
         </div>
+      </div>
+      <div className={classes.form__section}>
+        <Slider />
       </div>
     </>
   );
