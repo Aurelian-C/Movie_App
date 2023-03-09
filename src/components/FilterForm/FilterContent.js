@@ -173,7 +173,7 @@ export default function FilterContent() {
         </div>
       </div>
       <div className={classes.form__section}>
-        <Slider />
+        <Slider minValue="0" maxValue="100" stepValue="20" />
       </div>
     </>
   );
