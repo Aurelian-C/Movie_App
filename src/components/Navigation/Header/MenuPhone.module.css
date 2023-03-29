@@ -1,0 +1,28 @@
+.header__menu-items {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.header__menu-item {
+  position: relative;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.header__menu-link:link,
+.header__menu-link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.header__menu-item:hover > .header__menu-container-extras {
+  display: block;
+}
+
+@media screen and (min-width: 901px) {
+  .header__menu-items--2 {
+    display: none;
+  }
+}

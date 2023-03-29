@@ -22,6 +22,7 @@
   --selector-bg-green--light: rgb(30, 213, 169);
   --border-bottom-search-light: rgb(220, 220, 220);
   --hints-bg-light: rgb(247, 247, 247);
+  --slider-color: rgb(1, 180, 228);
 
   --container-max-width: 125rem;
 }

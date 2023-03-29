@@ -15,6 +15,7 @@
   top: 2rem;
   right: 3rem;
   cursor: pointer;
+  color: white;
 }
 
 .dropdown-menu__close i {
@@ -32,6 +33,7 @@
 
 .dropdown-menu__item {
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 .dropdown-menu__title {

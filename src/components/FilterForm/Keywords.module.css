@@ -1,0 +1,86 @@
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  padding: 2px;
+}
+
+.keywords__clear {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.keywords:hover .keywords__clear {
+  opacity: 1;
+  visibility: visible;
+}
+
+.keywords__list {
+  width: 90%;
+  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+}
+
+.keywords__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: rgb(228, 231, 235);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.keywords__item:hover {
+  background-color: rgb(212, 216, 221);
+}
+
+.keywords__text {
+  font-size: 1.3rem;
+}
+
+.keywords__delete {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.keywords__input {
+  width: 30%;
+  align-self: flex-end;
+}
+
+.options {
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 15rem;
+  overflow-y: scroll;
+}
+
+.option {
+  margin: 5px 0px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: rgb(212, 216, 221);
+}
+
+.option.selected {
+  background-color: var(--slider-color);
+}
+
+.option.selected:hover {
+  color: white;
+}

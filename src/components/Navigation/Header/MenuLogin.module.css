@@ -1,0 +1,39 @@
+.header__menu-items {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.header__menu-item {
+  position: relative;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.header__menu-item-language {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.header__menu-item-language:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(3, 37, 65);
+}
+
+.header__menu-item-language:hover a {
+  color: rgb(3, 37, 65);
+}
+
+.header__menu-link:link,
+.header__menu-link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .header__menu-items--1 {
+    display: none;
+  }
+}

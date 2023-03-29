@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './HeaderSearch.module.css';
-import HeaderSearchHint from './HeaderSearchHint';
+import classes from './MenuSearch.module.css';
+import SearchHint from './SearchHint';
 
-const HeaderSearch = props => {
+const MenuSearch = props => {
   return (
     <div className={`${classes['header-search']}`}>
       <div className={classes['header-search__form-container']}>
@@ -33,7 +33,7 @@ const HeaderSearch = props => {
         </div>
         <ul className={classes['header-search__hints']}>
           {props.searchHints.map(item => (
-            <HeaderSearchHint name={item} key={item} />
+            <SearchHint name={item} key={item} />
           ))}
         </ul>
       </div>
@@ -41,4 +41,4 @@ const HeaderSearch = props => {
   );
 };
 
-export default React.memo(HeaderSearch);
+export default React.memo(MenuSearch);

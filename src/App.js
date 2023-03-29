@@ -4,12 +4,11 @@ import TvPage from './pages/TV';
 import RootLayout from './pages/RootLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const App = () => {
+export default function App() {
   const routes = createBrowserRouter([
     {
       path: '/',
       element: <RootLayout />,
-
       children: [
         { index: true, element: <HomePage /> },
         {
@@ -42,6 +41,4 @@ const App = () => {
   ]);
 
   return <RouterProvider router={routes} />;
-};
-
-export default App;
+}

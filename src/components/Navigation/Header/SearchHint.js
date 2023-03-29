@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './HeaderSearchHint.module.css';
+import classes from './SearchHint.module.css';
 
-const HeaderSearchHint = props => {
+export default function SearchHint(props) {
   return (
     <li className={classes['header-search__hint']}>
       <div className={classes['header-search__hint-container']}>
@@ -14,6 +14,4 @@ const HeaderSearchHint = props => {
       </div>
     </li>
   );
-};
-
-export default HeaderSearchHint;
+}

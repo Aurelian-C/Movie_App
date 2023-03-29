@@ -6,6 +6,29 @@ export default function Slider({ minValue, maxValue, stepValue }) {
   const max = +maxValue;
   const step = +stepValue;
 
+  let ticks = [];
+  for (let i = 0; i <= max / stepValue; i++) {
+    if (i === 0 || i === 5 || i === max) {
+      ticks.push(
+        <li className={classes['slider__tick--big']} title="0">
+          <span className={classes.slider__number} title="0">
+            {i}
+          </span>
+        </li>
+      );
+      continue;
+    }
+
+    if (i === max)
+      ticks.push(
+        <li className={classes.slider__tick} title="0">
+          <span className={classes.slider__number} title="0">
+            {i}
+          </span>
+        </li>
+      );
+  }
+
   const [renderSliderValues, setRenderSliderValues] = useState(false);
   const [sliderOneValue, setSliderOneValue] = useState(min);
   const [sliderTwoValue, setSliderTwoValue] = useState(max);
@@ -66,38 +89,7 @@ export default function Slider({ minValue, maxValue, stepValue }) {
       {renderSliderValues && sliderValues}
       <div className={classes.slider__container}>
         <div className={classes.slider__track} />
-        <ul className={classes.slider__ticks}>
-          <li className={classes.slider__tick} title="0">
-            <span className={classes.slider__number} title="0">
-              0
-            </span>
-          </li>
-          <li className={classes.slider__tick} title="20">
-            <span className={classes.slider__number} title="20">
-              20
-            </span>
-          </li>
-          <li className={classes.slider__tick} title="40">
-            <span className={classes.slider__number} title="40">
-              40
-            </span>
-          </li>
-          <li className={classes.slider__tick} title="60">
-            <span className={classes.slider__number} title="60">
-              60
-            </span>
-          </li>
-          <li className={classes.slider__tick} title="80">
-            <span className={classes.slider__number} title="80">
-              80
-            </span>
-          </li>
-          <li className={classes.slider__tick} title="100">
-            <span className={classes.slider__number} title="100">
-              100
-            </span>
-          </li>
-        </ul>
+        <ul className={classes.slider__ticks}>{ticks}</ul>
         <input
           className={classes.slider__input}
           ref={sliderOneRef}

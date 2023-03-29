@@ -1,0 +1,35 @@
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.header__menu-search {
+  position: relative;
+  min-width: 1rem;
+  cursor: pointer;
+}
+
+.icon-search {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.icon-search {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.icon-search--open {
+  color: rgb(184, 114, 250);
+}
+
+.icon-search--close {
+  color: white;
+}

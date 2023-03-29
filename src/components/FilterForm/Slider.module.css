@@ -26,13 +26,21 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 0;
+  top: 7px;
   left: 0;
   width: 100%;
 }
 
 .slider__tick {
-  height: 15px;
+  height: 7px;
+  width: 1px;
+  background-color: #000000;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider__tick--big {
+  height: 14px;
   width: 1px;
   background-color: #000000;
   position: relative;
@@ -41,8 +49,9 @@
 
 .slider__number {
   position: absolute;
-  bottom: -40px;
+  bottom: -30px;
   transform: translateX(-50%);
+  cursor: pointer;
 }
 
 .slider__input {
@@ -76,9 +85,9 @@
 
 .slider__input::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 1.7em;
-  width: 1.7em;
-  background-color: #3264fe;
+  height: 15px;
+  width: 15px;
+  background-color: var(--slider-color);
   cursor: pointer;
   margin-top: -9px;
   pointer-events: auto;
@@ -91,7 +100,7 @@
   width: 1.7em;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #3264fe;
+  background-color: var(--slider-color);
   pointer-events: auto;
 }
 
@@ -101,13 +110,13 @@
   width: 1.7em;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #3264fe;
+  background-color: var(--slider-color);
   pointer-events: auto;
 }
 
 .slider__input:active::-webkit-slider-thumb {
-  background-color: #ffffff;
-  border: 3px solid #3264fe;
+  background-color: var(--slider-color);
+  border: 1px solid black;
 }
 
 .slider__values {

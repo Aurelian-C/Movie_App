@@ -36,6 +36,11 @@
   cursor: pointer;
 }
 
+.form__select:hover {
+  background-color: var(--slider-color);
+  color: white;
+}
+
 .form__search {
   border: 1px solid rgb(209, 209, 209);
   border-radius: 5px;

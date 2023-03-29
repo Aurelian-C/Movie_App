@@ -1,6 +1,7 @@
 import classes from './FilterContent.module.css';
 import { useState } from 'react';
 import Slider from './Slider';
+import Keywords from './Keywords';
 
 export default function FilterContent() {
   const [sortIsVisible, setSortIsVisible] = useState(false);
@@ -173,7 +174,28 @@ export default function FilterContent() {
         </div>
       </div>
       <div className={classes.form__section}>
-        <Slider minValue="0" maxValue="100" stepValue="20" />
+        <div className={classes.form__header}>
+          <h4 className={classes.form__title}>User Score</h4>
+        </div>
+        <Slider minValue="0" maxValue="10" stepValue="1" />
+      </div>
+      <div className={classes.form__section}>
+        <div className={classes.form__header}>
+          <h4 className={classes.form__title}>Minim User Votes</h4>
+        </div>
+        <Slider minValue="0" maxValue="500" stepValue="50" />
+      </div>
+      <div className={classes.form__section}>
+        <div className={classes.form__header}>
+          <h4 className={classes.form__title}>Runtime</h4>
+        </div>
+        <Slider minValue="0" maxValue="400" stepValue="20" />
+      </div>
+      <div className={classes.form__section}>
+        <div className={classes.form__header}>
+          <h4 className={classes.form__title}>Keywords</h4>
+        </div>
+        <Keywords />
       </div>
     </>
   );

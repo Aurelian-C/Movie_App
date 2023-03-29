@@ -1,7 +1,7 @@
-import classes from './HeaderMenuItem.module.css';
+import classes from './MenuLinks.module.css';
 import { Link } from 'react-router-dom';
 
-const HeaderMenuItem = () => {
+export default function MenuLinks() {
   return (
     <>
       <li className={classes['header__menu-item']}>
@@ -117,6 +117,4 @@ const HeaderMenuItem = () => {
       </li>
     </>
   );
-};
-
-export default HeaderMenuItem;
+}
