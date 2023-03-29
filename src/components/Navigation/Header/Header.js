@@ -7,6 +7,7 @@ import MenuLogin from './MenuLogin';
 import SearchButton from './SearchButton';
 import MenuContainer from './MenuContainer';
 import MenuPhone from './MenuPhone';
+import DropDownButton from './DropDownButton';
 
 export default function Header({ onShowSideMenu, searchHints }) {
   const [buttonSearchVisibility, setButtonSearchVisibility] = useState(true);
@@ -46,12 +47,7 @@ export default function Header({ onShowSideMenu, searchHints }) {
   return (
     <header className={classes.header} ref={headerRef}>
       <div className={classes.header__container} ref={headerContainerRef}>
-        <div className={classes.header__dropdown}>
-          <i
-            className={`fa-bars fa-solid ${classes['header__dropdown-icon']}`}
-            onClick={onShowSideMenu}
-          ></i>
-        </div>
+        <DropDownButton onShowSideMenu={onShowSideMenu} />
         <MenuLogo />
         <MenuContainer className={classes['header__menu--1']}>
           <MenuNavigation />

@@ -1,0 +1,15 @@
+.header__dropdown {
+  grid-column: 1 / 2;
+  align-self: center;
+}
+
+.header__dropdown-icon {
+  font-size: 1.6rem;
+  color: white;
+}
+
+@media screen and (min-width: 901px) {
+  .header__dropdown {
+    display: none;
+  }
+}
