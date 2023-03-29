@@ -14,11 +14,11 @@ export default function Header({ onShowSideMenu, searchHints }) {
   const headerRef = useRef();
   const headerContainerRef = useRef();
 
-  const showIconSearchHandler = () => {
+  const handleShowButtonSearch = () => {
     setButtonSearchVisibility(true);
   };
 
-  const hideIconSearchHandler = () => {
+  const handleHideButtonSearch = () => {
     setButtonSearchVisibility(false);
   };
 
@@ -56,9 +56,9 @@ export default function Header({ onShowSideMenu, searchHints }) {
           <MenuLogin />
           <MenuPhone />
           <SearchButton
-            iconVisibility={buttonSearchVisibility}
-            onShowIcon={showIconSearchHandler}
-            onHideIcon={hideIconSearchHandler}
+            buttonVisibility={buttonSearchVisibility}
+            onShow={handleShowButtonSearch}
+            onHide={handleHideButtonSearch}
           />
         </MenuContainer>
       </div>
