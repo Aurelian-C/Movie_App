@@ -245,13 +245,13 @@ export default function RootLayout() {
     setSideMenuVisibility(false);
   };
 
-  const searchHintsHandler = async () => {
+  const handleSearchHints = async () => {
     const searchHints = await fetchSearchHints('trending', 'all', 'day');
     setSearchHints(searchHints);
   };
 
   useEffect(() => {
-    searchHintsHandler();
+    handleSearchHints();
   }, []);
 
   return (

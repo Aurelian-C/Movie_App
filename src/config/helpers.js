@@ -1,11 +1,3 @@
-import React from 'react';
-
-const API_KEY = '13a63a2e3653f6be0befa030e1a22ce6';
-const API_URL = 'https://api.themoviedb.org/3/';
-const IMAGES_PATH = 'https://image.tmdb.org/t/p/w500/';
-const TIMEOUT_FETCH = 5; //5 seconds
-const PROMISE_DELAY = 1; //1 second
-
 const promiseDelay = function (seconds) {
   return new Promise((resolve, _) => {
     setTimeout(() => {
@@ -24,7 +16,7 @@ const timeout = function (seconds) {
   });
 };
 
-const AJAX = async function (url, uploadData = undefined) {
+export const AJAX = async function (url, uploadData = undefined) {
   try {
     const fetchPro = uploadData
       ? fetch(url, {
@@ -42,7 +34,3 @@ const AJAX = async function (url, uploadData = undefined) {
     throw err;
   }
 };
-
-const useFetchData = (category, mediaType, timeWindow) => {};
-
-export default useFetchData;
