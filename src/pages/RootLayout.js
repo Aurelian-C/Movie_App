@@ -3,7 +3,7 @@ import SideMenu from '../components/Navigation/Side/SideMenu';
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { fetchSearchHints } from '../helpers/fetchData';
+import { fetchSearchHints } from '../config/fetchData';
 import Footer from '../components/Footer/Footer';
 
 const trending = {

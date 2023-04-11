@@ -1,7 +1,7 @@
 import Search from '../components/Search/Search';
 import CardItems from '../components/Card/CardItems';
 
-import { fetchPopular, fetchTrendings } from '../helpers/fetchData';
+import { fetchPopular, fetchTrendings } from '../config/fetchData';
 
 const trending = {
   items: [

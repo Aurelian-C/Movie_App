@@ -1,4 +1,5 @@
-import { API_KEY, API_URL, IMAGES_PATH, AJAX } from './helpers';
+import { API_KEY, API_URL, IMAGES_PATH } from './config';
+import { AJAX } from './helpers';
 
 export const state = {
   trendings: {
