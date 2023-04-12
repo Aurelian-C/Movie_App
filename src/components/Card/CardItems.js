@@ -1,19 +1,13 @@
 import React from 'react';
 import CardItem from './CardItem';
-import Selector from '../Selector/Selector';
 import classes from './CardItems.module.css';
 
-export default function CardItems({ items, mainTitle, selectorCategories }) {
+export default function CardItems({ items, mainTitle, children }) {
   const trendingTitle = mainTitle.toLowerCase();
 
   return (
     <section className={classes['cards-section']}>
-      <div>
-        <Selector
-          selectorCategories={selectorCategories}
-          mainTitle={mainTitle}
-        />
-      </div>
+      <div>{children}</div>
       <div>
         <div
           className={`${classes.cards} ${

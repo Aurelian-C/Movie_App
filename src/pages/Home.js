@@ -1,5 +1,6 @@
 import Search from '../components/Search/Search';
 import CardItems from '../components/Card/CardItems';
+import Selector from '../components/Selector/Selector';
 
 const trending = {
   items: [
@@ -443,12 +444,22 @@ export default function HomePage() {
         items={popularity.items}
         selectorCategories={popularity.categories}
         mainTitle={popularity.mainTitle}
-      />
+      >
+        <Selector
+          selectorCategories={popularity.categories}
+          mainTitle={popularity.mainTitle}
+        />
+      </CardItems>
       <CardItems
         items={trending.items}
         selectorCategories={trending.categories}
         mainTitle={trending.mainTitle}
-      />
+      >
+        <Selector
+          selectorCategories={trending.categories}
+          mainTitle={trending.mainTitle}
+        />
+      </CardItems>
     </>
   );
 }
