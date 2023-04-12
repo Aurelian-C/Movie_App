@@ -1,7 +1,11 @@
 import React from 'react';
 import classes from './Selector.module.css';
 
-export default function CardSelector({ mainTitle, selectorCategories }) {
+export default function CardSelector({
+  mainTitle,
+  selectorCategories,
+  onGetCategoryTitle,
+}) {
   const selectCategoryHandler = e => {
     const targetElement = e.target.closest(`.${classes.selector__item}`);
     const elements = e.currentTarget.querySelectorAll(
@@ -13,7 +17,7 @@ export default function CardSelector({ mainTitle, selectorCategories }) {
     targetElement.classList.add('selected');
 
     const string = targetElement.dataset.mediaType;
-    console.log(string);
+    onGetCategoryTitle(string);
   };
 
   return (

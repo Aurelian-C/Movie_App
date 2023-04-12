@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardItem from './CardItem';
 import classes from './CardItems.module.css';
+import usePopular from '../../hooks/usePopular';
 
-export default function CardItems({ items, mainTitle, children }) {
+export default function CardItems({ mainTitle, children, word }) {
   const trendingTitle = mainTitle.toLowerCase();
+  const items = usePopular(word);
 
   return (
     <section className={classes['cards-section']}>
