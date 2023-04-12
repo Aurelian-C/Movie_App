@@ -1,8 +1,6 @@
 import Search from '../components/Search/Search';
 import CardItems from '../components/Card/CardItems';
 
-import { fetchPopular, fetchTrendings } from '../config/fetchData';
-
 const trending = {
   items: [
     {
@@ -445,13 +443,11 @@ export default function HomePage() {
         items={popularity.items}
         selectorCategories={popularity.categories}
         mainTitle={popularity.mainTitle}
-        onFetch={fetchPopular}
       />
       <CardItems
         items={trending.items}
         selectorCategories={trending.categories}
         mainTitle={trending.mainTitle}
-        onFetch={fetchTrendings}
       />
     </>
   );

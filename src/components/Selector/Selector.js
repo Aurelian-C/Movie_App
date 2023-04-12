@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Selector.module.css';
 
-const CardSelector = props => {
+export default function CardSelector({ mainTitle, selectorCategories }) {
   const selectCategoryHandler = e => {
     const targetElement = e.target.closest(`.${classes.selector__item}`);
     const elements = e.currentTarget.querySelectorAll(
@@ -13,19 +13,19 @@ const CardSelector = props => {
     targetElement.classList.add('selected');
 
     const string = targetElement.dataset.mediaType;
-    props.onFetch(string);
+    console.log(string);
   };
 
   return (
     <div className={classes.selector}>
       <div className={classes.selector__container}>
-        <h3 className={classes.selector__description}>{props.mainTitle}</h3>
+        <h3 className={classes.selector__description}>{mainTitle}</h3>
         <div className={classes.selector__wrapper}>
           <ul
             className={classes.selector__items}
             onClick={selectCategoryHandler}
           >
-            {props.selectorCategories.map((title, idx) => {
+            {selectorCategories.map((title, idx) => {
               if (idx === 0) {
                 return (
                   <li
@@ -55,6 +55,4 @@ const CardSelector = props => {
       </div>
     </div>
   );
-};
-
-export default CardSelector;
+}

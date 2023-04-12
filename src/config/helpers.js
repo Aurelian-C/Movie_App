@@ -1,4 +1,4 @@
-import { TIMEOUT_FETCH } from './config';
+import { TIMEOUT_FETCH, IMAGES_PATH } from './config';
 
 const promiseDelay = function (seconds) {
   return new Promise((resolve, _) => {
@@ -35,4 +35,24 @@ export const AJAX = async function (url, uploadData = undefined) {
   } catch (err) {
     throw err;
   }
+};
+
+export const createCardDetails = result => {
+  const date = result.first_air_date || result.release_date;
+  const options = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  };
+  const releaseDate = new Date(date).toLocaleString('en-US', options);
+
+  return {
+    title: result.title || result.name || result.original_name,
+    mediaType: result.media_type,
+    posterImage: `${IMAGES_PATH}${result.poster_path}`,
+    backdropImage: `${IMAGES_PATH}${result.backdrop_path}`,
+    voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
+    id: result.id,
+    releaseDate,
+  };
 };

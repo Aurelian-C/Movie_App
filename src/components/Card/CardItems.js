@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CardItem from './CardItem';
 import Selector from '../Selector/Selector';
 import classes from './CardItems.module.css';
 
-const CardItems = props => {
-  const [items, setItems] = useState(props.items);
-  const trendingTitle = props.mainTitle.toLowerCase();
-
-  const fetchData = async string => {
-    const items = await props.onFetch(string, 'all', 'trending');
-    setItems(items);
-  };
+export default function CardItems({ items, mainTitle, selectorCategories }) {
+  const trendingTitle = mainTitle.toLowerCase();
 
   return (
     <section className={classes['cards-section']}>
       <div>
         <Selector
-          selectorCategories={props.selectorCategories}
-          mainTitle={props.mainTitle}
-          onFetch={fetchData}
+          selectorCategories={selectorCategories}
+          mainTitle={mainTitle}
         />
       </div>
       <div>
@@ -42,6 +35,4 @@ const CardItems = props => {
       </div>
     </section>
   );
-};
-
-export default CardItems;
+}
