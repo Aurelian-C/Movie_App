@@ -3,7 +3,12 @@ import CardItem from './CardItem';
 import classes from './CardItems.module.css';
 import usePopular from '../../hooks/usePopular';
 
-export default function CardItems({ mainTitle, children, word }) {
+export default function CardItems({
+  mainTitle,
+  children,
+  word,
+  hasBackground,
+}) {
   const trendingTitle = mainTitle.toLowerCase();
   const items = usePopular(word);
 
@@ -13,7 +18,7 @@ export default function CardItems({ mainTitle, children, word }) {
       <div>
         <div
           className={`${classes.cards} ${
-            trendingTitle === 'trendings' && classes.cards__background
+            hasBackground && classes.cards__background
           }`}
         >
           <div className={classes.cards__container}>

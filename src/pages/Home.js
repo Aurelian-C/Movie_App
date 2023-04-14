@@ -25,6 +25,7 @@ export default function HomePage() {
       <CardItems
         selectorCategories={popularity.categories}
         mainTitle={popularity.mainTitle}
+        hasBackground={true}
         word={popularityTitle}
       >
         <Selector
