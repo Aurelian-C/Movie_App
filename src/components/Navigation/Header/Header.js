@@ -8,9 +8,11 @@ import SearchButton from './SearchButton';
 import MenuContainer from './MenuContainer';
 import MenuPhone from './MenuPhone';
 import DropDownButton from './DropDownButton';
+import MenuHints from './MenuHints';
 
 export default function Header({ onShowSideMenu, searchHints }) {
   const [buttonSearchVisibility, setButtonSearchVisibility] = useState(true);
+  const [menuHintsVisibility, setMenuHintsVisibility] = useState(false);
   const headerRef = useRef();
   const headerContainerRef = useRef();
 
@@ -20,6 +22,7 @@ export default function Header({ onShowSideMenu, searchHints }) {
 
   const handleHideButtonSearch = () => {
     setButtonSearchVisibility(false);
+    setMenuHintsVisibility(true);
   };
 
   useEffect(() => {
@@ -29,6 +32,7 @@ export default function Header({ onShowSideMenu, searchHints }) {
       const scrollYnumber = window.scrollY;
       const headerHeight =
         headerContainerRef.current.getBoundingClientRect().height;
+      setMenuHintsVisibility(false);
 
       // Hide header when scroll down
       if (scrollYnumber > scrollNumber) {
@@ -62,7 +66,11 @@ export default function Header({ onShowSideMenu, searchHints }) {
           />
         </MenuContainer>
       </div>
-      {buttonSearchVisibility || <MenuSearch searchHints={searchHints} />}
+      {buttonSearchVisibility || (
+        <MenuSearch>
+          {menuHintsVisibility && <MenuHints searchHints={searchHints} />}
+        </MenuSearch>
+      )}
     </header>
   );
 }

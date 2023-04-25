@@ -1,8 +1,7 @@
 import React from 'react';
 import classes from './MenuSearch.module.css';
-import SearchHint from './SearchHint';
 
-const MenuSearch = props => {
+export default function MenuSearch({ children }) {
   return (
     <div className={`${classes['header-search']}`}>
       <div className={classes['header-search__form-container']}>
@@ -22,23 +21,7 @@ const MenuSearch = props => {
           />
         </form>
       </div>
-      <div className={classes['header-search__content']}>
-        <div className={classes['header-search__trending']}>
-          <div className={classes['header-search__trending-container']}>
-            <i
-              className={`fa-arrow-trend-up fa-solid ${classes['header-search__trending-icon']}`}
-            ></i>
-            <span className={classes['header-search__title']}>Trending</span>
-          </div>
-        </div>
-        <ul className={classes['header-search__hints']}>
-          {props.searchHints.map(item => (
-            <SearchHint name={item} key={item} />
-          ))}
-        </ul>
-      </div>
+      {children}
     </div>
   );
-};
-
-export default React.memo(MenuSearch);
+}
