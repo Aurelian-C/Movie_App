@@ -32,6 +32,8 @@ export default function Header({ onShowSideMenu, searchHints }) {
       const scrollYnumber = window.scrollY;
       const headerHeight =
         headerContainerRef.current.getBoundingClientRect().height;
+
+      // Hide hints when scrolling
       setMenuHintsVisibility(false);
 
       // Hide header when scroll down

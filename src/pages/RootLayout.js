@@ -235,11 +235,11 @@ const trending = {
 export default function RootLayout() {
   const [sideMenuVisibility, setSideMenuVisibility] = useState(false);
 
-  const showSideMenuHandler = () => {
+  const handleShowSideMenu = () => {
     setSideMenuVisibility(true);
   };
 
-  const hideSideMenuHandler = () => {
+  const handleHideSideMenu = () => {
     setSideMenuVisibility(false);
   };
 
@@ -248,13 +248,13 @@ export default function RootLayout() {
   return (
     <>
       <Header
-        onShowSideMenu={showSideMenuHandler}
+        onShowSideMenu={handleShowSideMenu}
         trendingItems={trending.items}
         searchHints={searchHints}
       />
       <SideMenu
         sideMenuVisibility={sideMenuVisibility}
-        onHideSideMenu={hideSideMenuHandler}
+        onHideSideMenu={handleHideSideMenu}
       />
       <Outlet />
       <Footer />

@@ -2,6 +2,10 @@ import React from 'react';
 import classes from './Search.module.css';
 
 const Search = () => {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <section id="search">
       <div className={classes.search}>
@@ -14,7 +18,7 @@ const Search = () => {
               }
             </span>
           </div>
-          <form className={classes.search__form}>
+          <form className={classes.search__form} onSubmit={handleSubmit}>
             <input
               type="text"
               className={classes.search__input}

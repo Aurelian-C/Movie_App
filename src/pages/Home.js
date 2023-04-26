@@ -15,6 +15,7 @@ const popularity = {
 
 export default function HomePage() {
   const [popularityTitle, setPopularityTitle] = useState('movie');
+
   function handlePopularityTitle(word) {
     setPopularityTitle(word);
   }
