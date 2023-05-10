@@ -1,6 +1,5 @@
 import HomePage from './pages/Home';
-import MoviePage from './pages/Movie';
-import TvPage from './pages/TV';
+import PresentationPage from './pages/Presentation';
 import RootLayout from './pages/RootLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -13,24 +12,24 @@ export default function App() {
         { index: true, element: <HomePage /> },
         {
           path: 'movie',
-          element: <MoviePage />,
+          element: <PresentationPage />,
           children: [
             { path: 'now-playing' },
             { path: 'upcoming' },
             { path: 'top-rated' },
-            { path: ':movieId' },
           ],
         },
         {
           path: 'tv',
-          element: <TvPage />,
+          element: <PresentationPage />,
           children: [
             { path: 'airing-today' },
             { path: 'on-the-air' },
             { path: 'top-rated' },
-            { path: ':tvId' },
           ],
         },
+        { path: 'movie/:movieId' },
+        { path: 'tv/:tvId' },
         { path: 'person', children: [{ path: ':personId' }] },
         { path: 'discuss' },
         { path: 'leaderboard' },
