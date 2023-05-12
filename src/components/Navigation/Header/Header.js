@@ -15,7 +15,6 @@ export default function Header({ onShowSideMenu, searchHints }) {
   const [menuHintsVisibility, setMenuHintsVisibility] = useState(false);
   const headerRef = useRef();
   const headerContainerRef = useRef();
-  // console.log(menuHintsVisibility);
 
   const handleShowButtonSearch = () => {
     setButtonSearchVisibility(true);

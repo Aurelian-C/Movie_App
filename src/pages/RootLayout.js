@@ -2,7 +2,7 @@ import Header from '../components/Navigation/Header/Header';
 import SideMenu from '../components/Navigation/Side/SideMenu';
 import Footer from '../components/Footer/Footer';
 import { useState } from 'react';
-import useSearchHints from '../hooks/useSearchHints';
+import { useSearchHints } from '../hooks/useSearchHints';
 import { Outlet } from 'react-router-dom';
 
 const trending = {
