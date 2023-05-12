@@ -1,3 +1,4 @@
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import classes from './CardButton.module.css';
 import { useRef, useEffect } from 'react';
 
@@ -7,20 +8,7 @@ export default function CardButton({
 }) {
   const buttonRef = useRef();
 
-  function handleOutsideClick(e) {
-    const isContain = buttonRef.current.contains(e.target);
-    if (!isContain) {
-      onSetOverlayVisibility(false);
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('click', handleOutsideClick);
-
-    return () => {
-      window.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
+  useOnClickOutside(buttonRef, () => onSetOverlayVisibility(false));
 
   return (
     <div

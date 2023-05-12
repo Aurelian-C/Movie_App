@@ -234,6 +234,7 @@ const trending = {
 
 export default function RootLayout() {
   const [sideMenuVisibility, setSideMenuVisibility] = useState(false);
+  console.log(sideMenuVisibility);
 
   const handleShowSideMenu = () => {
     setSideMenuVisibility(true);

@@ -1,5 +1,7 @@
+import { useRef } from 'react';
 import classes from './MenuHints.module.css';
 import SearchHint from './SearchHint';
+import { useOnClickOutside } from '../../../hooks/useOnClickOutside';
 
 export default function MenuHints({ searchHints }) {
   return (
