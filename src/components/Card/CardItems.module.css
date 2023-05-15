@@ -15,7 +15,7 @@
   position: relative;
 }
 
-.cards::after {
+/* .cards::after {
   content: '';
   width: 60px;
   height: 100%;
@@ -29,7 +29,7 @@
     #fff 100%
   );
   transition: opacity 0.5s ease-in-out;
-}
+} */
 
 .cards__background {
   background: url('../../assets/img/background_for_trending_section.svg') bottom
