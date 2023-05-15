@@ -1,0 +1,15 @@
+.header__access {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.header__access i {
+  cursor: pointer;
+}
+
+.icon__menu {
+  display: none;
+}

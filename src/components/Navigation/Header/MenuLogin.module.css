@@ -1,3 +1,7 @@
+ul {
+  list-style: none;
+}
+
 .header__menu-items {
   display: flex;
   align-items: center;
@@ -8,7 +12,6 @@
 .header__menu-item {
   position: relative;
   padding: 0.5rem 0;
-  list-style: none;
 }
 
 .header__menu-item-language {
