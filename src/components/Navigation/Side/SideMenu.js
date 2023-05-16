@@ -19,13 +19,7 @@ const sideMenuCategories = {
 };
 
 const sideMenuLinks = [
-  { url: '/', title: 'Contribution Bible' },
-  { url: '/', title: 'Apps' },
-  { url: '/discuss', title: 'Discussions' },
-  { url: '/leaderboard', title: 'Leaderboard' },
-  { url: '/', title: 'Contribute' },
   { url: '/documentation/api', title: 'API' },
-  { url: '/talk', title: 'Support' },
   { url: '/', title: 'About' },
 ];
 

@@ -85,36 +85,6 @@ export default function MenuLinks() {
           </ul>
         </div>
       </li>
-      <li className={classes['header__menu-item']}>
-        <h2 className={classes['header__menu-title']}>More</h2>
-        <div className={classes['header__menu-container-extras']}>
-          <ul className={classes['header__menu-extras']}>
-            <li className={classes['header__menu-extra']}>
-              <Link to="discuss" className={classes['header__menu-link']}>
-                Discussions
-              </Link>
-            </li>
-            <li className={classes['header__menu-extra']}>
-              <Link to="leaderboard" className={classes['header__menu-link']}>
-                Leaderboard
-              </Link>
-            </li>
-            <li className={classes['header__menu-extra']}>
-              <Link to="talk" className={classes['header__menu-link']}>
-                Support
-              </Link>
-            </li>
-            <li className={classes['header__menu-extra']}>
-              <Link
-                to="documentation/api"
-                className={classes['header__menu-link']}
-              >
-                API
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </li>
     </>
   );
 }
