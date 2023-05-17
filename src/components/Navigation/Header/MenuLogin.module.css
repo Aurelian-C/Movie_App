@@ -32,7 +32,7 @@ ul {
 .header__menu-link:link,
 .header__menu-link:visited {
   text-decoration: none;
-  color: white;
+  color: var(--main-text-color-light);
 }
 
 @media screen and (max-width: 900px) {

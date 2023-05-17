@@ -26,7 +26,6 @@
 
 .card__content {
   position: relative;
-  color: black;
   padding-top: 2.5rem;
 }
 
@@ -34,7 +33,7 @@
   position: absolute;
   top: -20px;
   left: 10px;
-  background-color: var(--header-bg-dark);
+  background-color: var(--main-bg-score);
   padding: 10px;
   border-radius: 50%;
   color: white;
@@ -50,16 +49,16 @@
 
 .card__title-anchor:link,
 .card__title-anchor:visited {
-  color: black;
   text-decoration: none;
+  color: var(--main-text-color-light);
 }
 
 .card__title-anchor:hover {
-  color: rgb(148, 51, 239);
+  color: var(--main-text-color-dark);
 }
 
 .card__date {
-  color: rgb(168, 168, 168);
+  filter: brightness(94%);
   font-size: 1.4rem;
   margin-top: 2px;
 }

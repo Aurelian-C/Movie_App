@@ -1,5 +1,4 @@
 .selector {
-  color: var(--font-color-dark);
   display: flex;
   align-items: center;
   gap: 20px;
@@ -24,7 +23,7 @@
 
 .selector__items {
   list-style: none;
-  border: 1px solid black;
+  border: 1px solid var(--main-text-color-light);
   border-radius: 30px;
   display: flex;
 }
@@ -52,8 +51,8 @@
   .selector__items.active {
     background: linear-gradient(
       to right,
-      var(--selector-bg-green--lighter) 0%,
-      var(--selector-bg-green--light) 100%
+      var(--main-bg-selector-1) 0%,
+      var(--main-bg-selector-2) 100%
     );
     border-radius: 15px;
   }

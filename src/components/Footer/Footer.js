@@ -1,5 +1,5 @@
 import classes from './Footer.module.css';
-import logo from '../../assets/img/tmdb_logo2.svg';
+import logo from '../../assets/img/logo1.png';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

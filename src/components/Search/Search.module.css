@@ -1,5 +1,5 @@
 .search {
-  background-image: url('../../assets/img/search_img.jpg');
+  /* background-image: url('../../assets/img/search_img.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@
   width: 100%;
   height: 4rem;
   padding-left: 1.5rem;
-  border-radius: 5rem;
+  border-radius: 3px;
   outline: none;
   border: none;
   font-size: 1.6rem;
@@ -56,15 +56,15 @@
   transform: translateY(-50%);
   border: none;
   padding: 1rem 2rem;
-  border-radius: 3rem;
   color: white;
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 0.5px;
   cursor: pointer;
-  background: linear-gradient(
+  background-color: var(--main-bg-button-search);
+  /* background: linear-gradient(
     to right,
-    var(--light-green) 0%,
-    var(--light-blue) 100%
-  );
+    var(--main-bg-selector-2) 0%,
+    var(--main-bg-selector-1) 100%
+  ); */
 }

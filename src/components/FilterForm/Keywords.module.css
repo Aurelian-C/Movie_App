@@ -78,7 +78,7 @@
 }
 
 .option.selected {
-  background-color: var(--slider-color);
+  background-color: var(--main-bg-slider);
 }
 
 .option.selected:hover {

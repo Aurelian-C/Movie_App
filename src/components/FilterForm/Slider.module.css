@@ -87,7 +87,7 @@
   -webkit-appearance: none;
   height: 15px;
   width: 15px;
-  background-color: var(--slider-color);
+  background-color: var(--main-bg-slider);
   cursor: pointer;
   margin-top: -9px;
   pointer-events: auto;
@@ -100,7 +100,7 @@
   width: 1.7em;
   cursor: pointer;
   border-radius: 50%;
-  background-color: var(--slider-color);
+  background-color: var(--main-bg-slider);
   pointer-events: auto;
 }
 
@@ -110,12 +110,12 @@
   width: 1.7em;
   cursor: pointer;
   border-radius: 50%;
-  background-color: var(--slider-color);
+  background-color: var(--main-bg-slider);
   pointer-events: auto;
 }
 
 .slider__input:active::-webkit-slider-thumb {
-  background-color: var(--slider-color);
+  background-color: var(--main-bg-slider);
   border: 1px solid black;
 }
 

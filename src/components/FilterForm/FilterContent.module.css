@@ -37,7 +37,7 @@
 }
 
 .form__select:hover {
-  background-color: var(--slider-color);
+  background-color: var(--main-bg-slider);
   color: white;
 }
 

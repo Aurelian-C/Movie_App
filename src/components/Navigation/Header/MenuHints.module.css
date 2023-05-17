@@ -3,9 +3,9 @@
 }
 
 .header-search__trending {
-  background-color: var(--hints-bg-light);
+  background-color: var(--main-bg-hints);
   padding: 0.5rem var(--padding-sides-main);
-  border-bottom: 1px solid var(--border-bottom-search-light);
+  border-bottom: 1px solid var(--main-border-color);
 }
 
 .header-search__trending-container {

@@ -1,10 +1,10 @@
 .header-search {
-  background-color: var(--header-bg-light);
+  background-color: var(--main-bg-search);
 }
 
 .header-search__form-container {
   padding: 0 var(--padding-sides-main);
-  border-bottom: 1px solid var(--border-bottom-search-light);
+  border-bottom: 1px solid var(--main-border-color);
 }
 
 .header-search__form {

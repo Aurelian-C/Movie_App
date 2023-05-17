@@ -3,34 +3,40 @@
 :root {
   font-size: 62.5%;
 
-  --main-bg-image: linear-gradient(90deg, #ffffff, #ececec);
+  --main-bg-image: linear-gradient(90deg, #a9d0d6, #8dcbd6);
+  --main-bg-header: rgba(255, 255, 255, 0.1);
+  --main-bg-score: rgba(30, 178, 166, 0.8);
+  --main-bg-footer: rgb(3, 37, 65);
+  --main-bg-search: rgb(255, 255, 255);
+  --main-bg-hints: rgb(247, 247, 247);
+  --main-bg-selector-1: rgb(192, 254, 207);
+  --main-bg-selector-2: rgb(30, 213, 169);
+  --main-bg-slider: rgb(1, 180, 228);
+  --main-bg-button-circle: rgb(30, 178, 166, 0.7);
+  --main-bg-button-search: rgb(30, 178, 166);
+  --main-bg-button-selected: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #e4e4e4 100%
+  );
+  --main-text-color-light: white;
+  --main-text-color-dark: black;
+  --main-text-color-button-selected: linear-gradient(
+    to right,
+    #656565 0%,
+    #494949 100%
+  );
+  --main-border-color: rgb(220, 220, 220);
 
   --padding-sides-main: 5rem;
   --padding-left-side-main: var(--padding-sides-main);
   --padding-right-side-main: var(--padding-sides-main);
   --card-border-radius: 8px;
-
-  --font-color-light: white;
-  --font-color-dark: black;
-  --header-bg-dark: rgb(3, 37, 65);
-  --header-bg-light: rgb(255, 255, 255);
-  --mobile-menu-bg-dark: rgba(3, 37, 65, 0.9);
-  --menu-extras-bg-light: rgb(237, 237, 237);
-  --footer-bg-dark: rgb(3, 37, 65);
-  --footer-bg-light: rgb(255, 255, 255);
-  --light-green: rgb(30, 213, 169);
-  --light-blue: rgb(1, 180, 228);
-  --selector-bg-green--lighter: rgb(192, 254, 207);
-  --selector-bg-green--light: rgb(30, 213, 169);
-  --border-bottom-search-light: rgb(220, 220, 220);
-  --hints-bg-light: rgb(247, 247, 247);
-  --slider-color: rgb(1, 180, 228);
-
   --container-max-width: 125rem;
 }
 
 .dark {
-  --main-bg-image: linear-gradient(90deg, #555555, #383838);
+  --main-bg-image: linear-gradient(90deg, #191919, #161616);
 }
 
 @media screen and (max-width: 700px) {
@@ -64,7 +70,7 @@ html {
 }
 
 body {
-  color: black;
+  color: var(--main-text-color-light);
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
@@ -73,7 +79,7 @@ body {
 
 .selected {
   width: 100%;
-  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  background: var(--main-text-color-button-selected);
   background-clip: text;
   color: transparent;
   display: flex;
@@ -82,7 +88,7 @@ body {
 }
 
 .selected div {
-  background-color: black;
+  background: var(--main-bg-button-selected);
   position: absolute;
   top: -1;
   left: 0;
