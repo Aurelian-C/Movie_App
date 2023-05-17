@@ -234,6 +234,7 @@ export default function useTrendings(timeWindow, mediaType, category) {
         const { results } = await AJAX(
           `${API_URL}/${category}/${mediaType}/${timeWindow}?api_key=${API_KEY}`
         );
+        console.log(results);
         setItems(results.map(createCardDetails));
       } catch (err) {
         throw err;

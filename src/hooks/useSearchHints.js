@@ -22,7 +22,7 @@ export function useSearchHints(category, mediaType, timeWindow) {
       }
     }
     if (searchHints.length === 0) fetchData();
-  }, [searchHints]);
+  }, [searchHints, category, mediaType, timeWindow]);
 
   return searchHints;
 }

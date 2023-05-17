@@ -1,12 +1,12 @@
 import { TIMEOUT_FETCH, IMAGES_PATH } from './config';
 
-const promiseDelay = function (seconds) {
-  return new Promise((resolve, _) => {
-    setTimeout(() => {
-      resolve();
-    }, seconds * 1000);
-  });
-};
+// const promiseDelay = function (seconds) {
+//   return new Promise((resolve, _) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, seconds * 1000);
+//   });
+// };
 
 const timeout = function (seconds) {
   return new Promise((_, reject) => {
