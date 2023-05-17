@@ -1,10 +1,10 @@
 import React from 'react';
 import CardItem from './CardItem';
 import classes from './CardItems.module.css';
-import usePopular from '../../hooks/usePopular';
+import useTrending from '../../hooks/useTrending';
 
-export default function CardItems({ children, word, hasBackground }) {
-  const items = usePopular(word);
+export default function CardItems({ children, mediaType, hasBackground }) {
+  const items = useTrending(mediaType);
 
   return (
     <section className={classes['cards-section']}>

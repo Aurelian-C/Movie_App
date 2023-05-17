@@ -3,36 +3,53 @@ import CardItems from '../components/Card/CardItems';
 import Selector from '../components/Selector/Selector';
 import { useState } from 'react';
 
-// const trending = {
-//   categories: ['Day', 'Week'],
-//   mainTitle: 'Trendings',
-// };
-
-const popularity = {
+const trendings = {
   categories: ['Movie', 'TV'],
-  mainTitle: "What's popular",
+  mainTitle: 'Trendings',
+};
+
+const people = {
+  categories: ['Day', 'Week'],
+  mainTitle: 'People',
 };
 
 export default function HomePage() {
-  const [popularityTitle, setPopularityTitle] = useState('movie');
+  const [trendingsTitle, setTrendingsTitle] = useState('movie');
+  const [peopleTitle, setPeopleTitle] = useState('person');
 
-  function handlePopularityTitle(word) {
-    setPopularityTitle(word);
+  function handleTrendingsTitle(word) {
+    setTrendingsTitle(word);
+  }
+
+  function handlePeopleTitle(word) {
+    setPeopleTitle(word);
   }
 
   return (
     <>
       <Search />
       <CardItems
-        selectorCategories={popularity.categories}
-        mainTitle={popularity.mainTitle}
-        hasBackground={false}
-        word={popularityTitle}
+        selectorCategories={trendings.categories}
+        mainTitle={trendings.mainTitle}
+        hasBackground={true}
+        mediaType={trendingsTitle}
       >
         <Selector
-          selectorCategories={popularity.categories}
-          mainTitle={popularity.mainTitle}
-          onGetCategoryTitle={handlePopularityTitle}
+          selectorCategories={trendings.categories}
+          mainTitle={trendings.mainTitle}
+          onGetCategoryTitle={handleTrendingsTitle}
+        />
+      </CardItems>
+      <CardItems
+        selectorCategories={people.categories}
+        mainTitle={people.mainTitle}
+        hasBackground={false}
+        mediaType={peopleTitle}
+      >
+        <Selector
+          selectorCategories={people.categories}
+          mainTitle={people.mainTitle}
+          onGetCategoryTitle={handlePeopleTitle}
         />
       </CardItems>
     </>

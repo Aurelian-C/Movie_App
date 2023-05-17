@@ -4,7 +4,7 @@ import classes from './CardItem.module.css';
 import CardOverlay from './CardOverlay';
 import { Link } from 'react-router-dom';
 
-const CardItem = props => {
+const CardItem = ({ image, voteAverage, title, releaseDate }) => {
   const [buttonIsShown, setButtonIsShown] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
 
@@ -39,20 +39,19 @@ const CardItem = props => {
       )}
       <div className={classes.card__image}>
         <Link href="/" className={classes['card__image-anchor']}>
-          <img
-            src={props.image}
-            alt="The Chronicles of Narnia: The Lion, the Witch and the Wardrobe"
-          />
+          <img src={image} alt={title} />
         </Link>
       </div>
       <div className={classes.card__content}>
-        <div className={classes.card__score}>{props.voteAverage}</div>
+        {voteAverage && (
+          <div className={classes.card__score}>{voteAverage}</div>
+        )}
         <div className={classes.card__title}>
           <Link href="/" className={classes['card__title-anchor']}>
-            {props.title}
+            {title}
           </Link>
         </div>
-        <div className={classes.card__date}>{props.releaseDate}</div>
+        <div className={classes.card__date}>{releaseDate}</div>
       </div>
     </div>
   );

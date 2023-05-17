@@ -1,0 +1,26 @@
+import { useEffect, useState } from 'react';
+import { AJAX, createCardDetails } from '../config/helpers';
+import { API_URL, API_KEY } from '../config/config';
+
+export default function useTrending(mediaType, timeWindow = 'day') {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { results } = await AJAX(
+          `${API_URL}trending/${mediaType}/${timeWindow}?api_key=${API_KEY}`
+        );
+        const cardDetails = results.map(createCardDetails);
+        setItems(cardDetails);
+      } catch (err) {
+        throw err;
+      }
+    }
+    if (mediaType) {
+      fetchData();
+    }
+  }, [mediaType]);
+
+  return items;
+}

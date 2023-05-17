@@ -46,10 +46,14 @@ export const createCardDetails = result => {
   };
   const releaseDate = new Date(date).toLocaleString('en-US', options);
 
+  let posterImage = result.poster_path
+    ? `${IMAGES_PATH}${result.poster_path}`
+    : `${IMAGES_PATH}${result.profile_path}`;
+
   return {
     title: result.title || result.name || result.original_name,
     mediaType: result.media_type,
-    posterImage: `${IMAGES_PATH}${result.poster_path}`,
+    posterImage: posterImage,
     backdropImage: `${IMAGES_PATH}${result.backdrop_path}`,
     voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
     id: result.id,
