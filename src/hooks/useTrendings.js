@@ -242,7 +242,7 @@ export default function useTrendings(timeWindow, mediaType, category) {
     if (mediaType) {
       fetchData();
     }
-  });
+  }, [timeWindow, mediaType, category]);
 
   return items;
 }

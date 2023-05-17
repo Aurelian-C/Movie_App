@@ -1,29 +1,15 @@
-import { useState } from 'react';
-import CardButton from './CardButton';
 import classes from './CardOverlay.module.css';
+import { useRef } from 'react';
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 
-export default function CardOverlay() {
-  const [overlayVisibility, setOverlayVisibility] = useState(false);
-
-  function handleOverlayVisibility() {
-    if (!overlayVisibility) {
-      setOverlayVisibility(true);
-    } else {
-      setOverlayVisibility(false);
-    }
-  }
-
+export default function CardOverlay({ overlayVisibility }) {
   let overlayClass = overlayVisibility
     ? `${classes.card__overlay}`
     : `${classes.card__overlay} hidden`;
 
   return (
-    <div>
+    <>
       <div className={overlayClass}></div>
-      <CardButton
-        onToggleOverlayVisibility={handleOverlayVisibility}
-        onSetOverlayVisibility={setOverlayVisibility}
-      />
-    </div>
+    </>
   );
 }

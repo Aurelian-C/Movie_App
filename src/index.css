@@ -3,10 +3,18 @@
 :root {
   font-size: 62.5%;
 
-  --main-bg-image: linear-gradient(90deg, #a9d0d6, #8dcbd6);
+  --main-bg-image: linear-gradient(
+    90deg,
+    rgb(169, 208, 214),
+    rgb(141, 203, 214)
+  );
   --main-bg-header: rgba(255, 255, 255, 0.1);
+  --main-bg-mobile-navigation: linear-gradient(
+    90deg,
+    rgb(115 142 147 / 30%),
+    rgb(117 169 179 / 30%)
+  );
   --main-bg-score: rgba(30, 178, 166, 0.8);
-  --main-bg-footer: rgb(3, 37, 65);
   --main-bg-search: rgb(255, 255, 255);
   --main-bg-hints: rgb(247, 247, 247);
   --main-bg-selector-1: rgb(192, 254, 207);
@@ -18,6 +26,11 @@
     to right,
     #ffffff 0%,
     #e4e4e4 100%
+  );
+  --main-bg-cards-scrollbar: linear-gradient(
+    90deg,
+    rgb(140, 181, 188),
+    rgb(119, 150, 156)
   );
   --main-text-color-light: white;
   --main-text-color-dark: black;

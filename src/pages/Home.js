@@ -15,9 +15,13 @@ const popularity = {
 
 export default function HomePage() {
   const [popularityTitle, setPopularityTitle] = useState('movie');
+  const [tredingTitle, setTrendingTitle] = useState('day');
 
   function handlePopularityTitle(word) {
     setPopularityTitle(word);
+  }
+  function handleTrendingTitle(word) {
+    setTrendingTitle(word);
   }
 
   return (
@@ -26,13 +30,25 @@ export default function HomePage() {
       <CardItems
         selectorCategories={popularity.categories}
         mainTitle={popularity.mainTitle}
-        hasBackground={true}
+        hasBackground={false}
         word={popularityTitle}
       >
         <Selector
           selectorCategories={popularity.categories}
           mainTitle={popularity.mainTitle}
           onGetCategoryTitle={handlePopularityTitle}
+        />
+      </CardItems>
+      <CardItems
+        selectorCategories={trending.categories}
+        mainTitle={trending.mainTitle}
+        hasBackground={true}
+        word={tredingTitle}
+      >
+        <Selector
+          selectorCategories={trending.categories}
+          mainTitle={trending.mainTitle}
+          onGetCategoryTitle={handleTrendingTitle}
         />
       </CardItems>
     </>

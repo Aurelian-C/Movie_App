@@ -1,11 +1,42 @@
+import { useState } from 'react';
+import CardButton from './CardButton';
 import classes from './CardItem.module.css';
 import CardOverlay from './CardOverlay';
 import { Link } from 'react-router-dom';
 
 const CardItem = props => {
+  const [buttonIsShown, setButtonIsShown] = useState(false);
+  const [overlayVisibility, setOverlayVisibility] = useState(false);
+
+  function handleOverlayVisibility() {
+    if (!overlayVisibility) {
+      setOverlayVisibility(true);
+    } else {
+      setOverlayVisibility(false);
+    }
+  }
+
+  function handleMouseOverCard() {
+    setButtonIsShown(true);
+  }
+  function handleMouseLeaveCard() {
+    setButtonIsShown(false);
+    setOverlayVisibility(false);
+  }
+
   return (
-    <div className={classes.card}>
-      <CardOverlay />
+    <div
+      className={classes.card}
+      onMouseOver={handleMouseOverCard}
+      onMouseLeave={handleMouseLeaveCard}
+    >
+      <CardOverlay overlayVisibility={overlayVisibility} />
+      {buttonIsShown && (
+        <CardButton
+          onToggleOverlayVisibility={handleOverlayVisibility}
+          onSetOverlayVisibility={setOverlayVisibility}
+        />
+      )}
       <div className={classes.card__image}>
         <Link href="/" className={classes['card__image-anchor']}>
           <img

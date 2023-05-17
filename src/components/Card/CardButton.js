@@ -1,21 +1,8 @@
-import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import classes from './CardButton.module.css';
-import { useRef, useEffect } from 'react';
 
-export default function CardButton({
-  onToggleOverlayVisibility,
-  onSetOverlayVisibility,
-}) {
-  const buttonRef = useRef();
-
-  useOnClickOutside(buttonRef, () => onSetOverlayVisibility(false));
-
+export default function CardButton({ onToggleOverlayVisibility }) {
   return (
-    <div
-      className={classes.card__circle}
-      onClick={onToggleOverlayVisibility}
-      ref={buttonRef}
-    >
+    <div className={classes.card__circle} onClick={onToggleOverlayVisibility}>
       <button className={classes.card__button}>
         <i className={`fa-solid fa-circle ${classes.card__dot}`} />
         <i className={`fa-solid fa-circle ${classes.card__dot}`} />

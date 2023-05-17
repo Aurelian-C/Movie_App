@@ -1,5 +1,5 @@
 .dropdown-menu {
-  background-color: rgba(3, 37, 65, 0.9);
+  background: var(--main-bg-mobile-navigation);
   backdrop-filter: blur(15px);
   padding: 3rem 0 0 2rem;
   position: fixed;
