@@ -4,7 +4,7 @@ import classes from './CardItem.module.css';
 import CardOverlay from './CardOverlay';
 import { Link } from 'react-router-dom';
 
-const CardItem = ({ image, voteAverage, title, releaseDate }) => {
+export default function CardItem({ image, voteAverage, title, releaseDate }) {
   const [buttonIsShown, setButtonIsShown] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
 
@@ -43,9 +43,7 @@ const CardItem = ({ image, voteAverage, title, releaseDate }) => {
         </Link>
       </div>
       <div className={classes.card__content}>
-        {voteAverage && (
-          <div className={classes.card__score}>{voteAverage}</div>
-        )}
+        <div className={classes.card__score}>{voteAverage}</div>
         <div className={classes.card__title}>
           <Link href="/" className={classes['card__title-anchor']}>
             {title}
@@ -55,6 +53,4 @@ const CardItem = ({ image, voteAverage, title, releaseDate }) => {
       </div>
     </div>
   );
-};
-
-export default CardItem;
+}

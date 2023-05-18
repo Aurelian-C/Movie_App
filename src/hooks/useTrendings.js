@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AJAX, createCardDetails } from '../config/helpers';
 import { API_URL, API_KEY } from '../config/config';
 
-export default function useTrending(mediaType, timeWindow = 'day') {
+export default function useTrendings(mediaType, timeWindow = 'day') {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
