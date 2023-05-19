@@ -7,3 +7,31 @@
   padding: 1rem;
   z-index: 1;
 }
+
+.card__info {
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.card__info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.card__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  margin: auto;
+  background-color: var(--main-bg-button-circle);
+  padding: 5px 10px;
+  color: white;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.card__login:hover {
+  box-shadow: 1px 2px 10px rgba(255, 255, 255, 0.1);
+}

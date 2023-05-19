@@ -26,7 +26,7 @@ export default function HomePage() {
     setTrendingsTitle(word);
   }
 
-  function handleTrendingsSelector(word) {
+  function handleTopRatedSelector(word) {
     setTopRatedTitle(word);
   }
 
@@ -44,7 +44,7 @@ export default function HomePage() {
         <Selector
           selectorCategories={topRated.categories}
           mainTitle={topRated.mainTitle}
-          onGetCategoryTitle={handleTrendingsSelector}
+          onGetCategoryTitle={handleTopRatedSelector}
         />
       </CardItems>
     </>
