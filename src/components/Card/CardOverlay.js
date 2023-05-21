@@ -12,7 +12,7 @@ export default function CardOverlay({ overlayVisibility }) {
           <h2>Want to rate or add this item to a list?</h2>
           <button className={classes.card__login}>
             <h3>Login</h3>
-            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <i className="fa-solid fa-arrow-right-to-bracket"></i>
           </button>
         </div>
       </div>
