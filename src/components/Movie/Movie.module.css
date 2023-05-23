@@ -4,7 +4,7 @@
   background-position-x: 50%;
   height: 55rem;
   margin-top: 10rem;
-  padding: 3rem;
+  padding: 3rem var(--padding-sides-main);
 }
 
 .header__container {
