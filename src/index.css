@@ -45,7 +45,7 @@
   --padding-left-side-main: var(--padding-sides-main);
   --padding-right-side-main: var(--padding-sides-main);
   --card-border-radius: 8px;
-  --container-max-width: 125rem;
+  --page-max-width: 130rem;
 }
 
 .dark {

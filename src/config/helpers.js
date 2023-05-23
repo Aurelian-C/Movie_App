@@ -60,3 +60,29 @@ export const createCardDetails = result => {
     releaseDate,
   };
 };
+
+export const createMovieDetails = result => {
+  const date = result.first_air_date || result.release_date;
+  const options = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  };
+  const releaseDate = new Date(date).toLocaleString('en-US', options);
+
+  let posterImage = result.poster_path
+    ? `${IMAGES_PATH}${result.poster_path}`
+    : `${IMAGES_PATH}${result.profile_path}`;
+
+  return {
+    title: result.title || result.name || result.original_name,
+    posterImage: posterImage,
+    backdropImage: `${IMAGES_PATH}${result.backdrop_path}`,
+    voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
+    id: result.id,
+    releaseDate,
+    genres: result.genres,
+    tagline: result.tagline,
+    runtime: result.runtime,
+  };
+};

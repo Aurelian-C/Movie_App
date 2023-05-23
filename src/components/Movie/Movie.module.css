@@ -1,0 +1,24 @@
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 55rem;
+  margin-top: 10rem;
+  padding: 3rem;
+}
+
+.header__container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.header__poster {
+  height: 100%;
+}
+
+.header__poster img {
+  height: 100%;
+  border-radius: 10px;
+}

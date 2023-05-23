@@ -19,6 +19,7 @@ export default function CardItems({ children, items, hasBackground }) {
               title={item.title}
               voteAverage={item.voteAverage}
               releaseDate={item.releaseDate}
+              id={item.id}
             />
           ))}
         </div>

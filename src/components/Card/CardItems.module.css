@@ -1,5 +1,5 @@
 .cards-section {
-  max-width: 130rem;
+  max-width: var(--page-max-width);
   margin: 7rem auto;
   display: flex;
   flex-direction: column;
