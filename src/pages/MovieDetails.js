@@ -9,14 +9,7 @@ export default function MovieDetails() {
   console.log(movie);
   console.log(movieDetail);
 
-  return (
-    <Movie
-      title={movieDetail.title}
-      backdropImage={movieDetail.backdropImage}
-      posterImage={movieDetail.posterImage}
-      releaseDate={movieDetail.releaseDate}
-    />
-  );
+  return <Movie movieDetail={{ ...movieDetail }} />;
 }
 
 export async function movieLoader({ params }) {

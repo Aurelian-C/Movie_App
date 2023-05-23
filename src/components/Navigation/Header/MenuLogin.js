@@ -7,9 +7,6 @@ export default function MenuLogin() {
     <ul
       className={`${classes['header__menu-items']} ${classes['header__menu-items--1']}`}
     >
-      <li>
-        <DarkMode />
-      </li>
       <li className={classes['header__menu-item']}>
         <Link to="/" className={classes['header__menu-link']}>
           Login

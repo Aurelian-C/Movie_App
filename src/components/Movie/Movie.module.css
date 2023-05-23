@@ -1,6 +1,7 @@
 .header {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: 50%;
   height: 55rem;
   margin-top: 10rem;
   padding: 3rem;
@@ -21,4 +22,51 @@
 .header__poster img {
   height: 100%;
   border-radius: 10px;
+}
+
+.header__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.header__title h2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+}
+
+.header__facts {
+  display: flex;
+  gap: 20px;
+}
+
+.header__genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+}
+
+.header__tagline {
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.header__overview h3 {
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+
+.header__overview p {
+  font-size: 1.7rem;
+  text-align: justify;
+}
+
+@media screen and (max-width: 700px) {
+  .header__poster {
+    display: none;
+  }
 }

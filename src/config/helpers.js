@@ -1,4 +1,4 @@
-import { TIMEOUT_FETCH, IMAGES_PATH } from './config';
+import { TIMEOUT_FETCH, IMAGES_PATH, IMAGES_PATH_BIG } from './config';
 
 // const promiseDelay = function (seconds) {
 //   return new Promise((resolve, _) => {
@@ -77,12 +77,13 @@ export const createMovieDetails = result => {
   return {
     title: result.title || result.name || result.original_name,
     posterImage: posterImage,
-    backdropImage: `${IMAGES_PATH}${result.backdrop_path}`,
+    backdropImage: `${IMAGES_PATH_BIG}${result.backdrop_path}`,
     voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
     id: result.id,
     releaseDate,
     genres: result.genres,
     tagline: result.tagline,
     runtime: result.runtime,
+    overview: result.overview,
   };
 };
