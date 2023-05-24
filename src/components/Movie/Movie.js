@@ -27,7 +27,9 @@ export default function Movie({ movieDetail }) {
                   );
                 })}
               </div>
-              <div>{movieDetail.runtime} minutes</div>
+              <div>
+                {movieDetail.runtime.hours}h {movieDetail.runtime.minutes}m
+              </div>
             </div>
           </div>
           <div className={classes['header__actions']}></div>

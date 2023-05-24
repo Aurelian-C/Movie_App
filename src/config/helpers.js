@@ -74,6 +74,11 @@ export const createMovieDetails = result => {
     ? `${IMAGES_PATH}${result.poster_path}`
     : `${IMAGES_PATH}${result.profile_path}`;
 
+  const runtime = {
+    hours: Math.floor(result.runtime / 60),
+    minutes: result.runtime % 60,
+  };
+
   return {
     title: result.title || result.name || result.original_name,
     posterImage: posterImage,
@@ -83,7 +88,7 @@ export const createMovieDetails = result => {
     releaseDate,
     genres: result.genres,
     tagline: result.tagline,
-    runtime: result.runtime,
+    runtime,
     overview: result.overview,
   };
 };
