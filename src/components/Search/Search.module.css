@@ -1,9 +1,5 @@
 .search {
-  /* background-image: url('../../assets/img/search_img.jpg'); */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 15rem var(--padding-sides-main) 9rem var(--padding-sides-main);
+  padding: 15rem var(--padding-sides-main) 6rem var(--padding-sides-main);
   max-width: var(--page-max-width);
   margin: 0 auto;
   color: white;

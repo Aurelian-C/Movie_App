@@ -1,4 +1,3 @@
-import DarkMode from '../../UI/DarkMode/DarkMode';
 import classes from './MenuLogin.module.css';
 import { Link } from 'react-router-dom';
 
