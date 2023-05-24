@@ -1,5 +1,5 @@
 import Search from '../components/Search/Search';
-import CardItems from '../components/Card/CardItems';
+import CardItems from '../components/Cards/MovieCard/CardItems';
 import Selector from '../components/Selector/Selector';
 import { useState } from 'react';
 import useTrendings from '../hooks/useTrendings';

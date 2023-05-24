@@ -92,3 +92,14 @@ export const createMovieDetails = result => {
     overview: result.overview,
   };
 };
+
+export const createCastDetails = cast => {
+  return cast.map(person => {
+    return {
+      actorName: person.original_name,
+      characterName: person.character,
+      actorID: person.id,
+      profileImage: `${IMAGES_PATH}${person.profile_path}`,
+    };
+  });
+};

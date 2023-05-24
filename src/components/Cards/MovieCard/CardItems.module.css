@@ -32,7 +32,7 @@
 } */
 
 .cards__background {
-  background: url('../../assets/img/background_for_trending_section_dark.png');
+  background: url('../../../assets/img/background_for_trending_section_dark.png');
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;

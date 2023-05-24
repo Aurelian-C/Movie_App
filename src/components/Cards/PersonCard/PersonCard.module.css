@@ -1,0 +1,71 @@
+.person {
+  padding: 3rem 0;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.person__section-name {
+  margin-bottom: 10px;
+}
+
+.person__container {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding-bottom: 20px;
+}
+
+.person__container::-webkit-scrollbar {
+  width: 0px;
+  height: 8px;
+}
+
+.person__container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+  background: var(--main-bg-cards-scrollbar);
+}
+
+.person__card {
+  width: min-content;
+  flex: 0 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--main-bg-person-card);
+}
+
+.person__image img {
+  height: 200px;
+}
+
+.person__name {
+  padding: 10px;
+}
+
+.person__name h2 {
+  font-size: 1.5rem;
+}
+
+.person__name h3 {
+  margin-top: 5px;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.person__button {
+  width: fit-content;
+  align-self: center;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  background: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--main-text-color-light);
+  border: none;
+  cursor: pointer;
+}
