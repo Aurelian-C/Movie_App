@@ -40,6 +40,7 @@
   /* text color */
   --main-text-color-light: white;
   --main-text-color-dark: black;
+  --main-text-color-selected: rgb(0, 83, 136);
   --main-text-color-button-selected: linear-gradient(
     to right,
     #656565 0%,
@@ -55,6 +56,9 @@
   --padding-right-side-main: var(--padding-sides-main);
   --card-border-radius: 8px;
   --page-max-width: 130rem;
+
+  /* box-shadows color */
+  --person-card-box-shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 .dark {
@@ -62,6 +66,9 @@
   --main-bg-movie-score: rgba(96, 96, 96, 0.6);
   --main-bg-button-movie: rgb(93, 93, 93);
   --main-bg-person-card: rgb(43, 42, 42);
+
+  --main-text-color-selected: rgb(110, 204, 255);
+  --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);
 }
 
 @media screen and (max-width: 700px) {

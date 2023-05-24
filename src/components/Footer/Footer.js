@@ -107,7 +107,7 @@ const Footer = () => {
       </div>
       <div className={classes.footer__copyright}>
         <p>
-          This website is a clone of
+          This website is inspired by
           <Link
             className={classes['footer__copyright-link']}
             target="_blank"
@@ -116,18 +116,18 @@ const Footer = () => {
             TMDB
           </Link>
           , build from scratch with HTML, CSS, Vanilla JavaScript, ReactJS &amp;
-          React Router
+          React Router.
         </p>
         <p>
           For more projects go to
           <Link
             className={`${classes['footer__copyright-link']} ${classes['github-link']}`}
             target="_blank"
-            to="https://github.com/Aurelian-C"
+            to="https://aic-projects.netlify.app/"
           >
             Aurelian Cioloca
           </Link>
-          Github page.
+          web page.
         </p>
       </div>
     </footer>

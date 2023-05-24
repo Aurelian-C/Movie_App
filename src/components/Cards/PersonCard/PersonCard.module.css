@@ -1,5 +1,8 @@
 .person {
-  padding: 3rem 0;
+  padding: 3rem var(--padding-sides-main);
+}
+
+.person__container {
   max-width: var(--page-max-width);
   margin: 0 auto;
 }
@@ -8,19 +11,19 @@
   margin-bottom: 10px;
 }
 
-.person__container {
+.person__cards {
   display: flex;
   gap: 20px;
   overflow-x: scroll;
   padding-bottom: 20px;
 }
 
-.person__container::-webkit-scrollbar {
+.person__cards::-webkit-scrollbar {
   width: 0px;
   height: 8px;
 }
 
-.person__container::-webkit-scrollbar-thumb {
+.person__cards::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
   background: var(--main-bg-cards-scrollbar);
@@ -32,18 +35,28 @@
   border-radius: 5px;
   overflow: hidden;
   background-color: var(--main-bg-person-card);
+  box-shadow: 1px 2px 5px var(--person-card-box-shadow-color);
 }
 
 .person__image img {
   height: 200px;
+  cursor: pointer;
 }
 
 .person__name {
   padding: 10px;
 }
 
-.person__name h2 {
+.person__name a:link,
+.person__name a:visited {
+  text-decoration: none;
+  font-weight: 500;
   font-size: 1.5rem;
+  color: var(--main-text-color-light);
+}
+
+.person__name a:hover {
+  color: var(--main-text-color-selected);
 }
 
 .person__name h3 {
@@ -52,7 +65,9 @@
   font-weight: 400;
 }
 
-.person__button {
+.person__more:link,
+.person__more:visited {
+  text-decoration: none;
   width: fit-content;
   align-self: center;
   flex: 0 0 auto;
@@ -61,11 +76,8 @@
   gap: 4px;
   height: fit-content;
   padding: 10px;
-  border-radius: 5px;
-  background: none;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--main-text-color-light);
-  border: none;
   cursor: pointer;
 }
