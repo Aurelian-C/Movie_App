@@ -1,12 +1,18 @@
 import classes from './Movie.module.css';
+import { useContext } from 'react';
+import { ModeDarkContext } from '../../store/dark-mode';
 
 export default function Movie({ movieDetail }) {
-  console.log(movieDetail);
+  const darkModeContext = useContext(ModeDarkContext);
+
+  let liniarGradient = darkModeContext.darkMode
+    ? 'linear-gradient(to right, rgba(41, 41, 41, 1), rgba(0, 0, 0,  0.6))'
+    : 'linear-gradient(to right, rgba(69, 109, 115, 1), rgba(0, 0, 0,  0.5))';
   return (
     <div
       className={classes.header}
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(69, 109, 115, 1), rgba(0, 0, 0,  0.5)), url(${movieDetail.backdropImage})`,
+        backgroundImage: `${liniarGradient}, url(${movieDetail.backdropImage})`,
       }}
     >
       <div className={classes['header__container']}>
@@ -21,9 +27,9 @@ export default function Movie({ movieDetail }) {
               <div className={classes['header__genres']}>
                 {movieDetail.genres.map((genre, i) => {
                   return i !== movieDetail.genres.length - 1 ? (
-                    <span>{genre.name},</span>
+                    <span key={i}>{genre.name},</span>
                   ) : (
-                    <span>{genre.name}</span>
+                    <span key={i}>{genre.name}</span>
                   );
                 })}
               </div>
@@ -32,7 +38,34 @@ export default function Movie({ movieDetail }) {
               </div>
             </div>
           </div>
-          <div className={classes['header__actions']}></div>
+          <div className={classes['header__actions']}>
+            <div className={classes['header__user-score']}>
+              <div className={classes['header__score']}>
+                <span>{movieDetail.voteAverage}</span>
+              </div>
+              <div className={classes['header__user']}>User score</div>
+            </div>
+            <div className={classes['header__buttons']}>
+              <button className={classes['header__button']}>
+                <i className="fa-regular fa-rectangle-list"></i>
+                <div className={classes['header__tooltip']}>
+                  Login to create and edit custom list
+                </div>
+              </button>
+              <button className={classes['header__button']}>
+                <i className="fa-solid fa-heart"></i>
+                <div className={classes['header__tooltip']}>
+                  Login to add this movie to your favorite list
+                </div>
+              </button>
+              <button className={classes['header__button']}>
+                <i className="fa-solid fa-bookmark"></i>
+                <div className={classes['header__tooltip']}>
+                  Login to add this movie to your watchlist
+                </div>
+              </button>
+            </div>
+          </div>
           <div className={classes['header__info']}>
             <div className={classes['header__tagline']}>
               {movieDetail.tagline}

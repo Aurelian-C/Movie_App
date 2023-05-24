@@ -3,6 +3,7 @@
 :root {
   font-size: 62.5%;
 
+  /* background */
   --main-bg-image: linear-gradient(
     90deg,
     rgb(169, 208, 214),
@@ -22,6 +23,7 @@
   --main-bg-slider: rgb(1, 180, 228);
   --main-bg-button-circle: rgb(30, 178, 166, 0.7);
   --main-bg-button-search: rgb(30, 178, 166);
+  --main-bg-button-movie: rgb(30, 178, 166);
   --main-bg-button-selected: linear-gradient(
     to right,
     #ffffff 0%,
@@ -32,6 +34,9 @@
     rgb(140, 181, 188),
     rgb(119, 150, 156)
   );
+  --main-bg-movie-score: rgba(36, 157, 147, 0.7);
+
+  /* text color */
   --main-text-color-light: white;
   --main-text-color-dark: black;
   --main-text-color-button-selected: linear-gradient(
@@ -39,8 +44,11 @@
     #656565 0%,
     #494949 100%
   );
+
+  /* border color */
   --main-border-color: rgb(220, 220, 220);
 
+  /* padding measures */
   --padding-sides-main: 5rem;
   --padding-left-side-main: var(--padding-sides-main);
   --padding-right-side-main: var(--padding-sides-main);
@@ -50,6 +58,9 @@
 
 .dark {
   --main-bg-image: linear-gradient(90deg, #191919, #161616);
+
+  --main-bg-movie-score: rgba(96, 96, 96, 0.6);
+  --main-bg-button-movie: rgb(93, 93, 93);
 }
 
 @media screen and (max-width: 700px) {
