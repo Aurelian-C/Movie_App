@@ -9,7 +9,6 @@ import MenuContainer from './MenuContainer';
 import MenuPhone from './MenuPhone';
 import DropDownButton from './DropDownButton';
 import MenuHints from './MenuHints';
-import DarkMode from '../../UI/DarkMode/DarkMode';
 
 export default function Header({ onShowSideMenu, searchHints }) {
   const [buttonSearchVisibility, setButtonSearchVisibility] = useState(true);
@@ -60,7 +59,6 @@ export default function Header({ onShowSideMenu, searchHints }) {
           <MenuNavigation />
         </MenuContainer>
         <MenuContainer className={classes['header__menu--2']}>
-          <DarkMode />
           <MenuLogin />
           <MenuPhone />
           <SearchButton

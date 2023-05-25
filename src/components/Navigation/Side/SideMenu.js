@@ -1,6 +1,7 @@
 import classes from './SideMenu.module.css';
 import { Link } from 'react-router-dom';
 import SideMenuCategory from './SideMenuCategory';
+import DarkMode from '../../UI/DarkMode/DarkMode';
 
 const sideMenuCategories = {
   movies: [
@@ -30,9 +31,16 @@ export default function SideMenu({ sideMenuVisibility, onHideSideMenu }) {
         sideMenuVisibility ? 'mobile-active' : ''
       }`}
     >
-      <div className={classes['dropdown-menu__close']} onClick={onHideSideMenu}>
-        <i className="fa-solid fa-xmark"></i>
+      <div className={classes['dropdown-menu__actions']}>
+        <DarkMode />
+        <div
+          className={classes['dropdown-menu__close']}
+          onClick={onHideSideMenu}
+        >
+          <i className="fa-solid fa-xmark"></i>
+        </div>
       </div>
+
       <ul className={classes['dropdown-menu__main']}>
         <SideMenuCategory
           categoryTitle="Movies"

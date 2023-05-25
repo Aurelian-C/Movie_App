@@ -92,3 +92,37 @@
   font-size: 1.4rem;
   cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+  .person__image {
+    display: none;
+  }
+
+  .person__name {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .person__section-title {
+    font-size: 1.8rem;
+  }
+
+  .person__biography p {
+    font-size: 1.5rem;
+  }
+
+  .person__info {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 13px;
+  }
+
+  .person__info-title {
+    font-size: 1.5rem;
+  }
+
+  .person__info-paragraph {
+    font-size: 1.3rem;
+  }
+}

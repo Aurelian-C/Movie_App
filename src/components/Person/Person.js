@@ -52,28 +52,36 @@ export default function Person({ personDetail, movieCredits }) {
               </h3>
               <div className={classes['person__info']}>
                 <div>
-                  <h4>Known For</h4>
-                  <p>{personDetail.knownForDepartment}</p>
+                  <h4 className={classes['person__info-title']}>Known For</h4>
+                  <p className={classes['person__info-paragraph']}>
+                    {personDetail.knownForDepartment}
+                  </p>
                 </div>
                 <div>
-                  <h4>Gender</h4>
-                  <p>{gender}</p>
+                  <h4 className={classes['person__info-title']}>Gender</h4>
+                  <p className={classes['person__info-paragraph']}>{gender}</p>
                 </div>
                 <div>
-                  <h4>Birthday</h4>
-                  <p>{birthday}</p>
+                  <h4 className={classes['person__info-title']}>Birthday</h4>
+                  <p className={classes['person__info-paragraph']}>
+                    {birthday}
+                  </p>
                 </div>
                 <div>
-                  <h4>Age</h4>
-                  <p>
+                  <h4 className={classes['person__info-title']}>Age</h4>
+                  <p className={classes['person__info-paragraph']}>
                     {deathdayYear && `Dead in ${deathdayYear} at `}
                     {deathdayYear ? livedYears : ageYears}{' '}
                     {ageYears === '-' ? '' : 'years old'}
                   </p>
                 </div>
                 <div>
-                  <h4>Place of birth</h4>
-                  <p>{placeOfBirth}</p>
+                  <h4 className={classes['person__info-title']}>
+                    Place of birth
+                  </h4>
+                  <p className={classes['person__info-paragraph']}>
+                    {placeOfBirth}
+                  </p>
                 </div>
               </div>
             </div>

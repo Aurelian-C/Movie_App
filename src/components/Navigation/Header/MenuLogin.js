@@ -1,3 +1,4 @@
+import DarkMode from '../../UI/DarkMode/DarkMode';
 import classes from './MenuLogin.module.css';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +7,7 @@ export default function MenuLogin() {
     <ul
       className={`${classes['header__menu-items']} ${classes['header__menu-items--1']}`}
     >
+      <DarkMode />
       <li className={classes['header__menu-item']}>
         <Link to="/" className={classes['header__menu-link']}>
           Login
