@@ -1,12 +1,6 @@
 import { TIMEOUT_FETCH, IMAGES_PATH, IMAGES_PATH_BIG } from './config';
-
-// const promiseDelay = function (seconds) {
-//   return new Promise((resolve, _) => {
-//     setTimeout(() => {
-//       resolve();
-//     }, seconds * 1000);
-//   });
-// };
+import personWithoutImage from '../assets/img/person_with_no_image.png';
+import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 
 const timeout = function (seconds) {
   return new Promise((_, reject) => {
@@ -93,13 +87,45 @@ export const createMovieDetails = result => {
   };
 };
 
+export function createMovieCredits(movies) {
+  return movies.map(movie => {
+    return {
+      title: movie.title,
+      voteCount: movie.vote_count,
+      id: movie.id,
+      posterImage: `${IMAGES_PATH}${movie.poster_path}`,
+    };
+  });
+}
+
 export const createCastDetails = cast => {
   return cast.map(person => {
+    let image = person.profile_path
+      ? `${IMAGES_PATH}${person.profile_path}`
+      : personWithoutImage;
+
     return {
       actorName: person.original_name,
       characterName: person.character,
       actorID: person.id,
-      profileImage: `${IMAGES_PATH}${person.profile_path}`,
+      profileImage: image,
     };
   });
+};
+
+export const createPersonDetails = personInfo => {
+  let image = personInfo.profile_path
+    ? `${IMAGES_PATH}${personInfo.profile_path}`
+    : personWithoutImageBig;
+
+  return {
+    biography: personInfo.biography,
+    birthday: personInfo.birthday,
+    deathday: personInfo.deathday,
+    gender: personInfo.gender,
+    knownForDepartment: personInfo.known_for_department,
+    name: personInfo.name,
+    placeOfBirth: personInfo.place_of_birth,
+    profileImage: image,
+  };
 };

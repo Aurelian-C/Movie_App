@@ -30,7 +30,7 @@
 }
 
 .person__card {
-  width: min-content;
+  width: 133px;
   flex: 0 0 auto;
   border-radius: 5px;
   overflow: hidden;

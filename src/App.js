@@ -1,5 +1,6 @@
 import HomePage from './pages/Home';
 import MovieDetails, { movieLoader } from './pages/MovieDetails';
+import PersonDetails, { personLoader } from './pages/PersonDetails';
 import PresentationPage from './pages/Presentation';
 import RootLayout from './pages/RootLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -35,7 +36,16 @@ export default function App() {
           loader: movieLoader,
         },
         { path: 'tv/:tvId' },
-        { path: 'person', children: [{ path: ':personId' }] },
+        {
+          path: 'person',
+          children: [
+            {
+              path: ':personId',
+              element: <PersonDetails />,
+              loader: personLoader,
+            },
+          ],
+        },
         { path: 'documentation', children: [{ path: 'api' }] },
       ],
     },
