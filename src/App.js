@@ -4,6 +4,7 @@ import PersonDetails, { personLoader } from './pages/PersonDetails';
 import PresentationPage from './pages/Presentation';
 import RootLayout from './pages/RootLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import SearchPage, { searchLoader } from './pages/Search';
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -46,7 +47,12 @@ export default function App() {
             },
           ],
         },
-        { path: 'documentation', children: [{ path: 'api' }] },
+        {
+          path: 'search',
+          children: [
+            { path: ':query', element: <SearchPage />, loader: searchLoader },
+          ],
+        },
       ],
     },
   ]);

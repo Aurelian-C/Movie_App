@@ -36,6 +36,7 @@
   );
   --main-bg-movie-score: rgba(36, 157, 147, 0.7);
   --main-bg-person-card: rgb(32, 199, 185);
+  --main-bg-searched-card: rgb(153, 191, 204);
 
   /* text color */
   --main-text-color-light: white;
@@ -66,6 +67,7 @@
   --main-bg-movie-score: rgba(96, 96, 96, 0.6);
   --main-bg-button-movie: rgb(93, 93, 93);
   --main-bg-person-card: rgb(43, 42, 42);
+  --main-bg-searched-card: rgb(37, 37, 37);
 
   --main-text-color-selected: rgb(110, 204, 255);
   --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);

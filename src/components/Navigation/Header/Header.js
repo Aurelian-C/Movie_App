@@ -69,7 +69,7 @@ export default function Header({ onShowSideMenu, searchHints }) {
         </MenuContainer>
       </div>
       {buttonSearchVisibility || (
-        <MenuSearch>
+        <MenuSearch onSetMenuHintsVisibility={setMenuHintsVisibility}>
           {menuHintsVisibility && <MenuHints searchHints={searchHints} />}
         </MenuSearch>
       )}

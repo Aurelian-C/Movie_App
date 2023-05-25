@@ -1,0 +1,31 @@
+.section {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card:link,
+.card:visited {
+  display: flex;
+  gap: 10px;
+  background-color: var(--main-bg-searched-card);
+  box-shadow: 1px 1px 3px var(--person-card-box-shadow-color);
+  width: 35rem;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--main-text-color-light);
+}
+
+.card__image img {
+  height: 180px;
+  width: 123px;
+  border-radius: 10px;
+}
+
+.card__title {
+  font-size: 2.1rem;
+  font-weight: 500;
+}

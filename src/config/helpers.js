@@ -1,6 +1,7 @@
 import { TIMEOUT_FETCH, IMAGES_PATH, IMAGES_PATH_BIG } from './config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
+import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 
 const timeout = function (seconds) {
   return new Promise((_, reject) => {
@@ -128,4 +129,44 @@ export const createPersonDetails = personInfo => {
     placeOfBirth: personInfo.place_of_birth,
     profileImage: image,
   };
+};
+
+export const createSearchedItems = items => {
+  return items.map(item => {
+    let profileImage = item.profile_path
+      ? `${IMAGES_PATH}${item.profile_path}`
+      : cardWithoutImage;
+
+    let posterImage = item.poster_path
+      ? `${IMAGES_PATH}${item.poster_path}`
+      : cardWithoutImage;
+
+    if (item.media_type === 'person') {
+      const movies = item.known_for.map(movie => {
+        return {
+          id: movie.id,
+          mediaType: movie.media_type,
+          title: movie.title,
+        };
+      });
+
+      return {
+        profileImage: profileImage,
+        name: item.name,
+        mediaType: item.media_type,
+        id: item.id,
+        knownForDepartment: item.known_for_department,
+        knownForMovies: movies,
+      };
+    } else {
+      return {
+        posterImage: posterImage,
+        id: item.id,
+        mediaType: item.media_type,
+        title: item.title || item.original_name,
+        releaseDate: item.release_date || item.first_air_date,
+        overview: item.overview,
+      };
+    }
+  });
 };
