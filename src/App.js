@@ -50,7 +50,11 @@ export default function App() {
         {
           path: 'search',
           children: [
-            { path: ':query', element: <SearchPage />, loader: searchLoader },
+            {
+              path: ':query',
+              element: <SearchPage />,
+              loader: searchLoader,
+            },
           ],
         },
       ],

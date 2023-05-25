@@ -3,8 +3,6 @@ import SectionPrimary from '../UI/SectionWrapper/SectionPrimary';
 import { Link } from 'react-router-dom';
 
 export default function SearchedQueries({ items }) {
-  console.log(items);
-
   return (
     <SectionPrimary className={classes.section}>
       {items.map(item => {
