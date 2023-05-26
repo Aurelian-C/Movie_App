@@ -10,9 +10,10 @@ import MenuPhone from './MenuPhone';
 import DropDownButton from './DropDownButton';
 import MenuHints from './MenuHints';
 
-export default function Header({ onShowSideMenu, searchHints }) {
+export default function Header({ onShowSideMenu }) {
   const [buttonSearchVisibility, setButtonSearchVisibility] = useState(true);
   const [menuHintsVisibility, setMenuHintsVisibility] = useState(false);
+  const [searchedHints, setSearchedHints] = useState([]);
   const headerRef = useRef();
   const headerContainerRef = useRef();
 
@@ -23,6 +24,7 @@ export default function Header({ onShowSideMenu, searchHints }) {
   const handleHideButtonSearch = () => {
     setButtonSearchVisibility(false);
     setMenuHintsVisibility(true);
+    setSearchedHints([]);
   };
 
   useEffect(() => {
@@ -69,8 +71,11 @@ export default function Header({ onShowSideMenu, searchHints }) {
         </MenuContainer>
       </div>
       {buttonSearchVisibility || (
-        <MenuSearch onSetMenuHintsVisibility={setMenuHintsVisibility}>
-          {menuHintsVisibility && <MenuHints searchHints={searchHints} />}
+        <MenuSearch
+          onSetMenuHintsVisibility={setMenuHintsVisibility}
+          onSetSearchedHints={setSearchedHints}
+        >
+          {menuHintsVisibility && <MenuHints searchedHints={searchedHints} />}
         </MenuSearch>
       )}
     </header>

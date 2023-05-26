@@ -1,13 +1,30 @@
 import classes from './MenuSearch.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_KEY } from '../../../config/config';
+import { createSearchedItems } from '../../../config/helpers';
 
-export default function MenuSearch({ children, onSetMenuHintsVisibility }) {
+async function searchLoader(query) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${API_KEY}`
+  );
+  const data = await response.json();
+  return data;
+}
+
+export default function MenuSearch({
+  children,
+  onSetMenuHintsVisibility,
+  onSetSearchedHints,
+}) {
   const [inputQuery, setInputQuery] = useState('');
   const navigate = useNavigate();
 
-  function handleInput(e) {
+  async function handleInput(e) {
     setInputQuery(e.target.value);
+    const { results } = await searchLoader(e.target.value);
+    const searchedItems = createSearchedItems(results);
+    onSetSearchedHints(searchedItems);
   }
 
   function handleSubmit(e) {

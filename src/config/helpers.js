@@ -170,3 +170,12 @@ export const createSearchedItems = items => {
     }
   });
 };
+
+let timeoutID;
+export function debounce(func, query, timeout = 1000) {
+  if (timeoutID) clearTimeout(timeoutID);
+
+  timeoutID = setTimeout(() => {
+    func(query);
+  }, timeout);
+}

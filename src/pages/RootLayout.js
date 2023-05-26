@@ -2,7 +2,6 @@ import Header from '../components/Navigation/Header/Header';
 import SideMenu from '../components/Navigation/Side/SideMenu';
 import Footer from '../components/Footer/Footer';
 import { useState } from 'react';
-import { useSearchHints } from '../hooks/useSearchHints';
 import { Outlet } from 'react-router-dom';
 
 const trending = {
@@ -243,14 +242,11 @@ export default function RootLayout() {
     setSideMenuVisibility(false);
   };
 
-  const searchHints = useSearchHints('trending', 'all', 'day');
-
   return (
     <>
       <Header
         onShowSideMenu={handleShowSideMenu}
         trendingItems={trending.items}
-        searchHints={searchHints}
       />
       <SideMenu
         sideMenuVisibility={sideMenuVisibility}
