@@ -3,11 +3,16 @@ import { createCastDetails, createMovieDetails } from '../config/helpers';
 import { useLoaderData } from 'react-router-dom';
 import Movie from '../components/Movie/Movie';
 import PersonCard from '../components/Cards/PersonCard/PersonCard';
+import { useEffect } from 'react';
 
 export default function MovieDetails() {
   const [movie, credits] = useLoaderData();
   const movieDetail = createMovieDetails(movie);
   const castDetails = createCastDetails(credits.cast);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

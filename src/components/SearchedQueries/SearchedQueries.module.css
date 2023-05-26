@@ -1,5 +1,5 @@
 .section {
-  margin-top: 10rem;
+  margin-top: var(--page-margin-top);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

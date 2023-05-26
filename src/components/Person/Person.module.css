@@ -1,5 +1,5 @@
 .person {
-  margin-top: 10rem;
+  margin-top: var(--page-margin-top);
   padding: 0 var(--padding-sides-main);
 }
 
