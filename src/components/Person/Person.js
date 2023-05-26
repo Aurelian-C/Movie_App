@@ -29,8 +29,20 @@ export default function Person({ personDetail, movieCredits }) {
     livedYears = Math.floor((deathdayDate - birthdayDate) / 31556952000);
   }
 
+  const voteCounts = 2500;
   const knownFor = movieCredits
-    .filter(movie => movie.voteCount > 4000)
+    .filter(movie => movie.voteCount > voteCounts)
+    .sort((a, b) => {
+      if (a.voteCount < b.voteCount) {
+        return 1;
+      }
+
+      if (a.voteCount > b.voteCount) {
+        return -1;
+      }
+
+      return 0;
+    })
     .slice(0, 8);
 
   return (

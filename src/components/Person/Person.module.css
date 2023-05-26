@@ -34,7 +34,6 @@
 
 .person__section-title {
   font-size: 2.2rem;
-  margin-top: 20px;
   margin-bottom: 5px;
 }
 
@@ -44,11 +43,19 @@
   text-align: justify;
 }
 
+.person__information {
+  margin-top: 30px;
+}
+
 .person__info {
   display: flex;
   justify-content: space-between;
   gap: 40px;
   text-align: center;
+}
+
+.person__known {
+  margin-top: 45px;
 }
 
 .movie__cards {
