@@ -1,13 +1,23 @@
+import { useState } from 'react';
 import classes from './Person.module.css';
 import { Link } from 'react-router-dom';
 
 export default function Person({ personDetail, movieCredits }) {
+  const [renderFullBiography, setRenderFullBiography] = useState(false);
+
+  function handleFullBiography() {
+    setRenderFullBiography(true);
+  }
+
   let gender = personDetail.gender === 2 ? 'Male' : 'Female';
   let biography = personDetail.biography ? personDetail.biography : 'None';
+  const biographyArray = biography.split('\n').filter(string => string !== '');
+  biography = renderFullBiography ? biographyArray : biographyArray.slice(0, 2);
   let birthday = personDetail.birthday ? personDetail.birthday : '-';
   let placeOfBirth = personDetail.placeOfBirth
     ? personDetail.placeOfBirth
     : '-';
+  let renderButton = !renderFullBiography && biographyArray.length > 2;
 
   let ageYears = '-';
   if (personDetail.birthday) {
@@ -56,7 +66,20 @@ export default function Person({ personDetail, movieCredits }) {
             <h2 className={classes['person__name']}>{personDetail.name}</h2>
             <div className={classes['person__biography']}>
               <h3 className={classes['person__section-title']}>Biography</h3>
-              <p>{biography}</p>
+              <div className={classes['person__biography-text']}>
+                {biography.map((string, i) => (
+                  <p key={i}>{string}</p>
+                ))}
+                {renderButton && (
+                  <button
+                    className={classes['person__biography-button']}
+                    onClick={handleFullBiography}
+                  >
+                    <span>Read more</span>
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </button>
+                )}
+              </div>
             </div>
             <div className={classes['person__information']}>
               <h3 className={classes['person__section-title']}>

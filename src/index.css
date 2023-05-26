@@ -62,6 +62,7 @@
 
   /* box-shadows color */
   --person-card-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --button-biography-box-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 .dark {
@@ -75,6 +76,7 @@
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-hints: white;
   --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);
+  --button-biography-box-shadow-color: rgba(0, 0, 0, 0.6);
   --hints-border-color: rgb(93, 93, 93);
 }
 

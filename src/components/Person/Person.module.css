@@ -37,10 +37,26 @@
   margin-bottom: 5px;
 }
 
-.person__biography p {
+.person__biography-text p {
   font-size: 1.7rem;
   line-height: 1.3;
   text-align: justify;
+  margin-bottom: 15px;
+}
+
+.person__biography-button {
+  font-size: 1.5rem;
+  padding: 5px 8px;
+  background: none;
+  color: var(--main-text-color-light);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--hints-border-color);
+  margin-left: auto;
+  cursor: pointer;
+  box-shadow: 1px 3px 5px var(--button-biography-box-shadow-color);
 }
 
 .person__information {
