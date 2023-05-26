@@ -1,11 +1,12 @@
 .header-search {
   background-color: var(--main-bg-search);
-  max-width: var(--page-max-width);
 }
 
 .header-search__form-container {
   padding: 0 var(--padding-sides-main);
   border-bottom: 1px solid var(--main-border-color);
+  max-width: var(--page-max-width);
+  margin: auto;
 }
 
 .header-search__form {

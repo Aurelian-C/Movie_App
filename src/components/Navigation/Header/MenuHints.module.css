@@ -9,4 +9,6 @@
 
 .header-search__hints {
   list-style: none;
+  max-width: var(--page-max-width);
+  margin: auto;
 }
