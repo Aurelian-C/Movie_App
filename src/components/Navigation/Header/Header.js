@@ -50,7 +50,7 @@ export default function Header({ onShowSideMenu }) {
         headerRef.current.style.top = '0px';
       }
     });
-  }, [headerContainerRef, headerRef]);
+  }, [headerContainerRef, headerRef, menuHintsVisibility]);
 
   return (
     <header className={classes.header} ref={headerRef}>

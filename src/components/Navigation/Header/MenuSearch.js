@@ -25,6 +25,7 @@ export default function MenuSearch({
     const { results } = await searchLoader(e.target.value);
     const searchedItems = createSearchedItems(results);
     onSetSearchedHints(searchedItems);
+    onSetMenuHintsVisibility(true);
   }
 
   function handleSubmit(e) {

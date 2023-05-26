@@ -1,6 +1,5 @@
 .header-search__hint {
-  border-bottom: 1px solid var(--main-border-color);
-  color: black;
+  border-bottom: 1px solid var(--hints-border-color);
   padding: 5px var(--padding-sides-main);
   width: 100vw;
   cursor: pointer;
@@ -17,10 +16,6 @@
   max-width: var(--container-max-width);
 }
 
-.header-search__icon {
-  color: black;
-}
-
 .header-search__icon--hint {
   font-size: 1rem;
   margin-right: 8px;
@@ -28,5 +23,4 @@
 
 .header-search__hint-name {
   font-weight: 400;
-  color: rgb(45, 45, 45);
 }

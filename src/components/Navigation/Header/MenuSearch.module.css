@@ -1,5 +1,6 @@
 .header-search {
   background-color: var(--main-bg-search);
+  max-width: var(--page-max-width);
 }
 
 .header-search__form-container {

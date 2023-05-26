@@ -47,9 +47,11 @@
     #656565 0%,
     #494949 100%
   );
+  --text-color-hints: black;
 
   /* border color */
   --main-border-color: rgb(220, 220, 220);
+  --hints-border-color: rgb(220, 220, 220);
 
   /* padding measures */
   --padding-sides-main: 5rem;
@@ -68,9 +70,12 @@
   --main-bg-button-movie: rgb(93, 93, 93);
   --main-bg-person-card: rgb(43, 42, 42);
   --main-bg-searched-card: rgb(37, 37, 37);
+  --main-bg-hints: rgb(51, 51, 51);
 
   --main-text-color-selected: rgb(110, 204, 255);
+  --text-color-hints: white;
   --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);
+  --hints-border-color: rgb(93, 93, 93);
 }
 
 @media screen and (max-width: 700px) {
