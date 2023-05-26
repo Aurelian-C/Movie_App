@@ -6,7 +6,7 @@ export default function useGenres(mediaType) {
     async function fetchData() {
       try {
         const results = await AJAX(
-          `${API_URL}genre/${mediaType}/list?api_key=${API_KEY}`
+          `${API_URL}/genre/${mediaType}/list?api_key=${API_KEY}`
         );
         console.log(results);
       } catch (err) {

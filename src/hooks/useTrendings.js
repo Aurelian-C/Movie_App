@@ -9,7 +9,7 @@ export default function useTrendings(mediaType, timeWindow = 'day') {
     async function fetchData() {
       try {
         const { results } = await AJAX(
-          `${API_URL}trending/${mediaType}/${timeWindow}?api_key=${API_KEY}`
+          `${API_URL}/trending/${mediaType}/${timeWindow}?api_key=${API_KEY}`
         );
         const cardDetails = results.map(createCardDetails);
         setItems(cardDetails);

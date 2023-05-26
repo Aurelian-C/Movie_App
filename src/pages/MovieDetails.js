@@ -1,8 +1,8 @@
-import { API_KEY } from '../config/config';
-import { createCastDetails, createMovieDetails } from '../config/helpers';
-import { useLoaderData } from 'react-router-dom';
 import Movie from '../components/Movie/Movie';
 import PersonCard from '../components/Cards/PersonCard/PersonCard';
+import { API_KEY, API_URL } from '../config/config';
+import { createCastDetails, createMovieDetails } from '../config/helpers';
+import { useLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function MovieDetails() {
@@ -24,10 +24,10 @@ export default function MovieDetails() {
 
 export async function movieLoader({ params }) {
   const movie = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=${API_KEY}`
+    `${API_URL}/movie/${params.movieId}?api_key=${API_KEY}`
   );
   const credits = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.movieId}/credits?api_key=${API_KEY}`
+    `${API_URL}/movie/${params.movieId}/credits?api_key=${API_KEY}`
   );
 
   return [await movie.json(), await credits.json()];
