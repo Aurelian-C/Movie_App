@@ -2,27 +2,12 @@ import classes from './Footer.module.css';
 import logo from '../../assets/img/logo1.png';
 import { Link } from 'react-router-dom';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className={`${classes.footer} u-margin-top-big`}>
-      <div className={classes.footer__container}>
-        <div className={classes.footer__logo}>
-          <img src={logo} alt="" className={classes.footer__img} />
-        </div>
-        <div className={classes.footer__content}>
-          <h3 className={classes.footer__title}>THE BASICS</h3>
-          <ul className={classes.footer__items}>
-            <li className={classes.footer__item}>
-              <a
-                href="https://developer.themoviedb.org/reference/"
-                target="_blank"
-                className={classes.footer__link}
-              >
-                API
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div className={classes.footer__container}></div>
+      <div className={classes.footer__logo}>
+        <img src={logo} alt="" className={classes.footer__img} />
       </div>
       <div className={classes.footer__copyright}>
         <p>
@@ -51,6 +36,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
