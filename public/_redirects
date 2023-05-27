@@ -1,2 +1,3 @@
 /movie/:movieId /
-/movie/noow-playing /
+/person/:personId /
+/search/:query https://movie-aic.netlify.app/
