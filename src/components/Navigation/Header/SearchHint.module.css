@@ -1,7 +1,6 @@
 .header-search__hint {
   border-bottom: 1px solid var(--hints-border-color);
   padding: 5px var(--padding-sides-main);
-  width: 100vw;
   cursor: pointer;
 }
 

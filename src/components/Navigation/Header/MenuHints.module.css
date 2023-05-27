@@ -1,7 +1,5 @@
 .header-search__content {
   font-size: inherit;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
   background-color: var(--main-bg-hints);
   border-bottom: 1px solid var(--main-border-color);
   color: var(--text-color-hints);
