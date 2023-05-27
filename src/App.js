@@ -1,5 +1,5 @@
 import HomePage from './pages/Home';
-import MovieDetails, { movieLoader } from './pages/MovieDetails';
+import MovieDetails, { movieLoader, tvLoader } from './pages/MovieDetails';
 import PersonDetails, { personLoader } from './pages/PersonDetails';
 import PresentationPage from './pages/Presentation';
 import RootLayout from './pages/RootLayout';
@@ -36,7 +36,7 @@ export default function App() {
           element: <MovieDetails />,
           loader: movieLoader,
         },
-        { path: 'tv/:tvId' },
+        { path: 'tv/:tvId', element: <MovieDetails />, loader: tvLoader },
         {
           path: 'person',
           children: [

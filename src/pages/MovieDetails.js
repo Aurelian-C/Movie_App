@@ -32,3 +32,12 @@ export async function movieLoader({ params }) {
 
   return [await movie.json(), await credits.json()];
 }
+
+export async function tvLoader({ params }) {
+  const tv = await fetch(`${API_URL}/tv/${params.tvId}?api_key=${API_KEY}`);
+  const credits = await fetch(
+    `${API_URL}/tv/${params.tvId}/credits?api_key=${API_KEY}`
+  );
+
+  return [await tv.json(), await credits.json()];
+}

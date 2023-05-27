@@ -2,7 +2,14 @@ import React from 'react';
 import CardItem from './CardItem';
 import classes from './CardItems.module.css';
 
-export default function CardItems({ children, items, hasBackground }) {
+export default function CardItems({
+  children,
+  items,
+  hasBackground,
+  mediaType,
+}) {
+  console.log(mediaType);
+
   return (
     <section className={classes['cards-section']}>
       {children}
@@ -20,6 +27,7 @@ export default function CardItems({ children, items, hasBackground }) {
               voteAverage={item.voteAverage}
               releaseDate={item.releaseDate}
               id={item.id}
+              mediaType={item.mediaType ? item.mediaType : mediaType}
             />
           ))}
         </div>

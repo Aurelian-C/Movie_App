@@ -10,6 +10,7 @@ export default function CardItem({
   title,
   releaseDate,
   id,
+  mediaType,
 }) {
   const [buttonIsShown, setButtonIsShown] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
@@ -44,7 +45,10 @@ export default function CardItem({
         />
       )}
       <div className={classes.card__image}>
-        <Link to={`/movie/${id}`} className={classes['card__image-anchor']}>
+        <Link
+          to={`/${mediaType}/${id}`}
+          className={classes['card__image-anchor']}
+        >
           <img src={image} alt={title} />
         </Link>
       </div>

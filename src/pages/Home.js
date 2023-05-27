@@ -21,6 +21,7 @@ export default function HomePage() {
 
   const trendingItems = useTrendings(trendingsTitle);
   const topRatedItems = useTopRated(topRatedTitle);
+  console.log(topRatedItems);
 
   function handleTrendingsSelector(word) {
     setTrendingsTitle(word);
@@ -40,7 +41,11 @@ export default function HomePage() {
           onGetCategoryTitle={handleTrendingsSelector}
         />
       </CardItems>
-      <CardItems hasBackground={false} items={topRatedItems}>
+      <CardItems
+        hasBackground={false}
+        items={topRatedItems}
+        mediaType={topRatedTitle}
+      >
         <Selector
           selectorCategories={topRated.categories}
           mainTitle={topRated.mainTitle}
