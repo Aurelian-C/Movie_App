@@ -21,7 +21,6 @@ export default function HomePage() {
 
   const trendingItems = useTrendings(trendingsTitle);
   const topRatedItems = useTopRated(topRatedTitle);
-  console.log(topRatedItems);
 
   function handleTrendingsSelector(word) {
     setTrendingsTitle(word);

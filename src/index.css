@@ -4,11 +4,12 @@
   font-size: 62.5%;
 
   /* background */
-  --main-bg-image: linear-gradient(
+  --main-bg-image: linear-gradient(90deg, rgb(113, 153, 204), rgb(202, 95, 95));
+  /* --main-bg-image: linear-gradient(
     90deg,
     rgb(169, 208, 214),
     rgb(141, 203, 214)
-  );
+  ); */
   --main-bg-header: rgba(255, 255, 255, 0.1);
   --main-bg-mobile-navigation: linear-gradient(
     90deg,
