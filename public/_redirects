@@ -1,3 +1,16 @@
+/movie /
+/movie/now-playing /
+/movie/upcoming /
+/movie/top-rated /
 /movie/:movieId /
+
+/tv /
+/tv/airing-today /
+/tv/on-the-air /
+/tv/top-rated /
+/tv/:tvId
+
+/person /
 /person/:personId /
+
 /search/:query https://movie-aic.netlify.app/
