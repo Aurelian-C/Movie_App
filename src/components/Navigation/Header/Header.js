@@ -9,6 +9,7 @@ import MenuContainer from './MenuContainer';
 import MenuPhone from './MenuPhone';
 import DropDownButton from './DropDownButton';
 import MenuHints from './MenuHints';
+import SearchHint from './SearchHint';
 
 export default function Header({ onShowSideMenu }) {
   const [buttonSearchVisibility, setButtonSearchVisibility] = useState(true);
@@ -75,7 +76,22 @@ export default function Header({ onShowSideMenu }) {
           onSetMenuHintsVisibility={setMenuHintsVisibility}
           onSetSearchedHints={setSearchedHints}
         >
-          {menuHintsVisibility && <MenuHints searchedHints={searchedHints} />}
+          {menuHintsVisibility && (
+            <MenuHints>
+              {searchedHints.map(item => {
+                const name = item.title ? item.title : item.name;
+                return (
+                  <SearchHint
+                    name={name}
+                    key={item.id}
+                    mediaType={item.mediaType}
+                    id={item.id}
+                    onSetMenuHintsVisibility={setMenuHintsVisibility}
+                  />
+                );
+              })}
+            </MenuHints>
+          )}
         </MenuSearch>
       )}
     </header>

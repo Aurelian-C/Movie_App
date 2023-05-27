@@ -1,12 +1,12 @@
 import classes from './MenuSearch.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API_KEY } from '../../../config/config';
+import { API_KEY, API_URL } from '../../../config/config';
 import { createSearchedItems } from '../../../config/helpers';
 
 async function searchLoader(query) {
   const response = await fetch(
-    `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${API_KEY}`
+    `${API_URL}/search/multi?query=${query}&api_key=${API_KEY}`
   );
   const data = await response.json();
   return data;

@@ -9,11 +9,13 @@
   background-color: var(--main-bg-hints);
 }
 
-.header-search__hint-container {
+.header-search__anchor {
   display: flex;
   align-items: center;
   margin: 0 auto;
   max-width: var(--container-max-width);
+  color: var(--text-color-hints);
+  text-decoration: none;
 }
 
 .header-search__icon--hint {

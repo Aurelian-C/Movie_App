@@ -157,6 +157,7 @@ export const createSearchedItems = items => {
         id: item.id,
         knownForDepartment: item.known_for_department,
         knownForMovies: movies,
+        popularity: item.popularity,
       };
     } else {
       return {
@@ -166,6 +167,8 @@ export const createSearchedItems = items => {
         title: item.title || item.original_name,
         releaseDate: item.release_date || item.first_air_date,
         overview: item.overview,
+        voteAverage: item.vote_average,
+        voteCount: item.vote_count,
       };
     }
   });
