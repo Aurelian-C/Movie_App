@@ -36,6 +36,7 @@
   overflow: hidden;
   background-color: var(--main-bg-person-card);
   box-shadow: 1px 2px 5px var(--person-card-box-shadow-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .person__image img {

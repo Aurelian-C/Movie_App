@@ -1,16 +1,18 @@
 .footer {
   padding: 3rem 1rem;
+  margin: 10rem auto 0 auto;
+  max-width: 100rem;
   color: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 5rem; */
+  gap: 20px;
 }
 
 .footer__logo {
   display: inline-block;
   height: 10rem;
+  flex: 0 0 auto;
 }
 
 .footer__img {
@@ -21,18 +23,18 @@
 
 .footer__copyright {
   text-align: center;
-  margin-top: 2rem;
+  max-width: 50rem;
 }
 
 .footer__copyright a:link,
 .footer__copyright a:visited {
-  color: rgb(255, 69, 69);
+  color: rgb(255, 255, 0);
   text-decoration: none;
   margin: 0 5px;
 }
 
 .footer__copyright a:hover {
-  color: rgb(255, 125, 125);
+  border-bottom: 1px solid rgb(255, 255, 0);
 }
 
 .github-link {
