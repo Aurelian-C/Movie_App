@@ -16,10 +16,11 @@ export default function MenuSearch({
     setInputQuery(e.target.value);
     const { results } = await searchLoader(e.target.value);
     const searchedItems = createSearchedItems(results);
-    // const filteredItems = searchedItems.filter(
-    //   item => item.voteCount > 1000 || item.popularity > 50
-    // );
-    onSetSearchedHints(searchedItems);
+    const filteredItems = searchedItems.filter(
+      item => item.voteCount > 1000 || item.popularity > 50
+    );
+    const outputItems = [...new Set([...filteredItems, ...searchedItems])];
+    onSetSearchedHints(outputItems);
     onSetMenuHintsVisibility(true);
   }
 
