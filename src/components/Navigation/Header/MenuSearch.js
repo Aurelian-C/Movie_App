@@ -4,14 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { API_KEY, API_URL } from '../../../config/config';
 import { createSearchedItems } from '../../../config/helpers';
 
-async function searchLoader(query) {
-  const response = await fetch(
-    `${API_URL}/search/multi?query=${query}&api_key=${API_KEY}`
-  );
-  const data = await response.json();
-  return data;
-}
-
 export default function MenuSearch({
   children,
   onSetMenuHintsVisibility,
@@ -24,6 +16,9 @@ export default function MenuSearch({
     setInputQuery(e.target.value);
     const { results } = await searchLoader(e.target.value);
     const searchedItems = createSearchedItems(results);
+    // const filteredItems = searchedItems.filter(
+    //   item => item.voteCount > 1000 || item.popularity > 50
+    // );
     onSetSearchedHints(searchedItems);
     onSetMenuHintsVisibility(true);
   }
@@ -61,4 +56,12 @@ export default function MenuSearch({
       {children}
     </div>
   );
+}
+
+async function searchLoader(query) {
+  const response = await fetch(
+    `${API_URL}/search/multi?query=${query}&api_key=${API_KEY}`
+  );
+  const data = await response.json();
+  return data;
 }
