@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 900px) {
   .header__logo {
-    width: 5rem;
+    width: fit-content;
     grid-column: 2 / 3;
     justify-self: center;
   }
