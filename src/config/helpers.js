@@ -3,7 +3,7 @@ import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 
-const timeout = function (seconds) {
+export const timeout = function (seconds) {
   return new Promise((_, reject) => {
     setTimeout(() => {
       reject(
