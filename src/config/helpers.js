@@ -64,6 +64,14 @@ export const createMovieDetails = result => {
   };
   const releaseDate = new Date(date).toLocaleString('en-US', options);
 
+  const collections = result.belongs_to_collection
+    ? {
+        ...result.belongs_to_collection,
+        backdrop_path: `${IMAGES_PATH}${result.belongs_to_collection.backdrop_path}`,
+        poster_path: `${IMAGES_PATH}${result.belongs_to_collection.poster_path}`,
+      }
+    : null;
+
   let posterImage = result.poster_path
     ? `${IMAGES_PATH}${result.poster_path}`
     : `${IMAGES_PATH}${result.profile_path}`;
@@ -81,6 +89,7 @@ export const createMovieDetails = result => {
     vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
     release_date: releaseDate,
     runtime: runtime,
+    belongs_to_collection: collections,
     budget: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',

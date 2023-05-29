@@ -155,14 +155,6 @@
   text-align: justify;
 }
 
-.details {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  text-align: center;
-}
-
 @media screen and (max-width: 750px) {
   .header__poster {
     display: none;

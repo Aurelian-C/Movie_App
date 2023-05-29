@@ -4,6 +4,7 @@ import { API_KEY, API_URL } from '../config/config';
 import { createCastDetails, createMovieDetails } from '../config/helpers';
 import { Await, defer, useLoaderData } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
+import MovieCollections from '../components/Movie/MovieCollections';
 
 export default function MovieDetails() {
   const { movie, credits } = useLoaderData();
@@ -27,6 +28,18 @@ export default function MovieDetails() {
           {credits => {
             const castDetails = createCastDetails(credits.cast);
             return <PersonCard castDetail={castDetails} />;
+          }}
+        </Await>
+      </Suspense>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Await resolve={movie}>
+          {movie => {
+            const movieDetail = createMovieDetails(movie);
+            return (
+              <MovieCollections
+                collection={movieDetail.belongs_to_collection}
+              />
+            );
           }}
         </Await>
       </Suspense>
