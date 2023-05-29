@@ -81,6 +81,14 @@ export const createMovieDetails = result => {
     vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
     release_date: releaseDate,
     runtime: runtime,
+    budget: new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(result.budget),
+    revenue: new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(result.revenue),
   };
 };
 

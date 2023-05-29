@@ -1,0 +1,10 @@
+.section {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3rem var(--padding-sides-main);
+}
+
+.division {
+  max-width: var(--page-max-width);
+  margin: auto;
+}
