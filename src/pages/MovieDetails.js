@@ -78,35 +78,10 @@ async function fetchMovieCredits(params) {
   return credits;
 }
 
-// TV details fetch function
-export async function fetchTvDetails(params) {
-  const response = await fetch(
-    `${API_URL}/tv/${params.tvId}?api_key=${API_KEY}`
-  );
-  const tv = await response.json();
-  return tv;
-}
-
-export async function fetchTvCredits(params) {
-  const response = await fetch(
-    `${API_URL}/tv/${params.tvId}/credits?api_key=${API_KEY}`
-  );
-  const credits = await response.json();
-  return credits;
-}
-
 // Loader for movies
 export async function movieLoader({ params }) {
   return defer({
     movie: await fetchMovieDetails(params),
     credits: fetchMovieCredits(params),
-  });
-}
-
-// Loader for TVs
-export async function tvLoader({ params }) {
-  return defer({
-    movie: await fetchTvDetails(params),
-    credits: fetchTvCredits(params),
   });
 }

@@ -1,9 +1,10 @@
-import HomePage from './pages/Home';
-import MovieDetails, { movieLoader, tvLoader } from './pages/MovieDetails';
-import PersonDetails, { personLoader } from './pages/PersonDetails';
-import PresentationPage from './pages/Presentation';
-import RootLayout from './pages/RootLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RootLayout from './pages/RootLayout';
+import HomePage from './pages/Home';
+import PresentationPage from './pages/Presentation';
+import MovieDetails, { movieLoader } from './pages/MovieDetails';
+import PersonDetails, { personLoader } from './pages/PersonDetails';
+import TvDetails, { tvLoader } from './pages/TvDetails';
 import SearchPage, { searchLoader } from './pages/Search';
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
           element: <MovieDetails />,
           loader: movieLoader,
         },
-        { path: 'tv/:tvId', element: <MovieDetails />, loader: tvLoader },
+        { path: 'tv/:tvId', element: <TvDetails />, loader: tvLoader },
         {
           path: 'person',
           children: [
