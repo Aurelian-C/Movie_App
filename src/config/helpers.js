@@ -173,8 +173,8 @@ export const createCollectionDetails = collection => {
 
   return {
     ...collection,
-    backdrop_path: `${IMAGES_PATH}${collection.backdrop_path}`,
-    poster_path: `${IMAGES_PATH}${collection.poster_path}`,
+    backdrop_path: `${IMAGES_PATH_BIG}${collection.backdrop_path}`,
+    poster_path: `${IMAGES_PATH_BIG}${collection.poster_path}`,
     parts: parts,
   };
 };
