@@ -84,7 +84,7 @@ export default function Header({ onShowSideMenu }) {
                   <SearchHint
                     name={name}
                     key={item.id}
-                    mediaType={item.mediaType}
+                    mediaType={item.media_type}
                     id={item.id}
                     onSetMenuHintsVisibility={setMenuHintsVisibility}
                   />
