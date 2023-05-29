@@ -10,22 +10,23 @@ export default function Movie({ movieDetail }) {
     'linear-gradient(to right, rgba(41, 41, 41, 1), rgba(0, 0, 0,  0.6))';
 
   let liniarGradient = darkModeContext.darkMode ? dark : light;
+
   return (
     <div
       className={classes.header}
       style={{
-        backgroundImage: `${liniarGradient}, url(${movieDetail.backdropImage})`,
+        backgroundImage: `${liniarGradient}, url(${movieDetail.backdrop_path})`,
       }}
     >
       <div className={classes['header__container']}>
         <div className={classes['header__poster']}>
-          <img src={movieDetail.posterImage} alt={movieDetail.title} />
+          <img src={movieDetail.poster_path} alt={movieDetail.title} />
         </div>
         <div className={classes['header__details']}>
           <div className={classes['header__title']}>
             <h2>{movieDetail.title}</h2>
             <div className={classes['header__facts']}>
-              <div>{movieDetail.releaseDate}</div>
+              <div>{movieDetail.release_date}</div>
               <div className={classes['header__genres']}>
                 {movieDetail.genres.map((genre, i) => {
                   return i !== movieDetail.genres.length - 1 ? (
@@ -43,7 +44,7 @@ export default function Movie({ movieDetail }) {
           <div className={classes['header__actions']}>
             <div className={classes['header__user-score']}>
               <div className={classes['header__score']}>
-                <span>{movieDetail.voteAverage}</span>
+                <span>{movieDetail.vote_average}</span>
               </div>
               <div className={classes['header__user']}>User score</div>
             </div>

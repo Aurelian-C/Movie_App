@@ -46,13 +46,12 @@ export const createCardDetails = result => {
     : `${IMAGES_PATH}${result.profile_path}`;
 
   return {
+    ...result,
     title: result.title || result.name || result.original_name,
-    mediaType: result.media_type,
-    posterImage: posterImage,
-    backdropImage: `${IMAGES_PATH}${result.backdrop_path}`,
-    voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
-    id: result.id,
-    releaseDate,
+    backdrop_path: `${IMAGES_PATH}${result.backdrop_path}`,
+    poster_path: posterImage,
+    vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
+    release_date: releaseDate,
   };
 };
 
@@ -75,26 +74,21 @@ export const createMovieDetails = result => {
   };
 
   return {
+    ...result,
     title: result.title || result.name || result.original_name,
-    posterImage: posterImage,
-    backdropImage: `${IMAGES_PATH_BIG}${result.backdrop_path}`,
-    voteAverage: +Number.parseFloat(result.vote_average).toFixed(1),
-    id: result.id,
-    releaseDate,
-    genres: result.genres,
-    tagline: result.tagline,
-    runtime,
-    overview: result.overview,
+    backdrop_path: `${IMAGES_PATH_BIG}${result.backdrop_path}`,
+    poster_path: posterImage,
+    vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
+    release_date: releaseDate,
+    runtime: runtime,
   };
 };
 
 export function createMovieCredits(movies) {
   return movies.map(movie => {
     return {
-      title: movie.title,
-      voteCount: movie.vote_count,
-      id: movie.id,
-      posterImage: `${IMAGES_PATH}${movie.poster_path}`,
+      ...movie,
+      poster_path: `${IMAGES_PATH}${movie.poster_path}`,
     };
   });
 }
@@ -106,28 +100,20 @@ export const createCastDetails = cast => {
       : personWithoutImage;
 
     return {
-      actorName: person.original_name,
-      characterName: person.character,
-      actorID: person.id,
-      profileImage: image,
+      ...person,
+      profile_path: image,
     };
   });
 };
 
-export const createPersonDetails = personInfo => {
-  let image = personInfo.profile_path
-    ? `${IMAGES_PATH}${personInfo.profile_path}`
+export const createPersonDetails = person => {
+  let image = person.profile_path
+    ? `${IMAGES_PATH}${person.profile_path}`
     : personWithoutImageBig;
 
   return {
-    biography: personInfo.biography,
-    birthday: personInfo.birthday,
-    deathday: personInfo.deathday,
-    gender: personInfo.gender,
-    knownForDepartment: personInfo.known_for_department,
-    name: personInfo.name,
-    placeOfBirth: personInfo.place_of_birth,
-    profileImage: image,
+    ...person,
+    profile_path: image,
   };
 };
 
@@ -142,33 +128,16 @@ export const createSearchedItems = items => {
       : cardWithoutImage;
 
     if (item.media_type === 'person') {
-      const movies = item.known_for.map(movie => {
-        return {
-          id: movie.id,
-          mediaType: movie.media_type,
-          title: movie.title,
-        };
-      });
-
       return {
-        profileImage: profileImage,
-        name: item.name,
-        mediaType: item.media_type,
-        id: item.id,
-        knownForDepartment: item.known_for_department,
-        knownForMovies: movies,
-        popularity: item.popularity,
+        ...item,
+        profile_path: profileImage,
       };
     } else {
       return {
-        posterImage: posterImage,
-        id: item.id,
-        mediaType: item.media_type,
+        ...item,
+        poster_path: posterImage,
         title: item.title || item.original_name,
-        releaseDate: item.release_date || item.first_air_date,
-        overview: item.overview,
-        voteAverage: item.vote_average,
-        voteCount: item.vote_count,
+        release_date: item.release_date || item.first_air_date,
       };
     }
   });

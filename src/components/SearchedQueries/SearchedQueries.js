@@ -6,12 +6,12 @@ export default function SearchedQueries({ items }) {
   return (
     <SectionPrimary className={classes.section}>
       {items.map(item => {
-        let imageURL = item.posterImage || item.profileImage;
+        let imageURL = item.poster_path || item.profile_path;
         let title = item.title || item.name;
 
         return (
           <Link
-            to={`/${item.mediaType}/${item.id}`}
+            to={`/${item.media_type}/${item.id}`}
             className={classes.card}
             key={item.id}
           >
@@ -20,7 +20,7 @@ export default function SearchedQueries({ items }) {
             </div>
             <div>
               <div className={classes.card__title}>{title}</div>
-              <div>{item.mediaType}</div>
+              <div>{item.media_type}</div>
             </div>
           </Link>
         );

@@ -7,21 +7,21 @@ export default function PersonCard({ castDetail }) {
   return (
     <div className={classes.person}>
       <div className={classes['person__container']}>
-        <h2 className={classes['person__section-name']}>Top Billed Cast</h2>
+        <h2 className={classes['person__section-name']}>Top Cast</h2>
         <div className={classes['person__cards']}>
           {cast.map(person => {
             return (
-              <div key={person.actorID} className={classes['person__card']}>
+              <div key={person.id} className={classes['person__card']}>
                 <div className={classes['person__image']}>
-                  <Link to={`/person/${person.actorID}`}>
-                    <img src={person.profileImage} alt={person.actorName} />
+                  <Link to={`/person/${person.id}`}>
+                    <img src={person.profile_path} alt={person.original_name} />
                   </Link>
                 </div>
                 <div className={classes['person__name']}>
-                  <Link to={`/person/${person.actorID}`}>
-                    {person.actorName}
+                  <Link to={`/person/${person.id}`}>
+                    {person.original_name}
                   </Link>
-                  <h3>{person.characterName}</h3>
+                  <h3>{person.character}</h3>
                 </div>
               </div>
             );

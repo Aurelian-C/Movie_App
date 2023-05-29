@@ -9,6 +9,7 @@ export default function MovieDetails() {
   const [movie, credits] = useLoaderData();
   const movieDetail = createMovieDetails(movie);
   const castDetails = createCastDetails(credits.cast);
+  console.log(credits.cast);
 
   useEffect(() => {
     window.scrollTo(0, 0);

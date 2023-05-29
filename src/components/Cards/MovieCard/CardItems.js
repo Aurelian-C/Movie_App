@@ -35,12 +35,12 @@ export default function CardItems({
           {items.map(item => (
             <CardItem
               key={item.id}
-              image={item.posterImage}
+              image={item.poster_path}
               title={item.title}
-              voteAverage={item.voteAverage}
-              releaseDate={item.releaseDate}
+              voteAverage={item.vote_average}
+              releaseDate={item.release_date}
               id={item.id}
-              mediaType={item.mediaType ? item.mediaType : mediaType}
+              mediaType={item.media_type ? item.media_type : mediaType}
             />
           ))}
         </div>

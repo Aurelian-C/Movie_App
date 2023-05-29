@@ -14,8 +14,8 @@ export default function Person({ personDetail, movieCredits }) {
   const biographyArray = biography.split('\n').filter(string => string !== '');
   biography = renderFullBiography ? biographyArray : biographyArray.slice(0, 2);
   let birthday = personDetail.birthday ? personDetail.birthday : '-';
-  let placeOfBirth = personDetail.placeOfBirth
-    ? personDetail.placeOfBirth
+  let placeOfBirth = personDetail.place_of_birth
+    ? personDetail.place_of_birth
     : '-';
   let renderButton = !renderFullBiography && biographyArray.length > 2;
 
@@ -41,13 +41,13 @@ export default function Person({ personDetail, movieCredits }) {
 
   const voteCounts = 2500;
   const knownFor = movieCredits
-    .filter(movie => movie.voteCount > voteCounts)
+    .filter(movie => movie.vote_count > voteCounts)
     .sort((a, b) => {
-      if (a.voteCount < b.voteCount) {
+      if (a.vote_count < b.vote_count) {
         return 1;
       }
 
-      if (a.voteCount > b.voteCount) {
+      if (a.vote_count > b.vote_count) {
         return -1;
       }
 
@@ -60,7 +60,7 @@ export default function Person({ personDetail, movieCredits }) {
       <div className={classes['person__container']}>
         <div className={classes['person__header']}>
           <div className={classes['person__image']}>
-            <img src={personDetail.profileImage} alt={personDetail.name} />
+            <img src={personDetail.profile_path} alt={personDetail.name} />
           </div>
           <div className={classes['person__details']}>
             <h2 className={classes['person__name']}>{personDetail.name}</h2>
@@ -89,7 +89,7 @@ export default function Person({ personDetail, movieCredits }) {
                 <div>
                   <h4 className={classes['person__info-title']}>Known For</h4>
                   <p className={classes['person__info-paragraph']}>
-                    {personDetail.knownForDepartment}
+                    {personDetail.known_for_department}
                   </p>
                 </div>
                 <div>
@@ -129,7 +129,7 @@ export default function Person({ personDetail, movieCredits }) {
                       <div className={classes['movie__card']} key={movie.id}>
                         <div className={classes['movie__card-image']}>
                           <Link to={`/movie/${movie.id}`}>
-                            <img src={movie.posterImage} alt={movie.title} />
+                            <img src={movie.poster_path} alt={movie.title} />
                           </Link>
                         </div>
                         <Link
