@@ -1,13 +1,20 @@
 import Movie from '../components/Movie/Movie';
 import PersonCard from '../components/Cards/PersonCard/PersonCard';
 import { API_KEY, API_URL } from '../config/config';
-import { createCastDetails, createMovieDetails } from '../config/helpers';
+import {
+  createCastDetails,
+  createCollectionDetails,
+  createMovieDetails,
+} from '../config/helpers';
 import { Await, defer, useLoaderData } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 import MovieCollections from '../components/Movie/MovieCollections';
 
 export default function MovieDetails() {
-  const { movie, credits } = useLoaderData();
+  const {
+    movie: [movie, rawCollection],
+    credits,
+  } = useLoaderData();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,14 +39,12 @@ export default function MovieDetails() {
         </Await>
       </Suspense>
       <Suspense fallback={<p>Loading...</p>}>
-        <Await resolve={movie}>
-          {movie => {
-            const movieDetail = createMovieDetails(movie);
-            return (
-              <MovieCollections
-                collection={movieDetail.belongs_to_collection}
-              />
-            );
+        <Await resolve={rawCollection}>
+          {collection => {
+            const formatCollection = collection
+              ? createCollectionDetails(collection)
+              : null;
+            return <MovieCollections collection={formatCollection} />;
           }}
         </Await>
       </Suspense>
@@ -49,11 +54,20 @@ export default function MovieDetails() {
 
 // Movie details fetch function
 async function fetchMovieDetails(params) {
+  let collection;
   const response = await fetch(
     `${API_URL}/movie/${params.movieId}?api_key=${API_KEY}`
   );
   const movie = await response.json();
-  return movie;
+
+  if (movie.belongs_to_collection) {
+    const response = await fetch(
+      `${API_URL}/collection/${movie.belongs_to_collection.id}?api_key=${API_KEY}`
+    );
+    collection = await response.json();
+  }
+
+  return [movie, collection];
 }
 
 async function fetchMovieCredits(params) {

@@ -1,5 +1,4 @@
 .collection {
-  height: 30rem;
   background-size: cover;
   background-position: 50%;
   border-radius: 10px;
@@ -11,6 +10,20 @@
   letter-spacing: 1px;
 }
 
-.collection__names {
-  font-size: 2.8rem;
+.collection__list {
+  font-size: 2.2rem;
+}
+
+.collection__list li {
+  margin-left: 10px;
+}
+
+.collection__button {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
 }

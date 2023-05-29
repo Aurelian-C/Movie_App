@@ -160,6 +160,25 @@ export const createSearchedItems = items => {
   });
 };
 
+export const createCollectionDetails = collection => {
+  let parts = collection?.parts
+    ? collection.parts.map(part => {
+        return {
+          ...part,
+          backdrop_path: `${IMAGES_PATH}${part.backdrop_path}`,
+          poster_path: `${IMAGES_PATH}${part.poster_path}`,
+        };
+      })
+    : null;
+
+  return {
+    ...collection,
+    backdrop_path: `${IMAGES_PATH}${collection.backdrop_path}`,
+    poster_path: `${IMAGES_PATH}${collection.poster_path}`,
+    parts: parts,
+  };
+};
+
 let timeoutID;
 export function debounce(func, query, timeout = 1000) {
   if (timeoutID) clearTimeout(timeoutID);

@@ -1,17 +1,37 @@
 import SectionSecondary from '../UI/SectionWrapper/SectionSecondary';
 import classes from './MovieCollections.module.css';
+import { useContext } from 'react';
+import { ModeDarkContext } from '../../store/dark-mode';
 
 export default function MovieCollections({ collection }) {
+  const darkModeContext = useContext(ModeDarkContext);
   if (!collection) return null;
+
+  const light =
+    'linear-gradient(to right, rgb(82, 105, 162), rgba(67, 22, 19, 0.6))';
+  const dark =
+    'linear-gradient(to right, rgba(41, 41, 41, 1), rgba(0, 0, 0,  0.6))';
+
+  let liniarGradient = darkModeContext.darkMode ? dark : light;
 
   return (
     <SectionSecondary>
       <div
         className={classes.collection}
-        style={{ backgroundImage: `url(${collection.backdrop_path})` }}
+        style={{
+          backgroundImage: `${liniarGradient}, url(${collection.backdrop_path})`,
+        }}
       >
         <h2 className={classes.collection__title}>Part of {collection.name}</h2>
-        <p className={classes.collection__names}>Includes: </p>
+        <ul className={classes.collection__list}>
+          Includes:{' '}
+          {collection.parts.map(part => (
+            <li key={part.id}>- {part.title}</li>
+          ))}
+        </ul>
+        <button className={classes.collection__button}>
+          View the collection
+        </button>
       </div>
     </SectionSecondary>
   );
