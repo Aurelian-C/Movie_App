@@ -39,6 +39,7 @@
   --main-bg-movie-score: rgba(36, 157, 147, 0.7);
   --main-bg-person-card: rgba(118, 137, 181, 0.4);
   --main-bg-searched-card: rgb(153, 191, 204);
+  --main-bg-no-image: rgb(217, 217, 217);
 
   /* text color */
   --main-text-color-light: white;
@@ -62,6 +63,12 @@
   --card-border-radius: 8px;
   --page-margin-top: 10rem;
   --page-max-width: 130rem;
+
+  /* Dimensions */
+  --card-movie-height: 220px;
+  --card-movie-width: 147px;
+  --card-person-height: 200px;
+  --card-person-width: 133px;
 
   /* box-shadows color */
   --person-card-box-shadow-color: rgba(0, 0, 0, 0.3);

@@ -1,0 +1,48 @@
+.card {
+  max-width: min-content;
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+
+.card__image {
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+
+.card__image--movie {
+  height: var(--card-movie-height);
+  width: var(--card-movie-width);
+}
+
+.card__image--person {
+  height: var(--card-person-height);
+  width: var(--card-person-width);
+}
+
+.card__image img {
+  display: inline-block;
+  height: 100%;
+}
+
+.card__content {
+  position: relative;
+  padding-top: 15px;
+  padding-left: 3px;
+}
+
+.card__title,
+.card__date {
+  background-color: var(--main-bg-no-image);
+  border-radius: 20px;
+}
+
+.card__title {
+  width: 80%;
+  height: 10px;
+  margin-bottom: 5px;
+}
+
+.card__date {
+  width: 70%;
+  height: 10px;
+}

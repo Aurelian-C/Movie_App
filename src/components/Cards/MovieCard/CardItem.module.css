@@ -6,8 +6,8 @@
 }
 
 .card__image {
-  height: 220px;
-  width: 147px;
+  height: var(--card-movie-height);
+  width: var(--card-movie-width);
   border-radius: var(--card-border-radius);
   overflow: hidden;
   cursor: pointer;

@@ -9,6 +9,7 @@ import {
 import { Await, defer, useLoaderData } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 import MovieCollections from '../components/Movie/MovieCollections';
+import LoadingCard from '../components/Cards/LoadingCard/LoadingCard';
 
 export default function MovieDetails() {
   const {
@@ -30,7 +31,7 @@ export default function MovieDetails() {
           }}
         </Await>
       </Suspense>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<LoadingCard type="person" />}>
         <Await resolve={credits}>
           {credits => {
             const castDetails = createCastDetails(credits.cast);

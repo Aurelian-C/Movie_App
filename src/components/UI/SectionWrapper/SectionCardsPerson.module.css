@@ -1,0 +1,33 @@
+.section {
+  padding: 3rem var(--padding-sides-main);
+}
+
+.section__container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.section__title {
+  margin-bottom: 10px;
+}
+
+.section__cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content, 1fr);
+  grid-gap: 15px;
+  gap: 15px;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}
+
+.section__cards::-webkit-scrollbar {
+  width: 0;
+  height: 8px;
+}
+
+.section__cards::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+  background: var(--main-bg-cards-scrollbar);
+}

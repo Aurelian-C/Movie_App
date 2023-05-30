@@ -3,6 +3,14 @@ import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 
+export const asyncDelay = function (seconds) {
+  return new Promise((resolve, _) => {
+    setTimeout(() => {
+      resolve();
+    }, seconds * 1000);
+  });
+};
+
 export const timeout = function (seconds) {
   return new Promise((_, reject) => {
     setTimeout(() => {
