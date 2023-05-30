@@ -19,7 +19,7 @@ export default function HomePage() {
   const [trendingsTitle, setTrendingsTitle] = useState('movie');
   const [topRatedTitle, setTopRatedTitle] = useState('movie');
 
-  const trendingItems = useTrendings(trendingsTitle);
+  const trendingItems = useTrendings(trendingsTitle, 'week');
   const topRatedItems = useTopRated(topRatedTitle);
 
   function handleTrendingsSelector(word) {
