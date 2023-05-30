@@ -40,6 +40,8 @@
   --main-bg-person-card: rgba(118, 137, 181, 0.4);
   --main-bg-searched-card: rgb(153, 191, 204);
   --main-bg-no-image: rgb(217, 217, 217);
+  --main-bg-movie-button: rgba(255, 255, 255, 0.7);
+  --main-bg-movie-icon: rgba(0, 0, 0);
 
   /* text color */
   --main-text-color-light: white;
@@ -69,6 +71,8 @@
   --card-movie-width: 147px;
   --card-person-height: 200px;
   --card-person-width: 133px;
+  --video-height: 222px;
+  --video-width: 350px;
 
   /* box-shadows color */
   --person-card-box-shadow-color: rgba(0, 0, 0, 0.3);
@@ -95,6 +99,8 @@
     rgb(144, 192, 255),
     rgb(255, 157, 157)
   );
+  --main-bg-movie-button: rgba(0, 0, 0, 0.6);
+  --main-bg-movie-icon: rgba(255, 255, 255);
 
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-hints: white;

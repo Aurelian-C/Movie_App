@@ -9,11 +9,15 @@ export default function MovieVideos({ videosDetail }) {
       {videosDetail.results.map(video => (
         <div
           key={video.id}
-          className={classes.videos}
+          className={classes.video}
           style={{
             backgroundImage: `url('https://i.ytimg.com/vi/${video.key}/hqdefault.jpg')`,
           }}
-        ></div>
+        >
+          <button className={classes.video__button}>
+            <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
       ))}
     </SectionGrid>
   );

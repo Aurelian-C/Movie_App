@@ -1,6 +1,34 @@
-.videos {
-  height: 25rem;
-  width: 40rem;
+.video {
+  width: var(--video-width);
+  height: var(--video-height);
   background-position: 50%;
   background-size: cover;
+  position: relative;
+}
+
+.video__button {
+  background-color: var(--main-bg-movie-button);
+  border: none;
+  border-radius: 50%;
+  height: 7rem;
+  width: 7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.video__button i {
+  font-size: 3.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  transition: all 0.1s ease-in-out;
+  color: var(--main-bg-movie-icon);
+}
+
+.video__button:hover i {
+  font-size: 3rem;
 }
