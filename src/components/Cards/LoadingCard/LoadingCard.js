@@ -1,7 +1,7 @@
 import classes from './LoadingCard.module.css';
 import noMovieImage from '../../../assets/img/placeholder_content_img1.jpg';
 import noPersonImage from '../../../assets/img/person_with_no_image.png';
-import SectionCardsPerson from '../../UI/SectionWrapper/SectionCardsPerson';
+import SectionGrid from '../../UI/SectionWrapper/SectionGrid';
 
 export default function LoadingCard({ type = 'movie' }) {
   let image = type !== 'person' ? noMovieImage : noPersonImage;
@@ -13,7 +13,7 @@ export default function LoadingCard({ type = 'movie' }) {
   const cardsArrayNumber = Array.from(Array(10));
 
   return (
-    <SectionCardsPerson sectionTitle={'Top Cast'}>
+    <SectionGrid sectionTitle={'Top Cast'}>
       {cardsArrayNumber.map((_, i) => (
         <div className={classes.card} key={i}>
           <div className={`${classes.card__image} ${imageClass}`}>
@@ -25,6 +25,6 @@ export default function LoadingCard({ type = 'movie' }) {
           </div>
         </div>
       ))}
-    </SectionCardsPerson>
+    </SectionGrid>
   );
 }

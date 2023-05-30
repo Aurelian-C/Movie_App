@@ -11,11 +11,13 @@ import { Suspense, useEffect } from 'react';
 import MovieCollections from '../components/Movie/MovieCollections';
 import LoadingCard from '../components/Cards/LoadingCard/LoadingCard';
 import MovieProductionCompanies from '../components/Movie/MovieProductionCompanies';
+import MovieVideos from '../components/Movie/MovieVideos';
 
 export default function MovieDetails() {
   const {
     movie: [movie, collection],
     credits,
+    videos,
   } = useLoaderData();
 
   const movieDetail = createMovieDetails(movie);
@@ -41,6 +43,11 @@ export default function MovieDetails() {
       </Suspense>
       <MovieProductionCompanies movieDetail={{ ...movieDetail }} />
       <MovieCollections collection={collectionDetail} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Await resolve={videos}>
+          {videos => <MovieVideos videosDetail={videos} />}
+        </Await>
+      </Suspense>
     </>
   );
 }
@@ -71,10 +78,19 @@ async function fetchMovieCredits(params) {
   return credits;
 }
 
+async function fetchMovieVideos(params) {
+  const response = await fetch(
+    `${API_URL}/movie/${params.movieId}/videos?api_key=${API_KEY}`
+  );
+  const videos = await response.json();
+  return videos;
+}
+
 // Loader for movies
 export async function movieLoader({ params }) {
   return defer({
     movie: await fetchMovieDetails(params),
     credits: fetchMovieCredits(params),
+    videos: fetchMovieVideos(params),
   });
 }

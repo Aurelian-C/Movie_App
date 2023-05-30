@@ -1,4 +1,4 @@
-import SectionCardsPerson from '../../UI/SectionWrapper/SectionCardsPerson';
+import SectionGrid from '../../UI/SectionWrapper/SectionGrid';
 import classes from './PersonCard.module.css';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ export default function PersonCard({ castDetail }) {
   const cast = castDetail.slice(0, 9);
 
   return (
-    <SectionCardsPerson sectionTitle={'Top Cast'}>
+    <SectionGrid sectionTitle={'Top Cast'}>
       {cast.map(person => {
         return (
           <div key={person.id} className={classes['person__card']}>
@@ -26,6 +26,6 @@ export default function PersonCard({ castDetail }) {
         <span>View More</span>
         <i className="fa-solid fa-arrow-right"></i>
       </Link>
-    </SectionCardsPerson>
+    </SectionGrid>
   );
 }
