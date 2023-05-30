@@ -1,6 +1,6 @@
-import classes from './SectionSecondary.module.css';
+import classes from './SectionPageSecondary.module.css';
 
-export default function SectionSecondary({ className, children }) {
+export default function SectionPageSecondary({ className, children }) {
   return (
     <section className={`${classes.section} ${className}`}>
       <div className={classes.division}>{children}</div>

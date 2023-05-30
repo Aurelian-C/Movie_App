@@ -1,10 +1,10 @@
 import classes from './SearchedQueries.module.css';
-import SectionPrimary from '../UI/SectionWrapper/SectionPrimary';
+import SectionPagePrimary from '../UI/SectionWrapper/SectionPagePrimary';
 import { Link } from 'react-router-dom';
 
 export default function SearchedQueries({ items }) {
   return (
-    <SectionPrimary className={classes.section}>
+    <SectionPagePrimary className={classes.section}>
       {items.map(item => {
         let imageURL = item.poster_path || item.profile_path;
         let title = item.title || item.name;
@@ -25,6 +25,6 @@ export default function SearchedQueries({ items }) {
           </Link>
         );
       })}
-    </SectionPrimary>
+    </SectionPagePrimary>
   );
 }

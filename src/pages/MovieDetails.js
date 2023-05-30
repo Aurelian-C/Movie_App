@@ -1,4 +1,4 @@
-import Movie from '../components/Movie/Movie';
+import MovieHeader from '../components/Movie/MovieHeader';
 import PersonCard from '../components/Cards/PersonCard/PersonCard';
 import { API_KEY, API_URL } from '../config/config';
 import {
@@ -10,12 +10,19 @@ import { Await, defer, useLoaderData } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 import MovieCollections from '../components/Movie/MovieCollections';
 import LoadingCard from '../components/Cards/LoadingCard/LoadingCard';
+import MovieProductionCompanies from '../components/Movie/MovieProductionCompanies';
 
 export default function MovieDetails() {
   const {
-    movie: [movie, rawCollection],
+    movie: [movie, collection],
     credits,
   } = useLoaderData();
+
+  const movieDetail = createMovieDetails(movie);
+  let collectionDetail;
+  if (collection) {
+    collectionDetail = createCollectionDetails(collection);
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,32 +30,17 @@ export default function MovieDetails() {
 
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
-        <Await resolve={movie}>
-          {movie => {
-            const movieDetail = createMovieDetails(movie);
-            return <Movie movieDetail={{ ...movieDetail }} />;
-          }}
-        </Await>
-      </Suspense>
+      <MovieHeader movieDetail={{ ...movieDetail }} />
       <Suspense fallback={<LoadingCard type="person" />}>
         <Await resolve={credits}>
           {credits => {
-            const castDetails = createCastDetails(credits.cast);
-            return <PersonCard castDetail={castDetails} />;
+            const castDetail = createCastDetails(credits.cast);
+            return <PersonCard castDetail={castDetail} />;
           }}
         </Await>
       </Suspense>
-      <Suspense fallback={<p>Loading...</p>}>
-        <Await resolve={rawCollection}>
-          {collection => {
-            const formatCollection = collection
-              ? createCollectionDetails(collection)
-              : null;
-            return <MovieCollections collection={formatCollection} />;
-          }}
-        </Await>
-      </Suspense>
+      <MovieProductionCompanies movieDetail={{ ...movieDetail }} />
+      <MovieCollections collection={collectionDetail} />
     </>
   );
 }

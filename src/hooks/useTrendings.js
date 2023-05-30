@@ -20,7 +20,7 @@ export default function useTrendings(mediaType, timeWindow = 'day') {
     if (mediaType) {
       fetchData();
     }
-  }, [mediaType]);
+  }, [mediaType, timeWindow]);
 
   return items;
 }

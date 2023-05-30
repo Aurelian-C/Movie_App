@@ -155,6 +155,23 @@
   text-align: justify;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 50rem;
+  gap: 40px;
+}
+
+.info__item h3 {
+  font-size: 1.9rem;
+}
+
+.info__item h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 750px) {
   .header__poster {
     display: none;

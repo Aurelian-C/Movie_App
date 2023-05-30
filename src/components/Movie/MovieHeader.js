@@ -1,8 +1,8 @@
-import classes from './Movie.module.css';
+import classes from './MovieHeader.module.css';
 import { useContext } from 'react';
 import { ModeDarkContext } from '../../store/dark-mode';
 
-export default function Movie({ movieDetail }) {
+export default function MovieHeader({ movieDetail }) {
   const darkModeContext = useContext(ModeDarkContext);
   const light =
     'linear-gradient(to right, rgb(82, 105, 162), rgba(67, 22, 19, 0.6))';
@@ -76,6 +76,20 @@ export default function Movie({ movieDetail }) {
             <div className={classes['header__overview']}>
               <h3>Overview</h3>
               <p>{movieDetail.overview}</p>
+            </div>
+          </div>
+          <div className={classes.info}>
+            <div className={classes.info__item}>
+              <h3>Status</h3>
+              <h4>{movieDetail.status}</h4>
+            </div>
+            <div className={classes.info__item}>
+              <h3>Budget</h3>
+              <h4>{movieDetail.budget}</h4>
+            </div>
+            <div className={classes.info__item}>
+              <h3>Revenue</h3>
+              <h4>{movieDetail.revenue}</h4>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import SectionSecondary from '../UI/SectionWrapper/SectionSecondary';
+import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import classes from './MovieCollections.module.css';
 import { useContext } from 'react';
 import { ModeDarkContext } from '../../store/dark-mode';
@@ -15,7 +15,7 @@ export default function MovieCollections({ collection }) {
   let liniarGradient = darkModeContext.darkMode ? dark : light;
 
   return (
-    <SectionSecondary>
+    <SectionPageSecondary>
       <div
         className={classes.collection}
         style={{
@@ -33,6 +33,6 @@ export default function MovieCollections({ collection }) {
           View the collection
         </button>
       </div>
-    </SectionSecondary>
+    </SectionPageSecondary>
   );
 }

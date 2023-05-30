@@ -2,6 +2,7 @@ import { TIMEOUT_FETCH, IMAGES_PATH, IMAGES_PATH_BIG } from './config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
+import companyWithoutLogo from '../assets/img/company_without_logo.png';
 
 export const asyncDelay = function (seconds) {
   return new Promise((resolve, _) => {
@@ -80,6 +81,17 @@ export const createMovieDetails = result => {
       }
     : null;
 
+  const productionCompanies = result.production_companies
+    ? result.production_companies.map(company => {
+        return {
+          ...company,
+          logo_path: company.logo_path
+            ? `${IMAGES_PATH}${company.logo_path}`
+            : companyWithoutLogo,
+        };
+      })
+    : null;
+
   let posterImage = result.poster_path
     ? `${IMAGES_PATH}${result.poster_path}`
     : `${IMAGES_PATH}${result.profile_path}`;
@@ -98,6 +110,7 @@ export const createMovieDetails = result => {
     release_date: releaseDate,
     runtime: runtime,
     belongs_to_collection: collections,
+    production_companies: productionCompanies,
     budget: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
