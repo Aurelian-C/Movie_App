@@ -39,13 +39,14 @@
 .header__facts {
   display: flex;
   gap: 20px;
+  text-align: center;
 }
 
 .header__genres {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 7px;
+  column-gap: 7px;
 }
 
 .header__actions {
@@ -172,7 +173,7 @@
   font-weight: 400;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   .header__poster {
     display: none;
   }
