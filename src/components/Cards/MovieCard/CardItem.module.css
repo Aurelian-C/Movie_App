@@ -54,7 +54,7 @@
 }
 
 .card__title-anchor:hover {
-  color: var(--main-text-color-dark);
+  color: var(--card-text-hover);
 }
 
 .card__date {

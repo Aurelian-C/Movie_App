@@ -53,6 +53,7 @@
     #494949 100%
   );
   --text-color-hints: black;
+  --card-text-hover: rgb(109, 525, 245);
 
   /* border color */
   --main-border-color: rgb(220, 220, 220);
@@ -107,6 +108,7 @@
   --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);
   --button-biography-box-shadow-color: rgba(0, 0, 0, 0.6);
   --hints-border-color: rgb(93, 93, 93);
+  --card-text-hover: rgb(255, 144, 144);
 }
 
 @media screen and (max-width: 700px) {
