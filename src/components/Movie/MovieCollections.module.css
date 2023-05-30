@@ -11,19 +11,58 @@
 }
 
 .collection__list {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  margin-top: 4px;
 }
 
 .collection__list li {
   margin-left: 10px;
+  margin-bottom: 3px;
 }
 
 .collection__button {
   margin-top: 20px;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: 20px;
+  border: none;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .collection {
+    padding: 3rem;
+  }
+
+  .collection__title {
+    font-size: 2.5rem;
+  }
+
+  .collection__list {
+    font-size: 1.5rem;
+  }
+
+  .collection__button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .collection {
+    padding: 2rem;
+  }
+
+  .collection__title {
+    font-size: 2.2rem;
+  }
+
+  .collection__list {
+    font-size: 1.4rem;
+  }
+
+  .collection__button {
+    font-size: 1.4rem;
+  }
 }
