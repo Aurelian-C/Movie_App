@@ -10,7 +10,9 @@ export default function Person({ personDetail, movieCredits }) {
   }
 
   let gender = personDetail.gender === 2 ? 'Male' : 'Female';
-  let biography = personDetail.biography ? personDetail.biography : 'None';
+  let biography = personDetail.biography
+    ? personDetail.biography
+    : `We don't have a biography for ${personDetail.name}.`;
   const biographyArray = biography.split('\n').filter(string => string !== '');
   biography = renderFullBiography ? biographyArray : biographyArray.slice(0, 2);
   let birthday = personDetail.birthday ? personDetail.birthday : '-';
@@ -39,7 +41,7 @@ export default function Person({ personDetail, movieCredits }) {
     livedYears = Math.floor((deathdayDate - birthdayDate) / 31556952000);
   }
 
-  const voteCounts = 2500;
+  const voteCounts = 0;
   const knownFor = movieCredits
     .filter(movie => movie.vote_count > voteCounts)
     .sort((a, b) => {
