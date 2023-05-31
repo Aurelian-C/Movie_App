@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import classes from './MotionPictureProductionCompanies.module.css';
 import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
-import classes from './MovieProductionCompanies.module.css';
+import { useContext } from 'react';
 import { ModeDarkContext } from '../../store/dark-mode';
 
-export default function MovieProductionCompanies({ movieDetail }) {
+export default function MotionPictureProductionCompanies({ motion }) {
   const darkModeContext = useContext(ModeDarkContext);
 
   let invert = { filter: 'none' };
@@ -16,7 +16,7 @@ export default function MovieProductionCompanies({ movieDetail }) {
       <h2>Production companies</h2>
       <div className={classes.production}>
         <div className={classes.production__companies}>
-          {movieDetail.production_companies.map(company => (
+          {motion.production_companies.map(company => (
             <div key={company.id} className={classes.production__company}>
               <img src={company.logo_path} alt={company.name} style={invert} />
               <h3>{company.name}</h3>

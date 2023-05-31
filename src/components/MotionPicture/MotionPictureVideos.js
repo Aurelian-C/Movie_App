@@ -1,9 +1,9 @@
-import classes from './MovieVideos.module.css';
+import classes from './MotionPictureVideos.module.css';
 import SectionGrid from '../UI/SectionWrapper/SectionGrid';
 import VideoModal from '../VideoModal/VideoModal';
 import { useState } from 'react';
 
-export default function MovieVideos({ videosDetail }) {
+export default function MotionPictureVideos({ videos }) {
   const [overlay, setOverlay] = useState(false);
   const [modalContent, setModalContent] = useState();
 
@@ -19,7 +19,7 @@ export default function MovieVideos({ videosDetail }) {
   return (
     <>
       <SectionGrid sectionTitle={'Videos'}>
-        {videosDetail.results.map(video => (
+        {videos.results.map(video => (
           <div
             key={video.id}
             className={classes.video}

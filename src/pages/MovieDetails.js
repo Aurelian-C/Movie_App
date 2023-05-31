@@ -1,17 +1,8 @@
-import MovieHeader from '../components/Movie/MovieHeader';
-import PersonCard from '../components/Cards/PersonCard/PersonCard';
 import { API_KEY, API_URL } from '../config/config';
-import {
-  createCastDetails,
-  createCollectionDetails,
-  createMovieDetails,
-} from '../config/helpers';
-import { Await, defer, useLoaderData } from 'react-router-dom';
-import { Suspense, useEffect } from 'react';
-import MovieCollections from '../components/Movie/MovieCollections';
-import LoadingCard from '../components/Cards/LoadingCard/LoadingCard';
-import MovieProductionCompanies from '../components/Movie/MovieProductionCompanies';
-import MovieVideos from '../components/Movie/MovieVideos';
+import { createCollectionDetails, createMovieDetails } from '../config/helpers';
+import { defer, useLoaderData } from 'react-router-dom';
+import { useEffect } from 'react';
+import MotionPictureMovie from '../components/MotionPicture/Movie/MotionPictureMovie';
 
 export default function MovieDetails() {
   const {
@@ -31,24 +22,12 @@ export default function MovieDetails() {
   }, []);
 
   return (
-    <>
-      <MovieHeader movieDetail={{ ...movieDetail }} />
-      <Suspense fallback={<LoadingCard type="person" />}>
-        <Await resolve={credits}>
-          {credits => {
-            const castDetail = createCastDetails(credits.cast);
-            return <PersonCard castDetail={castDetail} />;
-          }}
-        </Await>
-      </Suspense>
-      <MovieProductionCompanies movieDetail={{ ...movieDetail }} />
-      <MovieCollections collection={collectionDetail} />
-      <Suspense fallback={<p>Loading...</p>}>
-        <Await resolve={videos}>
-          {videos => <MovieVideos videosDetail={videos} />}
-        </Await>
-      </Suspense>
-    </>
+    <MotionPictureMovie
+      motion={{ ...movieDetail }}
+      credits={credits}
+      collection={collectionDetail}
+      videos={videos}
+    />
   );
 }
 

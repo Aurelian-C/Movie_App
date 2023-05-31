@@ -1,9 +1,9 @@
+import classes from './MotionPictureCollections.module.css';
 import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
-import classes from './MovieCollections.module.css';
 import { useContext } from 'react';
 import { ModeDarkContext } from '../../store/dark-mode';
 
-export default function MovieCollections({ collection }) {
+export default function MotionPictureCollections({ collection }) {
   const darkModeContext = useContext(ModeDarkContext);
   if (!collection) return null;
 

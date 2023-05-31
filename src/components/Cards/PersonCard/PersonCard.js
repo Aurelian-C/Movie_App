@@ -2,12 +2,12 @@ import SectionGrid from '../../UI/SectionWrapper/SectionGrid';
 import classes from './PersonCard.module.css';
 import { Link } from 'react-router-dom';
 
-export default function PersonCard({ castDetail }) {
-  const cast = castDetail.slice(0, 9);
+export default function PersonCard({ cast }) {
+  const castDetail = cast.slice(0, 9);
 
   return (
     <SectionGrid sectionTitle={'Top Cast'}>
-      {cast.map(person => {
+      {castDetail.map(person => {
         return (
           <div key={person.id} className={classes['person__card']}>
             <div className={classes['person__image']}>
