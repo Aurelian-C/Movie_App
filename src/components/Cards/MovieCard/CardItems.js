@@ -4,6 +4,7 @@ import classes from './CardItems.module.css';
 import lightBackground from '../../../assets/img/background_for_trending_section_light.png';
 import darkBackground from '../../../assets/img/background_for_trending_section_dark.png';
 import { ModeDarkContext } from '../../../store/dark-mode';
+import LoadingCard from '../LoadingCard/LoadingCard';
 
 export default function CardItems({
   children,
@@ -32,6 +33,7 @@ export default function CardItems({
         }
       >
         <div className={classes.cards__container}>
+          {items.length === 0 && <LoadingCard />}
           {items.map(item => (
             <CardItem
               key={item.id}

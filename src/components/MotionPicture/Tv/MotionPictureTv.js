@@ -1,7 +1,7 @@
 import MotionPictureHeader from '../MotionPictureHeader';
 import MotionPictureProductionCompanies from '../MotionPictureProductionCompanies';
 import PersonCard from '../../Cards/PersonCard/PersonCard';
-import LoadingCard from '../../Cards/LoadingCard/LoadingCard';
+import LoadingCards from '../../Cards/LoadingCard/LoadingCards';
 import HeaderDetailsTv from './HeaderDetailsTv';
 import MotionPictureVideos from '../MotionPictureVideos';
 import { Suspense } from 'react';
@@ -15,7 +15,7 @@ export default function MotionPictureTv({ motion, credits, videos }) {
       <MotionPictureHeader motion={{ ...motion }}>
         <HeaderDetailsTv motion={{ ...motion }} />
       </MotionPictureHeader>
-      <Suspense fallback={<LoadingCard type="person" />}>
+      <Suspense fallback={<LoadingCards type="person" />}>
         <Await resolve={credits}>
           {credits => {
             const castDetail = createCastDetails(credits.cast);

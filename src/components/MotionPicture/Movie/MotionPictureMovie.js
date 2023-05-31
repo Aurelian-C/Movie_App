@@ -3,7 +3,7 @@ import MotionPictureCollections from '../MotionPictureCollections';
 import MotionPictureHeader from '../MotionPictureHeader';
 import MotionPictureProductionCompanies from '../MotionPictureProductionCompanies';
 import MotionPictureVideos from '../MotionPictureVideos';
-import LoadingCard from '../../Cards/LoadingCard/LoadingCard';
+import LoadingCards from '../../Cards/LoadingCard/LoadingCards';
 import { Suspense } from 'react';
 import { Await } from 'react-router-dom';
 import { createCastDetails } from '../../../config/helpers';
@@ -20,7 +20,7 @@ export default function MotionPictureMovie({
       <MotionPictureHeader motion={{ ...motion }}>
         <HeaderDetailsMovie motion={{ ...motion }} />
       </MotionPictureHeader>
-      <Suspense fallback={<LoadingCard type="person" />}>
+      <Suspense fallback={<LoadingCards type="person" />}>
         <Await resolve={credits}>
           {credits => {
             const castDetail = createCastDetails(credits.cast);
