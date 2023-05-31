@@ -7,6 +7,7 @@ import LoadingCard from '../../Cards/LoadingCard/LoadingCard';
 import { Suspense } from 'react';
 import { Await } from 'react-router-dom';
 import { createCastDetails } from '../../../config/helpers';
+import HeaderDetailsMovie from './HeaderDetailsMovie';
 
 export default function MotionPictureMovie({
   motion,
@@ -16,7 +17,9 @@ export default function MotionPictureMovie({
 }) {
   return (
     <>
-      <MotionPictureHeader motion={{ ...motion }} />
+      <MotionPictureHeader motion={{ ...motion }}>
+        <HeaderDetailsMovie motion={{ ...motion }} />
+      </MotionPictureHeader>
       <Suspense fallback={<LoadingCard type="person" />}>
         <Await resolve={credits}>
           {credits => {

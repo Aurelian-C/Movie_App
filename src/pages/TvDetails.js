@@ -1,12 +1,13 @@
 import { API_KEY, API_URL } from '../config/config';
-import { createMovieDetails } from '../config/helpers';
+import { createTvDetails } from '../config/helpers';
 import { defer, useLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
 import MotionPictureTv from '../components/MotionPicture/Tv/MotionPictureTv';
 
 export default function TvDetails() {
   const { tv, credits } = useLoaderData();
-  const tvDetail = createMovieDetails(tv);
+  const tvDetail = createTvDetails(tv);
+  console.log('Tv:', tv);
 
   useEffect(() => {
     window.scrollTo(0, 0);

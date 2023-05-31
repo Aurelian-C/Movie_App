@@ -64,7 +64,7 @@ export const createCardDetails = result => {
   };
 };
 
-export const createMovieDetails = result => {
+export const createTvDetails = result => {
   const date = result.first_air_date || result.release_date;
   const options = {
     year: 'numeric',
@@ -103,7 +103,65 @@ export const createMovieDetails = result => {
 
   return {
     ...result,
-    title: result.title || result.name || result.original_name,
+    title: result.name || result.original_name,
+    backdrop_path: `${IMAGES_PATH_BIG}${result.backdrop_path}`,
+    poster_path: posterImage,
+    vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
+    release_date: releaseDate,
+    runtime: runtime,
+    belongs_to_collection: collections,
+    production_companies: productionCompanies,
+    budget: new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(result.budget),
+    revenue: new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(result.revenue),
+  };
+};
+
+export const createMovieDetails = result => {
+  const date = result.release_date;
+  const options = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  };
+  const releaseDate = new Date(date).toLocaleString('en-US', options);
+
+  const collections = result.belongs_to_collection
+    ? {
+        ...result.belongs_to_collection,
+        backdrop_path: `${IMAGES_PATH}${result.belongs_to_collection.backdrop_path}`,
+        poster_path: `${IMAGES_PATH}${result.belongs_to_collection.poster_path}`,
+      }
+    : null;
+
+  const productionCompanies = result.production_companies
+    ? result.production_companies.map(company => {
+        return {
+          ...company,
+          logo_path: company.logo_path
+            ? `${IMAGES_PATH}${company.logo_path}`
+            : companyWithoutLogo,
+        };
+      })
+    : null;
+
+  let posterImage = result.poster_path
+    ? `${IMAGES_PATH}${result.poster_path}`
+    : `${IMAGES_PATH}${result.profile_path}`;
+
+  const runtime = {
+    hours: Math.floor(result.runtime / 60),
+    minutes: result.runtime % 60,
+  };
+
+  return {
+    ...result,
+    title: result.title || result.original_title,
     backdrop_path: `${IMAGES_PATH_BIG}${result.backdrop_path}`,
     poster_path: posterImage,
     vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
