@@ -76,6 +76,8 @@
   --card-person-width: 133px;
   --video-height: 222px;
   --video-width: 350px;
+  --company-image-width: 120px;
+  --company-image-max-height: 120px;
 
   /* box-shadows color */
   --person-card-box-shadow-color: rgba(0, 0, 0, 0.3);

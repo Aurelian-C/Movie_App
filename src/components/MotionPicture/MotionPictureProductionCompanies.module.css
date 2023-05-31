@@ -11,31 +11,31 @@
 }
 
 .production__company img {
-  width: 150px;
-  max-height: 150px;
+  width: var(--company-image-width);
+  max-height: var(--company-image-max-height);
   filter: invert();
 }
 
 .production__company h3 {
   margin-top: 7px;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   font-weight: 400;
 }
 
 .production__company h4 {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   font-style: italic;
 }
 
 @media screen and (max-width: 700px) {
+  .production__companies {
+    gap: 30px;
+  }
+
   .production__company img {
     width: 120px;
     max-height: 120px;
-  }
-
-  .production__company h3 {
-    font-size: 1.4rem;
   }
 
   .production__company h4 {
@@ -44,6 +44,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .production__companies {
+    gap: 25px;
+  }
+
   .production__company img {
     width: 100px;
     max-height: 100px;
@@ -51,9 +55,5 @@
 
   .production__company h3 {
     font-size: 1.2rem;
-  }
-
-  .production__company h4 {
-    font-size: 1rem;
   }
 }
