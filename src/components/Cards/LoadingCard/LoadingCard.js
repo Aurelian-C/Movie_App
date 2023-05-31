@@ -1,5 +1,5 @@
 import classes from './LoadingCard.module.css';
-import noMovieImage from '../../../assets/img/placeholder_content_img1.jpg';
+import noMovieImage from '../../../assets/img/placeholder_content_png1.png';
 import noPersonImage from '../../../assets/img/person_with_no_image.png';
 
 export default function LoadingCard({ type }) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AJAX, createCardDetails } from '../config/helpers';
+import { AJAX, asyncDelay, createCardDetails } from '../config/helpers';
 import { API_URL, API_KEY } from '../config/config';
 
 export default function useTrendings(mediaType, timeWindow = 'day') {
