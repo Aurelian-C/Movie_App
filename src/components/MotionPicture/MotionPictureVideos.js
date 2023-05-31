@@ -26,11 +26,9 @@ export default function MotionPictureVideos({ videos }) {
             style={{
               backgroundImage: `url('https://i.ytimg.com/vi/${video.key}/hqdefault.jpg')`,
             }}
+            onClick={handleOpenModal.bind(null, video)}
           >
-            <button
-              className={classes.video__button}
-              onClick={handleOpenModal.bind(null, video)}
-            >
+            <button className={classes.video__button}>
               <i className="fa-solid fa-play"></i>
             </button>
           </div>

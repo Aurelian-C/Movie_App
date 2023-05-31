@@ -6,8 +6,6 @@ function Overlay({ onCloseModal }) {
 }
 
 function Video({ content }) {
-  console.log(content);
-
   return (
     <div className={classes.video}>
       <h2>{content.name}</h2>

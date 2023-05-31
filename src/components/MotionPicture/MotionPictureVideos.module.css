@@ -4,6 +4,7 @@
   background-position: 50%;
   background-size: cover;
   position: relative;
+  cursor: pointer;
 }
 
 .video__button {
