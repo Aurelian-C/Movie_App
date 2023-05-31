@@ -4,9 +4,9 @@ export default function HeaderDetailsTv({ motion }) {
   return (
     <div className={classes['header__details']}>
       <div className={classes['header__title']}>
-        <h2>{motion.title}</h2>
+        <h2>{motion.name}</h2>
         <div className={classes['header__facts']}>
-          <div>{motion.release_date}</div>
+          <div>{motion.first_air_date}</div>
           <div className={classes['header__genres']}>
             {motion.genres.map((genre, i) => {
               return i !== motion.genres.length - 1 ? (
@@ -16,9 +16,7 @@ export default function HeaderDetailsTv({ motion }) {
               );
             })}
           </div>
-          <div>
-            {motion.runtime.hours}h {motion.runtime.minutes}m
-          </div>
+          <div>{motion.number_of_episodes} episodes</div>
         </div>
       </div>
       <div className={classes['header__actions']}>
@@ -56,19 +54,13 @@ export default function HeaderDetailsTv({ motion }) {
           <p>{motion.overview}</p>
         </div>
       </div>
-      <div className={classes.info}>
-        <div className={classes.info__item}>
-          <h3>Status</h3>
-          <h4>{motion.status}</h4>
-        </div>
-        <div className={classes.info__item}>
-          <h3>Budget</h3>
-          <h4>{motion.budget}</h4>
-        </div>
-        <div className={classes.info__item}>
-          <h3>Revenue</h3>
-          <h4>{motion.revenue}</h4>
-        </div>
+      <div className={classes.creator}>
+        {motion.created_by.map(creator => (
+          <div className={classes.creator__person} key={creator.id}>
+            <h3>{creator.name}</h3>
+            <h4>Creator</h4>
+          </div>
+        ))}
       </div>
     </div>
   );

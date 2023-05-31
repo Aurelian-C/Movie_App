@@ -1,0 +1,78 @@
+.season {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--main-bg-last-season-card);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 3px 5px var(--last-season-box-shadow-color);
+}
+
+.seasons__image {
+  display: block;
+  width: 130px;
+}
+
+.season__title a:link,
+.season__title a:visited {
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.season__title div {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.season__overview {
+  margin-top: 25px;
+  font-size: 1.5rem;
+}
+
+.season__button {
+  margin-top: 8px;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: var(--main-bg-last-season-button);
+  color: white;
+  box-shadow: 1px 3px 5px var(--last-season-box-shadow-color);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .season__overview {
+    margin-top: 10px;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .seasons__image {
+    width: 140px;
+  }
+
+  .season__overview {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .season {
+    display: block;
+  }
+
+  .seasons__image {
+    display: none;
+  }
+
+  .season__details {
+    padding: 10px;
+  }
+}

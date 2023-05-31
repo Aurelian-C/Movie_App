@@ -130,7 +130,7 @@
   text-align: justify;
 }
 
-.info {
+.creator {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -138,11 +138,12 @@
   gap: 40px;
 }
 
-.info__item h3 {
+.creator__person h3 {
   font-size: 1.9rem;
 }
 
-.info__item h4 {
+.creator__person h4 {
   font-size: 1.5rem;
   font-weight: 400;
+  text-align: center;
 }

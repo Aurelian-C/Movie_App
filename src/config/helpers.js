@@ -64,64 +64,6 @@ export const createCardDetails = result => {
   };
 };
 
-export const createTvDetails = result => {
-  const date = result.first_air_date || result.release_date;
-  const options = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  };
-  const releaseDate = new Date(date).toLocaleString('en-US', options);
-
-  const collections = result.belongs_to_collection
-    ? {
-        ...result.belongs_to_collection,
-        backdrop_path: `${IMAGES_PATH}${result.belongs_to_collection.backdrop_path}`,
-        poster_path: `${IMAGES_PATH}${result.belongs_to_collection.poster_path}`,
-      }
-    : null;
-
-  const productionCompanies = result.production_companies
-    ? result.production_companies.map(company => {
-        return {
-          ...company,
-          logo_path: company.logo_path
-            ? `${IMAGES_PATH}${company.logo_path}`
-            : companyWithoutLogo,
-        };
-      })
-    : null;
-
-  let posterImage = result.poster_path
-    ? `${IMAGES_PATH}${result.poster_path}`
-    : `${IMAGES_PATH}${result.profile_path}`;
-
-  const runtime = {
-    hours: Math.floor(result.runtime / 60),
-    minutes: result.runtime % 60,
-  };
-
-  return {
-    ...result,
-    title: result.name || result.original_name,
-    backdrop_path: `${IMAGES_PATH_BIG}${result.backdrop_path}`,
-    poster_path: posterImage,
-    vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
-    release_date: releaseDate,
-    runtime: runtime,
-    belongs_to_collection: collections,
-    production_companies: productionCompanies,
-    budget: new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(result.budget),
-    revenue: new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(result.revenue),
-  };
-};
-
 export const createMovieDetails = result => {
   const date = result.release_date;
   const options = {
@@ -266,3 +208,46 @@ export function debounce(func, query, timeout = 1000) {
     func(query);
   }, timeout);
 }
+
+export const createTvDetails = tv => {
+  const date = tv.first_air_date;
+  const options = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  };
+  const firstAirDate = new Date(date).toLocaleString('en-US', options);
+
+  const productionCompanies = tv.production_companies
+    ? tv.production_companies.map(company => {
+        return {
+          ...company,
+          logo_path: company.logo_path
+            ? `${IMAGES_PATH}${company.logo_path}`
+            : companyWithoutLogo,
+        };
+      })
+    : null;
+
+  let posterImage = tv.poster_path
+    ? `${IMAGES_PATH}${tv.poster_path}`
+    : `${IMAGES_PATH}${tv.profile_path}`;
+
+  const seasons = tv.seasons.map(season => {
+    return {
+      ...season,
+      poster_path: `${IMAGES_PATH}${season.poster_path}`,
+    };
+  });
+
+  return {
+    ...tv,
+    name: tv.name || tv.original_name,
+    backdrop_path: `${IMAGES_PATH_BIG}${tv.backdrop_path}`,
+    poster_path: posterImage,
+    vote_average: +Number.parseFloat(tv.vote_average).toFixed(1),
+    first_air_date: firstAirDate,
+    production_companies: productionCompanies,
+    seasons: seasons,
+  };
+};

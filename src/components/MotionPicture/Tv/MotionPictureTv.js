@@ -1,12 +1,15 @@
 import MotionPictureHeader from '../MotionPictureHeader';
+import MotionPictureProductionCompanies from '../MotionPictureProductionCompanies';
 import PersonCard from '../../Cards/PersonCard/PersonCard';
 import LoadingCard from '../../Cards/LoadingCard/LoadingCard';
 import HeaderDetailsTv from './HeaderDetailsTv';
+import MotionPictureVideos from '../MotionPictureVideos';
 import { Suspense } from 'react';
 import { Await } from 'react-router-dom';
 import { createCastDetails } from '../../../config/helpers';
+import LastSeasonDetailsTv from './LastSeasonsDetailsTv';
 
-export default function MotionPictureTv({ motion, credits }) {
+export default function MotionPictureTv({ motion, credits, videos }) {
   return (
     <>
       <MotionPictureHeader motion={{ ...motion }}>
@@ -18,6 +21,13 @@ export default function MotionPictureTv({ motion, credits }) {
             const castDetail = createCastDetails(credits.cast);
             return <PersonCard cast={castDetail} />;
           }}
+        </Await>
+      </Suspense>
+      <MotionPictureProductionCompanies motion={{ ...motion }} />
+      <LastSeasonDetailsTv seasons={motion.seasons} />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Await resolve={videos}>
+          {video => <MotionPictureVideos videos={video} />}
         </Await>
       </Suspense>
     </>
