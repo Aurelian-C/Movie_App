@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classes from './Person.module.css';
 import { Link } from 'react-router-dom';
 
-export default function Person({ personDetail, movieCredits }) {
+export default function Person({ personDetail, cast }) {
   const [renderFullBiography, setRenderFullBiography] = useState(false);
 
   function handleFullBiography() {
@@ -42,7 +42,7 @@ export default function Person({ personDetail, movieCredits }) {
   }
 
   const voteCounts = 0;
-  const knownFor = movieCredits
+  const knownFor = cast
     .filter(movie => movie.vote_count > voteCounts)
     .sort((a, b) => {
       if (a.vote_count < b.vote_count) {
@@ -58,97 +58,103 @@ export default function Person({ personDetail, movieCredits }) {
     .slice(0, 8);
 
   return (
-    <div className={classes.person}>
-      <div className={classes['person__container']}>
-        <div className={classes['person__header']}>
-          <div className={classes['person__image']}>
-            <img src={personDetail.profile_path} alt={personDetail.name} />
-          </div>
-          <div className={classes['person__details']}>
-            <h2 className={classes['person__name']}>{personDetail.name}</h2>
-            <div className={classes['person__biography']}>
-              <h3 className={classes['person__section-title']}>Biography</h3>
-              <div className={classes['person__biography-text']}>
-                {biography.map((string, i) => (
-                  <p key={i}>{string}</p>
-                ))}
-                {renderButton && (
-                  <button
-                    className={classes['person__biography-button']}
-                    onClick={handleFullBiography}
-                  >
-                    <span>Read more</span>
-                    <i className="fa-solid fa-chevron-down"></i>
-                  </button>
-                )}
-              </div>
+    <>
+      <div className={classes.person}>
+        <div className={classes['person__container']}>
+          <div className={classes['person__header']}>
+            <div className={classes['person__image']}>
+              <img src={personDetail.profile_path} alt={personDetail.name} />
             </div>
-            <div className={classes['person__information']}>
-              <h3 className={classes['person__section-title']}>
-                Personal info
-              </h3>
-              <div className={classes['person__info']}>
-                <div>
-                  <h4 className={classes['person__info-title']}>Known For</h4>
-                  <p className={classes['person__info-paragraph']}>
-                    {personDetail.known_for_department}
-                  </p>
-                </div>
-                <div>
-                  <h4 className={classes['person__info-title']}>Gender</h4>
-                  <p className={classes['person__info-paragraph']}>{gender}</p>
-                </div>
-                <div>
-                  <h4 className={classes['person__info-title']}>Birthday</h4>
-                  <p className={classes['person__info-paragraph']}>
-                    {birthday}
-                  </p>
-                </div>
-                <div>
-                  <h4 className={classes['person__info-title']}>Age</h4>
-                  <p className={classes['person__info-paragraph']}>
-                    {deathdayYear && `Dead in ${deathdayYear} at `}
-                    {deathdayYear ? livedYears : ageYears}{' '}
-                    {ageYears === '-' ? '' : 'years old'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className={classes['person__info-title']}>
-                    Place of birth
-                  </h4>
-                  <p className={classes['person__info-paragraph']}>
-                    {placeOfBirth}
-                  </p>
+            <div className={classes['person__details']}>
+              <h2 className={classes['person__name']}>{personDetail.name}</h2>
+              <div className={classes['person__biography']}>
+                <h3 className={classes['person__section-title']}>Biography</h3>
+                <div className={classes['person__biography-text']}>
+                  {biography.map((string, i) => (
+                    <p key={i}>{string}</p>
+                  ))}
+                  {renderButton && (
+                    <button
+                      className={classes['person__biography-button']}
+                      onClick={handleFullBiography}
+                    >
+                      <span>Read more</span>
+                      <i className="fa-solid fa-chevron-down"></i>
+                    </button>
+                  )}
                 </div>
               </div>
-            </div>
-            {knownFor.length > 0 && (
-              <div className={classes['person__known']}>
-                <h3 className={classes['person__section-title']}>Known for</h3>
-                <div className={classes['movie__cards']}>
-                  {knownFor.map(movie => {
-                    return (
-                      <div className={classes['movie__card']} key={movie.id}>
-                        <div className={classes['movie__card-image']}>
-                          <Link to={`/movie/${movie.id}`}>
-                            <img src={movie.poster_path} alt={movie.title} />
+              <div className={classes['person__information']}>
+                <h3 className={classes['person__section-title']}>
+                  Personal info
+                </h3>
+                <div className={classes['person__info']}>
+                  <div>
+                    <h4 className={classes['person__info-title']}>Known For</h4>
+                    <p className={classes['person__info-paragraph']}>
+                      {personDetail.known_for_department}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className={classes['person__info-title']}>Gender</h4>
+                    <p className={classes['person__info-paragraph']}>
+                      {gender}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className={classes['person__info-title']}>Birthday</h4>
+                    <p className={classes['person__info-paragraph']}>
+                      {birthday}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className={classes['person__info-title']}>Age</h4>
+                    <p className={classes['person__info-paragraph']}>
+                      {deathdayYear && `Dead in ${deathdayYear} at `}
+                      {deathdayYear ? livedYears : ageYears}{' '}
+                      {ageYears === '-' ? '' : 'years old'}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className={classes['person__info-title']}>
+                      Place of birth
+                    </h4>
+                    <p className={classes['person__info-paragraph']}>
+                      {placeOfBirth}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {knownFor.length > 0 && (
+                <div className={classes['person__known']}>
+                  <h3 className={classes['person__section-title']}>
+                    Known for
+                  </h3>
+                  <div className={classes['movie__cards']}>
+                    {knownFor.map(movie => {
+                      return (
+                        <div className={classes['movie__card']} key={movie.id}>
+                          <div className={classes['movie__card-image']}>
+                            <Link to={`/movie/${movie.id}`}>
+                              <img src={movie.poster_path} alt={movie.title} />
+                            </Link>
+                          </div>
+                          <Link
+                            to={`/movie/${movie.id}`}
+                            className={classes['movie__card-title']}
+                          >
+                            {movie.title}
                           </Link>
                         </div>
-                        <Link
-                          to={`/movie/${movie.id}`}
-                          className={classes['movie__card-title']}
-                        >
-                          {movie.title}
-                        </Link>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

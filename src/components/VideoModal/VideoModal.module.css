@@ -23,14 +23,19 @@
   z-index: 9999;
 }
 
-.video h2 {
+.video__title {
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
 }
 
-.video p {
-  font-size: 1.8rem;
+.video__icon {
+  font-size: 4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 iframe {

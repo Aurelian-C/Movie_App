@@ -10,7 +10,6 @@ export default function MovieDetails() {
     credits,
     videos,
   } = useLoaderData();
-  console.log('Movie:', movie);
 
   const movieDetail = createMovieDetails(movie);
   let collectionDetail;
