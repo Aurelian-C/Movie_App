@@ -3,6 +3,7 @@ import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 import companyWithoutLogo from '../assets/img/company_without_logo.png';
+import movieWithoutImage from '../assets/img/no_movie_image_big.jpg';
 
 export const asyncDelay = function (seconds) {
   return new Promise((resolve, _) => {
@@ -94,7 +95,7 @@ export const createMovieDetails = result => {
 
   let posterImage = result.poster_path
     ? `${IMAGES_PATH}${result.poster_path}`
-    : `${IMAGES_PATH}${result.profile_path}`;
+    : movieWithoutImage;
 
   const runtime = {
     hours: Math.floor(result.runtime / 60),
@@ -144,7 +145,7 @@ export const createTvDetails = tv => {
 
   let posterImage = tv.poster_path
     ? `${IMAGES_PATH}${tv.poster_path}`
-    : `${IMAGES_PATH}${tv.profile_path}`;
+    : movieWithoutImage;
 
   const seasons = tv.seasons.map(season => {
     return {

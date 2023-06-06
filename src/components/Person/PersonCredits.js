@@ -3,7 +3,13 @@ import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import classes from './PersonCredits.module.css';
 
 export default function PersonCredits({ cast }) {
-  const castFormat = cast
+  const eliminateDuplicates = [];
+  cast.forEach(movie => {
+    const include = eliminateDuplicates.some(item => item.id === movie.id);
+    if (!include) eliminateDuplicates.push(movie);
+  });
+
+  const castFormat = eliminateDuplicates
     .map(movie => {
       const date = movie.release_date || movie.first_air_date;
       const year = new Date(date).getFullYear();

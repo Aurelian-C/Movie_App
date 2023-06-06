@@ -7,8 +7,6 @@ import MotionPictureTv from '../components/MotionPicture/Tv/MotionPictureTv';
 export default function TvDetails() {
   const { tv, credits, videos } = useLoaderData();
   const tvDetail = createTvDetails(tv);
-  console.log('Original Tv:', tv);
-  console.log('Transformed Tv:', tvDetail);
 
   useEffect(() => {
     window.scrollTo(0, 0);

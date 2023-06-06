@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 export default function LastSeasonDetailsTv({ seasons }) {
   const lastSeason = seasons[seasons.length - 1];
   const year = new Date(lastSeason.air_date).getFullYear();
-  console.log(lastSeason);
 
   return (
     <SectionPageSecondary>
