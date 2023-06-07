@@ -45,6 +45,8 @@
   --main-bg-last-season-card: rgba(0, 0, 0, 0.05);
   --main-bg-last-season-button: rgb(113, 153, 204);
   --main-bg-credits-card: rgba(189, 136, 182, 1);
+  --main-bg-credits-sort: rgb(131, 131, 131);
+  --main-bg-credits-category: rgb(255, 255, 255);
 
   /* text color */
   --main-text-color-light: white;
@@ -57,6 +59,7 @@
   );
   --text-color-hints: black;
   --card-text-hover: rgb(109, 525, 245);
+  --text-color-credits-category: black;
 
   /* border color */
   --main-border-color: rgb(220, 220, 220);
@@ -112,15 +115,18 @@
   --main-bg-last-season-card: rgba(130, 130, 130, 0.05);
   --main-bg-last-season-button: rgba(57, 57, 57, 0.75);
   --main-bg-credits-card: rgba(255, 255, 255, 0.06);
+  --main-bg-credits-sort: rgb(52, 52, 52);
+  --main-bg-credits-category: rgb(155, 155, 155);
 
   --main-text-color-selected: rgb(110, 204, 255);
+  --text-color-credits-category: white;
   --text-color-hints: white;
   --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);
   --button-biography-box-shadow-color: rgba(0, 0, 0, 0.6);
   --hints-border-color: rgb(93, 93, 93);
   --card-text-hover: rgb(255, 144, 144);
   --last-season-box-shadow-color: rgba(0, 0, 0, 0.3);
-  --border-credits-card: rgba(86, 86, 86, 1);
+  --border-credits-card: rgb(152, 152, 152);
 }
 
 @media screen and (max-width: 700px) {
