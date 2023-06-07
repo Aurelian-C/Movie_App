@@ -137,3 +137,43 @@
   font-size: 1.2rem;
   font-weight: 400;
 }
+
+@media screen and (max-width: 900px) {
+  .credits__row {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .credits__row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .credits__year {
+    writing-mode: horizontal-tb;
+    text-orientation: sideways;
+    letter-spacing: 1px;
+  }
+
+  .box:link,
+  .box:visited {
+    width: 180px;
+  }
+
+  .box__image {
+    height: 90px;
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+  }
+
+  .box__title {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .box__character {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
