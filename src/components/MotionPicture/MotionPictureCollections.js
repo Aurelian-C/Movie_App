@@ -1,13 +1,21 @@
 import classes from './MotionPictureCollections.module.css';
 import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ModeDarkContext } from '../../store/dark-mode';
 import { Link } from 'react-router-dom';
 
 export default function MotionPictureCollections({ collection }) {
   const darkModeContext = useContext(ModeDarkContext);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  });
+
   if (!collection) return null;
-  console.log(collection);
 
   const light =
     'linear-gradient(to right, rgb(82, 105, 162), rgba(67, 22, 19, 0.6))';
