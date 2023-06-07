@@ -8,20 +8,20 @@ export default function PersonCredits({ cast, crew }) {
   const [departmentCategory, setDepartmentCategory] = useState('Acting');
 
   // Cast code
-  const eliminateDuplicates = [];
+  const eliminateCastDuplicates = [];
   cast.forEach(movie => {
-    const include = eliminateDuplicates.some(item => item.id === movie.id);
-    if (!include) eliminateDuplicates.push(movie);
+    const include = eliminateCastDuplicates.some(item => item.id === movie.id);
+    if (!include) eliminateCastDuplicates.push(movie);
   });
 
-  const howManyMovies = eliminateDuplicates.filter(
+  const howManyMovies = eliminateCastDuplicates.filter(
     movie => movie.media_type === 'movie'
   ).length;
-  const howManyTvShows = eliminateDuplicates.filter(
+  const howManyTvShows = eliminateCastDuplicates.filter(
     movie => movie.media_type === 'tv'
   ).length;
 
-  const castFormat = eliminateDuplicates
+  const castFormat = eliminateCastDuplicates
     .map(movie => {
       const date = movie.release_date || movie.first_air_date;
       const year = new Date(date).getFullYear();
@@ -68,7 +68,12 @@ export default function PersonCredits({ cast, crew }) {
   }
 
   // Crew code
-  const crewFormat = crew.map(item => {
+  const eliminateCrewDuplicates = [];
+  crew.forEach(movie => {
+    const include = eliminateCrewDuplicates.some(item => item.id === movie.id);
+    if (!include) eliminateCrewDuplicates.push(movie);
+  });
+  const crewFormat = eliminateCrewDuplicates.map(item => {
     const date = item.release_date || item.first_air_date;
     const year = new Date(date).getFullYear();
 
@@ -77,10 +82,35 @@ export default function PersonCredits({ cast, crew }) {
       releaseYear: year,
     };
   });
-  const departmentSet = new Set(crewFormat.map(item => item.department));
-  const departments = Array.from(departmentSet);
-  if (eliminateDuplicates.length > 0) departments.push('Acting');
-  departments.sort();
+
+  const departments = [];
+  crewFormat.forEach(item => {
+    const department = item.department;
+    const exist = departments.some(dep => dep.department === department);
+
+    if (!exist) {
+      departments.push({
+        department: item.department,
+        count: 1,
+      });
+    } else {
+      const idx = departments.findIndex(dep => dep.department === department);
+      departments[idx].count++;
+    }
+  });
+
+  if (eliminateCastDuplicates.length > 0)
+    departments.push({
+      department: 'Acting',
+      count: eliminateCastDuplicates.length,
+    });
+
+  departments.sort((a, b) => {
+    if (a.department < b.department) return -1;
+    if (a.department > b.department) return 1;
+    return 0;
+  });
+
   const filteredCrew = crewFormat.filter(
     item => item.department.toLowerCase() === departmentCategory.toLowerCase()
   );
@@ -159,14 +189,14 @@ export default function PersonCredits({ cast, crew }) {
                 ></i>
               </div>
               <ul className={classes.credits__sort}>
-                {departments.map(department => (
+                {departments.map(item => (
                   <li
                     className={classes.credits__category}
-                    key={department}
-                    data-department={department}
+                    key={item.department}
+                    data-department={item.department}
                     onClick={handleDepartment}
                   >
-                    {department}
+                    {item.department} <span>{item.count}</span>
                   </li>
                 ))}
               </ul>
