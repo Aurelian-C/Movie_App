@@ -3,10 +3,18 @@ import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import classes from './PersonCredits.module.css';
 import { useState } from 'react';
 
-export default function PersonCredits({ cast }) {
+export default function PersonCredits({ cast, crew }) {
   const [motionCategory, setMotionCategory] = useState('all');
   // const [departmentCategory, setDepartmentCategory] = useState('acting');
 
+  // Crew code
+  console.log(crew);
+  const departmentSet = new Set(crew.map(item => item.department));
+  const departments = Array(...departmentSet);
+  departments.push('Acting');
+  departments.sort();
+
+  // Cast code
   const eliminateDuplicates = [];
   cast.forEach(movie => {
     const include = eliminateDuplicates.some(item => item.id === movie.id);
@@ -109,10 +117,11 @@ export default function PersonCredits({ cast }) {
                 ></i>
               </div>
               <ul className={classes.credits__sort}>
-                <li className={classes.credits__category}>Acting</li>
-                <li className={classes.credits__category}>Production</li>
-                <li className={classes.credits__category}>Crew</li>
-                <li className={classes.credits__category}>Directing</li>
+                {departments.map(department => (
+                  <li className={classes.credits__category} key={department}>
+                    {department}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

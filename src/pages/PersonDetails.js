@@ -28,8 +28,9 @@ export default function PersonDetails() {
       <Suspense fallback={<p>Loading...</p>}>
         <Await resolve={combinedCredits}>
           {combined => {
-            const combinedCredits = createMovieCredits(combined.cast);
-            return <PersonCredits cast={combinedCredits} />;
+            const castCredits = createMovieCredits(combined.cast);
+            const crewCredits = createMovieCredits(combined.crew);
+            return <PersonCredits cast={castCredits} crew={crewCredits} />;
           }}
         </Await>
       </Suspense>
