@@ -1,4 +1,13 @@
-import { TIMEOUT_FETCH, IMAGES_PATH, IMAGES_PATH_BIG } from './config';
+import {
+  TIMEOUT_FETCH,
+  IMAGES_PATH_BIG,
+  POSTER_PATH_SMALL,
+  BACKDROP_PATH_SMALL,
+  BACKDROP_PATH_MEDIUM,
+  LOGO_PATH_MEDIUM,
+  POSTER_PATH_MEDIUM,
+  PROFILE_PATH_MEDIUM,
+} from './config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
@@ -52,13 +61,13 @@ export const createCardDetails = result => {
   const releaseDate = new Date(date).toLocaleString('en-US', options);
 
   let posterImage = result.poster_path
-    ? `${IMAGES_PATH}${result.poster_path}`
-    : `${IMAGES_PATH}${result.profile_path}`;
+    ? `${POSTER_PATH_SMALL}${result.poster_path}`
+    : `${POSTER_PATH_SMALL}${result.profile_path}`;
 
   return {
     ...result,
     title: result.title || result.name || result.original_name,
-    backdrop_path: `${IMAGES_PATH}${result.backdrop_path}`,
+    backdrop_path: `${BACKDROP_PATH_SMALL}${result.backdrop_path}`,
     poster_path: posterImage,
     vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
     release_date: releaseDate,
@@ -77,8 +86,8 @@ export const createMovieDetails = result => {
   const collections = result.belongs_to_collection
     ? {
         ...result.belongs_to_collection,
-        backdrop_path: `${IMAGES_PATH}${result.belongs_to_collection.backdrop_path}`,
-        poster_path: `${IMAGES_PATH}${result.belongs_to_collection.poster_path}`,
+        backdrop_path: `${BACKDROP_PATH_MEDIUM}${result.belongs_to_collection.backdrop_path}`,
+        poster_path: `${POSTER_PATH_SMALL}${result.belongs_to_collection.poster_path}`,
       }
     : null;
 
@@ -87,14 +96,14 @@ export const createMovieDetails = result => {
         return {
           ...company,
           logo_path: company.logo_path
-            ? `${IMAGES_PATH}${company.logo_path}`
+            ? `${LOGO_PATH_MEDIUM}${company.logo_path}`
             : companyWithoutLogo,
         };
       })
     : null;
 
   let posterImage = result.poster_path
-    ? `${IMAGES_PATH}${result.poster_path}`
+    ? `${POSTER_PATH_MEDIUM}${result.poster_path}`
     : movieWithoutImage;
 
   const runtime = {
@@ -137,20 +146,20 @@ export const createTvDetails = tv => {
         return {
           ...company,
           logo_path: company.logo_path
-            ? `${IMAGES_PATH}${company.logo_path}`
+            ? `${LOGO_PATH_MEDIUM}${company.logo_path}`
             : companyWithoutLogo,
         };
       })
     : null;
 
   let posterImage = tv.poster_path
-    ? `${IMAGES_PATH}${tv.poster_path}`
+    ? `${POSTER_PATH_MEDIUM}${tv.poster_path}`
     : movieWithoutImage;
 
   const seasons = tv.seasons.map(season => {
     return {
       ...season,
-      poster_path: `${IMAGES_PATH}${season.poster_path}`,
+      poster_path: `${POSTER_PATH_MEDIUM}${season.poster_path}`,
     };
   });
 
@@ -171,7 +180,7 @@ export function createMovieCredits(movies) {
     return {
       ...movie,
       poster_path: movie.poster_path
-        ? `${IMAGES_PATH}${movie.poster_path}`
+        ? `${POSTER_PATH_SMALL}${movie.poster_path}`
         : cardWithoutImage,
     };
   });
@@ -180,7 +189,7 @@ export function createMovieCredits(movies) {
 export const createCastDetails = cast => {
   return cast.map(person => {
     let image = person.profile_path
-      ? `${IMAGES_PATH}${person.profile_path}`
+      ? `${PROFILE_PATH_MEDIUM}${person.profile_path}`
       : personWithoutImage;
 
     return {
@@ -192,7 +201,7 @@ export const createCastDetails = cast => {
 
 export const createPersonDetails = person => {
   let image = person.profile_path
-    ? `${IMAGES_PATH}${person.profile_path}`
+    ? `${PROFILE_PATH_MEDIUM}${person.profile_path}`
     : personWithoutImageBig;
 
   return {
@@ -204,11 +213,11 @@ export const createPersonDetails = person => {
 export const createSearchedItems = items => {
   return items.map(item => {
     let profileImage = item.profile_path
-      ? `${IMAGES_PATH}${item.profile_path}`
+      ? `${PROFILE_PATH_MEDIUM}${item.profile_path}`
       : cardWithoutImage;
 
     let posterImage = item.poster_path
-      ? `${IMAGES_PATH}${item.poster_path}`
+      ? `${POSTER_PATH_SMALL}${item.poster_path}`
       : cardWithoutImage;
 
     if (item.media_type === 'person') {
@@ -232,8 +241,8 @@ export const createCollectionDetails = collection => {
     ? collection.parts.map(part => {
         return {
           ...part,
-          backdrop_path: `${IMAGES_PATH}${part.backdrop_path}`,
-          poster_path: `${IMAGES_PATH}${part.poster_path}`,
+          backdrop_path: `${BACKDROP_PATH_SMALL}${part.backdrop_path}`,
+          poster_path: `${POSTER_PATH_SMALL}${part.poster_path}`,
         };
       })
     : null;
