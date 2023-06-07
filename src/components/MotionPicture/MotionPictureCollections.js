@@ -2,10 +2,12 @@ import classes from './MotionPictureCollections.module.css';
 import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import { useContext } from 'react';
 import { ModeDarkContext } from '../../store/dark-mode';
+import { Link } from 'react-router-dom';
 
 export default function MotionPictureCollections({ collection }) {
   const darkModeContext = useContext(ModeDarkContext);
   if (!collection) return null;
+  console.log(collection);
 
   const light =
     'linear-gradient(to right, rgb(82, 105, 162), rgba(67, 22, 19, 0.6))';
@@ -26,7 +28,14 @@ export default function MotionPictureCollections({ collection }) {
         <ul className={classes.collection__list}>
           Includes:{' '}
           {collection.parts.map(part => (
-            <li key={part.id}>- {part.title}</li>
+            <li key={part.id}>
+              <Link
+                to={`/${part.media_type}/${part.id}`}
+                className={classes.collection__link}
+              >
+                - {part.title}
+              </Link>
+            </li>
           ))}
         </ul>
         <button className={classes.collection__button}>

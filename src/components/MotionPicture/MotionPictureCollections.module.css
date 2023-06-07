@@ -20,6 +20,12 @@
   margin-bottom: 3px;
 }
 
+.collection__link:link,
+.collection__link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 .collection__button {
   margin-top: 20px;
   font-size: 1.8rem;
