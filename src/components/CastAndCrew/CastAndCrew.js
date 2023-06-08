@@ -37,7 +37,6 @@ export default function CastAndCrew({ cast, crew }) {
   const filteredCrewMembers = crewMembers.filter(
     item => item.department === department
   )[0];
-  console.log(filteredCrewMembers);
 
   function handleSelectedCrew(e) {
     const { crew } = e.target.dataset;
@@ -70,7 +69,7 @@ export default function CastAndCrew({ cast, crew }) {
         <ul className={classes.credits__crew}>
           {filteredCrewMembers.crew.map(person => {
             return (
-              <li key={person.id} className={classes.person}>
+              <li key={`${person.id}${person.job}`} className={classes.person}>
                 <Link
                   to={`/person/${person.id}`}
                   className={classes.person__anchor}
@@ -78,6 +77,7 @@ export default function CastAndCrew({ cast, crew }) {
                   <img
                     src={person.profile_path}
                     className={classes.person__image}
+                    alt={person.profile_path}
                   />
                   <div className={classes.person__info}>
                     <div className={classes.person__name}>{person.name}</div>
