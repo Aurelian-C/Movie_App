@@ -1,13 +1,92 @@
+import { Link } from 'react-router-dom';
 import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import classes from './CastAndCrew.module.css';
+import { useState } from 'react';
 
 export default function CastAndCrew({ cast, crew }) {
-  console.log('cast:', cast);
-  console.log('crew:', crew);
+  const [department, setDepartment] = useState('Cast');
+  // console.log('cast:', cast);
+  // console.log('crew:', crew);
+
+  const crewMembers = [];
+  crew.forEach(item => {
+    const isInDepartment = crewMembers.some(
+      dep => dep.department === item.department
+    );
+
+    if (isInDepartment) {
+      const idx = crewMembers.findIndex(
+        dep => dep.department === item.department
+      );
+      crewMembers[idx].crew.push(item);
+    } else {
+      crewMembers.push({ department: item.department, crew: [item] });
+    }
+  });
+  crewMembers.sort((a, b) => {
+    if (a.department > b.department) return 1;
+    if (a.department < b.department) return -1;
+    return 0;
+  });
+  crewMembers.unshift({ department: 'Cast', crew: cast });
+
+  const filteredCrewMembers = crewMembers.filter(
+    item => item.department === department
+  )[0];
+  console.log(filteredCrewMembers);
+
+  function handleSelectedCrew(e) {
+    const { crew } = e.target.dataset;
+    setDepartment(crew);
+  }
 
   return (
-    <SectionPageSecondary className={classes.test}>
+    <SectionPageSecondary className={classes.margin__top}>
       <h1>Cast & Crew Details</h1>
+      <div className={classes.credits}>
+        <ul className={classes.credits__departments}>
+          {crewMembers.map(item => {
+            let departmentClass =
+              item.department === department
+                ? `${classes.credits__department} ${classes.selected}`
+                : classes.credits__department;
+
+            return (
+              <li
+                className={departmentClass}
+                key={item.department}
+                data-crew={item.department}
+                onClick={handleSelectedCrew}
+              >
+                {item.department}
+              </li>
+            );
+          })}
+        </ul>
+        <ul className={classes.credits__crew}>
+          {filteredCrewMembers.crew.map(person => {
+            return (
+              <li key={person.id} className={classes.person}>
+                <Link
+                  to={`/person/${person.id}`}
+                  className={classes.person__anchor}
+                >
+                  <img
+                    src={person.profile_path}
+                    className={classes.person__image}
+                  />
+                  <div className={classes.person__info}>
+                    <div className={classes.person__name}>{person.name}</div>
+                    <div className={classes.person__character}>
+                      {person.character || person.job}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </SectionPageSecondary>
   );
 }

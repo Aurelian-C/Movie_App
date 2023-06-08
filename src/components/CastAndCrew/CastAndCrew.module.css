@@ -1,3 +1,52 @@
-.test {
+.margin__top {
   margin-top: var(--page-margin-top);
+}
+
+.credits {
+  border: 1px solid black;
+}
+
+.credits__departments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid black;
+}
+
+.credits__department {
+  padding: 8px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.selected {
+  border-bottom: 5px solid red;
+}
+
+.person__anchor:link,
+.person__anchor:visited {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.person__image {
+  height: 60px;
+  border-radius: 3px;
+  display: block;
+}
+
+.person__name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.person__character {
+  font-size: 1.1rem;
 }
