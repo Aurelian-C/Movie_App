@@ -1,6 +1,6 @@
 import { API_KEY, API_URL } from '../config/config';
 import { createCollectionDetails, createMovieDetails } from '../config/helpers';
-import { defer, useLoaderData } from 'react-router-dom';
+import { defer, useRouteLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
 import MotionPictureMovie from '../components/MotionPicture/Movie/MotionPictureMovie';
 
@@ -9,7 +9,7 @@ export default function MovieDetails() {
     movie: [movie, collection],
     credits,
     videos,
-  } = useLoaderData();
+  } = useRouteLoaderData('movie-detail');
 
   const movieDetail = createMovieDetails(movie);
   let collectionDetail;

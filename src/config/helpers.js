@@ -7,6 +7,7 @@ import {
   LOGO_PATH_MEDIUM,
   POSTER_PATH_MEDIUM,
   PROFILE_PATH_MEDIUM,
+  PROFILE_PATH_SMALL,
 } from './config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
@@ -14,6 +15,7 @@ import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 import companyWithoutLogo from '../assets/img/company_without_logo.png';
 import movieWithoutImage from '../assets/img/no_movie_image_big.jpg';
 
+/*
 export const asyncDelay = function (seconds) {
   return new Promise((resolve, _) => {
     setTimeout(() => {
@@ -21,6 +23,7 @@ export const asyncDelay = function (seconds) {
     }, seconds * 1000);
   });
 };
+*/
 
 export const timeout = function (seconds) {
   return new Promise((_, reject) => {
@@ -190,6 +193,19 @@ export const createCastDetails = cast => {
   return cast.map(person => {
     let image = person.profile_path
       ? `${PROFILE_PATH_MEDIUM}${person.profile_path}`
+      : personWithoutImage;
+
+    return {
+      ...person,
+      profile_path: image,
+    };
+  });
+};
+
+export const createCrewDetails = crew => {
+  return crew.map(person => {
+    let image = person.profile_path
+      ? `${PROFILE_PATH_SMALL}${person.profile_path}`
       : personWithoutImage;
 
     return {

@@ -1,11 +1,11 @@
 import { API_KEY, API_URL } from '../config/config';
 import { createTvDetails } from '../config/helpers';
-import { defer, useLoaderData } from 'react-router-dom';
+import { defer, useRouteLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
 import MotionPictureTv from '../components/MotionPicture/Tv/MotionPictureTv';
 
 export default function TvDetails() {
-  const { tv, credits, videos } = useLoaderData();
+  const { tv, credits, videos } = useRouteLoaderData('tv-detail');
   const tvDetail = createTvDetails(tv);
 
   useEffect(() => {

@@ -6,6 +6,8 @@ import MovieDetails, { movieLoader } from './pages/MovieDetails';
 import PersonDetails, { personLoader } from './pages/PersonDetails';
 import TvDetails, { tvLoader } from './pages/TvDetails';
 import SearchPage, { searchLoader } from './pages/Search';
+import MovieCrewDetails from './pages/MovieCrewDetails';
+import TvCrewDetails from './pages/TvCrewDetails';
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -34,10 +36,22 @@ export default function App() {
         },
         {
           path: 'movie/:movieId',
-          element: <MovieDetails />,
           loader: movieLoader,
+          id: 'movie-detail',
+          children: [
+            { index: true, element: <MovieDetails /> },
+            { path: 'cast', element: <MovieCrewDetails /> },
+          ],
         },
-        { path: 'tv/:tvId', element: <TvDetails />, loader: tvLoader },
+        {
+          path: 'tv/:tvId',
+          loader: tvLoader,
+          id: 'tv-detail',
+          children: [
+            { index: true, element: <TvDetails /> },
+            { path: 'cast', element: <TvCrewDetails /> },
+          ],
+        },
         {
           path: 'person',
           children: [

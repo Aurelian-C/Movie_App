@@ -22,7 +22,7 @@ export default function PersonCard({ cast }) {
           </div>
         );
       })}
-      <Link className={classes['person__more']}>
+      <Link className={classes['person__more']} to="cast">
         <span>View More</span>
         <i className="fa-solid fa-arrow-right"></i>
       </Link>
