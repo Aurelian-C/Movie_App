@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
 import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import classes from './CastAndCrew.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CastAndCrew({ cast, crew }) {
   const [department, setDepartment] = useState('Cast');
   // console.log('cast:', cast);
   // console.log('crew:', crew);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   const crewMembers = [];
   crew.forEach(item => {

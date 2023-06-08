@@ -12,12 +12,27 @@
   align-items: center;
   list-style: none;
   border-bottom: 1px solid black;
+  text-align: center;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.credits__departments::-webkit-scrollbar {
+  width: 0px;
+  height: 5px;
+}
+
+.credits__departments::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+  background: var(--main-bg-cards-scrollbar);
 }
 
 .credits__department {
   padding: 8px 10px;
   margin: 0 5px;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
 .selected {
