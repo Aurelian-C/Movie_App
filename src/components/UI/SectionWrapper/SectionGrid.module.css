@@ -7,8 +7,18 @@
   margin: 0 auto;
 }
 
-.section__title {
+.section__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.section__anchor {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .section__cards {

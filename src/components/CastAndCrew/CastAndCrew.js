@@ -45,7 +45,6 @@ export default function CastAndCrew({ cast, crew }) {
 
   return (
     <SectionPageSecondary className={classes.margin__top}>
-      <h1>Cast & Crew Details</h1>
       <div className={classes.credits}>
         <ul className={classes.credits__departments}>
           {crewMembers.map(item => {

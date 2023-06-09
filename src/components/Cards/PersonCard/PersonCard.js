@@ -6,7 +6,7 @@ export default function PersonCard({ cast }) {
   const castDetail = cast.slice(0, 9);
 
   return (
-    <SectionGrid sectionTitle={'Top Cast'}>
+    <SectionGrid sectionTitle={'Top Cast'} includeCast={true}>
       {castDetail.map(person => {
         return (
           <div key={person.id} className={classes['person__card']}>
