@@ -12,6 +12,12 @@ export default function CastAndCrew({ cast, crew }) {
     window.scrollTo(0, 0);
   });
 
+  crew.sort((a, b) => {
+    if (a.job > b.job) return 1;
+    if (a.job < b.job) return -1;
+    return 0;
+  });
+
   const crewMembers = [];
   crew.forEach(item => {
     const isInDepartment = crewMembers.some(
