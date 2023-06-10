@@ -4,6 +4,7 @@ import Selector from '../components/Selector/Selector';
 import { useState } from 'react';
 import useTrendings from '../hooks/useTrendings';
 import useTopRated from '../hooks/useTopRated';
+import useUpcoming from '../hooks/useUpcoming';
 
 const trendings = {
   categories: ['Movie', 'TV'],
@@ -21,6 +22,7 @@ export default function HomePage() {
 
   const trendingItems = useTrendings(trendingsTitle, 'week');
   const topRatedItems = useTopRated(topRatedTitle);
+  const upcomingMovies = useUpcoming('movie');
 
   function handleTrendingsSelector(word) {
     setTrendingsTitle(word);

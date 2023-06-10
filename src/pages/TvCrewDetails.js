@@ -4,7 +4,8 @@ import { Await, useRouteLoaderData } from 'react-router-dom';
 import { createCastDetails, createCrewDetails } from '../config/helpers';
 
 export default function TvCrewDetails() {
-  const { credits } = useRouteLoaderData('tv-detail');
+  const { tv, credits } = useRouteLoaderData('tv-detail');
+  console.log(tv);
 
   return (
     <Suspense fallback={<p>Loading...</p>}>

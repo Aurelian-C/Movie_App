@@ -63,6 +63,10 @@ export const createCardDetails = result => {
   };
   const releaseDate = new Date(date).toLocaleString('en-US', options);
 
+  let backdropImage = result.backdrop_path
+    ? `${BACKDROP_PATH_SMALL}${result.backdrop_path}`
+    : null;
+
   let posterImage = result.poster_path
     ? `${POSTER_PATH_SMALL}${result.poster_path}`
     : `${POSTER_PATH_SMALL}${result.profile_path}`;
@@ -70,7 +74,7 @@ export const createCardDetails = result => {
   return {
     ...result,
     title: result.title || result.name || result.original_name,
-    backdrop_path: `${BACKDROP_PATH_SMALL}${result.backdrop_path}`,
+    backdrop_path: backdropImage,
     poster_path: posterImage,
     vote_average: +Number.parseFloat(result.vote_average).toFixed(1),
     release_date: releaseDate,
