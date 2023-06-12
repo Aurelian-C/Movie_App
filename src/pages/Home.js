@@ -109,7 +109,7 @@ async function fetchUpcomings() {
       if (a.popularity < b.popularity) return 1;
       return 0;
     });
-  return filteredResults;
+  return filteredResults.slice(0, 20);
 }
 
 export async function loaderUpcomings() {

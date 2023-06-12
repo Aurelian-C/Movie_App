@@ -1,7 +1,7 @@
 .upcoming {
   background-color: red;
   max-width: var(--page-max-width);
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 2rem var(--padding-sides-main);
   background-position: center;
   background-size: cover;
