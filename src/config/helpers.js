@@ -14,6 +14,7 @@ import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 import companyWithoutLogo from '../assets/img/company_without_logo.png';
 import movieWithoutImage from '../assets/img/no_movie_image_big.jpg';
+import backdropWithoutImage from '../assets/img/backdrop_with_no_image.jpg';
 
 /*
 export const asyncDelay = function (seconds) {
@@ -52,6 +53,39 @@ export const AJAX = async function (url, uploadData = undefined) {
   } catch (err) {
     throw err;
   }
+};
+
+export const createUpcomingDetails = items => {
+  return items.map(item => {
+    const date = item.first_air_date || item.release_date;
+    const options = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    };
+    const releaseDate = new Date(date).toLocaleString('en-US', options);
+
+    let backdropImage = item.backdrop_path
+      ? `${BACKDROP_PATH_MEDIUM}${item.backdrop_path}`
+      : backdropWithoutImage;
+
+    let posterImage = item.poster_path
+      ? `${POSTER_PATH_SMALL}${item.poster_path}`
+      : cardWithoutImage;
+
+    const title = item.title || item.name || item.original_name;
+
+    return {
+      title,
+      backdropImage,
+      posterImage,
+      releaseDate,
+      overview: item.overview,
+      popularity: item.popularity,
+      id: item.id,
+      mediaType: item.mediaType,
+    };
+  });
 };
 
 export const createCardDetails = result => {

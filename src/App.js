@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './pages/RootLayout';
-import HomePage from './pages/Home';
+import HomePage, { loaderUpcomings } from './pages/Home';
 import PresentationPage from './pages/Presentation';
 import MovieDetails, { movieLoader } from './pages/MovieDetails';
 import PersonDetails, { personLoader } from './pages/PersonDetails';
@@ -14,6 +14,8 @@ export default function App() {
     {
       path: '/',
       element: <RootLayout />,
+      loader: loaderUpcomings,
+      id: 'route-data',
       children: [
         { index: true, element: <HomePage /> },
         {
