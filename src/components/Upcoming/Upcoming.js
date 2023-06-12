@@ -21,11 +21,11 @@ export default function Upcoming({ upcomingItems }) {
     rgba(10, 13, 20, 0.7) 100%)`;
 
   const liniarGradientDark = `linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.85) 0%, 
+    rgba(0, 0, 0, 0.9) 0%, 
     rgba(0, 0, 0, 0.6) 25%, 
     rgba(0, 0, 0, 0.6) 50%,  
-    rgba(0, 0, 0, 0.65) 75%, 
-    rgba(0, 0, 0, 0.85) 100%)`;
+    rgba(0, 0, 0, 0.7) 75%, 
+    rgba(0, 0, 0, 0.8) 100%)`;
 
   let liniarGradient = darkMode ? liniarGradientDark : liniarGradientLight;
 
@@ -36,29 +36,31 @@ export default function Upcoming({ upcomingItems }) {
         backgroundImage: `${liniarGradient},  url('${sectionBackground}')`,
       }}
     >
-      <h3>Upcoming Movies & TVs</h3>
-      <div className={classes.upcoming__cards}>
-        {upcomingItems.map(item => {
-          return (
-            <Link
-              to={`/${item.mediaType}/${item.id}`}
-              className={classes.upcoming__card}
-              key={item.id}
-              onMouseOver={handleSectionBackground.bind(
-                null,
-                item.backdropImage
-              )}
-            >
-              <img
-                src={item.backdropImage}
-                alt={item.title}
-                className={classes.upcoming__image}
-              />
-              <div className={classes.upcoming__title}>{item.title}</div>
-              <div className={classes.upcoming__date}>{item.releaseDate}</div>
-            </Link>
-          );
-        })}
+      <div className={classes.upcoming__backdrop}>
+        <h3>Upcoming Movies & TVs</h3>
+        <div className={classes.upcoming__cards}>
+          {upcomingItems.map(item => {
+            return (
+              <Link
+                to={`/${item.mediaType}/${item.id}`}
+                className={classes.upcoming__card}
+                key={item.id}
+                onMouseOver={handleSectionBackground.bind(
+                  null,
+                  item.backdropImage
+                )}
+              >
+                <img
+                  src={item.backdropImage}
+                  alt={item.title}
+                  className={classes.upcoming__image}
+                />
+                <div className={classes.upcoming__title}>{item.title}</div>
+                <div className={classes.upcoming__date}>{item.releaseDate}</div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
