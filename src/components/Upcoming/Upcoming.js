@@ -36,7 +36,7 @@ export default function Upcoming({ upcomingItems }) {
         backgroundImage: `${liniarGradient},  url('${sectionBackground}')`,
       }}
     >
-      <h2>Upcoming Movies & TVs</h2>
+      <h3>Upcoming Movies & TVs</h3>
       <div className={classes.upcoming__cards}>
         {upcomingItems.map(item => {
           return (
