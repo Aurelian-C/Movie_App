@@ -36,10 +36,17 @@ export default function Upcoming({ upcomingItems }) {
         backgroundImage: `${liniarGradient},  url('${sectionBackground}')`,
       }}
     >
-      <div className={classes.upcoming__backdrop}>
+      <div className={classes.upcoming__overlay}>
         <h3>Upcoming Movies & TVs</h3>
         <div className={classes.upcoming__cards}>
           {upcomingItems.map(item => {
+            const iconType =
+              item.mediaType === 'movie' ? (
+                <i className={`fa-solid fa-film ${classes.upcoming__icon}`}></i>
+              ) : (
+                <i className={`fa-solid fa-tv ${classes.upcoming__icon}`}></i>
+              );
+
             return (
               <Link
                 to={`/${item.mediaType}/${item.id}`}
@@ -50,11 +57,20 @@ export default function Upcoming({ upcomingItems }) {
                   item.backdropImage
                 )}
               >
-                <img
-                  src={item.backdropImage}
-                  alt={item.title}
-                  className={classes.upcoming__image}
-                />
+                <div className={classes.upcoming__backdrop}>
+                  <img
+                    src={item.backdropImage}
+                    alt={item.title}
+                    className={classes.upcoming__image}
+                  />
+                  <div className={classes.upcoming__media}>
+                    {iconType}{' '}
+                    <div className={classes.upcoming__type}>
+                      {item.mediaType}
+                    </div>
+                  </div>
+                </div>
+
                 <div className={classes.upcoming__title}>{item.title}</div>
                 <div className={classes.upcoming__date}>{item.releaseDate}</div>
               </Link>

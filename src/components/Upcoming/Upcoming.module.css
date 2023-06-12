@@ -7,7 +7,7 @@
   border-radius: 3px;
 }
 
-.upcoming__backdrop {
+.upcoming__overlay {
   padding: 2rem var(--padding-sides-main);
   backdrop-filter: contrast(70%) saturate(50%);
 }
@@ -43,12 +43,34 @@
   color: inherit;
 }
 
+.upcoming__backdrop {
+  position: relative;
+}
+
 .upcoming__image {
   aspect-ratio: 16 / 9;
   display: block;
   width: 100%;
   border-radius: 10px;
   box-shadow: 2px 2px 5px var(--upcoming-card-box-shadow);
+}
+
+.upcoming__media {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  text-align: center;
+}
+
+.upcoming__icon {
+  font-size: 25px;
+}
+
+.upcoming__type {
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .upcoming__title {
@@ -96,5 +118,14 @@
   .upcoming__card:link,
   .upcoming__card:visited {
     flex: 0 0 240px;
+  }
+
+  .upcoming__icon {
+    font-size: 18px;
+  }
+
+  .upcoming__type {
+    font-size: 6px;
+    letter-spacing: 1px;
   }
 }
