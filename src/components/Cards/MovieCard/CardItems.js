@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import CardItem from './CardItem';
 import classes from './CardItems.module.css';
 import lightBackground from '../../../assets/img/background_for_trending_section_light.png';
@@ -13,6 +13,15 @@ export default function CardItems({
   mediaType,
 }) {
   const darkModeContext = useContext(ModeDarkContext);
+  const cardsContainer = useRef();
+
+  useEffect(() => {
+    cardsContainer.current.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, [items]);
 
   let backgroundImage = hasBackground
     ? { backgroundImage: `url(${lightBackground})` }
@@ -32,7 +41,7 @@ export default function CardItems({
           hasBackground ? { ...backgroundImage } : { backgroundImage: 'none' }
         }
       >
-        <div className={classes.cards__container}>
+        <div className={classes.cards__container} ref={cardsContainer}>
           {items.length === 0 && <LoadingCard />}
           {items.map(item => (
             <CardItem
