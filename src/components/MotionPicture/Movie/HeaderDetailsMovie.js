@@ -17,7 +17,8 @@ export default function HeaderDetailsMovie({ motion }) {
             })}
           </div>
           <div>
-            {motion.runtime.hours}h {motion.runtime.minutes}m
+            {motion.runtime.hours > 0 && `${motion.runtime.hours}h`}{' '}
+            {motion.runtime.minutes}m
           </div>
         </div>
       </div>

@@ -3,10 +3,12 @@ import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
 import classes from './CastAndCrew.module.css';
 import { useEffect, useState } from 'react';
 
-export default function CastAndCrew({ cast, crew }) {
+export default function CastAndCrew({ cast, crew, motion }) {
   const [department, setDepartment] = useState('Cast');
-  // console.log('cast:', cast);
-  // console.log('crew:', crew);
+  console.log(motion);
+  const motionItem = {
+    title: motion.title || motion.name,
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,6 +53,11 @@ export default function CastAndCrew({ cast, crew }) {
 
   return (
     <SectionPageSecondary className={classes.margin__top}>
+      <header className={classes.header}>
+        <div className={classes.header__overlay}>
+          <h1>{motionItem.title}</h1>
+        </div>
+      </header>
       <div className={classes.credits}>
         <ul className={classes.credits__departments}>
           {crewMembers.map(item => {
