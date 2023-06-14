@@ -13,7 +13,9 @@ export default function PresentationPage() {
     >
       {/* <FilterForm />
       <SearchedItems /> */}
-      <h1 style={{ fontSize: '10rem' }}>Page under construction...</h1>
+      <h1 style={{ fontSize: '4rem', textAlign: 'center' }}>
+        Page under construction...
+      </h1>
     </div>
   );
 }

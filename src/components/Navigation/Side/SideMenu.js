@@ -43,21 +43,26 @@ export default function SideMenu({ sideMenuVisibility, onHideSideMenu }) {
         <SideMenuCategory
           categoryTitle="Movies"
           categoryData={sideMenuCategories.movies}
+          onHideSideMenu={onHideSideMenu}
         />
         <SideMenuCategory
           categoryTitle="TV Shows"
           categoryData={sideMenuCategories.tvShows}
+          onHideSideMenu={onHideSideMenu}
         />
         <SideMenuCategory
           categoryTitle="People"
           categoryData={sideMenuCategories.person}
+          onHideSideMenu={onHideSideMenu}
         />
       </ul>
       <ul className={classes['dropdown-menu__secondary']}>
         {sideMenuLinks.map((item, idx) => {
           return (
             <li className={classes['dropdown-menu__extra']} key={idx}>
-              <Link to={item.url}>{item.title}</Link>
+              <Link to={item.url} onClick={onHideSideMenu}>
+                {item.title}
+              </Link>
             </li>
           );
         })}

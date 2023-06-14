@@ -2,7 +2,11 @@ import { useState } from 'react';
 import classes from './SideMenuCategory.module.css';
 import { Link } from 'react-router-dom';
 
-export default function SideMenuCategory({ categoryTitle, categoryData }) {
+export default function SideMenuCategory({
+  categoryTitle,
+  categoryData,
+  onHideSideMenu,
+}) {
   const [visible, setVisible] = useState(false);
 
   const hidden = visible ? '' : 'hidden';
@@ -27,7 +31,9 @@ export default function SideMenuCategory({ categoryTitle, categoryData }) {
         {categoryData.map((item, idx) => {
           return (
             <li className={classes['dropdown-menu__extra']} key={idx}>
-              <Link to={item.url}>{item.title}</Link>
+              <Link to={item.url} onClick={onHideSideMenu}>
+                {item.title}
+              </Link>
             </li>
           );
         })}
