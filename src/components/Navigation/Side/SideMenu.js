@@ -19,7 +19,10 @@ const sideMenuCategories = {
 };
 
 const sideMenuLinks = [
-  { url: '/documentation/api', title: 'API' },
+  {
+    url: 'https://developer.themoviedb.org/reference/intro/getting-started',
+    title: 'API',
+  },
   { url: '/', title: 'About' },
 ];
 
