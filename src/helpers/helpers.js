@@ -8,7 +8,7 @@ import {
   POSTER_PATH_MEDIUM,
   PROFILE_PATH_MEDIUM,
   PROFILE_PATH_SMALL,
-} from './config';
+} from '../config/config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
 import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';

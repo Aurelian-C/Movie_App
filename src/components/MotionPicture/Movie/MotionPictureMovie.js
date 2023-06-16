@@ -6,7 +6,7 @@ import MotionPictureVideos from '../MotionPictureVideos';
 import LoadingCards from '../../Cards/LoadingCard/LoadingCards';
 import { Suspense } from 'react';
 import { Await } from 'react-router-dom';
-import { createCastDetails } from '../../../config/helpers';
+import { createCastDetails } from '../../../helpers/helpers';
 import HeaderDetailsMovie from './HeaderDetailsMovie';
 
 export default function MotionPictureMovie({

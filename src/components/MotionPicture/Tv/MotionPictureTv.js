@@ -6,7 +6,7 @@ import HeaderDetailsTv from './HeaderDetailsTv';
 import MotionPictureVideos from '../MotionPictureVideos';
 import { Suspense } from 'react';
 import { Await } from 'react-router-dom';
-import { createCastDetails } from '../../../config/helpers';
+import { createCastDetails } from '../../../helpers/helpers';
 import LastSeasonDetailsTv from './LastSeasonsDetailsTv';
 
 export default function MotionPictureTv({ motion, credits, videos }) {

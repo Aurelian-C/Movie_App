@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { AJAX } from '../config/helpers';
+import { AJAX } from '../helpers/helpers';
 
 export default function useGenres(mediaType) {
   useEffect(() => {

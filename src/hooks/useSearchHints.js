@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../config/config';
-import { AJAX } from '../config/helpers';
+import { AJAX } from '../helpers/helpers';
 
 const createSearchHints = result => {
   return `${result.title || result.name || result.original_name}`;

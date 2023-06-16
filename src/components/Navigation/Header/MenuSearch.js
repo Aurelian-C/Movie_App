@@ -2,7 +2,7 @@ import classes from './MenuSearch.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_KEY, API_URL } from '../../../config/config';
-import { createSearchedItems } from '../../../config/helpers';
+import { createSearchedItems } from '../../../helpers/helpers';
 
 export default function MenuSearch({
   children,

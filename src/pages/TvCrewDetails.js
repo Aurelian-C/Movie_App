@@ -5,7 +5,7 @@ import {
   createCastDetails,
   createCrewDetails,
   createTvDetails,
-} from '../config/helpers';
+} from '../helpers/helpers';
 
 export default function TvCrewDetails() {
   const { tv, credits } = useRouteLoaderData('tv-detail');

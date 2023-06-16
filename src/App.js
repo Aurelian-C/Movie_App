@@ -1,13 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './pages/RootLayout';
-import HomePage, { loaderUpcomings } from './pages/Home';
+import HomePage from './pages/Home';
 import PresentationPage from './pages/Presentation';
-import MovieDetails, { movieLoader } from './pages/MovieDetails';
-import PersonDetails, { personLoader } from './pages/PersonDetails';
-import TvDetails, { tvLoader } from './pages/TvDetails';
-import SearchPage, { searchLoader } from './pages/Search';
+import MovieDetails from './pages/MovieDetails';
+import TvDetails from './pages/TvDetails';
+import PersonDetails from './pages/PersonDetails';
+import SearchPage from './pages/Search';
 import MovieCrewDetails from './pages/MovieCrewDetails';
 import TvCrewDetails from './pages/TvCrewDetails';
+import { movieLoader } from './helpers/loaders/movie-details';
+import { tvLoader } from './helpers/loaders/tv-details';
+import { loaderUpcomings } from './helpers/loaders/upcomings';
+import { personLoader } from './helpers/loaders/person-details';
+import { searchLoader } from './helpers/loaders/search';
 
 export default function App() {
   const routes = createBrowserRouter([

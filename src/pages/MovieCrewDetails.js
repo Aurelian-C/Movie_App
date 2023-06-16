@@ -5,7 +5,7 @@ import {
   createCastDetails,
   createCrewDetails,
   createMovieDetails,
-} from '../config/helpers';
+} from '../helpers/helpers';
 
 export default function MovieCrewDetails() {
   const { movie, credits } = useRouteLoaderData('movie-detail');
