@@ -1,5 +1,5 @@
 import {
-  TIMEOUT_FETCH,
+  // TIMEOUT_FETCH,
   IMAGES_PATH_BIG,
   POSTER_PATH_SMALL,
   BACKDROP_PATH_SMALL,
@@ -24,7 +24,7 @@ export const asyncDelay = function (seconds) {
     }, seconds * 1000);
   });
 };
-*/
+
 
 export const timeout = function (seconds) {
   return new Promise((_, reject) => {
@@ -54,6 +54,7 @@ export const AJAX = async function (url, uploadData = undefined) {
     throw err;
   }
 };
+*/
 
 export const createUpcomingDetails = items => {
   return items.map(item => {
