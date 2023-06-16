@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
-import { AJAX } from '../helpers/helpers';
 
 export default function useGenres(mediaType) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const results = await AJAX(
+        const response = await fetch(
           `${API_URL}/genre/${mediaType}/list?api_key=${API_KEY}`
         );
+
+        const results = await response.json();
         console.log(results);
       } catch (err) {
         throw err;

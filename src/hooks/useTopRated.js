@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AJAX, createCardDetails } from '../helpers/helpers';
+import { createCardDetails } from '../helpers/helpers';
 import { API_URL, API_KEY } from '../config/config';
 
 export default function useTopRated(mediaType) {
@@ -8,9 +8,10 @@ export default function useTopRated(mediaType) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const { results } = await AJAX(
+        const response = await fetch(
           `${API_URL}/${mediaType}/top_rated?api_key=${API_KEY}`
         );
+        const { results } = await response.json();
         const cardDetails = results.map(createCardDetails);
         setItems(cardDetails);
       } catch (err) {
