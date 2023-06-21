@@ -16,9 +16,10 @@ export default function PresentationPage() {
           return (
             <MotionPresentation
               data={results}
-              key={identifier}
+              key={`${identifier}${mediaType}`}
               identifier={identifier}
               mediaType={mediaType}
+              totalPages={data.total_pages}
             />
           );
         }}

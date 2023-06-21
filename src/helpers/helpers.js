@@ -18,9 +18,9 @@ import companyWithoutLogo from '../assets/img/company_without_logo.png';
 import movieWithoutImage from '../assets/img/no_movie_image_big.jpg';
 import backdropWithoutImage from '../assets/img/backdrop_with_no_image.jpg';
 
-export async function fetchMovies(identifier, pageNumber = 1) {
+export async function fetchMotion(mediaType, identifier, pageNumber = 1) {
   const response = await fetch(
-    `${API_URL}/movie/${identifier}?page=${pageNumber}&api_key=${API_KEY}`
+    `${API_URL}/${mediaType}/${identifier}?page=${pageNumber}&api_key=${API_KEY}`
   );
   const data = await response.json();
   return data;
@@ -109,11 +109,11 @@ export const createCardDetails = result => {
 
   let backdropImage = result.backdrop_path
     ? `${BACKDROP_PATH_SMALL}${result.backdrop_path}`
-    : null;
+    : cardWithoutImage;
 
   let posterImage = result.poster_path
     ? `${POSTER_PATH_SMALL}${result.poster_path}`
-    : `${POSTER_PATH_SMALL}${result.profile_path}`;
+    : cardWithoutImage;
 
   return {
     ...result,

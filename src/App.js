@@ -20,6 +20,12 @@ import {
   upcomingMoviesLoader,
 } from './helpers/loaders/movies';
 import FilterFormLayout from './pages/FilterFormLayout';
+import {
+  airingTodayTvLoader,
+  onTheAirTvLoader,
+  popularTvLoader,
+  topRatedTvLoader,
+} from './helpers/loaders/tv';
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -58,11 +64,28 @@ export default function App() {
         },
         {
           path: 'tv',
+          element: <FilterFormLayout />,
           children: [
-            { path: 'popular' },
-            { path: 'airing-today', element: <PresentationPage /> },
-            { path: 'on-the-air' },
-            { path: 'top-rated' },
+            {
+              path: 'popular',
+              element: <PresentationPage />,
+              loader: popularTvLoader,
+            },
+            {
+              path: 'airing-today',
+              element: <PresentationPage />,
+              loader: airingTodayTvLoader,
+            },
+            {
+              path: 'on-the-air',
+              element: <PresentationPage />,
+              loader: onTheAirTvLoader,
+            },
+            {
+              path: 'top-rated',
+              element: <PresentationPage />,
+              loader: topRatedTvLoader,
+            },
           ],
         },
         {

@@ -9,6 +9,8 @@
 }
 
 .motion__image {
+  aspect-ratio: 2 / 3;
+  height: 231px;
   width: 154px;
 }
 
