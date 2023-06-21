@@ -2,7 +2,6 @@ import classes from './MotionCard.module.css';
 import { Link } from 'react-router-dom';
 
 export default function MotionCard({ item, mediaType }) {
-  console.log(item);
   return (
     <Link to={`/${mediaType}/${item.id}`} className={classes.motion__card}>
       <div className={classes.motion__picture}>
