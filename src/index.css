@@ -235,3 +235,12 @@ body::-webkit-scrollbar-thumb {
 .fade-out::after {
   opacity: 0;
 }
+
+.presentation__layout {
+  margin-top: var(--page-margin-top);
+}
+
+.presentation__layout > div {
+  display: flex;
+  gap: 20px;
+}

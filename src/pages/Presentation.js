@@ -1,18 +1,28 @@
+import { Suspense } from 'react';
+import { Await, useLoaderData } from 'react-router-dom';
+import MotionPresentation from '../components/Presentation/MotionPresentation';
+import { createCardDetails } from '../helpers/helpers';
+
 export default function PresentationPage() {
+  const {
+    details: { data, identifier, mediaType },
+  } = useLoaderData();
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      {/* <FilterForm />
-      <SearchedItems /> */}
-      <h1 style={{ fontSize: '4rem', textAlign: 'center' }}>
-        Page under construction...
-      </h1>
-    </div>
+    <Suspense fallback={<p>Loading...</p>}>
+      <Await resolve={data}>
+        {data => {
+          const results = data.results.map(createCardDetails);
+          return (
+            <MotionPresentation
+              data={results}
+              key={identifier}
+              identifier={identifier}
+              mediaType={mediaType}
+            />
+          );
+        }}
+      </Await>
+    </Suspense>
   );
 }

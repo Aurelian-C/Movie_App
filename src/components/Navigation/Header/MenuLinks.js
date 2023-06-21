@@ -9,7 +9,10 @@ export default function MenuLinks() {
         <div className={classes['header__menu-container-extras']}>
           <ul className={classes['header__menu-extras']}>
             <li className={classes['header__menu-extra']}>
-              <Link to="/movie" className={classes['header__menu-link']}>
+              <Link
+                to="/movie/popular"
+                className={classes['header__menu-link']}
+              >
                 Popular
               </Link>
             </li>
@@ -45,7 +48,7 @@ export default function MenuLinks() {
         <div className={classes['header__menu-container-extras']}>
           <ul className={classes['header__menu-extras']}>
             <li className={classes['header__menu-extra']}>
-              <Link to="/tv" className={classes['header__menu-link']}>
+              <Link to="/tv/popular" className={classes['header__menu-link']}>
                 Popular
               </Link>
             </li>

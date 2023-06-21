@@ -4,13 +4,13 @@ import SideMenuCategory from './SideMenuCategory';
 
 const sideMenuCategories = {
   movies: [
-    { url: '/movie', title: 'Popular' },
+    { url: '/movie/popular', title: 'Popular' },
     { url: '/movie/top-rated', title: 'Top Rated' },
     { url: '/movie/upcoming', title: 'Upcoming' },
     { url: '/movie/now-playing', title: 'Now Playing' },
   ],
   tvShows: [
-    { url: '/tv', title: 'Popular' },
+    { url: '/tv/popular', title: 'Popular' },
     { url: '/tv/top-rated', title: 'Top Rated' },
     { url: '/tv/on-the-air', title: 'On TV' },
     { url: '/tv/airing-today', title: 'Airing Today' },

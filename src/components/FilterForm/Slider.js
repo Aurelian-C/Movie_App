@@ -10,7 +10,7 @@ export default function Slider({ minValue, maxValue, stepValue }) {
   for (let i = 0; i <= max / stepValue; i++) {
     if (i === 0 || i === 5 || i === max) {
       ticks.push(
-        <li className={classes['slider__tick--big']} title="0">
+        <li className={classes['slider__tick--big']} title="0" key={i}>
           <span className={classes.slider__number} title="0">
             {i}
           </span>

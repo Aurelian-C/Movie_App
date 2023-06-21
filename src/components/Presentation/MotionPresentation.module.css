@@ -1,0 +1,20 @@
+.motion {
+  flex: 1 0 auto;
+}
+
+.motion__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(154px, min-content));
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.motion__button {
+  margin-top: 30px;
+  width: 100%;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

@@ -8,6 +8,8 @@ import {
   POSTER_PATH_MEDIUM,
   PROFILE_PATH_MEDIUM,
   PROFILE_PATH_SMALL,
+  API_URL,
+  API_KEY,
 } from '../config/config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
@@ -15,6 +17,14 @@ import cardWithoutImage from '../assets/img/placeholder_content_img1.jpg';
 import companyWithoutLogo from '../assets/img/company_without_logo.png';
 import movieWithoutImage from '../assets/img/no_movie_image_big.jpg';
 import backdropWithoutImage from '../assets/img/backdrop_with_no_image.jpg';
+
+export async function fetchMovies(identifier, pageNumber = 1) {
+  const response = await fetch(
+    `${API_URL}/movie/${identifier}?page=${pageNumber}&api_key=${API_KEY}`
+  );
+  const data = await response.json();
+  return data;
+}
 
 /*
 export const asyncDelay = function (seconds) {
@@ -24,7 +34,6 @@ export const asyncDelay = function (seconds) {
     }, seconds * 1000);
   });
 };
-
 
 export const timeout = function (seconds) {
   return new Promise((_, reject) => {
@@ -310,7 +319,7 @@ export const createCollectionDetails = collection => {
   };
 };
 
-let timeoutID;
+/* let timeoutID;
 export function debounce(func, query, timeout = 1000) {
   if (timeoutID) clearTimeout(timeoutID);
 
@@ -318,3 +327,4 @@ export function debounce(func, query, timeout = 1000) {
     func(query);
   }, timeout);
 }
+*/

@@ -13,6 +13,13 @@ import { tvLoader } from './helpers/loaders/tv-details';
 import { loaderUpcomings } from './helpers/loaders/upcomings';
 import { personLoader } from './helpers/loaders/person-details';
 import { searchLoader } from './helpers/loaders/search';
+import {
+  nowPlayingMoviesLoader,
+  popularMoviesLoader,
+  topRatedMoviesLoader,
+  upcomingMoviesLoader,
+} from './helpers/loaders/movies';
+import FilterFormLayout from './pages/FilterFormLayout';
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -25,18 +32,35 @@ export default function App() {
         { index: true, element: <HomePage /> },
         {
           path: 'movie',
-          element: <PresentationPage />,
+          element: <FilterFormLayout />,
           children: [
-            { path: 'now-playing' },
-            { path: 'upcoming' },
-            { path: 'top-rated' },
+            {
+              path: 'popular',
+              element: <PresentationPage />,
+              loader: popularMoviesLoader,
+            },
+            {
+              path: 'now-playing',
+              element: <PresentationPage />,
+              loader: nowPlayingMoviesLoader,
+            },
+            {
+              path: 'upcoming',
+              element: <PresentationPage />,
+              loader: upcomingMoviesLoader,
+            },
+            {
+              path: 'top-rated',
+              element: <PresentationPage />,
+              loader: topRatedMoviesLoader,
+            },
           ],
         },
         {
           path: 'tv',
-          element: <PresentationPage />,
           children: [
-            { path: 'airing-today' },
+            { path: 'popular' },
+            { path: 'airing-today', element: <PresentationPage /> },
             { path: 'on-the-air' },
             { path: 'top-rated' },
           ],

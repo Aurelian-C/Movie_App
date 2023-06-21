@@ -1,0 +1,44 @@
+.motion__card:link,
+.motion__card:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.motion__picture {
+  position: relative;
+}
+
+.motion__image {
+  width: 154px;
+}
+
+.motion__score {
+  position: absolute;
+  bottom: -15px;
+  left: 10px;
+  height: 42px;
+  width: 42px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motion__score span {
+  font-weight: 500;
+}
+
+.motion__details {
+  margin-top: 15px;
+}
+
+.motion__title {
+  font-size: 1.5rem;
+}
+
+.motion__date {
+  font-size: 1.2rem;
+  filter: brightness(0.88);
+}
