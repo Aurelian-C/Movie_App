@@ -4,7 +4,7 @@
 
 .person__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 185px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
   justify-content: space-between;
   gap: 10px;
 }

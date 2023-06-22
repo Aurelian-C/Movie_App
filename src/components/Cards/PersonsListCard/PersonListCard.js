@@ -7,21 +7,18 @@ export default function PersonListCard({ person, mediaType }) {
   return (
     <div className={classes.person__card}>
       <Link to={`/${mediaType}/${person.id}`}>
-        <img
-          src={person.profile_path}
-          alt={person.name}
+        <div
+          style={{ backgroundImage: `url(${person.profile_path})` }}
           className={classes.person__image}
-        />
-      </Link>
-      <Link to={`/${mediaType}/${person.id}`} className={classes.person__name}>
-        {person.name}
+        ></div>
       </Link>
       <ul className={classes.person__list}>
+        <h3 className={classes.person__knownfor}>Known for:</h3>
         {person.known_for.map(item => (
           <li key={item.id}>
             <Link
               to={`/${item.media_type}/${item.id}`}
-              className={classes.person__known}
+              className={classes.person__motion}
             >
               <span className={classes.person__titles}>
                 - {item.title || item.name}
@@ -33,6 +30,9 @@ export default function PersonListCard({ person, mediaType }) {
           </li>
         ))}
       </ul>
+      <Link to={`/${mediaType}/${person.id}`} className={classes.person__name}>
+        {person.name}
+      </Link>
     </div>
   );
 }
