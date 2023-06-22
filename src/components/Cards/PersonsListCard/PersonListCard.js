@@ -18,14 +18,9 @@ export default function PersonListCard({ person, mediaType }) {
           <li key={item.id}>
             <Link
               to={`/${item.media_type}/${item.id}`}
-              className={classes.person__motion}
+              className={classes.person__titles}
             >
-              <span className={classes.person__titles}>
-                - {item.title || item.name}
-              </span>{' '}
-              <span className={classes.person__releaseyear}>
-                ({item.releaseYear})
-              </span>
+              - {item.title || item.name}
             </Link>
           </li>
         ))}

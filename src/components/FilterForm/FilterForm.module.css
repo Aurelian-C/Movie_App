@@ -2,7 +2,7 @@
   color: inherit;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
   .form {
     display: none;
   }

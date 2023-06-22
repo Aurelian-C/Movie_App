@@ -282,19 +282,25 @@ export const createPersonsList = list => {
       ? `${PROFILE_PATH_MEDIUM}${person.profile_path}`
       : personWithoutImage;
 
-    const knownFor = person.known_for.map(item => {
-      const posterImage = item.poster_path
-        ? `${POSTER_PATH_SMALL}${item.poster_path}`
-        : cardWithoutImage;
-      const date = item.release_date || item.first_air_date;
-      const releaseYear = new Date(date).getFullYear();
+    const knownFor = person.known_for
+      .map(item => {
+        const posterImage = item.poster_path
+          ? `${POSTER_PATH_SMALL}${item.poster_path}`
+          : cardWithoutImage;
+        const date = item.release_date || item.first_air_date;
+        const releaseYear = new Date(date).getFullYear();
 
-      return {
-        ...item,
-        poster_path: posterImage,
-        releaseYear,
-      };
-    });
+        return {
+          ...item,
+          poster_path: posterImage,
+          releaseYear,
+        };
+      })
+      .sort((a, b) => {
+        if (a.releaseYear > b.releaseYear) return -1;
+        if (a.releaseYear < b.releaseYear) return 1;
+        return 0;
+      });
 
     return {
       ...person,

@@ -58,6 +58,7 @@
     rgb(195, 90, 90),
     rgb(176, 155, 155)
   );
+  --main-bg-person-card-name: rgba(0, 20, 173, 0.4);
 
   /* text color */
   --main-text-color-light: white;
@@ -101,6 +102,7 @@
   --button-biography-box-shadow-color: rgba(0, 0, 0, 0.2);
   --last-season-box-shadow-color: rgba(0, 0, 0, 0.15);
   --upcoming-card-box-shadow: rgba(0, 0, 0, 0.2);
+  --person-card-picture-box-shadow: rgb(255, 255, 255);
 }
 
 .dark {
@@ -136,6 +138,7 @@
   --main-bg-credits-sort: rgb(52, 52, 52);
   --main-bg-credits-category: rgb(155, 155, 155);
   --main-bg-crew-card: rgb(36, 36, 36);
+  --main-bg-person-card-name: rgba(255, 255, 255, 0.15);
 
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-credits-category: white;
@@ -148,6 +151,7 @@
   --border-credits-card: rgb(152, 152, 152);
   --upcoming-card-box-shadow: rgba(0, 0, 0, 0.8);
   --border-crew-color: rgba(81, 81, 81, 1);
+  --person-card-picture-box-shadow: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 700px) {
