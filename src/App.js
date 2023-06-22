@@ -26,6 +26,8 @@ import {
   popularTvLoader,
   topRatedTvLoader,
 } from './helpers/loaders/tv';
+import PersonsPage from './pages/Persons';
+import { personsLoader } from './helpers/loaders/person';
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -108,13 +110,19 @@ export default function App() {
         },
         {
           path: 'person',
+          element: <FilterFormLayout />,
           children: [
             {
-              path: ':personId',
-              element: <PersonDetails />,
-              loader: personLoader,
+              path: 'popular',
+              element: <PersonsPage />,
+              loader: personsLoader,
             },
           ],
+        },
+        {
+          path: 'person/:personId',
+          element: <PersonDetails />,
+          loader: personLoader,
         },
         {
           path: 'search',

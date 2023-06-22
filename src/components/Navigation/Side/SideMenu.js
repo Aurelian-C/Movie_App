@@ -15,7 +15,7 @@ const sideMenuCategories = {
     { url: '/tv/on-the-air', title: 'On TV' },
     { url: '/tv/airing-today', title: 'Airing Today' },
   ],
-  person: [{ url: '/person', title: 'Popular People' }],
+  person: [{ url: '/person/popular', title: 'Popular People' }],
 };
 
 const sideMenuLinks = [

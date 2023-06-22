@@ -81,7 +81,10 @@ export default function MenuLinks() {
         <div className={classes['header__menu-container-extras']}>
           <ul className={classes['header__menu-extras']}>
             <li className={classes['header__menu-extra']}>
-              <Link to="/person" className={classes['header__menu-link']}>
+              <Link
+                to="/person/popular"
+                className={classes['header__menu-link']}
+              >
                 Popular People
               </Link>
             </li>

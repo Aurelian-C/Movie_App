@@ -5,7 +5,11 @@ export default function MotionCard({ item, mediaType }) {
   return (
     <Link to={`/${mediaType}/${item.id}`} className={classes.motion__card}>
       <div className={classes.motion__picture}>
-        <img src={item.poster_path} className={classes.motion__image} />
+        <img
+          src={item.poster_path}
+          alt={item.title}
+          className={classes.motion__image}
+        />
         <div className={classes.motion__score}>
           <span>{item.vote_average}</span>
         </div>

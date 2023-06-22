@@ -2,10 +2,10 @@ import {
   // TIMEOUT_FETCH,
   IMAGES_PATH_BIG,
   POSTER_PATH_SMALL,
+  POSTER_PATH_MEDIUM,
   BACKDROP_PATH_SMALL,
   BACKDROP_PATH_MEDIUM,
   LOGO_PATH_MEDIUM,
-  POSTER_PATH_MEDIUM,
   PROFILE_PATH_MEDIUM,
   PROFILE_PATH_SMALL,
   API_URL,
@@ -23,6 +23,7 @@ export async function fetchMotion(mediaType, identifier, pageNumber = 1) {
     `${API_URL}/${mediaType}/${identifier}?page=${pageNumber}&api_key=${API_KEY}`
   );
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
@@ -272,6 +273,36 @@ export const createPersonDetails = person => {
     ...person,
     profile_path: image,
   };
+};
+
+export const createPersonsList = list => {
+  return list.map(person => {
+    const gender = person.gender === 1 ? 'Female' : 'Male';
+    const profileImage = person.profile_path
+      ? `${PROFILE_PATH_MEDIUM}${person.profile_path}`
+      : personWithoutImage;
+
+    const knownFor = person.known_for.map(item => {
+      const posterImage = item.poster_path
+        ? `${POSTER_PATH_SMALL}${item.poster_path}`
+        : cardWithoutImage;
+      const date = item.release_date || item.first_air_date;
+      const releaseYear = new Date(date).getFullYear();
+
+      return {
+        ...item,
+        poster_path: posterImage,
+        releaseYear,
+      };
+    });
+
+    return {
+      ...person,
+      gender,
+      profile_path: profileImage,
+      known_for: knownFor,
+    };
+  });
 };
 
 export const createSearchedItems = items => {

@@ -1,0 +1,36 @@
+.person__card {
+}
+
+.person__image {
+  border-radius: 3px;
+  /* height: 150px; */
+  aspect-ratio: 2 / 3;
+}
+
+.person__name:link,
+.person__name:visited {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.person__list {
+  list-style: none;
+}
+
+.person__known:link,
+.person__known:visited {
+  text-decoration: none;
+  color: inherit;
+  filter: brightness(0.92);
+}
+
+.person__titles {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.person__releaseyear {
+  font-size: 1rem;
+}
