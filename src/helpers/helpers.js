@@ -10,6 +10,7 @@ import {
   PROFILE_PATH_SMALL,
   API_URL,
   API_KEY,
+  PROFILE_PATH_BIG,
 } from '../config/config';
 import personWithoutImage from '../assets/img/person_with_no_image.png';
 import personWithoutImageBig from '../assets/img/person_with_no_image_big.png';
@@ -266,7 +267,7 @@ export const createCrewDetails = crew => {
 
 export const createPersonDetails = person => {
   let image = person.profile_path
-    ? `${PROFILE_PATH_MEDIUM}${person.profile_path}`
+    ? `${PROFILE_PATH_BIG}${person.profile_path}`
     : personWithoutImageBig;
 
   return {

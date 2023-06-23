@@ -62,9 +62,10 @@ export default function Person({ personDetail, cast }) {
       <div className={classes.person}>
         <div className={classes['person__container']}>
           <div className={classes['person__header']}>
-            <div className={classes['person__image']}>
-              <img src={personDetail.profile_path} alt={personDetail.name} />
-            </div>
+            <div
+              className={classes['person__image']}
+              style={{ backgroundImage: `url(${personDetail.profile_path})` }}
+            ></div>
             <div className={classes['person__details']}>
               <h2 className={classes['person__name']}>{personDetail.name}</h2>
               <div className={classes['person__biography']}>
@@ -134,11 +135,15 @@ export default function Person({ personDetail, cast }) {
                     {knownFor.map(movie => {
                       return (
                         <div className={classes['movie__card']} key={movie.id}>
-                          <div className={classes['movie__card-image']}>
-                            <Link to={`/movie/${movie.id}`}>
-                              <img src={movie.poster_path} alt={movie.title} />
-                            </Link>
-                          </div>
+                          <Link to={`/movie/${movie.id}`}>
+                            <div
+                              className={classes['movie__card-image']}
+                              style={{
+                                backgroundImage: `url(${movie.poster_path})`,
+                              }}
+                            ></div>
+                          </Link>
+
                           <Link
                             to={`/movie/${movie.id}`}
                             className={classes['movie__card-title']}
