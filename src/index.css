@@ -151,7 +151,7 @@
   --border-credits-card: rgb(152, 152, 152);
   --upcoming-card-box-shadow: rgba(0, 0, 0, 0.8);
   --border-crew-color: rgba(81, 81, 81, 1);
-  --person-card-picture-box-shadow: rgb(0, 0, 0);
+  --person-card-picture-box-shadow: rgba(255, 255, 255, 0.4);
 }
 
 @media screen and (max-width: 700px) {
