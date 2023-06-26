@@ -31,7 +31,7 @@
 }
 
 .cards__container > :first-child {
-  padding-left: var(--padding-left-side-main);
+  margin-left: var(--padding-left-side-main);
 }
 
 .cards__container::-webkit-scrollbar {
