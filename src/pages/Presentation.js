@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Await, useLoaderData } from 'react-router-dom';
 import MotionPresentation from '../components/Presentation/MotionPresentation';
 import { createCardDetails } from '../helpers/helpers';
+import LoadingPresentation from '../components/Cards/LoadingPresentation/LoadingPresentation';
 
 export default function PresentationPage() {
   const {
@@ -9,7 +10,7 @@ export default function PresentationPage() {
   } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<LoadingPresentation />}>
       <Await resolve={data}>
         {data => {
           const results = data.results.map(createCardDetails);

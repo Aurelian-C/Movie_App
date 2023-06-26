@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Await, useLoaderData } from 'react-router-dom';
 import PersonPresentation from '../components/Presentation/PersonPresentation';
 import { createPersonsList } from '../helpers/helpers';
+import LoadingPersons from '../components/Cards/LoadingPersons/LoadingPersons';
 
 export default function PersonsPage() {
   const {
@@ -9,7 +10,7 @@ export default function PersonsPage() {
   } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<LoadingPersons />}>
       <Await resolve={data}>
         {data => {
           const results = createPersonsList(data.results);

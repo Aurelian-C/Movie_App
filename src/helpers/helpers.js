@@ -28,7 +28,6 @@ export async function fetchMotion(mediaType, identifier, pageNumber = 1) {
   return data;
 }
 
-/*
 export const asyncDelay = function (seconds) {
   return new Promise((resolve, _) => {
     setTimeout(() => {
@@ -37,6 +36,7 @@ export const asyncDelay = function (seconds) {
   });
 };
 
+/*
 export const timeout = function (seconds) {
   return new Promise((_, reject) => {
     setTimeout(() => {
