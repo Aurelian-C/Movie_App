@@ -5,7 +5,7 @@ import { ModeDarkContext } from '../../store/dark-mode';
 
 export default function Upcoming({ upcomingItems }) {
   const [sectionBackground, setSectionBeckground] = useState(
-    upcomingItems[0].backdropImage
+    () => upcomingItems[0]?.backdropImage
   );
   const { darkMode } = useContext(ModeDarkContext);
 
