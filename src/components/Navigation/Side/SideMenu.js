@@ -1,22 +1,7 @@
 import classes from './SideMenu.module.css';
 import { Link } from 'react-router-dom';
 import SideMenuCategory from './SideMenuCategory';
-
-const sideMenuCategories = {
-  movies: [
-    { url: '/movie/popular', title: 'Popular' },
-    { url: '/movie/top-rated', title: 'Top Rated' },
-    { url: '/movie/upcoming', title: 'Upcoming' },
-    { url: '/movie/now-playing', title: 'Now Playing' },
-  ],
-  tvShows: [
-    { url: '/tv/popular', title: 'Popular' },
-    { url: '/tv/top-rated', title: 'Top Rated' },
-    { url: '/tv/on-the-air', title: 'On TV' },
-    { url: '/tv/airing-today', title: 'Airing Today' },
-  ],
-  person: [{ url: '/person/popular', title: 'Popular People' }],
-};
+import { menuCategories } from '../../../config/config';
 
 const sideMenuLinks = [
   {
@@ -45,17 +30,17 @@ export default function SideMenu({ sideMenuVisibility, onHideSideMenu }) {
       <ul className={classes['dropdown-menu__main']}>
         <SideMenuCategory
           categoryTitle="Movies"
-          categoryData={sideMenuCategories.movies}
+          categoryData={menuCategories.movies}
           onHideSideMenu={onHideSideMenu}
         />
         <SideMenuCategory
           categoryTitle="TV Shows"
-          categoryData={sideMenuCategories.tvShows}
+          categoryData={menuCategories.tvShows}
           onHideSideMenu={onHideSideMenu}
         />
         <SideMenuCategory
           categoryTitle="People"
-          categoryData={sideMenuCategories.person}
+          categoryData={menuCategories.person}
           onHideSideMenu={onHideSideMenu}
         />
       </ul>

@@ -30,6 +30,10 @@
   display: block;
 }
 
+.header__menu-extra {
+  transition: none;
+}
+
 .header__menu-extra:hover {
   cursor: pointer;
   background-color: rgb(237, 237, 237);
