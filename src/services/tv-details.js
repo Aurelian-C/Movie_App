@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '../../config/config';
+import { API_KEY, API_URL } from '../config/config';
 import { defer } from 'react-router-dom';
 
 // TV details fetch function

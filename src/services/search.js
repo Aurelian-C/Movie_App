@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '../../config/config';
+import { API_KEY, API_URL } from '../config/config';
 
 export async function searchLoader({ params }) {
   const response = await fetch(

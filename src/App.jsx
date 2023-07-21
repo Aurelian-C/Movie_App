@@ -8,26 +8,26 @@ import PersonDetails from './pages/PersonDetails';
 import SearchPage from './pages/Search';
 import MovieCrewDetails from './pages/MovieCrewDetails';
 import TvCrewDetails from './pages/TvCrewDetails';
-import { movieLoader } from './helpers/loaders/movie-details';
-import { tvLoader } from './helpers/loaders/tv-details';
-import { loaderUpcomings } from './helpers/loaders/upcomings';
-import { personLoader } from './helpers/loaders/person-details';
-import { searchLoader } from './helpers/loaders/search';
+import { movieLoader } from './services/movie-details';
+import { tvLoader } from './services/tv-details';
+import { loaderUpcomings } from './services/upcomings';
+import { personLoader } from './services/person-details';
+import { searchLoader } from './services/search';
 import {
   nowPlayingMoviesLoader,
   popularMoviesLoader,
   topRatedMoviesLoader,
   upcomingMoviesLoader,
-} from './helpers/loaders/movies';
+} from './services/movies';
 import FilterFormLayout from './pages/FilterFormLayout';
 import {
   airingTodayTvLoader,
   onTheAirTvLoader,
   popularTvLoader,
   topRatedTvLoader,
-} from './helpers/loaders/tv';
+} from './services/tv';
 import PersonsPage from './pages/Persons';
-import { personsLoader } from './helpers/loaders/person';
+import { personsLoader } from './services/person';
 
 export default function App() {
   const routes = createBrowserRouter([

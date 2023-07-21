@@ -1,6 +1,5 @@
-import { API_KEY, API_URL } from '../../config/config';
+import { API_KEY, API_URL } from '../config/config';
 import { defer } from 'react-router-dom';
-import { asyncDelay } from '../helpers';
 
 async function fetchPersons() {
   const response = await fetch(
