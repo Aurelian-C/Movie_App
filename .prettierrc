@@ -1,1 +1,1 @@
-{ "arrowParens": "avoid", "singleQuote": true }
+{ "singleQuote": true, "arrowParens": "avoid" }

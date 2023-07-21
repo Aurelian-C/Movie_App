@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
-import './index.css';
+import './main.css';
 import App from './App';
 import ModeDarkContextProvider from './store/dark-mode';
 
