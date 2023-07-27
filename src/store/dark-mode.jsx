@@ -7,16 +7,17 @@ export const ModeDarkContext = React.createContext({
 });
 
 export default function ModeDarkContextProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
-  const darkModeString = localStorage.getItem('darkmode');
+  const [darkMode, setDarkMode] = useState(
+    () => window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
 
   useEffect(() => {
-    if (darkModeString === 'true') {
+    if (darkMode) {
       handleDarkMode();
     } else {
       handleLightMode();
     }
-  }, [darkModeString]);
+  }, [darkMode]);
 
   function handleDarkMode() {
     const html = document.querySelector('html');
