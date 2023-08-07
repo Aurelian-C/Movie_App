@@ -1,5 +1,5 @@
 import classes from './SearchedQueries.module.css';
-import SectionPagePrimary from '../UI/SectionWrapper/SectionPagePrimary';
+import SectionPagePrimary from '../../ui/SectionWrappers/SectionPagePrimary';
 import { Link } from 'react-router-dom';
 
 export default function SearchedQueries({ items }) {

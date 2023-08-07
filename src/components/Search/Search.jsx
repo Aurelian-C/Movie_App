@@ -1,7 +1,7 @@
 import classes from './Search.module.css';
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ModeDarkContext } from '../../store/dark-mode';
+import { ModeDarkContext } from '../../features/darkMode/darkModeContext';
 
 export default function Search() {
   const [inputQuery, setInputQuery] = useState('');

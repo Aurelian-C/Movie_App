@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { createCardDetails } from '../helpers/helpers';
-import { API_URL, API_KEY } from '../config/config';
+import { createCardDetails } from '../../helpers/helpers';
+import { API_URL, API_KEY } from '../../config/config';
 
-export default function useTrendings(mediaType, timeWindow = 'day') {
+export function useTrendings(mediaType, timeWindow = 'day') {
   const [items, setItems] = useState([]);
 
   useEffect(() => {

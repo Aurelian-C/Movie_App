@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
+import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import classes from './PersonCredits.module.css';
 import { useState } from 'react';
 

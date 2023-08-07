@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import classes from './PersonListCard.module.css';
 
 export default function PersonListCard({ person, mediaType }) {
-  console.log(person);
-
   return (
     <div className={classes.person__card}>
       <Link to={`/${mediaType}/${person.id}`}>

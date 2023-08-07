@@ -1,5 +1,5 @@
 import classes from './DropDownButton.module.css';
-import DarkMode from '../../UI/DarkMode/DarkMode';
+import DarkMode from '../../darkMode/DarkMode';
 
 export default function DropDownButton({ onShowSideMenu }) {
   return (

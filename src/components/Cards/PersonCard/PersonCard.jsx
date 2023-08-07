@@ -1,4 +1,4 @@
-import SectionGrid from '../../UI/SectionWrapper/SectionGrid';
+import SectionGrid from '../../../ui/SectionWrappers/SectionGrid';
 import classes from './PersonCard.module.css';
 import { Link } from 'react-router-dom';
 

@@ -1,4 +1,4 @@
-import SectionGrid from '../../UI/SectionWrapper/SectionGrid';
+import SectionGrid from '../../../ui/SectionWrappers/SectionGrid';
 import LoadingCard from './LoadingCard';
 
 export default function LoadingCards({ type = 'movie' }) {

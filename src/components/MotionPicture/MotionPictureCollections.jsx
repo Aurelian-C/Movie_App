@@ -1,7 +1,7 @@
 import classes from './MotionPictureCollections.module.css';
-import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
+import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import { useContext, useEffect } from 'react';
-import { ModeDarkContext } from '../../store/dark-mode';
+import { ModeDarkContext } from '../../features/darkMode/darkModeContext';
 import { Link } from 'react-router-dom';
 
 export default function MotionPictureCollections({ collection }) {

@@ -1,5 +1,5 @@
-import SectionPageSecondary from '../../UI/SectionWrapper/SectionPageSecondary';
-import classes from './LastSeasonDetailsTv.module.css';
+import SectionPageSecondary from '../../../ui/SectionWrappers/SectionPageSecondary';
+import classes from './LastSeasonsDetailsTv.module.css';
 import { Link } from 'react-router-dom';
 
 export default function LastSeasonDetailsTv({ seasons }) {

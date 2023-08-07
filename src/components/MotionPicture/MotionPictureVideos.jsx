@@ -1,5 +1,5 @@
 import classes from './MotionPictureVideos.module.css';
-import SectionGrid from '../UI/SectionWrapper/SectionGrid';
+import SectionGrid from '../../ui/SectionWrappers/SectionGrid';
 import VideoModal from '../VideoModal/VideoModal';
 import { useState } from 'react';
 

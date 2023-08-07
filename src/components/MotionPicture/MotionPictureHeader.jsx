@@ -1,6 +1,6 @@
 import classes from './MotionPictureHeader.module.css';
 import { useContext } from 'react';
-import { ModeDarkContext } from '../../store/dark-mode';
+import { ModeDarkContext } from '../../features/darkMode/darkModeContext';
 
 export default function MotionPictureHeader({ motion, children }) {
   const darkModeContext = useContext(ModeDarkContext);

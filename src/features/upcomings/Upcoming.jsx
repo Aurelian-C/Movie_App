@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './Upcoming.module.css';
-import { ModeDarkContext } from '../../store/dark-mode';
+import { ModeDarkContext } from '../darkMode/darkModeContext';
 
 export default function Upcoming({ upcomingItems }) {
   const [sectionBackground, setSectionBeckground] = useState(

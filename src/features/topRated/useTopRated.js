@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { createCardDetails } from '../helpers/helpers';
-import { API_URL, API_KEY } from '../config/config';
+import { createCardDetails } from '../../helpers/helpers';
+import { API_URL, API_KEY } from '../../config/config';
 
 export default function useTopRated(mediaType) {
   const [items, setItems] = useState([]);

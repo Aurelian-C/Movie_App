@@ -1,5 +1,5 @@
 import classes from './DarkMode.module.css';
-import { ModeDarkContext } from '../../../store/dark-mode';
+import { ModeDarkContext } from './darkModeContext';
 import { useContext } from 'react';
 
 export default function DarkMode() {

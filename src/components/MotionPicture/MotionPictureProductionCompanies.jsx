@@ -1,7 +1,7 @@
 import classes from './MotionPictureProductionCompanies.module.css';
-import SectionPageSecondary from '../UI/SectionWrapper/SectionPageSecondary';
+import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import { useContext } from 'react';
-import { ModeDarkContext } from '../../store/dark-mode';
+import { ModeDarkContext } from '../../features/darkMode/darkModeContext';
 
 export default function MotionPictureProductionCompanies({ motion }) {
   const darkModeContext = useContext(ModeDarkContext);
