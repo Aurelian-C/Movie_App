@@ -11,7 +11,7 @@ export default function Footer() {
       <div className={classes.footer__copyright}>
         <p>
           This website is build from scratch with HTML, CSS, Vanilla JavaScript,
-          ReactJS &amp; React Router.
+          ReactJS, React Router &amp; React Query.
         </p>
         <p>
           For more projects go to

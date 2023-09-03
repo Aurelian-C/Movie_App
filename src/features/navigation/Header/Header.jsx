@@ -3,13 +3,13 @@ import classes from './Header.module.css';
 import MenuSearch from './MenuSearch';
 import MenuLogo from './MenuLogo';
 import MenuNavigation from './MenuNavigation';
-import MenuLogin from './MenuLogin';
 import SearchButton from './SearchButton';
 import MenuContainer from './MenuContainer';
 import MenuPhone from './MenuPhone';
 import DropDownButton from './DropDownButton';
 import MenuHints from './MenuHints';
 import SearchHint from './SearchHint';
+import DarkMode from '../../darkMode/DarkMode';
 
 export default function Header({ onShowSideMenu }) {
   const [buttonSearchVisibility, setButtonSearchVisibility] = useState(true);
@@ -62,7 +62,7 @@ export default function Header({ onShowSideMenu }) {
           <MenuNavigation />
         </MenuContainer>
         <MenuContainer className={classes['header__menu--2']}>
-          <MenuLogin />
+          <DarkMode />
           <MenuPhone />
           <SearchButton
             buttonVisibility={buttonSearchVisibility}
