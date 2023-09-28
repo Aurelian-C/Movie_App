@@ -8,6 +8,7 @@ const addMediaAndYearProperty = (itemsArray, mediaType) => {
       ...item,
       mediaType: mediaType,
       releaseYear: new Date(date).getFullYear(),
+      releaseDate: new Date(date),
     };
   });
 };
@@ -22,7 +23,7 @@ async function fetchUpcomings() {
     return `${year}-${month}-${dayString}`;
   };
 
-  const referenceYear = new Date().getFullYear() + 1;
+  const dateAfterSixMonths = new Date(Date.now() + 15778800000);
   const today = getDateString();
 
   const responseMovie = await fetch(
@@ -37,7 +38,7 @@ async function fetchUpcomings() {
   const formatTVs = addMediaAndYearProperty(resultsTV, 'tv');
   const allResults = [...formatMovies, ...formatTVs];
   const filteredResults = allResults
-    .filter(item => item.releaseYear < referenceYear)
+    .filter(item => item.releaseDate < dateAfterSixMonths)
     .sort((a, b) => {
       if (a.popularity > b.popularity) return -1;
       if (a.popularity < b.popularity) return 1;
