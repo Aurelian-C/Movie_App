@@ -61,6 +61,8 @@ function Signup() {
                 type="text"
                 {...register('lastName', {
                   required: 'This field is required!',
+                  validate: value =>
+                    value.trim() !== '' || 'You type only spaces!',
                 })}
               />
               {errors?.lastName && (
