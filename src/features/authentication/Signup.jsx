@@ -89,14 +89,14 @@ function Signup() {
             </div>
 
             <div className={classes.form__control}>
-              <label>Password (4 characters minimum)</label>
+              <label>Password (6 characters minimum)</label>
               <input
                 type="password"
                 {...register('password', {
                   required: 'This field is required!',
                   minLength: {
-                    value: 4,
-                    message: 'Password must have at least 4 characters',
+                    value: 6,
+                    message: 'Password must have at least 6 characters',
                   },
                 })}
               />
