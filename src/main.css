@@ -59,6 +59,7 @@
     rgb(176, 155, 155)
   );
   --main-bg-person-card-name: rgba(0, 20, 173, 0.4);
+  --main-bg-benefits: rgba(0, 0, 0, 0.2);
 
   /* text color */
   --main-text-color-light: white;
@@ -139,6 +140,7 @@
   --main-bg-credits-category: rgb(155, 155, 155);
   --main-bg-crew-card: rgb(36, 36, 36);
   --main-bg-person-card-name: rgba(255, 255, 255, 0.15);
+  --main-bg-benefits: rgba(255, 255, 255, 0.05);
 
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-credits-category: white;

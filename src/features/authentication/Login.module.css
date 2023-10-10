@@ -1,0 +1,90 @@
+.login {
+  padding-top: 80px;
+  position: relative;
+}
+
+.login__title {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.login__title p {
+  margin-top: 8px;
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.form {
+  max-width: 700px;
+  font-size: 2rem;
+  margin: 50px auto 0 auto;
+}
+
+.form__control {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.form__control input {
+  font-size: 1.8rem;
+  padding: 10px;
+  width: 100%;
+}
+
+.form__error {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.form__button {
+  font-size: 2.4rem;
+  font-weight: 600;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 10px auto 0 auto;
+  cursor: pointer;
+}
+
+.signup {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.signup__title {
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.signup__link:link,
+.signup__link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  font-weight: 500;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  background-color: var(--main-bg-button-search);
+  border-radius: 5px;
+}
+
+.home__link:link,
+.home__link:visited {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}

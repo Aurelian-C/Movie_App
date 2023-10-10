@@ -5,7 +5,7 @@ import MenuLogo from './MenuLogo';
 import MenuNavigation from './MenuNavigation';
 import SearchButton from './SearchButton';
 import MenuContainer from './MenuContainer';
-import MenuPhone from './MenuPhone';
+import MenuAccount from './MenuAccount';
 import DropDownButton from './DropDownButton';
 import MenuHints from './MenuHints';
 import SearchHint from './SearchHint';
@@ -63,7 +63,7 @@ export default function Header({ onShowSideMenu }) {
         </MenuContainer>
         <MenuContainer className={classes['header__menu--2']}>
           <DarkMode />
-          <MenuPhone />
+          <MenuAccount />
           <SearchButton
             buttonVisibility={buttonSearchVisibility}
             onShow={handleShowButtonSearch}

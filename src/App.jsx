@@ -13,6 +13,8 @@ import { tvLoader } from './services/tv-details';
 import { loaderUpcomings } from './services/upcomings';
 import { personLoader } from './services/person-details';
 import { searchLoader } from './services/search';
+import Signup from './features/authentication/Signup';
+import Login from './features/authentication/Login';
 import {
   nowPlayingMoviesLoader,
   popularMoviesLoader,
@@ -136,6 +138,8 @@ export default function App() {
         },
       ],
     },
+    { path: '/signup', element: <Signup /> },
+    { path: '/login', element: <Login /> },
   ]);
 
   return <RouterProvider router={routes} />;
