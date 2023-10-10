@@ -30,6 +30,10 @@ import {
 } from './services/tv';
 import PersonsPage from './pages/Persons';
 import { personsLoader } from './services/person';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -142,5 +146,10 @@ export default function App() {
     { path: '/login', element: <Login /> },
   ]);
 
-  return <RouterProvider router={routes} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={routes} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
 }

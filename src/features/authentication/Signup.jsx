@@ -2,6 +2,7 @@ import classes from './Signup.module.css';
 import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useSignup } from './useSignup';
 
 function Signup() {
   const {
@@ -11,8 +12,17 @@ function Signup() {
     getValues,
   } = useForm();
 
+  const { signup, isLoadingSignup } = useSignup();
+
   const onSubmit = data => {
-    console.log(data.firstName.trim());
+    const formObject = {
+      firstName: data.firstName.trim(),
+      lastName: data.lastName.trim(),
+      email: data.email.trim(),
+      password: data.password.trim(),
+    };
+
+    signup(formObject);
   };
 
   return (
@@ -124,7 +134,11 @@ function Signup() {
               )}
             </div>
 
-            <button type="submit" className={classes.form__button}>
+            <button
+              type="submit"
+              className={classes.form__button}
+              disabled={isLoadingSignup}
+            >
               Sign In
             </button>
           </form>
