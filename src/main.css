@@ -62,6 +62,7 @@
   --main-bg-benefits: rgba(0, 0, 0, 0.2);
   --bg-account-menu: rgb(136, 64, 74);
   --bg-account-list: rgb(102, 51, 58);
+  --bg-toast: rgb(103, 40, 40);
 
   /* text color */
   --main-text-color-light: white;
@@ -75,6 +76,7 @@
   --text-color-hints: black;
   --card-text-hover: rgb(109, 525, 245);
   --text-color-credits-category: black;
+  --color-toast: rgb(255, 255, 255);
 
   /* border color */
   --main-border-color: rgb(220, 220, 220);
@@ -145,7 +147,9 @@
   --main-bg-benefits: rgba(255, 255, 255, 0.05);
   --bg-account-menu: rgb(88, 34, 40);
   --bg-account-list: rgb(129, 84, 88);
+  --bg-toast: rgb(245, 245, 245);
 
+  --color-toast: rgb(0, 0, 0);
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-credits-category: white;
   --text-color-hints: white;

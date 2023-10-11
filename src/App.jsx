@@ -161,8 +161,8 @@ export default function App() {
         gutter={12}
         containerStyle={{ margin: '8px' }}
         toastOptions={{
-          success: { duration: 5000 },
-          error: { duration: 7000 },
+          success: { duration: 500000 },
+          error: { duration: 700000 },
           style: {
             fontSize: '18px',
             maxWidth: '500px',

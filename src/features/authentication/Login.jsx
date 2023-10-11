@@ -3,6 +3,7 @@ import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary'
 import classes from './Login.module.css';
 import { useForm } from 'react-hook-form';
 import { useLogin } from './useLogin';
+import SpinnerMini from '../../ui/Spinner/SpinnerMini';
 
 function Login() {
   const {
@@ -11,7 +12,7 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const { login } = useLogin();
+  const { login, isLoadingLogin } = useLogin();
 
   function onSubmit(data) {
     login(data);
@@ -73,8 +74,12 @@ function Login() {
               )}
             </div>
           </div>
-          <button className={classes.form__button} type="submit">
-            Login
+          <button
+            className={classes.form__button}
+            type="submit"
+            disabled={isLoadingLogin}
+          >
+            {isLoadingLogin ? <SpinnerMini /> : 'Login'}
           </button>
         </form>
         <div className={classes.signup}>
