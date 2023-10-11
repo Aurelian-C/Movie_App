@@ -37,7 +37,7 @@
   width: max-content;
   position: absolute;
   border-radius: 3px;
-  top: 120%;
+  top: 135%;
   right: 3px;
   z-index: 99;
 }
@@ -49,15 +49,14 @@
   right: 0;
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent var(--border-color-account-menu)
-    transparent;
+  border-color: transparent transparent var(--bg-account-menu) transparent;
 }
 
 .account__ul {
   list-style: none;
   font-size: 1.7rem;
   padding: 5px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hidden {

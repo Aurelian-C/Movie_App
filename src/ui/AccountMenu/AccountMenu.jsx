@@ -1,18 +1,17 @@
-import classes from './MenuAccount.module.css';
-import { ACCOUNT_MENU_ITEMS } from '../../../helpers/config';
-import AccountMenuItems from '../../../ui/AccountMenu/AccountMenuItems';
-import AccountMenuProfile from '../../../ui/AccountMenu/AccountMenuProfile';
-import { useUser } from '../../authentication/useUser';
-import { useLogout } from '../../authentication/useLogout';
-import { useOutsideClick } from '../../../hooks/useOutsideClick';
+import classes from './AccountMenu.module.css';
+import { ACCOUNT_MENU_ITEMS } from '../../helpers/config';
+import AccountMenuItems from './AccountMenuItems';
+import AccountMenuProfile from './AccountMenuProfile';
+import { useUser } from '../../features/authentication/useUser';
+import { useLogout } from '../../features/authentication/useLogout';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function MenuAccount() {
-  const { isAuthenticated, firstName, lastName, userEmail } = useUser();
+export default function AccountMenu() {
   const [isVisible, setIsVisible] = useState(false);
   const iconRef = useOutsideClick(() => setIsVisible(false));
-
+  const { isAuthenticated, firstName, lastName, userEmail } = useUser();
   const { logout, isLoadingLogout } = useLogout();
 
   function handleAccountMenuVisibility() {
