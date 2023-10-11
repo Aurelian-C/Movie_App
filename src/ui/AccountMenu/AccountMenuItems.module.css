@@ -1,0 +1,32 @@
+.account__li:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.account__link:link,
+.account__link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.account__link {
+  display: block;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.account__link:hover,
+.account__button:hover {
+  background-color: var(--bg-account-list);
+}
+
+.account__button {
+  text-align: start;
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px 15px;
+  cursor: pointer;
+}

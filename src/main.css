@@ -60,6 +60,8 @@
   );
   --main-bg-person-card-name: rgba(0, 20, 173, 0.4);
   --main-bg-benefits: rgba(0, 0, 0, 0.2);
+  --bg-account-menu: rgb(136, 64, 74);
+  --bg-account-list: rgb(102, 51, 58);
 
   /* text color */
   --main-text-color-light: white;
@@ -141,6 +143,8 @@
   --main-bg-crew-card: rgb(36, 36, 36);
   --main-bg-person-card-name: rgba(255, 255, 255, 0.15);
   --main-bg-benefits: rgba(255, 255, 255, 0.05);
+  --bg-account-menu: rgb(87, 34, 40);
+  --bg-account-list: rgb(129, 84, 88);
 
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-credits-category: white;

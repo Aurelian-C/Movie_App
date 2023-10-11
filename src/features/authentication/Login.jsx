@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import classes from './Login.module.css';
 import { useForm } from 'react-hook-form';
+import { useLogin } from './useLogin';
 
 function Login() {
   const {
@@ -10,8 +11,10 @@ function Login() {
     formState: { errors },
   } = useForm();
 
+  const { login } = useLogin();
+
   function onSubmit(data) {
-    console.log(data);
+    login(data);
   }
 
   return (
