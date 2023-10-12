@@ -10,6 +10,10 @@ import TvCrewDetails from './pages/TvCrewDetails';
 import FilterFormLayout from './pages/FilterFormLayout';
 import PersonsPage from './pages/Persons';
 import AccountPage from './pages/Account';
+import FavoritesPage from './pages/Favorites';
+import WatchlistPage from './pages/Watchlist';
+import EditProfilePage from './pages/EditProfile';
+import SettingsPage from './pages/Settings';
 
 import Signup from './features/authentication/Signup';
 import Login from './features/authentication/Login';
@@ -145,11 +149,18 @@ export default function App() {
             },
           ],
         },
+        { path: 'signup', element: <Signup /> },
+        { path: 'login', element: <Login /> },
+        {
+          path: 'account',
+          element: <AccountPage />,
+        },
+        { path: 'account/favorites', element: <FavoritesPage /> },
+        { path: 'account/watchlist', element: <WatchlistPage /> },
+        { path: 'account/edit-profile', element: <EditProfilePage /> },
+        { path: 'account/settings', element: <SettingsPage /> },
       ],
     },
-    { path: '/signup', element: <Signup /> },
-    { path: '/login', element: <Login /> },
-    { path: '/account', element: <AccountPage /> },
   ]);
 
   return (

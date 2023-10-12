@@ -108,6 +108,7 @@
   --last-season-box-shadow-color: rgba(0, 0, 0, 0.15);
   --upcoming-card-box-shadow: rgba(0, 0, 0, 0.2);
   --person-card-picture-box-shadow: rgb(255, 255, 255);
+  --shadow-card-favorites: rgba(0, 0, 0, 0.3);
 }
 
 .dark {
@@ -153,7 +154,7 @@
   --main-text-color-selected: rgb(110, 204, 255);
   --text-color-credits-category: white;
   --text-color-hints: white;
-  --person-card-box-shadow-color: rgb(0, 0, 0, 0.6);
+  --person-card-box-shadow-color: rgba(0, 0, 0, 0.6);
   --button-biography-box-shadow-color: rgba(0, 0, 0, 0.6);
   --hints-border-color: rgb(93, 93, 93);
   --card-text-hover: rgb(255, 144, 144);
@@ -162,6 +163,7 @@
   --upcoming-card-box-shadow: rgba(0, 0, 0, 0.8);
   --border-crew-color: rgba(81, 81, 81, 1);
   --person-card-picture-box-shadow: rgba(255, 255, 255, 0.4);
+  --shadow-card-favorites: rgba(0, 0, 0, 0.6);
 }
 
 @media screen and (max-width: 700px) {

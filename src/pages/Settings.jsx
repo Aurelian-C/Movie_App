@@ -1,11 +1,11 @@
 import SectionPagePrimary from '../ui/SectionWrappers/SectionPagePrimary';
 
-function AccountPage() {
+function SettingsPage() {
   return (
     <SectionPagePrimary>
-      <div style={{ color: 'white', fontSize: '10rem' }}>Account Page</div>
+      <div>Accout Settings Page</div>
     </SectionPagePrimary>
   );
 }
 
-export default AccountPage;
+export default SettingsPage;

@@ -1,6 +1,15 @@
+import { useUser } from '../../../features/authentication/useUser';
+import { useAddFavorites } from '../../../features/favorites/useAddFavorites';
 import classes from './HeaderDetailsMovie.module.css';
 
 export default function HeaderDetailsMovie({ motion }) {
+  const { isAuthenticated, userId } = useUser();
+  const { addToFavorites } = useAddFavorites();
+
+  function handleAddToFavorites(data) {
+    addToFavorites({ ...data, user_id: userId });
+  }
+
   return (
     <div className={classes['header__details']}>
       <div className={classes['header__title']}>
@@ -30,22 +39,38 @@ export default function HeaderDetailsMovie({ motion }) {
           <div className={classes['header__user']}>User score</div>
         </div>
         <div className={classes['header__buttons']}>
-          <button className={classes['header__button']}>
+          <button
+            className={classes['header__button']}
+            disabled={!isAuthenticated}
+          >
             <i className="fa-regular fa-rectangle-list"></i>
             <div className={classes['header__tooltip']}>
-              Login to create and edit custom list
+              {isAuthenticated
+                ? 'Add to list'
+                : 'Login to create and edit custom list'}
             </div>
           </button>
-          <button className={classes['header__button']}>
+          <button
+            className={classes['header__button']}
+            disabled={!isAuthenticated}
+            onClick={handleAddToFavorites.bind(null, motion)}
+          >
             <i className="fa-solid fa-heart"></i>
             <div className={classes['header__tooltip']}>
-              Login to add this movie to your favorite list
+              {isAuthenticated
+                ? 'Mark as favorite'
+                : 'Login to add this movie to your favorite list'}
             </div>
           </button>
-          <button className={classes['header__button']}>
+          <button
+            className={classes['header__button']}
+            disabled={!isAuthenticated}
+          >
             <i className="fa-solid fa-bookmark"></i>
             <div className={classes['header__tooltip']}>
-              Login to add this movie to your watchlist
+              {isAuthenticated
+                ? 'Add to your watchlist'
+                : 'Login to add this movie to your watchlist'}
             </div>
           </button>
         </div>

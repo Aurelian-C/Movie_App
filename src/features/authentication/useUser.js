@@ -12,12 +12,14 @@ export function useUser() {
   const firstName = userCredentials?.user_metadata?.firstName;
   const lastName = userCredentials?.user_metadata?.lastName;
   const userEmail = userCredentials?.email;
+  const userId = userCredentials?.id;
 
   return {
     isAuthenticated,
     firstName,
     lastName,
     userEmail,
+    userId,
     isLoadingUserCredentials,
   };
 }

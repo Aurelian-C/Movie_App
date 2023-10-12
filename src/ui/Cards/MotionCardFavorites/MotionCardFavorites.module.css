@@ -1,0 +1,99 @@
+.card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+  background-color: var(--main-bg-credits-card);
+  border: 1px solid var(--border-credits-card);
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px var(--shadow-card-favorites);
+  overflow: hidden;
+  color: white;
+}
+
+.card__image {
+  overflow: hidden;
+}
+
+.card__img {
+  display: block;
+  max-height: 250px;
+  aspect-ratio: 2 / 3;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 10px 10px 10px 0;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card__user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.card__score {
+  background-color: var(--main-bg-movie-score);
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.card__score span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.card__user-score {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card__buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.card__button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card__button button {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background-color: var(--main-bg-button-movie);
+}
+
+.card__button i {
+  font-size: 1.7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--main-text-color-light);
+}
+
+.card__button label {
+  font-size: 1.5rem;
+}
