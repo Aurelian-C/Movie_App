@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import classes from './Login.module.css';
 import { useForm } from 'react-hook-form';
 import { useLogin } from './useLogin';
 import SpinnerMini from '../../ui/Spinner/SpinnerMini';
+import SectionPagePrimary from '../../ui/SectionWrappers/SectionPagePrimary';
 
 function Login() {
   const {
@@ -19,7 +19,7 @@ function Login() {
   }
 
   return (
-    <SectionPageSecondary>
+    <SectionPagePrimary>
       <div className={classes.login}>
         <div className={classes.login__title}>
           <h2>Login to your account</h2>
@@ -94,7 +94,7 @@ function Login() {
           Back to Home Page
         </Link>
       </div>
-    </SectionPageSecondary>
+    </SectionPagePrimary>
   );
 }
 

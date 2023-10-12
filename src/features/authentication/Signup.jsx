@@ -1,8 +1,8 @@
 import classes from './Signup.module.css';
-import SectionPageSecondary from '../../ui/SectionWrappers/SectionPageSecondary';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useSignup } from './useSignup';
+import SectionPagePrimary from '../../ui/SectionWrappers/SectionPagePrimary';
 
 function Signup() {
   const {
@@ -26,7 +26,7 @@ function Signup() {
   };
 
   return (
-    <SectionPageSecondary>
+    <SectionPagePrimary>
       <div className={classes.signin}>
         <div className={classes.signin__title}>
           <h2>Sign up for an account</h2>
@@ -148,7 +148,7 @@ function Signup() {
           Back to Home Page
         </Link>
       </div>
-    </SectionPageSecondary>
+    </SectionPagePrimary>
   );
 }
 

@@ -24,7 +24,7 @@
 
 .form__control {
   display: grid;
-  grid-template-columns: 12rem 1fr;
+  grid-template-columns: 10.5rem 1fr;
   align-items: baseline;
   margin-bottom: 15px;
 }
@@ -48,12 +48,13 @@
   border-radius: 5px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   width: 100%;
-  margin: 10px auto 0 auto;
+  margin: auto;
   cursor: pointer;
 }
 
 .signup {
-  margin-top: 30px;
+  margin-top: 80px;
+  margin-bottom: 35rem;
   text-align: center;
   font-size: 2rem;
 }
