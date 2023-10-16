@@ -1,0 +1,19 @@
+.card__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  z-index: 1;
+}
+
+.card__info {
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.card__info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}

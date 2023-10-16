@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { Await, useLoaderData } from 'react-router-dom';
-import PersonPresentation from '../components/Presentation/PersonPresentation';
+import PersonPresentation from '../ui/Presentation/PersonPresentation';
+import LoadingPersons from '../ui/Cards/LoadingPersons/LoadingPersons';
 import { createPersonsList } from '../helpers/helpers';
-import LoadingPersons from '../components/Cards/LoadingPersons/LoadingPersons';
 
 export default function PersonsPage() {
   const {

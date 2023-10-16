@@ -9,6 +9,7 @@ export default function MotionCard({ item, mediaType }) {
           src={item.poster_path}
           alt={item.title}
           className={classes.motion__image}
+          loading="lazy"
         />
         <div className={classes.motion__score}>
           <span>{item.vote_average}</span>

@@ -1,4 +1,4 @@
-import SearchedQueries from '../components/SearchedQueries/SearchedQueries';
+import SearchedQueries from '../ui/SearchedQueries/SearchedQueries';
 import { useLoaderData } from 'react-router-dom';
 import { createSearchedItems } from '../helpers/helpers';
 

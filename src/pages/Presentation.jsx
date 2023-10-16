@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { Await, useLoaderData } from 'react-router-dom';
-import MotionPresentation from '../components/Presentation/MotionPresentation';
+import MotionPresentation from '../ui/Presentation/MotionPresentation';
+import LoadingPresentation from '../ui/Cards/LoadingPresentation/LoadingPresentation';
 import { createCardDetails } from '../helpers/helpers';
-import LoadingPresentation from '../components/Cards/LoadingPresentation/LoadingPresentation';
 
 export default function PresentationPage() {
   const {

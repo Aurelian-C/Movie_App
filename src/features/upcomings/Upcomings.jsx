@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { Await, useRouteLoaderData } from 'react-router-dom';
 import { createUpcomingDetails } from '../../helpers/helpers';
 import Upcoming from './Upcoming';

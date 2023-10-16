@@ -4,7 +4,7 @@ import {
 } from '../helpers/helpers';
 import { useRouteLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
-import MotionPictureMovie from '../components/MotionPicture/Movie/MotionPictureMovie';
+import MotionPictureMovie from '../ui/MotionPicture/Movie/MotionPictureMovie';
 
 export default function MovieDetails() {
   const {

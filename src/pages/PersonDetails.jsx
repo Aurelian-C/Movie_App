@@ -1,5 +1,5 @@
-import Person from '../components/Person/Person';
-import PersonCredits from '../components/Person/PersonCredits';
+import Person from '../ui/Person/Person';
+import PersonCredits from '../ui/Person/PersonCredits';
 import { Await, useLoaderData } from 'react-router-dom';
 import { createMovieCredits, createPersonDetails } from '../helpers/helpers';
 import { Suspense, useEffect } from 'react';

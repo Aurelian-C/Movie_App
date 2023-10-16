@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useLogin } from './useLogin';
 import SpinnerMini from '../../ui/Spinner/SpinnerMini';
 import SectionPagePrimary from '../../ui/SectionWrappers/SectionPagePrimary';
+import { useEffect } from 'react';
 
 function Login() {
   const {
@@ -13,6 +14,10 @@ function Login() {
   } = useForm();
 
   const { login, isLoadingLogin } = useLogin();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   function onSubmit(data) {
     login(data);

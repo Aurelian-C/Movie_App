@@ -1,4 +1,4 @@
-import Search from '../components/Search/Search';
+import Search from '../../src/ui/Search/Search';
 import Trendings from '../features/trendings/Trendings';
 import TopRated from '../features/topRated/TopRated';
 import Upcomings from '../features/upcomings/Upcomings';

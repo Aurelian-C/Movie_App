@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useTopRated from './useTopRated';
-import CardItems from '../../components/Cards/MovieCard/CardItems';
-import Selector from '../../components/Selector/Selector';
+import CardItems from '../../ui/Cards/MovieCard/CardItems';
+import Selector from '../../ui/Selector/Selector';
 
 const topRated = {
   categories: ['Movie', 'TV'],

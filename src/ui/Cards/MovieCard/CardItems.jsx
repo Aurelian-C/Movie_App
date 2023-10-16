@@ -45,6 +45,7 @@ export default function CardItems({
           {items.length === 0 && <LoadingCard />}
           {items.map(item => (
             <CardItem
+              item={item}
               key={item.id}
               image={item.poster_path}
               title={item.title}

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import CastAndCrew from '../components/CastAndCrew/CastAndCrew';
+import CastAndCrew from '../ui/CastAndCrew/CastAndCrew';
 import { Await, useRouteLoaderData } from 'react-router-dom';
 import {
   createCastDetails,

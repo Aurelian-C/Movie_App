@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTrendings } from './useTrendings';
-import CardItems from '../../components/Cards/MovieCard/CardItems';
-import Selector from '../../components/Selector/Selector';
+import CardItems from '../../ui/Cards/MovieCard/CardItems';
+import Selector from '../../ui/Selector/Selector';
 
 const trendings = {
   categories: ['Movie', 'TV'],

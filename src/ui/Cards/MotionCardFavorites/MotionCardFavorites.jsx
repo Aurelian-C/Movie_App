@@ -15,6 +15,7 @@ export default function MotionCardFavorites({ motionDetail }) {
           className={classes.card__img}
           src={motionDetail.poster_path}
           alt={motionDetail.title}
+          loading="lazy"
         />
       </div>
 
