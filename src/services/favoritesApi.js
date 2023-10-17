@@ -41,7 +41,7 @@ export async function addToFavorites({
 export async function getFavorites(category) {
   let url = supabase.from('favorites');
 
-  if (category === 'all') {
+  if (category === 'all' || !category) {
     url = url.select('*');
   }
 
