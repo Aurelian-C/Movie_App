@@ -10,6 +10,7 @@ export async function addToFavorites({
   poster_path,
   overview,
   runtime,
+  media_type,
   user_id,
 }) {
   const { data, error } = await supabase
@@ -25,6 +26,7 @@ export async function addToFavorites({
         poster_path,
         overview,
         runtime,
+        media_type,
         user_id,
       },
     ])
@@ -36,8 +38,18 @@ export async function addToFavorites({
   return data;
 }
 
-export async function getFavorites() {
-  const { data, error } = await supabase.from('favorites').select('*');
+export async function getFavorites(category) {
+  let url = supabase.from('favorites');
+
+  if (category === 'all') {
+    url = url.select('*');
+  }
+
+  if (category === 'movie' || category === 'tv') {
+    url = url.select('*').eq('media_type', category);
+  }
+
+  const { data, error } = await url;
 
   if (error) throw new Error(error.message);
 

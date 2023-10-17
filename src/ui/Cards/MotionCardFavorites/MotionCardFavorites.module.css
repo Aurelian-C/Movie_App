@@ -1,7 +1,7 @@
 .card {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 10px;
+  grid-template-columns: max-content 1fr;
+  gap: 20px;
   background-color: var(--main-bg-credits-card);
   border: 1px solid var(--border-credits-card);
   border-radius: 5px;
@@ -17,7 +17,6 @@
 .card__img {
   display: block;
   max-height: 250px;
-  aspect-ratio: 2 / 3;
 }
 
 .card__body {
@@ -61,6 +60,14 @@
 .card__user-score {
   font-size: 1.2rem;
   text-align: center;
+}
+
+.card__title {
+  font-size: 2.3rem;
+}
+
+.card__date {
+  font-size: 1.3rem;
 }
 
 .card__buttons {

@@ -31,6 +31,7 @@ export default function CardItem({
       poster_path: item.poster_path,
       overview: item.overview,
       runtime: null,
+      media_type: mediaType,
       user_id: userId,
     };
     addToFavorites(motionObject);
