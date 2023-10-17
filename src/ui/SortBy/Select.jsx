@@ -3,9 +3,7 @@ import classes from './Select.module.css';
 function Select({ type, value, options, onChange }) {
   return (
     <select
-      className={`${classes.select} ${
-        type === 'white' ? classes['select--white'] : classes['select--grey']
-      }`}
+      className={`${classes.select} ${classes['select--white']}`}
       value={value}
       onChange={onChange}
     >

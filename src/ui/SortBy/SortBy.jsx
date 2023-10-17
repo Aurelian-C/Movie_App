@@ -11,14 +11,7 @@ function SortBy({ options }) {
     setSearchParams(searchParams);
   }
 
-  return (
-    <Select
-      options={options}
-      type="white"
-      onChange={handleChange}
-      value={sortBy}
-    />
-  );
+  return <Select options={options} onChange={handleChange} value={sortBy} />;
 }
 
 export default SortBy;

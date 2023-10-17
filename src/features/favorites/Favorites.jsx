@@ -19,29 +19,34 @@ export default function Favorites() {
     <SectionPagePrimary>
       {isLoadingFavorites && <Spinner />}
 
-      {!isLoadingFavorites && (
-        <Filter
-          filterField="category"
-          options={[
-            { value: 'all', label: 'All' },
-            { value: 'movies', label: 'Movies' },
-            { value: 'tv', label: 'TVs' },
-          ]}
-        />
-      )}
+      <h2 className={classes.title}>My favorites</h2>
 
       {!isLoadingFavorites && (
-        <SortBy
-          options={[
-            { value: 'startDate-desc', label: 'Sort by date (recent first)' },
-            { value: 'startDate-asc', label: 'Sort by date (older first)' },
-            {
-              value: 'userScore-desc',
-              label: 'Sort by user score (high first)',
-            },
-            { value: 'userScore-asc', label: 'Sort by user score (low first)' },
-          ]}
-        />
+        <div className={classes.filters}>
+          <Filter
+            filterField="category"
+            options={[
+              { value: 'all', label: 'All' },
+              { value: 'movie', label: 'Movies' },
+              { value: 'tv', label: 'TVs' },
+            ]}
+          />
+
+          <SortBy
+            options={[
+              { value: 'startDate-desc', label: 'Sort by date (recent first)' },
+              { value: 'startDate-asc', label: 'Sort by date (older first)' },
+              {
+                value: 'userScore-desc',
+                label: 'Sort by user score (high first)',
+              },
+              {
+                value: 'userScore-asc',
+                label: 'Sort by user score (low first)',
+              },
+            ]}
+          />
+        </div>
       )}
 
       {!isLoadingFavorites && <div className={classes.cards}>{cards}</div>}

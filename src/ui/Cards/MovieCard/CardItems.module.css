@@ -34,6 +34,10 @@
   margin-left: var(--padding-left-side-main);
 }
 
+.cards__container > :last-child {
+  margin-right: 20px;
+}
+
 .cards__container::-webkit-scrollbar {
   width: 0px;
   height: 8px;
