@@ -1,7 +1,7 @@
 .filter {
   display: flex;
   gap: 5px;
-  background-color: var(--bg-filter);
+  /* background-color: var(--bg-filter); */
   border-radius: 5px;
   padding: 0.4rem;
 }
