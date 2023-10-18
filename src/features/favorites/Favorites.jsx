@@ -9,7 +9,12 @@ import { useReadFavorites } from './useReadFavorites';
 export default function Favorites() {
   const { favorites, isLoadingFavorites } = useReadFavorites();
 
-  if (isLoadingFavorites) return <Spinner />;
+  if (isLoadingFavorites)
+    return (
+      <SectionPagePrimary>
+        <Spinner />
+      </SectionPagePrimary>
+    );
 
   const cards = favorites.map(motionDetail => (
     <MotionCardFavorites key={motionDetail.id} motionDetail={motionDetail} />
@@ -17,8 +22,6 @@ export default function Favorites() {
 
   return (
     <SectionPagePrimary>
-      {isLoadingFavorites && <Spinner />}
-
       <h2 className={classes.title}>My favorites</h2>
 
       {!isLoadingFavorites && (
@@ -34,15 +37,21 @@ export default function Favorites() {
 
           <SortBy
             options={[
-              { value: 'startDate-desc', label: 'Sort by date (recent first)' },
-              { value: 'startDate-asc', label: 'Sort by date (older first)' },
               {
-                value: 'userScore-desc',
-                label: 'Sort by user score (high first)',
+                value: 'release_date-descending',
+                label: 'Release date (recent first)',
               },
               {
-                value: 'userScore-asc',
-                label: 'Sort by user score (low first)',
+                value: 'release_date-ascending',
+                label: 'Release date (older first)',
+              },
+              {
+                value: 'vote_average-descending',
+                label: 'Vote average (high first)',
+              },
+              {
+                value: 'vote_average-ascending',
+                label: 'Vote average (low first)',
               },
             ]}
           />

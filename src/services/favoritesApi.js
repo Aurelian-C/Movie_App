@@ -20,7 +20,7 @@ export async function addToFavorites({
         id,
         title,
         vote_average,
-        release_date,
+        release_date: new Date(release_date),
         genres,
         backdrop_path,
         poster_path,
@@ -38,7 +38,7 @@ export async function addToFavorites({
   return data;
 }
 
-export async function getFavorites(category) {
+export async function getFavorites(category, sortBy, order) {
   let url = supabase.from('favorites');
 
   if (category === 'all' || !category) {
@@ -49,7 +49,9 @@ export async function getFavorites(category) {
     url = url.select('*').eq('media_type', category);
   }
 
-  const { data, error } = await url;
+  const { data, error } = await url.order(sortBy, {
+    ascending: order === 'ascending',
+  });
 
   if (error) throw new Error(error.message);
 

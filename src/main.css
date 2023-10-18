@@ -88,6 +88,8 @@
   --hints-border-color: rgb(220, 220, 220);
   --border-credits-card: rgba(0, 0, 0, 0.2);
   --border-crew-color: rgba(255, 255, 255, 0.3);
+  --border-color-spinner: rgb(203, 233, 238);
+  --border-top-color-spinner: rgb(127, 165, 172);
 
   /* padding measures */
   --padding-sides-main: 5rem;
@@ -174,6 +176,8 @@
   --border-crew-color: rgba(81, 81, 81, 1);
   --person-card-picture-box-shadow: rgba(255, 255, 255, 0.4);
   --shadow-card-favorites: rgba(0, 0, 0, 0.6);
+  --border-color-spinner: rgb(204, 204, 204);
+  --border-top-color-spinner: rgb(76, 76, 76);
 }
 
 @media screen and (max-width: 700px) {

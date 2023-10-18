@@ -11,7 +11,12 @@ function SortBy({ options }) {
     setSearchParams(searchParams);
   }
 
-  return <Select options={options} onChange={handleChange} value={sortBy} />;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div>Sort by:</div>
+      <Select options={options} onChange={handleChange} value={sortBy} />
+    </div>
+  );
 }
 
 export default SortBy;
