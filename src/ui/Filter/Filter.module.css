@@ -1,11 +1,9 @@
 .filter {
-  border: 1px solid white;
+  display: flex;
+  gap: 5px;
   background-color: var(--bg-filter);
-  box-shadow: 1px 2px 3px black;
   border-radius: 5px;
   padding: 0.4rem;
-  display: flex;
-  gap: 0.4rem;
 }
 
 .filter__button {
@@ -16,7 +14,8 @@
   font-size: 1.4rem;
   color: white;
   padding: 0.44rem 0.8rem;
-  transition: all 0.3s;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
 }
 
 .filter__button:hover:not(:disabled) {
@@ -28,4 +27,5 @@
 .filter__button--active {
   background-color: var(--bg-filter-button-active);
   color: var(--main-text-color-dark);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }

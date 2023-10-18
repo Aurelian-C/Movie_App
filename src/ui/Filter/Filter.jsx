@@ -12,21 +12,24 @@ function Filter({ filterField, options }) {
   }
 
   return (
-    <div className={classes.filter}>
-      {options.map(option => (
-        <button
-          className={`${classes.filter__button} ${
-            activeFilterButton === option.value
-              ? classes['filter__button--active']
-              : ''
-          }`}
-          onClick={() => handleClick(option.value)}
-          key={option.label}
-          disabled={activeFilterButton === option.value}
-        >
-          {option.label}
-        </button>
-      ))}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div>Category:</div>
+      <div className={classes.filter}>
+        {options.map(option => (
+          <button
+            className={`${classes.filter__button} ${
+              activeFilterButton === option.value
+                ? classes['filter__button--active']
+                : ''
+            }`}
+            onClick={() => handleClick(option.value)}
+            key={option.label}
+            disabled={activeFilterButton === option.value}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
