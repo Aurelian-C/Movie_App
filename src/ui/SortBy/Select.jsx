@@ -1,6 +1,6 @@
 import classes from './Select.module.css';
 
-function Select({ type, value, options, onChange }) {
+function Select({ value, options, onChange }) {
   return (
     <select
       className={`${classes.select} ${classes['select--white']}`}
