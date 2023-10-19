@@ -1,3 +1,64 @@
+/* Section grid */
+.section {
+  padding: 3rem var(--padding-sides-main);
+}
+
+.section__container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.section__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section__anchor {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.section__cards {
+  display: grid;
+  grid-auto-flow: column;
+  /* grid-auto-columns: minmax(min-content, 1fr); */
+  grid-auto-columns: max-content;
+  gap: 15px;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+}
+
+.section__cards::-webkit-scrollbar {
+  width: 0;
+  height: 8px;
+}
+
+.section__cards::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+  background: var(--main-bg-cards-scrollbar);
+}
+
+/* Filter */
+.select {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  background-color: #171717;
+  font-weight: 500;
+  box-shadow: 1px 2px 3px black;
+  color: white;
+}
+
+.select--white {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Section videos */
 .video {
   width: var(--video-width);
   height: var(--video-height);

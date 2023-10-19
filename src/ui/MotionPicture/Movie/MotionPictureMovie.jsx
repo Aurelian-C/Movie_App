@@ -32,7 +32,18 @@ export default function MotionPictureMovie({
       <MotionPictureCollections collection={collection} />
       <Suspense fallback={<p>Loading...</p>}>
         <Await resolve={videos}>
-          {video => <MotionPictureVideos videos={video} />}
+          {videoDetails => {
+            if (videoDetails.videos.results.length) {
+              return (
+                <MotionPictureVideos
+                  videos={videoDetails.videos}
+                  videoTypes={videoDetails.videoTypes}
+                />
+              );
+            } else {
+              return null;
+            }
+          }}
         </Await>
       </Suspense>
     </>

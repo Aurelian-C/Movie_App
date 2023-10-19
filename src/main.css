@@ -68,6 +68,7 @@
   --bg-filter-button-hover: rgb(80, 80, 80);
   --bg-filter-button-active: rgb(245, 245, 245);
   --bg-sortby: rgb(119, 148, 196);
+  --bg-filterBy: rgb(193, 100, 105);
 
   /* text color */
   --main-text-color-light: white;
@@ -161,6 +162,7 @@
   --bg-filter-button-hover: rgb(100, 100, 100);
   --bg-filter-button-active: rgb(245, 245, 245);
   --bg-sortby: rgb(37, 37, 37);
+  --bg-filterBy: rgb(37, 37, 37);
 
   --color-toast: rgb(0, 0, 0);
   --main-text-color-selected: rgb(110, 204, 255);
