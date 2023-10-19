@@ -18,6 +18,7 @@ async function combinedCredits(personId) {
     `${API_URL}/person/${personId}/combined_credits?api_key=${API_KEY}`
   );
   const data = await response.json();
+  if (data.success === false) return { cast: [], crew: [] };
   return data;
 }
 

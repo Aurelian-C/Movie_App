@@ -29,7 +29,11 @@ export default function PersonDetails() {
           {combined => {
             const castCredits = createMovieCredits(combined.cast);
             const crewCredits = createMovieCredits(combined.crew);
-            return <PersonCredits cast={castCredits} crew={crewCredits} />;
+            if (castCredits.length === 0 && crewCredits.length === 0) {
+              return null;
+            } else {
+              return <PersonCredits cast={castCredits} crew={crewCredits} />;
+            }
           }}
         </Await>
       </Suspense>
