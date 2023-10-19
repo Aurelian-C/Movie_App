@@ -5,7 +5,7 @@ import SectionPageSecondary from '../ui/SectionWrappers/SectionPageSecondary';
 export default function FilterFormLayout() {
   return (
     <SectionPageSecondary className="presentation__layout">
-      <FilterForm />
+      {/* <FilterForm /> */}
       <Outlet />
     </SectionPageSecondary>
   );
