@@ -1,13 +1,23 @@
 import { useUser } from '../../../features/authentication/useUser';
 import { useAddFavorites } from '../../../features/favorites/useAddFavorites';
+import { useReadFavorites } from '../../../features/favorites/useReadFavorites';
+import { useRemoveFavorites } from '../../../features/favorites/useRemoveFavorites';
 import classes from './HeaderDetailsMovie.module.css';
 
 export default function HeaderDetailsMovie({ motion }) {
   const { isAuthenticated, userId } = useUser();
-  const { addToFavorites } = useAddFavorites();
+  const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
+  const { removeFavorite, isLoadingRemoveFavorite } = useRemoveFavorites();
+  const { favorites } = useReadFavorites();
 
-  function handleAddToFavorites(data) {
-    addToFavorites({ ...data, user_id: userId });
+  const isFavorite = favorites?.some(favorite => favorite.id === motion.id);
+
+  function handleFavorites(motion) {
+    if (isFavorite) {
+      removeFavorite(motion.id);
+    } else {
+      addToFavorites({ ...motion, user_id: userId });
+    }
   }
 
   return (
@@ -39,7 +49,7 @@ export default function HeaderDetailsMovie({ motion }) {
           <div className={classes['header__user']}>User score</div>
         </div>
         <div className={classes['header__buttons']}>
-          <button
+          {/* <button
             className={classes['header__button']}
             disabled={!isAuthenticated}
           >
@@ -49,13 +59,20 @@ export default function HeaderDetailsMovie({ motion }) {
                 ? 'Add to list'
                 : 'Login to create and edit custom list'}
             </div>
-          </button>
+          </button> */}
           <button
             className={classes['header__button']}
-            disabled={!isAuthenticated}
-            onClick={handleAddToFavorites.bind(null, motion)}
+            disabled={
+              !isAuthenticated ||
+              isLoadingAddToFavorites ||
+              isLoadingRemoveFavorite
+            }
+            onClick={handleFavorites.bind(null, motion)}
           >
-            <i className="fa-solid fa-heart"></i>
+            {isFavorite && (
+              <i className={`fa-solid fa-heart ${classes.icon__favorite}`}></i>
+            )}
+            {!isFavorite && <i className="fa-regular fa-heart"></i>}
             <div className={classes['header__tooltip']}>
               {isAuthenticated
                 ? 'Mark as favorite'

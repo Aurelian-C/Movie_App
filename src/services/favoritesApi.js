@@ -54,9 +54,9 @@ export async function getFavorites(category, sortBy, order) {
     ({ data, error } = await url.order(sortBy, {
       ascending: order === 'ascending',
     }));
+  } else {
+    ({ data, error } = await url);
   }
-
-  ({ data, error } = await url);
 
   if (error) throw new Error(error.message);
 

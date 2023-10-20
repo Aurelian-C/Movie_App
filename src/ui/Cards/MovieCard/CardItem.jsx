@@ -81,12 +81,12 @@ export default function CardItem({
         )}
         {isAuthenticated && (
           <div className={classes.card__buttons}>
-            <button className={classes.button}>
+            {/* <button className={classes.button}>
               <div className={classes.button__icon}>
                 <i className="fa-solid fa-list-ul"></i>
               </div>
               <div className={classes.button__name}>Add to list</div>
-            </button>
+            </button> */}
 
             <button
               className={classes.button}

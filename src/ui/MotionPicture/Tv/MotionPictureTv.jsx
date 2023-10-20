@@ -27,7 +27,18 @@ export default function MotionPictureTv({ motion, credits, videos }) {
       <LastSeasonDetailsTv seasons={motion.seasons} />
       <Suspense fallback={<p>Loading...</p>}>
         <Await resolve={videos}>
-          {video => <MotionPictureVideos videos={video} />}
+          {videoDetails => {
+            if (videoDetails.videos.results.length) {
+              return (
+                <MotionPictureVideos
+                  videos={videoDetails.videos}
+                  videoTypes={videoDetails.videoTypes}
+                />
+              );
+            } else {
+              return null;
+            }
+          }}
         </Await>
       </Suspense>
     </>

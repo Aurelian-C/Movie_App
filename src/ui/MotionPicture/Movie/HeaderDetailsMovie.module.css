@@ -84,6 +84,10 @@
   color: var(--main-text-color-light);
 }
 
+.header__button .icon__favorite {
+  color: red;
+}
+
 .header__tooltip {
   position: absolute;
   top: 120%;

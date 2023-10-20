@@ -38,6 +38,14 @@ export default function Favorites() {
           <SortBy
             options={[
               {
+                value: 'created_at-descending',
+                label: 'Date added (recent first)',
+              },
+              {
+                value: 'created_at-ascending',
+                label: 'Date added (older first)',
+              },
+              {
                 value: 'release_date-descending',
                 label: 'Release date (recent first)',
               },

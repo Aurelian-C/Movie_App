@@ -23,7 +23,12 @@ async function fetchMovieVideos(params) {
     `${API_URL}/tv/${params.tvId}/videos?api_key=${API_KEY}`
   );
   const videos = await response.json();
-  return videos;
+
+  // Make an array with unique videos types
+  const videoTypes = [...new Set(videos.results.map(video => video.type))];
+  videoTypes.unshift('None');
+
+  return { videos, videoTypes };
 }
 
 // Loader for TVs

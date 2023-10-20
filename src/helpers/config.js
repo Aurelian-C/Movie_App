@@ -3,12 +3,12 @@ export const ACCOUNT_MENU_ITEMS = [
     {
       type: 'link',
       label: 'Favorites',
-      link: '/account/favorites?category=all&sortBy=release_date-descending',
+      link: '/account/favorites?category=all&sortBy=created_at-descending',
     },
     {
       type: 'link',
       label: 'Watchlist',
-      link: '/account/watchlist?category=all&sortBy=release_date-descending',
+      link: '/account/watchlist?category=all&sortBy=created_at-descending',
     },
   ],
   [
