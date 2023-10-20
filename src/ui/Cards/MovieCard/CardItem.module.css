@@ -117,6 +117,10 @@
   transform: translate(-50%, -50%);
 }
 
+.button__icon .icon__favorite {
+  color: red;
+}
+
 .button__name {
   font-size: 1.5rem;
 }

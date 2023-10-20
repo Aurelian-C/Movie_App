@@ -1,10 +1,11 @@
+import classes from './CardItem.module.css';
 import { useState } from 'react';
 import CardButton from './CardButton';
-import classes from './CardItem.module.css';
 import CardOverlay from './CardOverlay';
 import { Link } from 'react-router-dom';
 import { useUser } from '../../../features/authentication/useUser';
 import { useAddFavorites } from '../../../features/favorites/useAddFavorites';
+import { useRemoveFavorites } from '../../../features/favorites/useRemoveFavorites';
 
 export default function CardItem({
   image,
@@ -14,11 +15,15 @@ export default function CardItem({
   id,
   mediaType,
   item,
+  favorites,
 }) {
   const [buttonIsShown, setButtonIsShown] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
   const { isAuthenticated, userId } = useUser();
   const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
+  const { removeFavorite, isLoadingRemoveFavorite } = useRemoveFavorites();
+
+  const isFavorite = favorites?.some(favorite => favorite.id === id);
 
   function handleFavorites(item) {
     const motionObject = {
@@ -34,7 +39,12 @@ export default function CardItem({
       media_type: mediaType,
       user_id: userId,
     };
-    addToFavorites(motionObject);
+
+    if (isFavorite) {
+      removeFavorite(item.id);
+    } else {
+      addToFavorites(motionObject);
+    }
   }
 
   function handleOverlayVisibility() {
@@ -81,10 +91,15 @@ export default function CardItem({
             <button
               className={classes.button}
               onClick={handleFavorites.bind(null, item)}
-              disabled={isLoadingAddToFavorites}
+              disabled={isLoadingAddToFavorites || isLoadingRemoveFavorite}
             >
               <div className={classes.button__icon}>
-                <i className="fa-solid fa-heart"></i>
+                {isFavorite && (
+                  <i
+                    className={`fa-solid fa-heart ${classes.icon__favorite}`}
+                  ></i>
+                )}
+                {!isFavorite && <i className="fa-regular fa-heart"></i>}
               </div>
               <div className={classes.button__name}>Favorites</div>
             </button>

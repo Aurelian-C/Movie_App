@@ -5,6 +5,7 @@ import lightBackground from '../../../assets/img/background_for_trending_section
 import darkBackground from '../../../assets/img/background_for_trending_section_dark.png';
 import { ModeDarkContext } from '../../../features/darkMode/darkModeContext';
 import LoadingCard from '../LoadingCard/LoadingCard';
+import { useReadFavorites } from '../../../features/favorites/useReadFavorites';
 
 export default function CardItems({
   children,
@@ -14,6 +15,7 @@ export default function CardItems({
 }) {
   const darkModeContext = useContext(ModeDarkContext);
   const cardsContainer = useRef();
+  const { favorites } = useReadFavorites();
 
   useEffect(() => {
     cardsContainer.current.scrollTo({
@@ -53,6 +55,7 @@ export default function CardItems({
               releaseDate={item.release_date}
               id={item.id}
               mediaType={item.media_type ? item.media_type : mediaType}
+              favorites={favorites}
             />
           ))}
         </div>

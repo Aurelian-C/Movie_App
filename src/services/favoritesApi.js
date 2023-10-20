@@ -40,6 +40,7 @@ export async function addToFavorites({
 
 export async function getFavorites(category, sortBy, order) {
   let url = supabase.from('favorites');
+  let data, error;
 
   if (category === 'all' || !category) {
     url = url.select('*');
@@ -49,9 +50,13 @@ export async function getFavorites(category, sortBy, order) {
     url = url.select('*').eq('media_type', category);
   }
 
-  const { data, error } = await url.order(sortBy, {
-    ascending: order === 'ascending',
-  });
+  if (sortBy) {
+    ({ data, error } = await url.order(sortBy, {
+      ascending: order === 'ascending',
+    }));
+  }
+
+  ({ data, error } = await url);
 
   if (error) throw new Error(error.message);
 
