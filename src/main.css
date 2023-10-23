@@ -18,7 +18,8 @@
   --main-bg-selector-1: rgb(192, 254, 207);
   --main-bg-selector-2: rgb(30, 213, 169);
   --main-bg-slider: rgb(1, 180, 228);
-  --main-bg-button-circle: rgb(30, 178, 166, 0.7);
+  --main-bg-button-circle: rgb(255, 255, 255, 0.2);
+  --main-bg-button-circle-hover: rgb(255, 255, 255, 0.4);
   --main-bg-button-search: rgb(151, 87, 87);
   --main-bg-button-movie: rgb(30, 178, 166);
   --main-bg-button-selected: linear-gradient(

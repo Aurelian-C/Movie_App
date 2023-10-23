@@ -20,7 +20,6 @@ export default function CardItem({
   favorites,
   watchlist,
 }) {
-  const [buttonIsShown, setButtonIsShown] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
   const { isAuthenticated, userId } = useUser();
   const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
@@ -83,20 +82,12 @@ export default function CardItem({
     }
   }
 
-  function handleMouseOverCard() {
-    setButtonIsShown(true);
-  }
   function handleMouseLeaveCard() {
-    setButtonIsShown(false);
     setOverlayVisibility(false);
   }
 
   return (
-    <div
-      className={classes.card}
-      onMouseOver={handleMouseOverCard}
-      onMouseLeave={handleMouseLeaveCard}
-    >
+    <div className={classes.card} onMouseLeave={handleMouseLeaveCard}>
       <CardOverlay overlayVisibility={overlayVisibility}>
         {!isAuthenticated && (
           <div>
@@ -150,12 +141,10 @@ export default function CardItem({
           </div>
         )}
       </CardOverlay>
-      {buttonIsShown && (
-        <CardButton
-          onToggleOverlayVisibility={handleOverlayVisibility}
-          onSetOverlayVisibility={setOverlayVisibility}
-        />
-      )}
+      <CardButton
+        onToggleOverlayVisibility={handleOverlayVisibility}
+        onSetOverlayVisibility={setOverlayVisibility}
+      />
       <div className={classes.card__image}>
         <Link
           to={`/${mediaType}/${id}`}

@@ -9,10 +9,11 @@
   background-color: var(--main-bg-button-circle);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  transition: background 0.1s ease-in-out;
 }
 
 .card__circle:hover {
-  filter: brightness(1.3);
+  background-color: var(--main-bg-button-circle-hover);
 }
 
 .card__button {
