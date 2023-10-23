@@ -5,11 +5,13 @@ import Spinner from '../../ui/Spinner/Spinner';
 import Filter from '../../ui/Filter/Filter';
 import SortBy from '../../ui/SortBy/SortBy';
 import { useReadWatchlist } from './useReadWatchlist';
+import { useReadFavorites } from '../favorites/useReadFavorites';
 
 export default function Watchlist() {
   const { watchlist, isLoadingWatchlist } = useReadWatchlist();
+  const { favorites, isLoadingFavorites } = useReadFavorites();
 
-  if (isLoadingWatchlist)
+  if (isLoadingWatchlist || isLoadingFavorites)
     return (
       <SectionPagePrimary>
         <Spinner />
@@ -17,7 +19,11 @@ export default function Watchlist() {
     );
 
   const cards = watchlist.map(motionDetail => (
-    <MotionCardWatchlist key={motionDetail.id} motionDetail={motionDetail} />
+    <MotionCardWatchlist
+      key={motionDetail.id}
+      motionDetail={motionDetail}
+      favorites={favorites}
+    />
   ));
 
   return (

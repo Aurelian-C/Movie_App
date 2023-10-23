@@ -82,18 +82,13 @@
 }
 
 .card__buttons {
+  margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 
 .card__button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.card__button button {
   height: 4.5rem;
   width: 4.5rem;
   border-radius: 50%;
@@ -112,6 +107,6 @@
   color: var(--main-text-color-light);
 }
 
-.card__button label {
-  font-size: 1.5rem;
+.card__button .icon__favorite {
+  color: red;
 }
