@@ -6,9 +6,12 @@ import { useRemoveFavorites } from '../../../features/favorites/useRemoveFavorit
 import { useAddWatchlist } from '../../../features/watchlist/useAddWatchlist';
 import { useReadWatchlist } from '../../../features/watchlist/useReadWatchlist';
 import { useRemoveWatchlist } from '../../../features/watchlist/useRemoveWatchlist';
+import { useLocation } from 'react-router-dom';
 
 export default function HeaderDetailsMovie({ motion }) {
   const { isAuthenticated, userId } = useUser();
+  const location = useLocation();
+  const mediaType = location.pathname.split('/')[1];
 
   const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
   const { removeFavorite, isLoadingRemoveFavorite } = useRemoveFavorites();
@@ -25,7 +28,7 @@ export default function HeaderDetailsMovie({ motion }) {
     if (isFavorite) {
       removeFavorite(motion.id);
     } else {
-      addToFavorites({ ...motion, user_id: userId });
+      addToFavorites({ ...motion, media_type: mediaType, user_id: userId });
     }
   }
 
@@ -33,7 +36,7 @@ export default function HeaderDetailsMovie({ motion }) {
     if (isWatchlist) {
       removeWatchlist(motion.id);
     } else {
-      addToWatchlist({ ...motion, user_id: userId });
+      addToWatchlist({ ...motion, media_type: mediaType, user_id: userId });
     }
   }
 

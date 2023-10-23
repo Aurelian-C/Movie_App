@@ -1,6 +1,71 @@
 import classes from './HeaderDetailsTv.module.css';
+import { useUser } from '../../../features/authentication/useUser';
+import { useAddFavorites } from '../../../features/favorites/useAddFavorites';
+import { useReadFavorites } from '../../../features/favorites/useReadFavorites';
+import { useRemoveFavorites } from '../../../features/favorites/useRemoveFavorites';
+import { useAddWatchlist } from '../../../features/watchlist/useAddWatchlist';
+import { useReadWatchlist } from '../../../features/watchlist/useReadWatchlist';
+import { useRemoveWatchlist } from '../../../features/watchlist/useRemoveWatchlist';
+import { useLocation } from 'react-router-dom';
 
 export default function HeaderDetailsTv({ motion }) {
+  const { isAuthenticated, userId } = useUser();
+  const location = useLocation();
+  const mediaType = location.pathname.split('/')[1];
+
+  const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
+  const { removeFavorite, isLoadingRemoveFavorite } = useRemoveFavorites();
+  const { favorites } = useReadFavorites();
+
+  const { addToWatchlist, isLoadingAddToWatchlist } = useAddWatchlist();
+  const { removeWatchlist, isLoadingRemoveWatchlist } = useRemoveWatchlist();
+  const { watchlist } = useReadWatchlist();
+
+  const isFavorite = favorites?.some(favorite => favorite.id === motion.id);
+  const isWatchlist = watchlist?.some(watchlist => watchlist.id === motion.id);
+
+  function handleFavorites(motion) {
+    if (isFavorite) {
+      removeFavorite(motion.id);
+    } else {
+      const motionObject = {
+        id: motion.id,
+        title: motion.title,
+        vote_average: motion.vote_average,
+        release_date: motion.release_date,
+        genres: null,
+        backdrop_path: motion.backdrop_path,
+        poster_path: motion.poster_path,
+        overview: motion.overview,
+        runtime: null,
+        media_type: mediaType,
+      };
+
+      addToFavorites({ ...motionObject, user_id: userId });
+    }
+  }
+
+  function handleWatchlist(motion) {
+    if (isWatchlist) {
+      removeWatchlist(motion.id);
+    } else {
+      const motionObject = {
+        id: motion.id,
+        title: motion.name,
+        vote_average: motion.vote_average,
+        release_date: motion.first_air_date,
+        genres: null,
+        backdrop_path: motion.backdrop_path,
+        poster_path: motion.poster_path,
+        overview: motion.overview,
+        runtime: null,
+        media_type: mediaType,
+      };
+
+      addToWatchlist({ ...motionObject, user_id: userId });
+    }
+  }
+
   return (
     <div className={classes['header__details']}>
       <div className={classes['header__title']}>
@@ -27,22 +92,55 @@ export default function HeaderDetailsTv({ motion }) {
           <div className={classes['header__user']}>User score</div>
         </div>
         <div className={classes['header__buttons']}>
-          <button className={classes['header__button']}>
+          {/* <button
+            className={classes['header__button']}
+            disabled={!isAuthenticated}
+          >
             <i className="fa-regular fa-rectangle-list"></i>
             <div className={classes['header__tooltip']}>
-              Login to create and edit custom list
+              {isAuthenticated
+                ? 'Add to list'
+                : 'Login to create and edit custom list'}
+            </div>
+          </button> */}
+          <button
+            className={classes['header__button']}
+            disabled={
+              !isAuthenticated ||
+              isLoadingAddToFavorites ||
+              isLoadingRemoveFavorite
+            }
+            onClick={handleFavorites.bind(null, motion)}
+          >
+            {isFavorite && (
+              <i className={`fa-solid fa-heart ${classes.icon__favorite}`}></i>
+            )}
+            {!isFavorite && <i className="fa-regular fa-heart"></i>}
+            <div className={classes['header__tooltip']}>
+              {isAuthenticated
+                ? 'Mark as favorite'
+                : 'Login to add this movie to your favorite list'}
             </div>
           </button>
-          <button className={classes['header__button']}>
-            <i className="fa-solid fa-heart"></i>
+          <button
+            className={classes['header__button']}
+            disabled={
+              !isAuthenticated ||
+              isLoadingAddToWatchlist ||
+              isLoadingRemoveWatchlist
+            }
+            onClick={handleWatchlist.bind(null, motion)}
+          >
+            {isWatchlist && (
+              <i
+                className={`fa-solid fa-bookmark ${classes.icon__favorite}`}
+              ></i>
+            )}
+            {!isWatchlist && <i className="fa-regular fa-bookmark"></i>}
             <div className={classes['header__tooltip']}>
-              Login to add this movie to your favorite list
-            </div>
-          </button>
-          <button className={classes['header__button']}>
-            <i className="fa-solid fa-bookmark"></i>
-            <div className={classes['header__tooltip']}>
-              Login to add this movie to your watchlist
+              {isAuthenticated
+                ? 'Add to your watchlist'
+                : 'Login to add this movie to your watchlist'}
             </div>
           </button>
         </div>
