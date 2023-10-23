@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { useUser } from '../../../features/authentication/useUser';
 import { useAddFavorites } from '../../../features/favorites/useAddFavorites';
 import { useRemoveFavorites } from '../../../features/favorites/useRemoveFavorites';
+import { useAddWatchlist } from '../../../features/watchlist/useAddWatchlist';
+import { useRemoveWatchlist } from '../../../features/watchlist/useRemoveWatchlist';
 
 export default function CardItem({
   image,
@@ -16,14 +18,18 @@ export default function CardItem({
   mediaType,
   item,
   favorites,
+  watchlist,
 }) {
   const [buttonIsShown, setButtonIsShown] = useState(false);
   const [overlayVisibility, setOverlayVisibility] = useState(false);
   const { isAuthenticated, userId } = useUser();
   const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
   const { removeFavorite, isLoadingRemoveFavorite } = useRemoveFavorites();
+  const { addToWatchlist, isLoadingAddToWatchlist } = useAddWatchlist();
+  const { removeWatchlist, isLoadingRemoveWatchlist } = useRemoveWatchlist();
 
   const isFavorite = favorites?.some(favorite => favorite.id === id);
+  const isWatchlist = watchlist?.some(watchlist => watchlist.id === id);
 
   function handleFavorites(item) {
     const motionObject = {
@@ -44,6 +50,28 @@ export default function CardItem({
       removeFavorite(item.id);
     } else {
       addToFavorites(motionObject);
+    }
+  }
+
+  function handleWatchlist(item) {
+    const motionObject = {
+      id: item.id,
+      title: item.title,
+      vote_average: item.vote_average,
+      release_date: item.release_date,
+      genres: null,
+      backdrop_path: item.backdrop_path,
+      poster_path: item.poster_path,
+      overview: item.overview,
+      runtime: null,
+      media_type: mediaType,
+      user_id: userId,
+    };
+
+    if (isWatchlist) {
+      removeWatchlist(item.id);
+    } else {
+      addToWatchlist(motionObject);
     }
   }
 
@@ -104,9 +132,18 @@ export default function CardItem({
               <div className={classes.button__name}>Favorites</div>
             </button>
 
-            <button className={classes.button}>
+            <button
+              className={classes.button}
+              onClick={handleWatchlist.bind(null, item)}
+              disabled={isLoadingAddToWatchlist || isLoadingRemoveWatchlist}
+            >
               <div className={classes.button__icon}>
-                <i className="fa-regular fa-bookmark"></i>
+                {isWatchlist && (
+                  <i
+                    className={`fa-solid fa-bookmark ${classes.icon__favorite}`}
+                  ></i>
+                )}
+                {!isWatchlist && <i className="fa-regular fa-bookmark"></i>}
               </div>
               <div className={classes.button__name}>Watchlist</div>
             </button>

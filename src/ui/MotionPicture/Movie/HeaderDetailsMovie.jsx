@@ -1,22 +1,39 @@
+import classes from './HeaderDetailsMovie.module.css';
 import { useUser } from '../../../features/authentication/useUser';
 import { useAddFavorites } from '../../../features/favorites/useAddFavorites';
 import { useReadFavorites } from '../../../features/favorites/useReadFavorites';
 import { useRemoveFavorites } from '../../../features/favorites/useRemoveFavorites';
-import classes from './HeaderDetailsMovie.module.css';
+import { useAddWatchlist } from '../../../features/watchlist/useAddWatchlist';
+import { useReadWatchlist } from '../../../features/watchlist/useReadWatchlist';
+import { useRemoveWatchlist } from '../../../features/watchlist/useRemoveWatchlist';
 
 export default function HeaderDetailsMovie({ motion }) {
   const { isAuthenticated, userId } = useUser();
+
   const { addToFavorites, isLoadingAddToFavorites } = useAddFavorites();
   const { removeFavorite, isLoadingRemoveFavorite } = useRemoveFavorites();
   const { favorites } = useReadFavorites();
 
+  const { addToWatchlist, isLoadingAddToWatchlist } = useAddWatchlist();
+  const { removeWatchlist, isLoadingRemoveWatchlist } = useRemoveWatchlist();
+  const { watchlist } = useReadWatchlist();
+
   const isFavorite = favorites?.some(favorite => favorite.id === motion.id);
+  const isWatchlist = watchlist?.some(watchlist => watchlist.id === motion.id);
 
   function handleFavorites(motion) {
     if (isFavorite) {
       removeFavorite(motion.id);
     } else {
       addToFavorites({ ...motion, user_id: userId });
+    }
+  }
+
+  function handleWatchlist(motion) {
+    if (isWatchlist) {
+      removeWatchlist(motion.id);
+    } else {
+      addToWatchlist({ ...motion, user_id: userId });
     }
   }
 
@@ -81,9 +98,19 @@ export default function HeaderDetailsMovie({ motion }) {
           </button>
           <button
             className={classes['header__button']}
-            disabled={!isAuthenticated}
+            disabled={
+              !isAuthenticated ||
+              isLoadingAddToWatchlist ||
+              isLoadingRemoveWatchlist
+            }
+            onClick={handleWatchlist.bind(null, motion)}
           >
-            <i className="fa-solid fa-bookmark"></i>
+            {isWatchlist && (
+              <i
+                className={`fa-solid fa-bookmark ${classes.icon__favorite}`}
+              ></i>
+            )}
+            {!isWatchlist && <i className="fa-regular fa-bookmark"></i>}
             <div className={classes['header__tooltip']}>
               {isAuthenticated
                 ? 'Add to your watchlist'

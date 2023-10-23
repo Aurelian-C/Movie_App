@@ -1,11 +1,5 @@
-import SectionPagePrimary from '../ui/SectionWrappers/SectionPagePrimary';
+import Watchlist from '../features/watchlist/Watchlist';
 
-function WatchlistPage() {
-  return (
-    <SectionPagePrimary>
-      <div>Watchlist Page</div>
-    </SectionPagePrimary>
-  );
+export default function WatchlistPage() {
+  return <Watchlist />;
 }
-
-export default WatchlistPage;
