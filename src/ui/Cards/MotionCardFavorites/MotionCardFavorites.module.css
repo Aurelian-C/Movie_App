@@ -88,12 +88,7 @@
 }
 
 .card__button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.card__button button {
+  margin-left: auto;
   height: 4.5rem;
   width: 4.5rem;
   border-radius: 50%;

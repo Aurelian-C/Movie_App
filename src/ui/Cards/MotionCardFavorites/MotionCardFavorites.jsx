@@ -37,21 +37,13 @@ export default function MotionCardFavorites({ motionDetail }) {
         <div className={classes.card__overview}>{motionDetail.overview}</div>
 
         <div className={classes.card__buttons}>
-          <div className={classes.card__button}>
-            <button id="button-favorites">
-              <i className="fa-solid fa-heart"></i>
-            </button>
-            <label htmlFor="button-favorites">Add to favorites</label>
-          </div>
-          <div className={classes.card__button}>
-            <button
-              id="button-remove"
-              onClick={handleRemoveFavorite.bind(null, motionDetail.id)}
-            >
-              <i className="fa-regular fa-trash-can"></i>
-            </button>
-            <label htmlFor="button-remove">Remove</label>
-          </div>
+          <button
+            className={classes.card__button}
+            id="button-remove"
+            onClick={handleRemoveFavorite.bind(null, motionDetail.id)}
+          >
+            <i className="fa-regular fa-trash-can"></i>
+          </button>
         </div>
       </div>
     </div>

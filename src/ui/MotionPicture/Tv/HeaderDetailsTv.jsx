@@ -30,7 +30,7 @@ export default function HeaderDetailsTv({ motion }) {
     } else {
       const motionObject = {
         id: motion.id,
-        title: motion.title,
+        title: motion.name,
         vote_average: motion.vote_average,
         release_date: motion.release_date,
         genres: null,
