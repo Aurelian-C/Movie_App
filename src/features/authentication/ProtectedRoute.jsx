@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import Spinner from '../../ui/Spinner/Spinner';
 import { useUser } from './useUser';
@@ -21,6 +21,11 @@ export default function ProtectedRoute({ children }) {
 
   // 4. If there IS A USER, render the /account page
   if (isAuthenticated) {
-    return children;
+    return (
+      <>
+        {children}
+        <Outlet />
+      </>
+    );
   }
 }

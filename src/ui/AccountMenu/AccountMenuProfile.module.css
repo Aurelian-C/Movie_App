@@ -2,10 +2,6 @@
   padding: 8px 15px 15px 15px;
 }
 
-.profile__anchor {
-  text-decoration: none;
-}
-
 .profile__data {
   display: flex;
   flex-direction: column;

@@ -9,7 +9,6 @@ import MovieCrewDetails from './pages/MovieCrewDetails';
 import TvCrewDetails from './pages/TvCrewDetails';
 import FilterFormLayout from './pages/FilterFormLayout';
 import PersonsPage from './pages/Persons';
-import AccountPage from './pages/Account';
 import FavoritesPage from './pages/Favorites';
 import WatchlistPage from './pages/Watchlist';
 import EditProfilePage from './pages/EditProfile';
@@ -17,6 +16,7 @@ import SettingsPage from './pages/Settings';
 
 import Signup from './features/authentication/Signup';
 import Login from './features/authentication/Login';
+import ProtectedRoute from './features/authentication/ProtectedRoute';
 
 import { movieLoader } from './services/movie-details';
 import { tvLoader } from './services/tv-details';
@@ -153,12 +153,14 @@ export default function App() {
         { path: 'login', element: <Login /> },
         {
           path: 'account',
-          element: <AccountPage />,
+          element: <ProtectedRoute />,
+          children: [
+            { path: 'favorites', element: <FavoritesPage /> },
+            { path: 'watchlist', element: <WatchlistPage /> },
+            { path: 'edit-profile', element: <EditProfilePage /> },
+            { path: 'settings', element: <SettingsPage /> },
+          ],
         },
-        { path: 'account/favorites', element: <FavoritesPage /> },
-        { path: 'account/watchlist', element: <WatchlistPage /> },
-        { path: 'account/edit-profile', element: <EditProfilePage /> },
-        { path: 'account/settings', element: <SettingsPage /> },
       ],
     },
   ]);
