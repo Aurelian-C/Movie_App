@@ -55,7 +55,7 @@ export default function CastAndCrew({ cast, crew, motion }) {
     <SectionPageSecondary className={classes.margin__top}>
       <header className={classes.header}>
         <div className={classes.header__overlay}>
-          <h1>{motionItem.title}</h1>
+          <h2>{motionItem.title}</h2>
         </div>
       </header>
       <div className={classes.credits}>

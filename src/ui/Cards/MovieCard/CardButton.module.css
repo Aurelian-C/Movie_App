@@ -4,7 +4,7 @@
   right: 10px;
   height: 3rem;
   width: 3rem;
-  z-index: 999;
+  z-index: 99;
   border-radius: 50%;
   background-color: var(--main-bg-button-circle);
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
