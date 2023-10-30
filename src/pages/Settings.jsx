@@ -3,7 +3,17 @@ import SectionPagePrimary from '../ui/SectionWrappers/SectionPagePrimary';
 function SettingsPage() {
   return (
     <SectionPagePrimary>
-      <div>Accout Settings Page</div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '6rem',
+          height: '600px',
+        }}
+      >
+        Settings page is under construction...
+      </div>
     </SectionPagePrimary>
   );
 }

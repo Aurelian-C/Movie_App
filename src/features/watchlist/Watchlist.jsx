@@ -18,6 +18,23 @@ export default function Watchlist() {
       </SectionPagePrimary>
     );
 
+  if (!favorites.length || !watchlist.length) {
+    return (
+      <SectionPagePrimary>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '3rem',
+          }}
+        >
+          There are no movies or TVs on your watchlist!
+        </div>
+      </SectionPagePrimary>
+    );
+  }
+
   const cards = watchlist.map(motionDetail => (
     <MotionCardWatchlist
       key={motionDetail.id}

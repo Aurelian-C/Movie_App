@@ -16,6 +16,23 @@ export default function Favorites() {
       </SectionPagePrimary>
     );
 
+  if (!favorites.length) {
+    return (
+      <SectionPagePrimary>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '3rem',
+          }}
+        >
+          There are no movies or TVs on your favorite list!
+        </div>
+      </SectionPagePrimary>
+    );
+  }
+
   const cards = favorites.map(motionDetail => (
     <MotionCardFavorites key={motionDetail.id} motionDetail={motionDetail} />
   ));
