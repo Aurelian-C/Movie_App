@@ -18,7 +18,7 @@ export default function Watchlist() {
       </SectionPagePrimary>
     );
 
-  if (!favorites.length || !watchlist.length) {
+  if (!watchlist.length) {
     return (
       <SectionPagePrimary>
         <div
