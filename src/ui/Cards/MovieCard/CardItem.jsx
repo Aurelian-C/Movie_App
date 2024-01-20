@@ -27,8 +27,12 @@ export default function CardItem({
   const { addToWatchlist, isLoadingAddToWatchlist } = useAddWatchlist();
   const { removeWatchlist, isLoadingRemoveWatchlist } = useRemoveWatchlist();
 
-  const isFavorite = favorites?.some(favorite => favorite.id === id);
-  const isWatchlist = watchlist?.some(watchlist => watchlist.id === id);
+  const isFavorite = favorites?.some(
+    favorite => favorite.id === `${userId}--${id}`
+  );
+  const isWatchlist = watchlist?.some(
+    watchlist => watchlist.id === `${userId}--${id}`
+  );
 
   function handleFavorites(item) {
     const motionObject = {
@@ -46,7 +50,7 @@ export default function CardItem({
     };
 
     if (isFavorite) {
-      removeFavorite(item.id);
+      removeFavorite({ id: item.id, userId });
     } else {
       addToFavorites(motionObject);
     }
@@ -68,7 +72,7 @@ export default function CardItem({
     };
 
     if (isWatchlist) {
-      removeWatchlist(item.id);
+      removeWatchlist({ id: item.id, userId });
     } else {
       addToWatchlist(motionObject);
     }

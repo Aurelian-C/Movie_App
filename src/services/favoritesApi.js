@@ -13,11 +13,13 @@ export async function addToFavorites({
   media_type,
   user_id,
 }) {
+  const storedId = String(id).includes(user_id) ? id : `${user_id}--${id}`;
+
   const { data, error } = await supabase
     .from('favorites')
     .insert([
       {
-        id: `${user_id}--${id}`,
+        id: storedId,
         title,
         vote_average,
         release_date: new Date(release_date),
@@ -63,8 +65,13 @@ export async function getFavorites(category, sortBy, order) {
   return data;
 }
 
-export async function removeFavorite(id) {
-  const { error } = await supabase.from('favorites').delete().eq('id', id);
+export async function removeFavorite({ id, userId }) {
+  const removedId = userId ? `${userId}--${id}` : id;
+
+  const { error } = await supabase
+    .from('favorites')
+    .delete()
+    .eq('id', removedId);
 
   if (error) throw new Error(error.message);
 }

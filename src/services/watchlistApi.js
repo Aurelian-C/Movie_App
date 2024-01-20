@@ -63,8 +63,13 @@ export async function getWatchlist(category, sortBy, order) {
   return data;
 }
 
-export async function removeWatchlist(id) {
-  const { error } = await supabase.from('watchlist').delete().eq('id', id);
+export async function removeWatchlist({ id, userId }) {
+  const removedId = userId ? `${userId}--${id}` : id;
+
+  const { error } = await supabase
+    .from('watchlist')
+    .delete()
+    .eq('id', removedId);
 
   if (error) throw new Error(error.message);
 }

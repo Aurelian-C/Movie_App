@@ -5,7 +5,7 @@ export default function MotionCardFavorites({ motionDetail }) {
   const { removeFavorite } = useRemoveFavorites();
 
   function handleRemoveFavorite(id) {
-    removeFavorite(id);
+    removeFavorite({ id });
   }
 
   return (
