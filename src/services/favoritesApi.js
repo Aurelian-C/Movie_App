@@ -17,7 +17,7 @@ export async function addToFavorites({
     .from('favorites')
     .insert([
       {
-        id,
+        id: `${user_id}--${id}`,
         title,
         vote_average,
         release_date: new Date(release_date),
