@@ -21,12 +21,16 @@ export default function HeaderDetailsMovie({ motion }) {
   const { removeWatchlist, isLoadingRemoveWatchlist } = useRemoveWatchlist();
   const { watchlist } = useReadWatchlist();
 
-  const isFavorite = favorites?.some(favorite => favorite.id === motion.id);
-  const isWatchlist = watchlist?.some(watchlist => watchlist.id === motion.id);
+  const isFavorite = favorites?.some(
+    favorite => favorite.id === `${userId}--${motion.id}`
+  );
+  const isWatchlist = watchlist?.some(
+    watchlist => watchlist.id === `${userId}--${motion.id}`
+  );
 
   function handleFavorites(motion) {
     if (isFavorite) {
-      removeFavorite(motion.id);
+      removeFavorite({ id: motion.id, userId });
     } else {
       addToFavorites({ ...motion, media_type: mediaType, user_id: userId });
     }
@@ -34,7 +38,7 @@ export default function HeaderDetailsMovie({ motion }) {
 
   function handleWatchlist(motion) {
     if (isWatchlist) {
-      removeWatchlist(motion.id);
+      removeWatchlist({ id: motion.id, userId });
     } else {
       addToWatchlist({ ...motion, media_type: mediaType, user_id: userId });
     }

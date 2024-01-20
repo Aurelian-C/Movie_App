@@ -67,6 +67,7 @@ export async function getFavorites(category, sortBy, order) {
 
 export async function removeFavorite({ id, userId }) {
   const removedId = userId ? `${userId}--${id}` : id;
+  console.log(removedId);
 
   const { error } = await supabase
     .from('favorites')
