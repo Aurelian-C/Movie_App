@@ -16,7 +16,7 @@ export default function MotionCardWatchlist({ motionDetail, favorites }) {
 
   function handleFavorites(motion) {
     if (isFavorite) {
-      removeFavorite(motion.id);
+      removeFavorite({ id: motion.id });
     } else {
       const motionObject = {
         id: motion.id,
@@ -37,7 +37,7 @@ export default function MotionCardWatchlist({ motionDetail, favorites }) {
   }
 
   function handleRemoveWatchlist(id) {
-    removeWatchlist(id);
+    removeWatchlist({ id });
   }
 
   return (
