@@ -97,11 +97,14 @@ export default function HeaderDetailsMovie({ motion }) {
               <i className={`fa-solid fa-heart ${classes.icon__favorite}`}></i>
             )}
             {!isFavorite && <i className="fa-regular fa-heart"></i>}
-            <div className={classes['header__tooltip']}>
-              {isAuthenticated
-                ? 'Mark as favorite'
-                : 'Login to add this movie to your favorite list'}
-            </div>
+            {!isAuthenticated && (
+              <div className={classes['header__tooltip']}>
+                Login to add this movie to your favorite list
+              </div>
+            )}
+            {!isFavorite && isAuthenticated && (
+              <div className={classes['header__tooltip']}>Mark as favorite</div>
+            )}
           </button>
           <button
             className={classes['header__button']}
@@ -118,11 +121,16 @@ export default function HeaderDetailsMovie({ motion }) {
               ></i>
             )}
             {!isWatchlist && <i className="fa-regular fa-bookmark"></i>}
-            <div className={classes['header__tooltip']}>
-              {isAuthenticated
-                ? 'Add to your watchlist'
-                : 'Login to add this movie to your watchlist'}
-            </div>
+            {!isAuthenticated && (
+              <div className={classes['header__tooltip']}>
+                Login to add this movie to your watchlist
+              </div>
+            )}
+            {!isWatchlist && isAuthenticated && (
+              <div className={classes['header__tooltip']}>
+                Add to your watchlist
+              </div>
+            )}
           </button>
         </div>
       </div>
