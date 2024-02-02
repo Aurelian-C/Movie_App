@@ -12,9 +12,10 @@
 }
 
 .header__container {
-  padding: 2rem 5rem;
+  padding: 10px 5rem;
   display: grid;
   grid-template-columns: min-content repeat(2, 1fr) min-content;
+  align-items: center;
   gap: 2rem;
   max-width: var(--page-max-width);
   margin: 0 auto;
