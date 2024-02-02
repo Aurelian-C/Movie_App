@@ -184,7 +184,7 @@ function Signup() {
                 className={classes.form__button}
                 disabled={isLoadingSignup}
               >
-                {isLoadingSignup ? <SpinnerMini /> : 'Sing In'}
+                {isLoadingSignup ? <SpinnerMini /> : 'Sign In'}
               </button>
             </form>
           </div>
