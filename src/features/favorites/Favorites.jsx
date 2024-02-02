@@ -25,6 +25,7 @@ export default function Favorites() {
             justifyContent: 'center',
             alignItems: 'center',
             fontSize: '3rem',
+            textAlign: 'center',
           }}
         >
           There are no movies or TVs on your favorite list!

@@ -2,6 +2,7 @@ import Search from '../../src/ui/Search/Search';
 import Trendings from '../features/trendings/Trendings';
 import TopRated from '../features/topRated/TopRated';
 import Upcomings from '../features/upcomings/Upcomings';
+import Footer from '../ui/Footer/Footer';
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Trendings />
       <Upcomings />
       <TopRated />
+      <Footer />
     </>
   );
 }
