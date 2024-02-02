@@ -102,9 +102,9 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   font-size: 1.4rem;
+  font-weight: 700;
   padding: 1.2rem 1.6rem;
   font-size: 1.6rem;
-  font-weight: 500;
   cursor: pointer;
 }
 
