@@ -11,7 +11,14 @@ import { Link } from 'react-router-dom';
 export default function AccountMenu() {
   const [isVisible, setIsVisible] = useState(false);
   const iconRef = useOutsideClick(() => setIsVisible(false));
-  const { isAuthenticated, firstName, lastName, userEmail } = useUser();
+  const {
+    isAuthenticated,
+    firstName,
+    lastName,
+    userEmail,
+    isAdminUser,
+    profileImage,
+  } = useUser();
   const { logout, isLoadingLogout } = useLogout();
 
   function handleAccountMenuVisibility() {
@@ -49,11 +56,12 @@ export default function AccountMenu() {
         )}
         {isAuthenticated && (
           <div className={classes.account}>
-            <i
-              className="fa-regular fa-circle-user"
+            <img
+              src={profileImage || '/default-user.jpg'}
+              className={classes.account__image}
               onClick={handleAccountMenuVisibility}
               ref={iconRef}
-            ></i>
+            />
             <div
               className={`${classes.account__menu} ${
                 isVisible ? '' : classes.hidden
@@ -64,6 +72,8 @@ export default function AccountMenu() {
                   userEmail={userEmail}
                   firstName={firstName}
                   lastName={lastName}
+                  profileImage={profileImage}
+                  isAdminUser={isAdminUser}
                 />
                 {accountMenuItems}
               </div>

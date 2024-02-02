@@ -8,7 +8,7 @@ import ToastErrorMessage from '../../ui/Toast/ToastErrorMessage';
 
 function UpdateUserData() {
   const { updateUserData, isLoadingUpdateUserData } = useUpdateUserData();
-  const { userEmail, firstName, lastName, isLoadingGetUser, userID } =
+  const { userEmail, firstName, lastName, isLoadingGetUser, userId } =
     useUser();
   const { register, handleSubmit } = useForm();
 
@@ -17,7 +17,7 @@ function UpdateUserData() {
       {
         ...data,
         profileImage: data.profileImage[0],
-        userId: userID,
+        userId,
       },
       {
         onError: error =>

@@ -27,8 +27,12 @@
   position: relative;
 }
 
-.account i {
-  font-size: 2.4rem;
+.account__image {
+  width: 45px;
+  height: 45px;
+  outline: 2px solid var(--border-profile-image);
+  border-radius: 50%;
+  object-fit: cover;
   cursor: pointer;
 }
 
