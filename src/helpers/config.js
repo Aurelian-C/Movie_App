@@ -13,7 +13,7 @@ export const ACCOUNT_MENU_ITEMS = [
   ],
   [
     { type: 'link', label: 'Edit Profile', link: '/account/edit-profile' },
-    { type: 'link', label: 'Settings', link: '/account/settings' },
+    { type: 'link', label: 'Settings', link: '/account/settings/change-email' },
   ],
   [{ type: 'button', label: 'Logout' }],
 ];

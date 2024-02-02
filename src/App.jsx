@@ -41,6 +41,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
+import UpdateUserEmail from './features/editAccount/UpdateUserEmail';
+import UpdateUserPassword from './features/editAccount/UpdateUserPassword';
+import DeleteUserAccount from './features/editAccount/DeleteUserAccount';
 
 const queryClient = new QueryClient();
 
@@ -158,7 +161,15 @@ export default function App() {
             { path: 'favorites', element: <FavoritesPage /> },
             { path: 'watchlist', element: <WatchlistPage /> },
             { path: 'edit-profile', element: <EditProfilePage /> },
-            { path: 'settings', element: <SettingsPage /> },
+            {
+              path: 'settings',
+              element: <SettingsPage />,
+              children: [
+                { element: <UpdateUserEmail />, path: 'change-email' },
+                { element: <UpdateUserPassword />, path: 'change-password' },
+                { element: <DeleteUserAccount />, path: 'delete-account' },
+              ],
+            },
           ],
         },
       ],

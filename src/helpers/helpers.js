@@ -28,45 +28,6 @@ export async function fetchMotion(mediaType, identifier, pageNumber = 1) {
   return data;
 }
 
-export const asyncDelay = function (seconds) {
-  return new Promise((resolve, _) => {
-    setTimeout(() => {
-      resolve();
-    }, seconds * 1000);
-  });
-};
-
-/*
-export const timeout = function (seconds) {
-  return new Promise((_, reject) => {
-    setTimeout(() => {
-      reject(
-        new Error(`Faild to fetch! Request took to long (${seconds} seconds)!`)
-      );
-    }, seconds * 1000);
-  });
-};
-
-export const AJAX = async function (url, uploadData = undefined) {
-  try {
-    const fetchPro = uploadData
-      ? fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(uploadData),
-        })
-      : fetch(url);
-    const request = await Promise.race([fetchPro, timeout(TIMEOUT_FETCH)]);
-    const data = await request.json();
-    return data;
-  } catch (err) {
-    throw err;
-  }
-};
-*/
-
 export const createUpcomingDetails = items => {
   return items.map(item => {
     const date = item.first_air_date || item.release_date;
@@ -357,12 +318,130 @@ export const createCollectionDetails = collection => {
   };
 };
 
-/* let timeoutID;
-export function debounce(func, query, timeout = 1000) {
-  if (timeoutID) clearTimeout(timeoutID);
-
-  timeoutID = setTimeout(() => {
-    func(query);
-  }, timeout);
+export function asyncDelay(seconds) {
+  return new Promise((resolve, _) => {
+    setTimeout(() => {
+      resolve();
+    }, seconds * 1000);
+  });
 }
-*/
+
+export function formatLastViewDate(lastViewTimestamp) {
+  const locales = navigator.language;
+
+  const date = new Intl.DateTimeFormat(locales, {
+    dateStyle: 'short',
+    timeStyle: 'short',
+  }).format(lastViewTimestamp);
+
+  return date.split(',');
+}
+
+export function buildFilteredVersesByBook(versesArray) {
+  let filteredVersesByBook = [];
+  versesArray.forEach(verse => {
+    const isContain = filteredVersesByBook.some(
+      filteredVerse => filteredVerse.bookId === verse.book_id.book_id
+    );
+
+    if (isContain) {
+      const idx = filteredVersesByBook.findIndex(
+        filteredVerse => filteredVerse.bookId === verse.book_id.book_id
+      );
+
+      filteredVersesByBook[idx].verses.push({
+        chapterNumber: verse.chapter_id.chapter_number,
+        verseNumber: verse.verse_number,
+        verseText: verse.verse_text,
+        id: verse.verse_id,
+      });
+    } else {
+      filteredVersesByBook.push({
+        bookTitle: verse.book_id.book_title,
+        bookId: verse.book_id.book_id,
+        bookTitleShort: verse.book_id.book_title_short,
+        verses: [
+          {
+            chapterNumber: verse.chapter_id.chapter_number,
+            verseNumber: verse.verse_number,
+            verseText: verse.verse_text,
+            id: verse.verse_id,
+          },
+        ],
+      });
+    }
+  });
+
+  return filteredVersesByBook;
+}
+
+export function groupByConsecutiveNumbers(arr) {
+  if (!Array.isArray(arr) || arr.length === 0) {
+    return [];
+  }
+
+  const result = [];
+  let currentGroup = [arr[0]];
+
+  for (let i = 1; i < arr.length; i++) {
+    const currentNumber = arr[i].verseOrder;
+    const previousNumber = arr[i - 1].verseOrder;
+
+    if (currentNumber === previousNumber + 1) {
+      currentGroup.push(arr[i]);
+    } else {
+      result.push(currentGroup);
+      currentGroup = [arr[i]];
+    }
+  }
+
+  // Push the last group
+  result.push(currentGroup);
+
+  return result;
+}
+
+// Check if an email is valid
+export function isValidEmail(email) {
+  // Define the regular expression pattern for a valid email address
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  // Use test() method to check if the input matches the pattern
+  return emailPattern.test(email);
+}
+
+// Check if a text contains a capital letter
+export function containsCapitalLetter(text) {
+  // Regular expression to check for at least one capital letter
+  const capitalLetterRegex = /[A-Z]/;
+
+  // Test if the text contains a capital letter
+  return capitalLetterRegex.test(text);
+}
+
+// Check if a text contains a small letter that is not a empty string
+export function containsNonEmptySmallLetter(text) {
+  // Regular expression to check for at least one lowercase letter
+  const smallLetterRegex = /[a-z]/;
+
+  // Test if the text contains a lowercase letter and is not empty
+  return smallLetterRegex.test(text);
+}
+
+// Check if a text contains a number
+export function containsNumber(text) {
+  // Regular expression to check for at least one digit
+  const numberRegex = /\d/;
+
+  // Test if the text contains a digit
+  return numberRegex.test(text);
+}
+
+// Check if a text contains special character
+export function containsSpecialCharacter(text) {
+  // Regular expression to check for at least one special character or symbol
+  const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+  // Test if the text contains a special character
+  return specialCharacterRegex.test(text);
+}
