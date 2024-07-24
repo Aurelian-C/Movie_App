@@ -45,6 +45,14 @@ import UpdateUserEmail from './features/editAccount/UpdateUserEmail';
 import UpdateUserPassword from './features/editAccount/UpdateUserPassword';
 import DeleteUserAccount from './features/editAccount/DeleteUserAccount';
 
+// Preload the dark & light mode images
+const darkModeImage = new Image();
+const lightModeImage = new Image();
+darkModeImage.src =
+  '../../../assets/img/background_for_trending_section_dark.png';
+lightModeImage.src =
+  '../../../assets/img/background_for_trending_section_light.png';
+
 const queryClient = new QueryClient();
 
 export default function App() {
