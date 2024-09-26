@@ -46,9 +46,9 @@ export default function MotionPictureCollections({ collection }) {
             </li>
           ))}
         </ul>
-        <button className={classes.collection__button}>
+        {/* <button className={classes.collection__button}>
           View the collection
-        </button>
+        </button> */}
       </div>
     </SectionPageSecondary>
   );

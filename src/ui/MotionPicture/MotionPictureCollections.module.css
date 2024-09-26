@@ -13,6 +13,7 @@
 .collection__list {
   font-size: 1.8rem;
   margin-top: 4px;
+  list-style: none;
 }
 
 .collection__list li {
